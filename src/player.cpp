@@ -14,7 +14,7 @@ Player::~Player()
 
 }
 
-b2Body* Player:: createbody(b2World* world, b2Vec2 position, bool isStatic, float length, float width, float restitution, float density)
+b2Body* Player:: createbody(b2World* world, b2Vec2 position, bool isStatic, float length, float width, float restitution, float density,int data)
 {
 	b2BodyDef bodyDef;
     bodyDef.position = position;
@@ -27,10 +27,11 @@ b2Body* Player:: createbody(b2World* world, b2Vec2 position, bool isStatic, floa
     shape1.SetAsBox((length/2)/SCALE, (width/2)/SCALE);
     FixtureDef.shape = &shape1;
     body->CreateFixture(&FixtureDef);
+    body->SetUserData(&data);
     return body;
 }
 
-b2Body* Player::createhead(b2World* world, b2Vec2 position, bool isStatic, float radius, float restitution, float density)
+b2Body* Player::createhead(b2World* world, b2Vec2 position, bool isStatic, float radius, float restitution, float density,int data)
 {
 	b2BodyDef bodyDef;
     bodyDef.position = position;
@@ -43,6 +44,7 @@ b2Body* Player::createhead(b2World* world, b2Vec2 position, bool isStatic, float
     shape1.m_radius = radius/SCALE;
     FixtureDef.shape = &shape1;
     body->CreateFixture(&FixtureDef);
+    body->SetUserData(&data);
     return body;
 }
 
