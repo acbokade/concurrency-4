@@ -7,18 +7,22 @@
 #include <queue>
 #include <time.h>
 #include <sys/time.h>
+#include <thread>
+#include <queue>
+#include <mutex>
 
 class Game
 {
 public:
 	Game();
 	sf::RenderWindow *window ;
-	b2World *world;
+	b2World* world;
+	b2Body* ground;
 	sf::Texture groundTexture;
 	sf::Sprite groundSprite;
 	int velocityIterations = 10;
 	int positionIterations = 10;
-	float timeStep = 1.0f / 120.0f;
+	float timeStep = 1.0f / 240.0f;
 	myListener* listener;
 	std::thread worker[30];
 	std::mutex m;
@@ -26,10 +30,10 @@ public:
     Player* player2;
 	struct timeval current_time,prev_time;
 	double time_difference;
-	void createGround(b2Vec2 position);
+	b2Body* createGround(b2Vec2 position, int data);
 	void gameLoop();
 	void checkcollision();
-	void decrease_hp();
+	void decrease_hp(int a, int b);
 };
 
 #endif

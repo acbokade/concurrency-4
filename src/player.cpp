@@ -1,6 +1,7 @@
 #include "player.h"
 #include "SFML/Graphics.hpp"
 #include "Box2D/Box2D.h"
+#define DEGTORAD 0.0174532925199432957f
 
 const float SCALE = 30.f;
 
@@ -48,6 +49,22 @@ b2Body* Player::createhead(b2World* world, b2Vec2 position, bool isStatic, float
     return body;
 }
 
+b2RevoluteJoint* Player::createRevoluteJoint(b2World *world, b2Body* body1, b2Body* body2, b2Vec2 anchorPoint1, b2Vec2 anchorPoint2, float lowerLimit, float upperLimit)
+{
+    b2RevoluteJointDef jointDef;
+    jointDef.bodyA= body1;
+    jointDef.bodyB= body2;
+    jointDef.collideConnected = false;
+    jointDef.localAnchorA.Set(anchorPoint1.x,anchorPoint1.y);
+    jointDef.localAnchorB.Set(anchorPoint2.x,anchorPoint2.y);
+    jointDef.enableLimit = true;
+    jointDef.referenceAngle = 0 * DEGTORAD;  
+    jointDef.lowerAngle = lowerLimit * DEGTORAD;
+    jointDef.upperAngle = upperLimit * DEGTORAD;
+    b2RevoluteJoint* joint = (b2RevoluteJoint*)world->CreateJoint(&jointDef);
+    return joint;
+}
+
 void Player::setHealth(int health)
 {
 	this->health = health;
@@ -77,7 +94,7 @@ void Player::init()
 {
 	this->headTexture.loadFromFile("res/head1.png");
 	this->bodyTexture.loadFromFile("res/body2.png");
-	this->handTexture.loadFromFile("res/hand2.png");
+	this->handTexture.loadFromFile("res/hand3.png");
 	this->legTexture.loadFromFile("res/leg2.png");
 	this->headSprite.setTexture(headTexture);
     this->headSprite.setOrigin((sf::Vector2f)(headTexture.getSize())/2.f);

@@ -13,7 +13,7 @@ int main()
 {   
     Game gameState;
     //creating ground
-    gameState.createGround(b2Vec2(400.f/SCALE, 550.f/SCALE), -1);
+    gameState.ground = gameState.createGround(b2Vec2(400.f/SCALE, 550.f/SCALE), -1);
     gameState.gameLoop();
     return 0;
 }

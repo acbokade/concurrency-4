@@ -3,7 +3,7 @@
 #include "game.h"
 #include "Box2D/Box2D.h"
 #include "myListener.h"
-
+#define DEGTORAD 0.0174532925199432957f
 
 const float SCALE = 30.f;
 float temp1 = (75/2)/sqrt(2);
@@ -11,29 +11,34 @@ float temp2 = (60/2);
 
 Game::Game()
 {
-	this->window = new sf::RenderWindow(sf::VideoMode(800, 600, 32), "StickMan Fighter");
+	this->window = new sf::RenderWindow(sf::VideoMode(1920, 1080, 32), "StickMan Fighter");
 	this->window->setFramerateLimit(240);
-	b2Vec2 gravity(0.0f,0.0f);
+	b2Vec2 gravity(0.0f, 0.0f);
 	this->listener = new myListener();
 	this->world = new b2World(gravity);
 	this->world->SetContactListener(&listener);
-	this->player1 = new player();
-	this->player2 = new player();
+	this->player1 = new Player();
+	this->player2 = new Player();
     this->groundTexture.loadFromFile("res/ground.png");
     this->groundSprite.setTexture(groundTexture);
-    this->groundSprite.setOrigin((sf::Vector2f)(groundTexture.getSize())/2.f);
+    this->groundSprite.setOrigin(400.f, 8.f);
 };
 
 void Game::gameLoop()
 {
     //creating player 1
-    player1.head = player1.createhead(world, b2Vec2(200.f/SCALE,200.f/SCALE), 0, 25.f, 1.f, 1.f, 1);
-    player1.body = player1.createbody(world, b2Vec2(200.f/SCALE,270.f/SCALE), 0, 20.f, 90.f, 1.f, 1.f, 2);
-    player1.left_hand = player1.createbody(world, b2Vec2((170.f)/SCALE,(225.f)/SCALE), 0, 10.f, 60.f, 1.f, 1.f, 3);
-    player1.right_hand = player1.createbody(world, b2Vec2((230.f)/SCALE,(225.f)/SCALE), 0, 10.f, 60.f, 1.f, 1.f, 3);
-    player1.left_leg = player1.createbody(world, b2Vec2((200.f-temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
-    player1.right_leg = player1.createbody(world, b2Vec2((200.f+temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
-    player1.init();
+    player1->head = player1->createhead(world, b2Vec2(200.f/SCALE,200.f/SCALE), 0, 25.f, 1.f, 1.f, 1);
+    player1->body = player1->createbody(world, b2Vec2(200.f/SCALE,270.f/SCALE), 0, 20.f, 90.f, 1.f, 1.f, 2);
+    player1->left_hand = player1->createbody(world, b2Vec2((160.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3);
+    player1->right_hand = player1->createbody(world, b2Vec2((240.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3);
+    player1->left_leg = player1->createbody(world, b2Vec2((200.f-temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
+    player1->right_leg = player1->createbody(world, b2Vec2((200.f+temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
+    player1->headJoint = player1->createRevoluteJoint(world, player1->head, player1->body, b2Vec2(0.f,25.0f/SCALE), b2Vec2(0.f,-45.0f/SCALE), 0, 0);
+    player1->left_legJoint = player1->createRevoluteJoint(world, player1->body, player1->left_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2((temp1-12)/SCALE,-temp1/SCALE), 30, 60);
+    player1->right_legJoint = player1->createRevoluteJoint(world, player1->body, player1->right_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2(-(temp1-12)/SCALE,-temp1/SCALE), -60, -30);
+    player1->left_handJoint = player1->createRevoluteJoint(world, player1->body, player1->left_hand, b2Vec2(-10.f/SCALE,-40.0f/SCALE), b2Vec2(25.f/SCALE,0.f/SCALE), -10, 10);
+    player1->right_handJoint = player1->createRevoluteJoint(world, player1->body, player1->right_hand, b2Vec2(10.f/SCALE,-40.0f/SCALE), b2Vec2(-25.f/SCALE,0.f/SCALE), -10, 10);
+    player1->init();
 
     gettimeofday(&prev_time,NULL);
 	while(window->isOpen())
@@ -55,36 +60,74 @@ void Game::gameLoop()
             gettimeofday(&current_time,NULL);
         }
 		
-		player1.headSprite.setPosition(player1.head->GetPosition().x*SCALE,player1.head->GetPosition().y*SCALE);
-        player1.headSprite.setRotation(player1.head->GetAngle() * (180/b2_pi));
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
+        {
+            player1->body->SetAngularVelocity(60*DEGTORAD);
+        }
 
-        player1.bodySprite.setPosition(player1.body->GetPosition().x*SCALE,player1.body->GetPosition().y*SCALE);
-        player1.bodySprite.setRotation(player1.body->GetAngle() * (180/b2_pi));
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+        {
+            player1->body->SetAngularVelocity(-60*DEGTORAD);
+        }
 
-        player1.left_legSprite.setPosition(player1.left_leg->GetPosition().x*SCALE,player1.left_leg->GetPosition().y*SCALE);
-        player1.left_legSprite.setRotation(player1.left_leg->GetAngle() * (180/b2_pi));
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+        {
+            player1->body->SetLinearVelocity(b2Vec2(-4,0));
+            player1->body->SetLinearVelocity(b2Vec2(-4,0));
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+        {
+            player1->body->SetLinearVelocity(b2Vec2(4,0));
+            player1->body->SetLinearVelocity(b2Vec2(4,0));
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        {
+            player1->body->SetLinearVelocity(b2Vec2(0,-4));
+            player1->body->SetLinearVelocity(b2Vec2(0,-4));
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+        {
+            player1->head->SetLinearVelocity(b2Vec2(0,4));
+            player1->body->SetLinearVelocity(b2Vec2(0,4));
+        }
+
+		player1->headSprite.setPosition(player1->head->GetPosition().x*SCALE,player1->head->GetPosition().y*SCALE);
+        player1->headSprite.setRotation(player1->head->GetAngle() * (180/b2_pi));
+
+        player1->bodySprite.setPosition(player1->body->GetPosition().x*SCALE,player1->body->GetPosition().y*SCALE);
+        player1->bodySprite.setRotation(player1->body->GetAngle() * (180/b2_pi));
+
+        player1->left_legSprite.setPosition(player1->left_leg->GetPosition().x*SCALE,player1->left_leg->GetPosition().y*SCALE);
+        player1->left_legSprite.setRotation(player1->left_leg->GetAngle() * (180/b2_pi));
   
-        player1.right_legSprite.setPosition(player1.right_leg->GetPosition().x*SCALE,player1.right_leg->GetPosition().y*SCALE);
-        player1.right_legSprite.setRotation(player1.right_leg->GetAngle() * (180/b2_pi));
+        player1->right_legSprite.setPosition(player1->right_leg->GetPosition().x*SCALE,player1->right_leg->GetPosition().y*SCALE);
+        player1->right_legSprite.setRotation(player1->right_leg->GetAngle() * (180/b2_pi));
 
-        player1.left_handSprite.setPosition(player1.left_hand->GetPosition().x*SCALE,player1.left_hand->GetPosition().y*SCALE);
-        player1.left_handSprite.setRotation(player1.left_hand->GetAngle() * (180/b2_pi));
+        player1->left_handSprite.setPosition(player1->left_hand->GetPosition().x*SCALE,player1->left_hand->GetPosition().y*SCALE);
+        player1->left_handSprite.setRotation(player1->left_hand->GetAngle() * (180/b2_pi));
    
-        player1.right_handSprite.setPosition(player1.right_hand->GetPosition().x*SCALE,player1.right_hand->GetPosition().y*SCALE);
-        player1.right_handSprite.setRotation(player1.right_hand->GetAngle() * (180/b2_pi));
+        player1->right_handSprite.setPosition(player1->right_hand->GetPosition().x*SCALE,player1->right_hand->GetPosition().y*SCALE);
+        player1->right_handSprite.setRotation(player1->right_hand->GetAngle() * (180/b2_pi));
+
+        groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
+        groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
 
 		window->clear(sf::Color::White);
-        window->draw(player1.headSprite);
-        window->draw(player1.bodySprite);
-        window->draw(player1.left_legSprite);
-        window->draw(player1.right_legSprite);
-        window->draw(player1.left_handSprite);
-        window->draw(player1.right_handSprite);
+		window->draw(player1->left_legSprite);
+        window->draw(player1->right_legSprite);
+        window->draw(player1->left_handSprite);
+        window->draw(player1->right_handSprite);
+        window->draw(player1->headSprite);
+        window->draw(player1->bodySprite);
+        window->draw(this->groundSprite);
         window->display();
 	}
 }
 
-void Game::createGround(b2Vec2 position,int data)
+b2Body* Game::createGround(b2Vec2 position, int data)
 {
 
 	b2BodyDef BodyDef;
@@ -99,6 +142,7 @@ void Game::createGround(b2Vec2 position,int data)
     FixtureDef.shape = &Shape;
     Body->CreateFixture(&FixtureDef);
     Body->SetUserData(&data);
+    return Body;
 }
 
 void Game::checkcollision()
