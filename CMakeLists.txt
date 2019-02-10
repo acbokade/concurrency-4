@@ -3,6 +3,7 @@ project (stickman)
 # The version number.
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
+set(CMAKE_CXX_STANDARD 11)
 set(SFML_DIR "SFML/lib/cmake/SFML")
 
 
