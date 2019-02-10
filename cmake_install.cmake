@@ -1,4 +1,4 @@
-# Install script for directory: /home/tungadri/popl2-game/concurrency-4
+# Install script for directory: /home/tungadri/Desktop/popl2-git/concurrency-4
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/tungadri/popl2-game/concurrency-4/Libraries/cmake_install.cmake")
+  include("/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tungadri/popl2-game/concurrency-4/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/tungadri/Desktop/popl2-git/concurrency-4/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

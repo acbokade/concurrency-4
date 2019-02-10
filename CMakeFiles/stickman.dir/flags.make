@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tungadri/popl2-game/concurrency-4/headers -isystem /home/tungadri/popl2-game/concurrency-4/SFML/include 
+CXX_INCLUDES = -I/home/tungadri/Desktop/popl2-git/concurrency-4/headers -isystem /home/tungadri/Desktop/popl2-git/concurrency-4/SFML/include 
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/tungadri/popl2-game/concurrency-4/Libraries
+# Install script for directory: /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

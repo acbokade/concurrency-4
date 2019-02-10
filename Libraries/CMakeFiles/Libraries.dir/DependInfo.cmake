@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tungadri/popl2-game/concurrency-4/Libraries/AssetManager.cpp" "/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o"
-  "/home/tungadri/popl2-game/concurrency-4/Libraries/Game.cpp" "/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir/Game.cpp.o"
-  "/home/tungadri/popl2-game/concurrency-4/Libraries/InputManager.cpp" "/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o"
-  "/home/tungadri/popl2-game/concurrency-4/Libraries/MainMenuState.cpp" "/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o"
-  "/home/tungadri/popl2-game/concurrency-4/Libraries/SplashState.cpp" "/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o"
-  "/home/tungadri/popl2-game/concurrency-4/Libraries/StateMachine.cpp" "/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/AssetManager.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/Game.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/Libraries.dir/Game.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/InputManager.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/MainMenuState.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/SplashState.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/StateMachine.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

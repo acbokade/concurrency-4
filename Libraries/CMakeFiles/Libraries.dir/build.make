@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tungadri/popl2-game/concurrency-4
+CMAKE_SOURCE_DIR = /home/tungadri/Desktop/popl2-git/concurrency-4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tungadri/popl2-game/concurrency-4
+CMAKE_BINARY_DIR = /home/tungadri/Desktop/popl2-git/concurrency-4
 
 # Include any dependencies generated for this target.
 include Libraries/CMakeFiles/Libraries.dir/depend.make
@@ -59,16 +59,16 @@ include Libraries/CMakeFiles/Libraries.dir/flags.make
 
 Libraries/CMakeFiles/Libraries.dir/Game.cpp.o: Libraries/CMakeFiles/Libraries.dir/flags.make
 Libraries/CMakeFiles/Libraries.dir/Game.cpp.o: Libraries/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/popl2-game/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Libraries/CMakeFiles/Libraries.dir/Game.cpp.o"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/Game.cpp.o -c /home/tungadri/popl2-game/concurrency-4/Libraries/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Libraries/CMakeFiles/Libraries.dir/Game.cpp.o"
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/Game.cpp.o -c /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/Game.cpp
 
 Libraries/CMakeFiles/Libraries.dir/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Libraries.dir/Game.cpp.i"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/popl2-game/concurrency-4/Libraries/Game.cpp > CMakeFiles/Libraries.dir/Game.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/Game.cpp > CMakeFiles/Libraries.dir/Game.cpp.i
 
 Libraries/CMakeFiles/Libraries.dir/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Libraries.dir/Game.cpp.s"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/popl2-game/concurrency-4/Libraries/Game.cpp -o CMakeFiles/Libraries.dir/Game.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/Game.cpp -o CMakeFiles/Libraries.dir/Game.cpp.s
 
 Libraries/CMakeFiles/Libraries.dir/Game.cpp.o.requires:
 
@@ -83,16 +83,16 @@ Libraries/CMakeFiles/Libraries.dir/Game.cpp.o.provides.build: Libraries/CMakeFil
 
 Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o: Libraries/CMakeFiles/Libraries.dir/flags.make
 Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o: Libraries/AssetManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/popl2-game/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/AssetManager.cpp.o -c /home/tungadri/popl2-game/concurrency-4/Libraries/AssetManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o"
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/AssetManager.cpp.o -c /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/AssetManager.cpp
 
 Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Libraries.dir/AssetManager.cpp.i"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/popl2-game/concurrency-4/Libraries/AssetManager.cpp > CMakeFiles/Libraries.dir/AssetManager.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/AssetManager.cpp > CMakeFiles/Libraries.dir/AssetManager.cpp.i
 
 Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Libraries.dir/AssetManager.cpp.s"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/popl2-game/concurrency-4/Libraries/AssetManager.cpp -o CMakeFiles/Libraries.dir/AssetManager.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/AssetManager.cpp -o CMakeFiles/Libraries.dir/AssetManager.cpp.s
 
 Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o.requires:
 
@@ -107,16 +107,16 @@ Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o.provides.build: Libraries/
 
 Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o: Libraries/CMakeFiles/Libraries.dir/flags.make
 Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o: Libraries/InputManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/popl2-game/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/InputManager.cpp.o -c /home/tungadri/popl2-game/concurrency-4/Libraries/InputManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o"
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/InputManager.cpp.o -c /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/InputManager.cpp
 
 Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Libraries.dir/InputManager.cpp.i"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/popl2-game/concurrency-4/Libraries/InputManager.cpp > CMakeFiles/Libraries.dir/InputManager.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/InputManager.cpp > CMakeFiles/Libraries.dir/InputManager.cpp.i
 
 Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Libraries.dir/InputManager.cpp.s"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/popl2-game/concurrency-4/Libraries/InputManager.cpp -o CMakeFiles/Libraries.dir/InputManager.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/InputManager.cpp -o CMakeFiles/Libraries.dir/InputManager.cpp.s
 
 Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o.requires:
 
@@ -131,16 +131,16 @@ Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o.provides.build: Libraries/
 
 Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o: Libraries/CMakeFiles/Libraries.dir/flags.make
 Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o: Libraries/SplashState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/popl2-game/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/SplashState.cpp.o -c /home/tungadri/popl2-game/concurrency-4/Libraries/SplashState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o"
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/SplashState.cpp.o -c /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/SplashState.cpp
 
 Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Libraries.dir/SplashState.cpp.i"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/popl2-game/concurrency-4/Libraries/SplashState.cpp > CMakeFiles/Libraries.dir/SplashState.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/SplashState.cpp > CMakeFiles/Libraries.dir/SplashState.cpp.i
 
 Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Libraries.dir/SplashState.cpp.s"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/popl2-game/concurrency-4/Libraries/SplashState.cpp -o CMakeFiles/Libraries.dir/SplashState.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/SplashState.cpp -o CMakeFiles/Libraries.dir/SplashState.cpp.s
 
 Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o.requires:
 
@@ -155,16 +155,16 @@ Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o.provides.build: Libraries/C
 
 Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o: Libraries/CMakeFiles/Libraries.dir/flags.make
 Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o: Libraries/StateMachine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/popl2-game/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/StateMachine.cpp.o -c /home/tungadri/popl2-game/concurrency-4/Libraries/StateMachine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o"
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/StateMachine.cpp.o -c /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/StateMachine.cpp
 
 Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Libraries.dir/StateMachine.cpp.i"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/popl2-game/concurrency-4/Libraries/StateMachine.cpp > CMakeFiles/Libraries.dir/StateMachine.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/StateMachine.cpp > CMakeFiles/Libraries.dir/StateMachine.cpp.i
 
 Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Libraries.dir/StateMachine.cpp.s"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/popl2-game/concurrency-4/Libraries/StateMachine.cpp -o CMakeFiles/Libraries.dir/StateMachine.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/StateMachine.cpp -o CMakeFiles/Libraries.dir/StateMachine.cpp.s
 
 Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o.requires:
 
@@ -179,16 +179,16 @@ Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o.provides.build: Libraries/
 
 Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o: Libraries/CMakeFiles/Libraries.dir/flags.make
 Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o: Libraries/MainMenuState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/popl2-game/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/MainMenuState.cpp.o -c /home/tungadri/popl2-game/concurrency-4/Libraries/MainMenuState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o"
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Libraries.dir/MainMenuState.cpp.o -c /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/MainMenuState.cpp
 
 Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Libraries.dir/MainMenuState.cpp.i"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/popl2-game/concurrency-4/Libraries/MainMenuState.cpp > CMakeFiles/Libraries.dir/MainMenuState.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/MainMenuState.cpp > CMakeFiles/Libraries.dir/MainMenuState.cpp.i
 
 Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Libraries.dir/MainMenuState.cpp.s"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/popl2-game/concurrency-4/Libraries/MainMenuState.cpp -o CMakeFiles/Libraries.dir/MainMenuState.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/MainMenuState.cpp -o CMakeFiles/Libraries.dir/MainMenuState.cpp.s
 
 Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o.requires:
 
@@ -221,9 +221,9 @@ Libraries/libLibraries.a: Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o
 Libraries/libLibraries.a: Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o
 Libraries/libLibraries.a: Libraries/CMakeFiles/Libraries.dir/build.make
 Libraries/libLibraries.a: Libraries/CMakeFiles/Libraries.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tungadri/popl2-game/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libLibraries.a"
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && $(CMAKE_COMMAND) -P CMakeFiles/Libraries.dir/cmake_clean_target.cmake
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Libraries.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libLibraries.a"
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && $(CMAKE_COMMAND) -P CMakeFiles/Libraries.dir/cmake_clean_target.cmake
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Libraries.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Libraries/CMakeFiles/Libraries.dir/build: Libraries/libLibraries.a
@@ -240,10 +240,10 @@ Libraries/CMakeFiles/Libraries.dir/requires: Libraries/CMakeFiles/Libraries.dir/
 .PHONY : Libraries/CMakeFiles/Libraries.dir/requires
 
 Libraries/CMakeFiles/Libraries.dir/clean:
-	cd /home/tungadri/popl2-game/concurrency-4/Libraries && $(CMAKE_COMMAND) -P CMakeFiles/Libraries.dir/cmake_clean.cmake
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries && $(CMAKE_COMMAND) -P CMakeFiles/Libraries.dir/cmake_clean.cmake
 .PHONY : Libraries/CMakeFiles/Libraries.dir/clean
 
 Libraries/CMakeFiles/Libraries.dir/depend:
-	cd /home/tungadri/popl2-game/concurrency-4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tungadri/popl2-game/concurrency-4 /home/tungadri/popl2-game/concurrency-4/Libraries /home/tungadri/popl2-game/concurrency-4 /home/tungadri/popl2-game/concurrency-4/Libraries /home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tungadri/Desktop/popl2-git/concurrency-4 /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries /home/tungadri/Desktop/popl2-git/concurrency-4 /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/Libraries.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Libraries/CMakeFiles/Libraries.dir/depend
 

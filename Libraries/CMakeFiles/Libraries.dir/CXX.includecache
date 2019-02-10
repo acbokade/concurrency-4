@@ -6,47 +6,47 @@
 
 #IncludeRegexTransform: 
 
-/home/tungadri/popl2-game/concurrency-4/Libraries/AssetManager.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/AssetManager.cpp
 SFML/Graphics.hpp
 -
 AssetManager.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/AssetManager.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/AssetManager.hpp
 
-/home/tungadri/popl2-game/concurrency-4/Libraries/Game.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/Game.cpp
 Game.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/Game.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/Game.hpp
 SplashState.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/SplashState.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/SplashState.hpp
 
-/home/tungadri/popl2-game/concurrency-4/Libraries/InputManager.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/InputManager.cpp
 InputManager.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/InputManager.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/InputManager.hpp
 
-/home/tungadri/popl2-game/concurrency-4/Libraries/MainMenuState.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/MainMenuState.cpp
 sstream
 -
 MainMenuState.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/MainMenuState.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/MainMenuState.hpp
 DEFINITIONS.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/DEFINITIONS.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/DEFINITIONS.hpp
 iostream
 -
 
-/home/tungadri/popl2-game/concurrency-4/Libraries/SplashState.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/SplashState.cpp
 sstream
 -
 SplashState.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/SplashState.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/SplashState.hpp
 DEFINITIONS.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/DEFINITIONS.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/DEFINITIONS.hpp
 MainMenuState.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/MainMenuState.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/MainMenuState.hpp
 iostream
 -
 
-/home/tungadri/popl2-game/concurrency-4/Libraries/StateMachine.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/StateMachine.cpp
 StateMachine.hpp
-/home/tungadri/popl2-game/concurrency-4/Libraries/StateMachine.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/StateMachine.hpp
 
 Libraries/../headers/AssetManager.hpp
 map

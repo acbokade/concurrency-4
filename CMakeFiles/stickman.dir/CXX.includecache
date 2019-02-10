@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/tungadri/popl2-game/concurrency-4/main.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/main.cpp
 Game.hpp
-/home/tungadri/popl2-game/concurrency-4/Game.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/Game.hpp
 DEFINITIONS.hpp
-/home/tungadri/popl2-game/concurrency-4/DEFINITIONS.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/DEFINITIONS.hpp
 
 SFML/include/SFML/Config.hpp
 TargetConditionals.h

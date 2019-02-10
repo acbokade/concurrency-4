@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tungadri/popl2-game/concurrency-4/main.cpp" "/home/tungadri/popl2-game/concurrency-4/CMakeFiles/stickman.dir/main.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/main.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles/stickman.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,7 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir/DependInfo.cmake"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/Libraries.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
