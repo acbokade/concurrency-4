@@ -95,9 +95,9 @@ void Game::gameLoop()
 	}
 }
 
-b2Body* Game::createGround(b2Vec2 position, int data)
+b2Body* Game::createGround(b2Vec2 position)
 {
-
+    this->groundUserData = -1;
 	b2BodyDef BodyDef;
     BodyDef.position = position;
     BodyDef.type = b2_staticBody;
@@ -109,24 +109,36 @@ b2Body* Game::createGround(b2Vec2 position, int data)
     FixtureDef.density = 0.f;
     FixtureDef.shape = &Shape;
     Body->CreateFixture(&FixtureDef);
-    Body->SetUserData(&data);
+    Body->SetUserData(&this->groundUserData);
    	return Body;
 }
 
 void Game::initPlayer(Player *player, float X, int offset)
 {
-	player->head = player->createhead(world, b2Vec2(X/SCALE,200.f/SCALE), 0, 25.f, 1.f, 1.f, 1+offset);
-    player->body = player->createbody(world, b2Vec2(X/SCALE,270.f/SCALE), 0, 20.f, 90.f, 1.f, 1.f, 2+offset);
-    player->left_hand = player->createbody(world, b2Vec2((X-40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3+offset);
-    player->right_hand = player->createbody(world, b2Vec2((X+40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3+offset);
-    player->left_leg = player->createbody(world, b2Vec2((X-temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4+offset);
-    player->right_leg = player->createbody(world, b2Vec2((X+temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4+offset);
+    player->headUserData = 1+offset;
+    player->bodyUserData = 2+offset;
+    player->left_handUserData = 3+offset;
+    player->right_handUserData = 3+offset;
+    player->left_legUserData = 4+offset;
+    player->right_legUserData = 4+offset;
+	player->head = player->createhead(world, b2Vec2(X/SCALE,200.f/SCALE), 0, 25.f, 1.f, 1.f);
+    player->body = player->createbody(world, b2Vec2(X/SCALE,270.f/SCALE), 0, 20.f, 90.f, 1.f, 1.f);
+    player->left_hand = player->createbody(world, b2Vec2((X-40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f);
+    player->right_hand = player->createbody(world, b2Vec2((X+40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f);
+    player->left_leg = player->createbody(world, b2Vec2((X-temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f);
+    player->right_leg = player->createbody(world, b2Vec2((X+temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f);
     player->headJoint = player->createRevoluteJoint(world, player->head, player->body, b2Vec2(0.f,25.0f/SCALE), b2Vec2(0.f,-45.0f/SCALE), 0, 0);
     player->left_legJoint = player->createRevoluteJoint(world, player->body, player->left_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2((temp1-12)/SCALE,-temp1/SCALE), 30, 60);
     player->right_legJoint = player->createRevoluteJoint(world, player->body, player->right_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2(-(temp1-12)/SCALE,-temp1/SCALE), -60, -30);
     player->left_handJoint = player->createRevoluteJoint(world, player->body, player->left_hand, b2Vec2(-10.f/SCALE,-40.0f/SCALE), b2Vec2(25.f/SCALE,0.f/SCALE), -10, 10);
     player->right_handJoint = player->createRevoluteJoint(world, player->body, player->right_hand, b2Vec2(10.f/SCALE,-40.0f/SCALE), b2Vec2(-25.f/SCALE,0.f/SCALE), -10, 10);
     player->init();
+    player->head->SetUserData(&player->headUserData);
+    player->body->SetUserData(&player->bodyUserData);
+    player->left_hand->SetUserData(&player->left_handUserData);
+    player->right_hand->SetUserData(&player->right_handUserData);
+    player->left_leg->SetUserData(&player->left_legUserData);
+    player->right_leg->SetUserData(&player->right_legUserData);
 }
 
 void Game::updatePlayer(Player *player)
@@ -242,6 +254,6 @@ void Game::decrease_hp(int a,int b)
 		player2->setHealth(new_hp2);
 		m.unlock();
 	}
-    std::cout<<player1->getHealth()<<" "<<a<<" "<<b<<std::endl;
+    std::cout<<player1->getHealth()<<std::endl;
     std::cout<<player2->getHealth()<<std::endl;
 }

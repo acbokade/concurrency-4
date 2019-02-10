@@ -20,6 +20,7 @@ public:
 	sf::RenderWindow *window ;
 	b2World* world;
 	b2Body* ground;
+	int groundUserData;
 	sf::Texture groundTexture;
 	sf::Sprite groundSprite;
 	int velocityIterations = 10;
@@ -33,7 +34,7 @@ public:
     std::pair<int,int> p;
 	struct timeval current_time,prev_time;
 	double time_difference;
-	b2Body* createGround(b2Vec2 position, int data);
+	b2Body* createGround(b2Vec2 position);
 	void initPlayer(Player *player, float X, int offset);
 	void gameLoop();
 	void updatePlayer(Player *player);
