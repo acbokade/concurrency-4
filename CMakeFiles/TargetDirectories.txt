@@ -1,3 +1,0 @@
-/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles/rebuild_cache.dir
-/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles/stickman.dir
-/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles/edit_cache.dir
