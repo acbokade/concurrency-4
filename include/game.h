@@ -31,7 +31,10 @@ public:
 	struct timeval current_time,prev_time;
 	double time_difference;
 	b2Body* createGround(b2Vec2 position, int data);
+	void initPlayer(Player *player, float X);
 	void gameLoop();
+	void updatePlayer(Player *player);
+	void draw(Player *player);
 	void checkcollision();
 	void decrease_hp(int a, int b);
 };

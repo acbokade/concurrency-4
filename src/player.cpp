@@ -93,9 +93,9 @@ void Player::updatePosition(b2Vec2 position)
 void Player::init()
 {
 	this->headTexture.loadFromFile("res/head1.png");
-	this->bodyTexture.loadFromFile("res/body2.png");
+	this->bodyTexture.loadFromFile("res/body1.png");
 	this->handTexture.loadFromFile("res/hand3.png");
-	this->legTexture.loadFromFile("res/leg2.png");
+	this->legTexture.loadFromFile("res/leg1.png");
 	this->headSprite.setTexture(headTexture);
     this->headSprite.setOrigin((sf::Vector2f)(headTexture.getSize())/2.f);
     this->bodySprite.setTexture(bodyTexture);

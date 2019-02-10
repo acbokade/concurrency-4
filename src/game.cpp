@@ -14,9 +14,9 @@ Game::Game()
 	this->window = new sf::RenderWindow(sf::VideoMode(1920, 1080, 32), "StickMan Fighter");
 	this->window->setFramerateLimit(240);
 	b2Vec2 gravity(0.0f, 0.0f);
-	this->listener = new myListener();
+	//this->listener = new myListener();
 	this->world = new b2World(gravity);
-	this->world->SetContactListener(&listener);
+	//this->world->SetContactListener(&listener);
 	this->player1 = new Player();
 	this->player2 = new Player();
     this->groundTexture.loadFromFile("res/ground.png");
@@ -26,21 +26,9 @@ Game::Game()
 
 void Game::gameLoop()
 {
-    //creating player 1
-    player1->head = player1->createhead(world, b2Vec2(200.f/SCALE,200.f/SCALE), 0, 25.f, 1.f, 1.f, 1);
-    player1->body = player1->createbody(world, b2Vec2(200.f/SCALE,270.f/SCALE), 0, 20.f, 90.f, 1.f, 1.f, 2);
-    player1->left_hand = player1->createbody(world, b2Vec2((160.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3);
-    player1->right_hand = player1->createbody(world, b2Vec2((240.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3);
-    player1->left_leg = player1->createbody(world, b2Vec2((200.f-temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
-    player1->right_leg = player1->createbody(world, b2Vec2((200.f+temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
-    player1->headJoint = player1->createRevoluteJoint(world, player1->head, player1->body, b2Vec2(0.f,25.0f/SCALE), b2Vec2(0.f,-45.0f/SCALE), 0, 0);
-    player1->left_legJoint = player1->createRevoluteJoint(world, player1->body, player1->left_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2((temp1-12)/SCALE,-temp1/SCALE), 30, 60);
-    player1->right_legJoint = player1->createRevoluteJoint(world, player1->body, player1->right_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2(-(temp1-12)/SCALE,-temp1/SCALE), -60, -30);
-    player1->left_handJoint = player1->createRevoluteJoint(world, player1->body, player1->left_hand, b2Vec2(-10.f/SCALE,-40.0f/SCALE), b2Vec2(25.f/SCALE,0.f/SCALE), -10, 10);
-    player1->right_handJoint = player1->createRevoluteJoint(world, player1->body, player1->right_hand, b2Vec2(10.f/SCALE,-40.0f/SCALE), b2Vec2(-25.f/SCALE,0.f/SCALE), -10, 10);
-    player1->init();
-
-    gettimeofday(&prev_time,NULL);
+	initPlayer(player1, 200.f);
+	initPlayer(player2, 1400.f);
+    //gettimeofday(&prev_time,NULL);
 	while(window->isOpen())
 	{
 		sf::Event event;
@@ -54,11 +42,11 @@ void Game::gameLoop()
 		gettimeofday(&current_time,NULL);
         time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
 
-        if(time_difference > 100)
+        /*if(time_difference > 100)
         {
             checkcollision();
             gettimeofday(&current_time,NULL);
-        }
+        }*/
 		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
         {
@@ -93,35 +81,13 @@ void Game::gameLoop()
             player1->head->SetLinearVelocity(b2Vec2(0,4));
             player1->body->SetLinearVelocity(b2Vec2(0,4));
         }
-
-		player1->headSprite.setPosition(player1->head->GetPosition().x*SCALE,player1->head->GetPosition().y*SCALE);
-        player1->headSprite.setRotation(player1->head->GetAngle() * (180/b2_pi));
-
-        player1->bodySprite.setPosition(player1->body->GetPosition().x*SCALE,player1->body->GetPosition().y*SCALE);
-        player1->bodySprite.setRotation(player1->body->GetAngle() * (180/b2_pi));
-
-        player1->left_legSprite.setPosition(player1->left_leg->GetPosition().x*SCALE,player1->left_leg->GetPosition().y*SCALE);
-        player1->left_legSprite.setRotation(player1->left_leg->GetAngle() * (180/b2_pi));
-  
-        player1->right_legSprite.setPosition(player1->right_leg->GetPosition().x*SCALE,player1->right_leg->GetPosition().y*SCALE);
-        player1->right_legSprite.setRotation(player1->right_leg->GetAngle() * (180/b2_pi));
-
-        player1->left_handSprite.setPosition(player1->left_hand->GetPosition().x*SCALE,player1->left_hand->GetPosition().y*SCALE);
-        player1->left_handSprite.setRotation(player1->left_hand->GetAngle() * (180/b2_pi));
-   
-        player1->right_handSprite.setPosition(player1->right_hand->GetPosition().x*SCALE,player1->right_hand->GetPosition().y*SCALE);
-        player1->right_handSprite.setRotation(player1->right_hand->GetAngle() * (180/b2_pi));
-
-        groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
-        groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
-
+        updatePlayer(player1);
+        updatePlayer(player2);
+      	groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
+    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
 		window->clear(sf::Color::White);
-		window->draw(player1->left_legSprite);
-        window->draw(player1->right_legSprite);
-        window->draw(player1->left_handSprite);
-        window->draw(player1->right_handSprite);
-        window->draw(player1->headSprite);
-        window->draw(player1->bodySprite);
+		draw(player1);
+		draw(player2);
         window->draw(this->groundSprite);
         window->display();
 	}
@@ -142,12 +108,59 @@ b2Body* Game::createGround(b2Vec2 position, int data)
     FixtureDef.shape = &Shape;
     Body->CreateFixture(&FixtureDef);
     Body->SetUserData(&data);
-    return Body;
+   	return Body;
 }
 
-void Game::checkcollision()
+void Game::initPlayer(Player *player, float X)
 {
-	int r1=listener.Queue.size();
+	player->head = player->createhead(world, b2Vec2(X/SCALE,200.f/SCALE), 0, 25.f, 1.f, 1.f, 1);
+    player->body = player->createbody(world, b2Vec2(X/SCALE,270.f/SCALE), 0, 20.f, 90.f, 1.f, 1.f, 2);
+    player->left_hand = player->createbody(world, b2Vec2((X-40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3);
+    player->right_hand = player->createbody(world, b2Vec2((X+40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3);
+    player->left_leg = player->createbody(world, b2Vec2((X-temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
+    player->right_leg = player->createbody(world, b2Vec2((X+temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
+    player->headJoint = player->createRevoluteJoint(world, player->head, player->body, b2Vec2(0.f,25.0f/SCALE), b2Vec2(0.f,-45.0f/SCALE), 0, 0);
+    player->left_legJoint = player->createRevoluteJoint(world, player->body, player->left_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2((temp1-12)/SCALE,-temp1/SCALE), 30, 60);
+    player->right_legJoint = player->createRevoluteJoint(world, player->body, player->right_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2(-(temp1-12)/SCALE,-temp1/SCALE), -60, -30);
+    player->left_handJoint = player->createRevoluteJoint(world, player->body, player->left_hand, b2Vec2(-10.f/SCALE,-40.0f/SCALE), b2Vec2(25.f/SCALE,0.f/SCALE), -10, 10);
+    player->right_handJoint = player->createRevoluteJoint(world, player->body, player->right_hand, b2Vec2(10.f/SCALE,-40.0f/SCALE), b2Vec2(-25.f/SCALE,0.f/SCALE), -10, 10);
+    player->init();
+}
+
+void Game::updatePlayer(Player *player)
+{
+	player->headSprite.setPosition(player->head->GetPosition().x*SCALE,player->head->GetPosition().y*SCALE);
+    player->headSprite.setRotation(player->head->GetAngle() * (180/b2_pi));
+
+    player->bodySprite.setPosition(player->body->GetPosition().x*SCALE,player->body->GetPosition().y*SCALE);
+    player->bodySprite.setRotation(player->body->GetAngle() * (180/b2_pi));
+
+    player->left_legSprite.setPosition(player->left_leg->GetPosition().x*SCALE,player->left_leg->GetPosition().y*SCALE);
+    player->left_legSprite.setRotation(player->left_leg->GetAngle() * (180/b2_pi));
+
+    player->right_legSprite.setPosition(player->right_leg->GetPosition().x*SCALE,player->right_leg->GetPosition().y*SCALE);
+    player->right_legSprite.setRotation(player->right_leg->GetAngle() * (180/b2_pi));
+
+    player->left_handSprite.setPosition(player->left_hand->GetPosition().x*SCALE,player->left_hand->GetPosition().y*SCALE);
+    player->left_handSprite.setRotation(player->left_hand->GetAngle() * (180/b2_pi));
+
+    player->right_handSprite.setPosition(player->right_hand->GetPosition().x*SCALE,player->right_hand->GetPosition().y*SCALE);
+    player->right_handSprite.setRotation(player->right_hand->GetAngle() * (180/b2_pi));
+}
+
+void Game::draw(Player* player)
+{
+	window->draw(player->left_legSprite);
+    window->draw(player->right_legSprite);
+    window->draw(player->left_handSprite);
+    window->draw(player->right_handSprite);
+    window->draw(player->headSprite);
+    window->draw(player->bodySprite);
+}
+
+/*void Game::checkcollision()
+{
+	int r1=listener->Queue.size();
     if(r1 > 30)
         r1=30;
     for(int i=0;i<r1;i++)
@@ -158,7 +171,7 @@ void Game::checkcollision()
     }
     for(int i=0;i<r1;i++)
         worker[i].join();
-}
+}*/
 
 void Game::decrease_hp(int a,int b)
 {
@@ -227,5 +240,4 @@ void Game::decrease_hp(int a,int b)
 		player2->setHealth(new_hp2);
 		m.unlock();
 	}
-
 }
