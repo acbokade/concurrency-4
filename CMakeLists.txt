@@ -6,17 +6,17 @@ set (Tutorial_VERSION_MINOR 0)
 set(SFML_DIR "SFML/lib/cmake/SFML")
 
 
-add_subdirectory(Libraries)
+add_subdirectory(src)
 
-include_directories(headers)
+include_directories(include)
 
-link_directories(headers)
+link_directories(include)
 
 find_package(SFML 2.5 COMPONENTS window system graphics audio network REQUIRED)
 
 add_executable(stickman main.cpp)
 
-target_link_libraries(stickman Libraries
+target_link_libraries(stickman src
 				sfml-window
         			sfml-system
         			sfml-graphics

@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles /home/tungadri/Desktop/popl2-git/concurrency-4/Libraries/CMakeFiles/progress.marks
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 Libraries/all
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles /home/tungadri/Desktop/popl2-git/concurrency-4/src/CMakeFiles/progress.marks
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 Libraries/clean
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,12 +97,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 Libraries/preinstall
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 Libraries/preinstall
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -111,19 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Libraries/CMakeFiles/Libraries.dir/rule:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 Libraries/CMakeFiles/Libraries.dir/rule
-.PHONY : Libraries/CMakeFiles/Libraries.dir/rule
+src/CMakeFiles/src.dir/rule:
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/src.dir/rule
+.PHONY : src/CMakeFiles/src.dir/rule
 
 # Convenience name for target.
-Libraries: Libraries/CMakeFiles/Libraries.dir/rule
+src: src/CMakeFiles/src.dir/rule
 
-.PHONY : Libraries
+.PHONY : src
 
 # fast build rule for target.
-Libraries/fast:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/build
-.PHONY : Libraries/fast
+src/fast:
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
+.PHONY : src/fast
 
 AssetManager.o: AssetManager.cpp.o
 
@@ -131,7 +131,7 @@ AssetManager.o: AssetManager.cpp.o
 
 # target to build an object file
 AssetManager.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/AssetManager.cpp.o
 .PHONY : AssetManager.cpp.o
 
 AssetManager.i: AssetManager.cpp.i
@@ -140,7 +140,7 @@ AssetManager.i: AssetManager.cpp.i
 
 # target to preprocess a source file
 AssetManager.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/AssetManager.cpp.i
 .PHONY : AssetManager.cpp.i
 
 AssetManager.s: AssetManager.cpp.s
@@ -149,7 +149,7 @@ AssetManager.s: AssetManager.cpp.s
 
 # target to generate assembly for a file
 AssetManager.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/AssetManager.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/AssetManager.cpp.s
 .PHONY : AssetManager.cpp.s
 
 Game.o: Game.cpp.o
@@ -158,7 +158,7 @@ Game.o: Game.cpp.o
 
 # target to build an object file
 Game.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/Game.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Game.cpp.o
 .PHONY : Game.cpp.o
 
 Game.i: Game.cpp.i
@@ -167,7 +167,7 @@ Game.i: Game.cpp.i
 
 # target to preprocess a source file
 Game.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/Game.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Game.cpp.i
 .PHONY : Game.cpp.i
 
 Game.s: Game.cpp.s
@@ -176,7 +176,7 @@ Game.s: Game.cpp.s
 
 # target to generate assembly for a file
 Game.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/Game.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
 InputManager.o: InputManager.cpp.o
@@ -185,7 +185,7 @@ InputManager.o: InputManager.cpp.o
 
 # target to build an object file
 InputManager.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/InputManager.cpp.o
 .PHONY : InputManager.cpp.o
 
 InputManager.i: InputManager.cpp.i
@@ -194,7 +194,7 @@ InputManager.i: InputManager.cpp.i
 
 # target to preprocess a source file
 InputManager.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/InputManager.cpp.i
 .PHONY : InputManager.cpp.i
 
 InputManager.s: InputManager.cpp.s
@@ -203,7 +203,7 @@ InputManager.s: InputManager.cpp.s
 
 # target to generate assembly for a file
 InputManager.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/InputManager.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/InputManager.cpp.s
 .PHONY : InputManager.cpp.s
 
 MainMenuState.o: MainMenuState.cpp.o
@@ -212,7 +212,7 @@ MainMenuState.o: MainMenuState.cpp.o
 
 # target to build an object file
 MainMenuState.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/MainMenuState.cpp.o
 .PHONY : MainMenuState.cpp.o
 
 MainMenuState.i: MainMenuState.cpp.i
@@ -221,7 +221,7 @@ MainMenuState.i: MainMenuState.cpp.i
 
 # target to preprocess a source file
 MainMenuState.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/MainMenuState.cpp.i
 .PHONY : MainMenuState.cpp.i
 
 MainMenuState.s: MainMenuState.cpp.s
@@ -230,7 +230,7 @@ MainMenuState.s: MainMenuState.cpp.s
 
 # target to generate assembly for a file
 MainMenuState.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/MainMenuState.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/MainMenuState.cpp.s
 .PHONY : MainMenuState.cpp.s
 
 SplashState.o: SplashState.cpp.o
@@ -239,7 +239,7 @@ SplashState.o: SplashState.cpp.o
 
 # target to build an object file
 SplashState.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/SplashState.cpp.o
 .PHONY : SplashState.cpp.o
 
 SplashState.i: SplashState.cpp.i
@@ -248,7 +248,7 @@ SplashState.i: SplashState.cpp.i
 
 # target to preprocess a source file
 SplashState.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/SplashState.cpp.i
 .PHONY : SplashState.cpp.i
 
 SplashState.s: SplashState.cpp.s
@@ -257,7 +257,7 @@ SplashState.s: SplashState.cpp.s
 
 # target to generate assembly for a file
 SplashState.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/SplashState.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/SplashState.cpp.s
 .PHONY : SplashState.cpp.s
 
 StateMachine.o: StateMachine.cpp.o
@@ -266,7 +266,7 @@ StateMachine.o: StateMachine.cpp.o
 
 # target to build an object file
 StateMachine.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StateMachine.cpp.o
 .PHONY : StateMachine.cpp.o
 
 StateMachine.i: StateMachine.cpp.i
@@ -275,7 +275,7 @@ StateMachine.i: StateMachine.cpp.i
 
 # target to preprocess a source file
 StateMachine.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StateMachine.cpp.i
 .PHONY : StateMachine.cpp.i
 
 StateMachine.s: StateMachine.cpp.s
@@ -284,7 +284,7 @@ StateMachine.s: StateMachine.cpp.s
 
 # target to generate assembly for a file
 StateMachine.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/StateMachine.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/StateMachine.cpp.s
 .PHONY : StateMachine.cpp.s
 
 game.o: game.cpp.o
@@ -293,7 +293,7 @@ game.o: game.cpp.o
 
 # target to build an object file
 game.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/game.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/game.cpp.o
 .PHONY : game.cpp.o
 
 game.i: game.cpp.i
@@ -302,7 +302,7 @@ game.i: game.cpp.i
 
 # target to preprocess a source file
 game.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/game.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/game.cpp.i
 .PHONY : game.cpp.i
 
 game.s: game.cpp.s
@@ -311,7 +311,7 @@ game.s: game.cpp.s
 
 # target to generate assembly for a file
 game.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/game.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/game.cpp.s
 .PHONY : game.cpp.s
 
 myListener.o: myListener.cpp.o
@@ -320,7 +320,7 @@ myListener.o: myListener.cpp.o
 
 # target to build an object file
 myListener.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/myListener.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/myListener.cpp.o
 .PHONY : myListener.cpp.o
 
 myListener.i: myListener.cpp.i
@@ -329,7 +329,7 @@ myListener.i: myListener.cpp.i
 
 # target to preprocess a source file
 myListener.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/myListener.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/myListener.cpp.i
 .PHONY : myListener.cpp.i
 
 myListener.s: myListener.cpp.s
@@ -338,7 +338,7 @@ myListener.s: myListener.cpp.s
 
 # target to generate assembly for a file
 myListener.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/myListener.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/myListener.cpp.s
 .PHONY : myListener.cpp.s
 
 player.o: player.cpp.o
@@ -347,7 +347,7 @@ player.o: player.cpp.o
 
 # target to build an object file
 player.cpp.o:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/player.cpp.o
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/player.cpp.o
 .PHONY : player.cpp.o
 
 player.i: player.cpp.i
@@ -356,7 +356,7 @@ player.i: player.cpp.i
 
 # target to preprocess a source file
 player.cpp.i:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/player.cpp.i
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/player.cpp.i
 .PHONY : player.cpp.i
 
 player.s: player.cpp.s
@@ -365,7 +365,7 @@ player.s: player.cpp.s
 
 # target to generate assembly for a file
 player.cpp.s:
-	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/player.cpp.s
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/player.cpp.s
 .PHONY : player.cpp.s
 
 # Help Target
@@ -375,7 +375,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Libraries"
+	@echo "... src"
 	@echo "... edit_cache"
 	@echo "... AssetManager.o"
 	@echo "... AssetManager.i"

@@ -1,5 +1,5 @@
-include_directories(../headers)
-add_library(Libraries
+include_directories(../include)
+add_library(src
 		Game.cpp		
 		AssetManager.cpp
 		InputManager.cpp
