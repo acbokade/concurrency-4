@@ -23,4 +23,5 @@ target_link_libraries(stickman Libraries
         			sfml-audio
         			sfml-network
 				libBox2D.a
+				pthread
 				)

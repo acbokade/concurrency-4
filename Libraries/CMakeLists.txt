@@ -8,7 +8,7 @@ add_library(Libraries
 		MainMenuState.cpp
 		game.cpp
 		player.cpp
-		#myListener.cpp
+		myListener.cpp
 			)
 
 

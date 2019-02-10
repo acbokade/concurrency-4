@@ -314,6 +314,33 @@ game.cpp.s:
 	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/game.cpp.s
 .PHONY : game.cpp.s
 
+myListener.o: myListener.cpp.o
+
+.PHONY : myListener.o
+
+# target to build an object file
+myListener.cpp.o:
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/myListener.cpp.o
+.PHONY : myListener.cpp.o
+
+myListener.i: myListener.cpp.i
+
+.PHONY : myListener.i
+
+# target to preprocess a source file
+myListener.cpp.i:
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/myListener.cpp.i
+.PHONY : myListener.cpp.i
+
+myListener.s: myListener.cpp.s
+
+.PHONY : myListener.s
+
+# target to generate assembly for a file
+myListener.cpp.s:
+	cd /home/tungadri/Desktop/popl2-git/concurrency-4 && $(MAKE) -f Libraries/CMakeFiles/Libraries.dir/build.make Libraries/CMakeFiles/Libraries.dir/myListener.cpp.s
+.PHONY : myListener.cpp.s
+
 player.o: player.cpp.o
 
 .PHONY : player.o
@@ -371,6 +398,9 @@ help:
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"
+	@echo "... myListener.o"
+	@echo "... myListener.i"
+	@echo "... myListener.s"
 	@echo "... player.o"
 	@echo "... player.i"
 	@echo "... player.s"

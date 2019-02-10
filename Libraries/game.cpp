@@ -11,12 +11,12 @@ float temp2 = (60/2);
 
 Game::Game()
 {
-	this->window = new sf::RenderWindow(sf::VideoMode(1920, 1080, 32), "StickMan Fighter");
+	this->window = new sf::RenderWindow(sf::VideoMode(800, 600, 32), "StickMan Fighter");
 	this->window->setFramerateLimit(240);
 	b2Vec2 gravity(0.0f, 0.0f);
-	//this->listener = new myListener();
 	this->world = new b2World(gravity);
-	//this->world->SetContactListener(&listener);
+    this->listener = new myListener();
+	this->world->SetContactListener(listener);
 	this->player1 = new Player();
 	this->player2 = new Player();
     this->groundTexture.loadFromFile("res/ground.png");
@@ -26,9 +26,11 @@ Game::Game()
 
 void Game::gameLoop()
 {
-	initPlayer(player1, 200.f);
-	initPlayer(player2, 1400.f);
-    //gettimeofday(&prev_time,NULL);
+	initPlayer(player1, 200.f,0);
+	initPlayer(player2, 500.f,4);
+    player1->setHealth(100);
+    player2->setHealth(100);
+    gettimeofday(&prev_time,NULL);
 	while(window->isOpen())
 	{
 		sf::Event event;
@@ -37,16 +39,16 @@ void Game::gameLoop()
             if (event.type == sf::Event::Closed)
                 window->close();
         }
-		world->Step(timeStep, velocityIterations, positionIterations);
+		this->world->Step(timeStep, velocityIterations, positionIterations);
 
 		gettimeofday(&current_time,NULL);
         time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
 
-        /*if(time_difference > 100)
+        if(time_difference > 100)
         {
             checkcollision();
-            gettimeofday(&current_time,NULL);
-        }*/
+            gettimeofday(&prev_time,NULL);
+        }
 		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
         {
@@ -111,14 +113,14 @@ b2Body* Game::createGround(b2Vec2 position, int data)
    	return Body;
 }
 
-void Game::initPlayer(Player *player, float X)
+void Game::initPlayer(Player *player, float X, int offset)
 {
-	player->head = player->createhead(world, b2Vec2(X/SCALE,200.f/SCALE), 0, 25.f, 1.f, 1.f, 1);
-    player->body = player->createbody(world, b2Vec2(X/SCALE,270.f/SCALE), 0, 20.f, 90.f, 1.f, 1.f, 2);
-    player->left_hand = player->createbody(world, b2Vec2((X-40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3);
-    player->right_hand = player->createbody(world, b2Vec2((X+40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3);
-    player->left_leg = player->createbody(world, b2Vec2((X-temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
-    player->right_leg = player->createbody(world, b2Vec2((X+temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4);
+	player->head = player->createhead(world, b2Vec2(X/SCALE,200.f/SCALE), 0, 25.f, 1.f, 1.f, 1+offset);
+    player->body = player->createbody(world, b2Vec2(X/SCALE,270.f/SCALE), 0, 20.f, 90.f, 1.f, 1.f, 2+offset);
+    player->left_hand = player->createbody(world, b2Vec2((X-40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3+offset);
+    player->right_hand = player->createbody(world, b2Vec2((X+40.f)/SCALE,(230.f)/SCALE), 0, 60.f, 10.f, 1.f, 1.f, 3+offset);
+    player->left_leg = player->createbody(world, b2Vec2((X-temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4+offset);
+    player->right_leg = player->createbody(world, b2Vec2((X+temp1)/SCALE,(315.f+temp1)/SCALE), 0, 10.f, 75.f, 1.f, 1.f, 4+offset);
     player->headJoint = player->createRevoluteJoint(world, player->head, player->body, b2Vec2(0.f,25.0f/SCALE), b2Vec2(0.f,-45.0f/SCALE), 0, 0);
     player->left_legJoint = player->createRevoluteJoint(world, player->body, player->left_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2((temp1-12)/SCALE,-temp1/SCALE), 30, 60);
     player->right_legJoint = player->createRevoluteJoint(world, player->body, player->right_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2(-(temp1-12)/SCALE,-temp1/SCALE), -60, -30);
@@ -158,20 +160,20 @@ void Game::draw(Player* player)
     window->draw(player->bodySprite);
 }
 
-/*void Game::checkcollision()
+void Game::checkcollision()
 {
-	int r1=listener->Queue.size();
+	int r1=(listener->Queue).size();
     if(r1 > 30)
         r1=30;
     for(int i=0;i<r1;i++)
     {
-        pair<int,int> p = listener.Q.front();
-        listener.Q.pop();
-        worker[i]=thread(decrease_hp,p.first,p.second);
+        p = (listener->Queue).front();
+        (listener->Queue).pop();
+        worker[i]=std::thread(&Game::decrease_hp,this,p.first,p.second);
     }
     for(int i=0;i<r1;i++)
         worker[i].join();
-}*/
+}
 
 void Game::decrease_hp(int a,int b)
 {
@@ -240,4 +242,6 @@ void Game::decrease_hp(int a,int b)
 		player2->setHealth(new_hp2);
 		m.unlock();
 	}
+    std::cout<<player1->getHealth()<<" "<<a<<" "<<b<<std::endl;
+    std::cout<<player2->getHealth()<<std::endl;
 }
