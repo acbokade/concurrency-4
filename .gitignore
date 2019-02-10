@@ -1,0 +1,4 @@
+#ignore the following for commits
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake

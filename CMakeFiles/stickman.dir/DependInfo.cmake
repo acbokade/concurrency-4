@@ -4,15 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ajinkya/Desktop/concurrency/main.cpp" "/home/ajinkya/Desktop/concurrency/CMakeFiles/stickman.dir/main.cpp.o"
-  "/home/ajinkya/Desktop/concurrency/src/game.cpp" "/home/ajinkya/Desktop/concurrency/CMakeFiles/stickman.dir/src/game.cpp.o"
-  "/home/ajinkya/Desktop/concurrency/src/player.cpp" "/home/ajinkya/Desktop/concurrency/CMakeFiles/stickman.dir/src/player.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/main.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles/stickman.dir/main.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/src/game.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles/stickman.dir/src/game.cpp.o"
+  "/home/tungadri/Desktop/popl2-git/concurrency-4/src/player.cpp" "/home/tungadri/Desktop/popl2-git/concurrency-4/CMakeFiles/stickman.dir/src/player.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "dependencies/Box2D/Box2D"
   "include"
   )
 

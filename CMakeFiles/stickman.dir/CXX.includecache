@@ -6,173 +6,173 @@
 
 #IncludeRegexTransform: 
 
-/home/ajinkya/Desktop/concurrency/main.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/main.cpp
 SFML/Graphics.hpp
-/home/ajinkya/Desktop/concurrency/SFML/Graphics.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/SFML/Graphics.hpp
 Box2D/Box2D.h
-/home/ajinkya/Desktop/concurrency/Box2D/Box2D.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/Box2D/Box2D.h
 player.h
-/home/ajinkya/Desktop/concurrency/player.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/player.h
 game.h
-/home/ajinkya/Desktop/concurrency/game.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/game.h
 bits/stdc++.h
 -
 
-/home/ajinkya/Desktop/concurrency/src/game.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/game.cpp
 player.h
-/home/ajinkya/Desktop/concurrency/src/player.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/player.h
 SFML/Graphics.hpp
-/home/ajinkya/Desktop/concurrency/src/SFML/Graphics.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/SFML/Graphics.hpp
 game.h
-/home/ajinkya/Desktop/concurrency/src/game.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/game.h
 Box2D/Box2D.h
-/home/ajinkya/Desktop/concurrency/src/Box2D/Box2D.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/Box2D/Box2D.h
 myListener.h
-/home/ajinkya/Desktop/concurrency/src/myListener.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/myListener.h
 
-/home/ajinkya/Desktop/concurrency/src/player.cpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/player.cpp
 player.h
-/home/ajinkya/Desktop/concurrency/src/player.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/player.h
 SFML/Graphics.hpp
-/home/ajinkya/Desktop/concurrency/src/SFML/Graphics.hpp
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/SFML/Graphics.hpp
 Box2D/Box2D.h
-/home/ajinkya/Desktop/concurrency/src/Box2D/Box2D.h
+/home/tungadri/Desktop/popl2-git/concurrency-4/src/Box2D/Box2D.h
 
-dependencies/Box2D/Box2D/Box2D/Box2D.h
+include/Box2D/Box2D.h
 Box2D/Common/b2Settings.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Common/b2Settings.h
+include/Box2D/Box2D/Common/b2Settings.h
 Box2D/Common/b2Draw.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Common/b2Draw.h
+include/Box2D/Box2D/Common/b2Draw.h
 Box2D/Common/b2Timer.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Common/b2Timer.h
+include/Box2D/Box2D/Common/b2Timer.h
 Box2D/Collision/Shapes/b2CircleShape.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Collision/Shapes/b2CircleShape.h
+include/Box2D/Box2D/Collision/Shapes/b2CircleShape.h
 Box2D/Collision/Shapes/b2EdgeShape.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Collision/Shapes/b2EdgeShape.h
+include/Box2D/Box2D/Collision/Shapes/b2EdgeShape.h
 Box2D/Collision/Shapes/b2ChainShape.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Collision/Shapes/b2ChainShape.h
+include/Box2D/Box2D/Collision/Shapes/b2ChainShape.h
 Box2D/Collision/Shapes/b2PolygonShape.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h
+include/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h
 Box2D/Collision/b2BroadPhase.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Collision/b2BroadPhase.h
+include/Box2D/Box2D/Collision/b2BroadPhase.h
 Box2D/Collision/b2Distance.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Collision/b2Distance.h
+include/Box2D/Box2D/Collision/b2Distance.h
 Box2D/Collision/b2DynamicTree.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Collision/b2DynamicTree.h
+include/Box2D/Box2D/Collision/b2DynamicTree.h
 Box2D/Collision/b2TimeOfImpact.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Collision/b2TimeOfImpact.h
+include/Box2D/Box2D/Collision/b2TimeOfImpact.h
 Box2D/Dynamics/b2Body.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/b2Body.h
+include/Box2D/Box2D/Dynamics/b2Body.h
 Box2D/Dynamics/b2Fixture.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/b2Fixture.h
+include/Box2D/Box2D/Dynamics/b2Fixture.h
 Box2D/Dynamics/b2WorldCallbacks.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/b2WorldCallbacks.h
+include/Box2D/Box2D/Dynamics/b2WorldCallbacks.h
 Box2D/Dynamics/b2TimeStep.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/b2TimeStep.h
+include/Box2D/Box2D/Dynamics/b2TimeStep.h
 Box2D/Dynamics/b2World.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/b2World.h
+include/Box2D/Box2D/Dynamics/b2World.h
 Box2D/Dynamics/Contacts/b2Contact.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Contacts/b2Contact.h
+include/Box2D/Box2D/Dynamics/Contacts/b2Contact.h
 Box2D/Dynamics/Joints/b2DistanceJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h
 Box2D/Dynamics/Joints/b2FrictionJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h
 Box2D/Dynamics/Joints/b2GearJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h
 Box2D/Dynamics/Joints/b2MotorJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.h
 Box2D/Dynamics/Joints/b2MouseJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h
 Box2D/Dynamics/Joints/b2PrismaticJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h
 Box2D/Dynamics/Joints/b2PulleyJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h
 Box2D/Dynamics/Joints/b2RevoluteJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h
 Box2D/Dynamics/Joints/b2RopeJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.h
 Box2D/Dynamics/Joints/b2WeldJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h
 Box2D/Dynamics/Joints/b2WheelJoint.h
-dependencies/Box2D/Box2D/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
+include/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
 
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/b2ChainShape.h
+include/Box2D/Collision/Shapes/b2ChainShape.h
 Box2D/Collision/Shapes/b2Shape.h
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/Box2D/Collision/Shapes/b2Shape.h
+include/Box2D/Collision/Shapes/Box2D/Collision/Shapes/b2Shape.h
 
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/b2CircleShape.h
+include/Box2D/Collision/Shapes/b2CircleShape.h
 Box2D/Collision/Shapes/b2Shape.h
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/Box2D/Collision/Shapes/b2Shape.h
+include/Box2D/Collision/Shapes/Box2D/Collision/Shapes/b2Shape.h
 
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/b2EdgeShape.h
+include/Box2D/Collision/Shapes/b2EdgeShape.h
 Box2D/Collision/Shapes/b2Shape.h
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/Box2D/Collision/Shapes/b2Shape.h
+include/Box2D/Collision/Shapes/Box2D/Collision/Shapes/b2Shape.h
 
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h
+include/Box2D/Collision/Shapes/b2PolygonShape.h
 Box2D/Collision/Shapes/b2Shape.h
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/Box2D/Collision/Shapes/b2Shape.h
+include/Box2D/Collision/Shapes/Box2D/Collision/Shapes/b2Shape.h
 
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/b2Shape.h
+include/Box2D/Collision/Shapes/b2Shape.h
 Box2D/Common/b2BlockAllocator.h
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/Box2D/Common/b2BlockAllocator.h
+include/Box2D/Collision/Shapes/Box2D/Common/b2BlockAllocator.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/Box2D/Common/b2Math.h
+include/Box2D/Collision/Shapes/Box2D/Common/b2Math.h
 Box2D/Collision/b2Collision.h
-dependencies/Box2D/Box2D/Box2D/Collision/Shapes/Box2D/Collision/b2Collision.h
+include/Box2D/Collision/Shapes/Box2D/Collision/b2Collision.h
 
-dependencies/Box2D/Box2D/Box2D/Collision/b2BroadPhase.h
+include/Box2D/Collision/b2BroadPhase.h
 Box2D/Common/b2Settings.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Common/b2Settings.h
+include/Box2D/Collision/Box2D/Common/b2Settings.h
 Box2D/Collision/b2Collision.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Collision/b2Collision.h
+include/Box2D/Collision/Box2D/Collision/b2Collision.h
 Box2D/Collision/b2DynamicTree.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Collision/b2DynamicTree.h
+include/Box2D/Collision/Box2D/Collision/b2DynamicTree.h
 algorithm
 -
 
-dependencies/Box2D/Box2D/Box2D/Collision/b2Collision.h
+include/Box2D/Collision/b2Collision.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Common/b2Math.h
+include/Box2D/Collision/Box2D/Common/b2Math.h
 limits.h
 -
 
-dependencies/Box2D/Box2D/Box2D/Collision/b2Distance.h
+include/Box2D/Collision/b2Distance.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Common/b2Math.h
+include/Box2D/Collision/Box2D/Common/b2Math.h
 
-dependencies/Box2D/Box2D/Box2D/Collision/b2DynamicTree.h
+include/Box2D/Collision/b2DynamicTree.h
 Box2D/Collision/b2Collision.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Collision/b2Collision.h
+include/Box2D/Collision/Box2D/Collision/b2Collision.h
 Box2D/Common/b2GrowableStack.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Common/b2GrowableStack.h
+include/Box2D/Collision/Box2D/Common/b2GrowableStack.h
 
-dependencies/Box2D/Box2D/Box2D/Collision/b2TimeOfImpact.h
+include/Box2D/Collision/b2TimeOfImpact.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Common/b2Math.h
+include/Box2D/Collision/Box2D/Common/b2Math.h
 Box2D/Collision/b2Distance.h
-dependencies/Box2D/Box2D/Box2D/Collision/Box2D/Collision/b2Distance.h
+include/Box2D/Collision/Box2D/Collision/b2Distance.h
 
-dependencies/Box2D/Box2D/Box2D/Common/b2BlockAllocator.h
+include/Box2D/Common/b2BlockAllocator.h
 Box2D/Common/b2Settings.h
-dependencies/Box2D/Box2D/Box2D/Common/Box2D/Common/b2Settings.h
+include/Box2D/Common/Box2D/Common/b2Settings.h
 
-dependencies/Box2D/Box2D/Box2D/Common/b2Draw.h
+include/Box2D/Common/b2Draw.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Common/Box2D/Common/b2Math.h
+include/Box2D/Common/Box2D/Common/b2Math.h
 
-dependencies/Box2D/Box2D/Box2D/Common/b2GrowableStack.h
+include/Box2D/Common/b2GrowableStack.h
 Box2D/Common/b2Settings.h
-dependencies/Box2D/Box2D/Box2D/Common/Box2D/Common/b2Settings.h
+include/Box2D/Common/Box2D/Common/b2Settings.h
 string.h
 -
 
-dependencies/Box2D/Box2D/Box2D/Common/b2Math.h
+include/Box2D/Common/b2Math.h
 Box2D/Common/b2Settings.h
-dependencies/Box2D/Box2D/Box2D/Common/Box2D/Common/b2Settings.h
+include/Box2D/Common/Box2D/Common/b2Settings.h
 math.h
 -
 
-dependencies/Box2D/Box2D/Box2D/Common/b2Settings.h
+include/Box2D/Common/b2Settings.h
 stddef.h
 -
 assert.h
@@ -180,113 +180,113 @@ assert.h
 float.h
 -
 
-dependencies/Box2D/Box2D/Box2D/Common/b2StackAllocator.h
+include/Box2D/Common/b2StackAllocator.h
 Box2D/Common/b2Settings.h
-dependencies/Box2D/Box2D/Box2D/Common/Box2D/Common/b2Settings.h
+include/Box2D/Common/Box2D/Common/b2Settings.h
 
-dependencies/Box2D/Box2D/Box2D/Common/b2Timer.h
+include/Box2D/Common/b2Timer.h
 Box2D/Common/b2Settings.h
-dependencies/Box2D/Box2D/Box2D/Common/Box2D/Common/b2Settings.h
+include/Box2D/Common/Box2D/Common/b2Settings.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Contacts/b2Contact.h
+include/Box2D/Dynamics/Contacts/b2Contact.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Contacts/Box2D/Common/b2Math.h
+include/Box2D/Dynamics/Contacts/Box2D/Common/b2Math.h
 Box2D/Collision/b2Collision.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Contacts/Box2D/Collision/b2Collision.h
+include/Box2D/Dynamics/Contacts/Box2D/Collision/b2Collision.h
 Box2D/Collision/Shapes/b2Shape.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Contacts/Box2D/Collision/Shapes/b2Shape.h
+include/Box2D/Dynamics/Contacts/Box2D/Collision/Shapes/b2Shape.h
 Box2D/Dynamics/b2Fixture.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Contacts/Box2D/Dynamics/b2Fixture.h
+include/Box2D/Dynamics/Contacts/Box2D/Dynamics/b2Fixture.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h
+include/Box2D/Dynamics/Joints/b2DistanceJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h
+include/Box2D/Dynamics/Joints/b2FrictionJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h
+include/Box2D/Dynamics/Joints/b2GearJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/b2Joint.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Common/b2Math.h
+include/Box2D/Dynamics/Joints/Box2D/Common/b2Math.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.h
+include/Box2D/Dynamics/Joints/b2MotorJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h
+include/Box2D/Dynamics/Joints/b2MouseJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h
+include/Box2D/Dynamics/Joints/b2PrismaticJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h
+include/Box2D/Dynamics/Joints/b2PulleyJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h
+include/Box2D/Dynamics/Joints/b2RevoluteJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.h
+include/Box2D/Dynamics/Joints/b2RopeJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h
+include/Box2D/Dynamics/Joints/b2WeldJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
+include/Box2D/Dynamics/Joints/b2WheelJoint.h
 Box2D/Dynamics/Joints/b2Joint.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
+include/Box2D/Dynamics/Joints/Box2D/Dynamics/Joints/b2Joint.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/b2Body.h
+include/Box2D/Dynamics/b2Body.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Common/b2Math.h
+include/Box2D/Dynamics/Box2D/Common/b2Math.h
 Box2D/Collision/Shapes/b2Shape.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Collision/Shapes/b2Shape.h
+include/Box2D/Dynamics/Box2D/Collision/Shapes/b2Shape.h
 memory
 -
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/b2ContactManager.h
+include/Box2D/Dynamics/b2ContactManager.h
 Box2D/Collision/b2BroadPhase.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Collision/b2BroadPhase.h
+include/Box2D/Dynamics/Box2D/Collision/b2BroadPhase.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/b2Fixture.h
+include/Box2D/Dynamics/b2Fixture.h
 Box2D/Dynamics/b2Body.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Dynamics/b2Body.h
+include/Box2D/Dynamics/Box2D/Dynamics/b2Body.h
 Box2D/Collision/b2Collision.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Collision/b2Collision.h
+include/Box2D/Dynamics/Box2D/Collision/b2Collision.h
 Box2D/Collision/Shapes/b2Shape.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Collision/Shapes/b2Shape.h
+include/Box2D/Dynamics/Box2D/Collision/Shapes/b2Shape.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/b2TimeStep.h
+include/Box2D/Dynamics/b2TimeStep.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Common/b2Math.h
+include/Box2D/Dynamics/Box2D/Common/b2Math.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/b2World.h
+include/Box2D/Dynamics/b2World.h
 Box2D/Common/b2Math.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Common/b2Math.h
+include/Box2D/Dynamics/Box2D/Common/b2Math.h
 Box2D/Common/b2BlockAllocator.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Common/b2BlockAllocator.h
+include/Box2D/Dynamics/Box2D/Common/b2BlockAllocator.h
 Box2D/Common/b2StackAllocator.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Common/b2StackAllocator.h
+include/Box2D/Dynamics/Box2D/Common/b2StackAllocator.h
 Box2D/Dynamics/b2ContactManager.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Dynamics/b2ContactManager.h
+include/Box2D/Dynamics/Box2D/Dynamics/b2ContactManager.h
 Box2D/Dynamics/b2WorldCallbacks.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Dynamics/b2WorldCallbacks.h
+include/Box2D/Dynamics/Box2D/Dynamics/b2WorldCallbacks.h
 Box2D/Dynamics/b2TimeStep.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Dynamics/b2TimeStep.h
+include/Box2D/Dynamics/Box2D/Dynamics/b2TimeStep.h
 
-dependencies/Box2D/Box2D/Box2D/Dynamics/b2WorldCallbacks.h
+include/Box2D/Dynamics/b2WorldCallbacks.h
 Box2D/Common/b2Settings.h
-dependencies/Box2D/Box2D/Box2D/Dynamics/Box2D/Common/b2Settings.h
+include/Box2D/Dynamics/Box2D/Common/b2Settings.h
 
 include/game.h
 SFML/Graphics.hpp
