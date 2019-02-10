@@ -10,6 +10,8 @@
 #include <thread>
 #include <queue>
 #include <mutex>
+#include <utility>
+#include <bits/stdc++.h>
 
 class Game
 {
@@ -28,10 +30,11 @@ public:
 	std::mutex m;
     Player* player1;
     Player* player2;
+    std::pair<int,int> p;
 	struct timeval current_time,prev_time;
 	double time_difference;
 	b2Body* createGround(b2Vec2 position, int data);
-	void initPlayer(Player *player, float X);
+	void initPlayer(Player *player, float X, int offset);
 	void gameLoop();
 	void updatePlayer(Player *player);
 	void draw(Player *player);
