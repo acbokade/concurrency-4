@@ -12,7 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/ajinkya/Downloads/Box2D/Box2D"
+  "dependencies/Box2D/Box2D"
   "include"
   )
 

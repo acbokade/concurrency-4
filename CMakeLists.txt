@@ -6,10 +6,10 @@ set(CMAKE_CXX_STANDARD 11)
 
 project(stickman)
 
-include_directories(~/Downloads/Box2D/Box2D
+include_directories(dependencies/Box2D/Box2D
 					include)
 
-link_directories(~/Downloads/Box2D/Box2D/Build/gmake/bin/Debug)
+link_directories(dependencies/Box2D/Box2D/Build/gmake/bin/Debug)
 
 set(SOURCE_FILES
 	main.cpp

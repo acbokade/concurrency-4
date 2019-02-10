@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ajinkya/Downloads/Box2D/Box2D -I/home/ajinkya/Desktop/concurrency/include 
+CXX_INCLUDES = -I/home/ajinkya/Desktop/concurrency/dependencies/Box2D/Box2D -I/home/ajinkya/Desktop/concurrency/include 
 
