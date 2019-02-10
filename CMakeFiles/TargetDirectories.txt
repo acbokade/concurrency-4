@@ -1,0 +1,6 @@
+/home/tungadri/popl2-game/concurrency-4/CMakeFiles/rebuild_cache.dir
+/home/tungadri/popl2-game/concurrency-4/CMakeFiles/stickman.dir
+/home/tungadri/popl2-game/concurrency-4/CMakeFiles/edit_cache.dir
+/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/rebuild_cache.dir
+/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/Libraries.dir
+/home/tungadri/popl2-game/concurrency-4/Libraries/CMakeFiles/edit_cache.dir

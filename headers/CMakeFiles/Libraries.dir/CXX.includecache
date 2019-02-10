@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tungadri/Downloads/7 - Splash State/Libraries/AssetManager.cpp
+SFML/Graphics.hpp
+-
+AssetManager.hpp
+/home/tungadri/Downloads/7 - Splash State/Libraries/AssetManager.hpp
+
+/home/tungadri/Downloads/7 - Splash State/Libraries/Game.cpp
+Game.hpp
+/home/tungadri/Downloads/7 - Splash State/Libraries/Game.hpp
+SplashState.hpp
+/home/tungadri/Downloads/7 - Splash State/Libraries/SplashState.hpp
+
+/home/tungadri/Downloads/7 - Splash State/Libraries/InputManager.cpp
+InputManager.hpp
+/home/tungadri/Downloads/7 - Splash State/Libraries/InputManager.hpp
+
+/home/tungadri/Downloads/7 - Splash State/Libraries/SplashState.cpp
+sstream
+-
+SplashState.hpp
+/home/tungadri/Downloads/7 - Splash State/Libraries/SplashState.hpp
+DEFINITIONS.hpp
+/home/tungadri/Downloads/7 - Splash State/Libraries/DEFINITIONS.hpp
+iostream
+-
+
+/home/tungadri/Downloads/7 - Splash State/Libraries/StateMachine.cpp
+StateMachine.hpp
+/home/tungadri/Downloads/7 - Splash State/Libraries/StateMachine.hpp
+

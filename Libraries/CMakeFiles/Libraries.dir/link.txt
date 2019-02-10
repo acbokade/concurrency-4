@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLibraries.a  CMakeFiles/Libraries.dir/Game.cpp.o CMakeFiles/Libraries.dir/AssetManager.cpp.o CMakeFiles/Libraries.dir/InputManager.cpp.o CMakeFiles/Libraries.dir/SplashState.cpp.o CMakeFiles/Libraries.dir/StateMachine.cpp.o CMakeFiles/Libraries.dir/MainMenuState.cpp.o
+/usr/bin/ranlib libLibraries.a

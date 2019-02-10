@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/stickman.dir/main.cpp.o  -o stickman -Wl,-rpath,/home/tungadri/popl2-game/concurrency-4/SFML/lib Libraries/libLibraries.a SFML/lib/libsfml-graphics.so.2.5.1 SFML/lib/libsfml-audio.so.2.5.1 SFML/lib/libsfml-network.so.2.5.1 SFML/lib/libsfml-window.so.2.5.1 SFML/lib/libsfml-system.so.2.5.1 
