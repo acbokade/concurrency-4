@@ -6,7 +6,7 @@
 #define DEGTORAD 0.0174532925199432957f
 
 const float SCALE = 30.f;
-float temp1 = (75/2)/sqrt(2);
+float temp1 = ((75/2)/sqrt(2));
 float temp2 = (60/2);
 
 Game::Game()
@@ -250,10 +250,12 @@ void Game::decrease_hp(int a,int b)
 	else if( (a==4 && b==6) || (a==6 && b==4) )
 	{
 		m.lock();
-		int new_hp2 = player2->getHealth() - 10;
+		int new_hp2 = player2->getHealth() - 5;
 		player2->setHealth(new_hp2);
 		m.unlock();
 	}
-    std::cout<<player1->getHealth()<<std::endl;
+	m.lock();
+    std::cout<<player1->getHealth()<<" "<<a<<" "<<b<<" ";
     std::cout<<player2->getHealth()<<std::endl;
+    m.unlock();
 }
