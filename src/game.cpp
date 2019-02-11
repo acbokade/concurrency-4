@@ -1,8 +1,11 @@
 #include "player.h"
 #include "SFML/Graphics.hpp"
+#include "SFML/Network.hpp"
 #include "game.h"
 #include "Box2D/Box2D.h"
 #include "myListener.h"
+#include <iostream>
+using namespace std;
 #define DEGTORAD 0.0174532925199432957f
 
 const float SCALE = 30.f;
@@ -26,72 +29,246 @@ Game::Game()
 
 void Game::gameLoop()
 {
-	initPlayer(player1, 200.f,0);
-	initPlayer(player2, 500.f,4);
-    player1->setHealth(100);
-    player2->setHealth(100);
-    gettimeofday(&prev_time,NULL);
-	while(window->isOpen())
+	char con;
+	cout<<"(s) for server (c) for client\n";
+	this->ip=sf::IpAddress::getLocalAddress();
+	cin>>con;
+	//cout<<ip;
+	if(con=='s')
 	{
-		sf::Event event;
-        while (window->pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window->close();
-        }
-		this->world->Step(timeStep, velocityIterations, positionIterations);
+		this->isClient=false;
+		cout<<this->ip<<endl;
+		sf::TcpListener tcplistener;
+		tcplistener.listen(3000);
+		tcplistener.accept(this->socket);
+	}
+	else
+		{
+			this->isClient=true;
+			this->socket.connect(this->ip,3000);
+		}
 
-		gettimeofday(&current_time,NULL);
-        time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
+	this->socket.setBlocking(false);
 
-        if(time_difference > 100)
-        {
-            checkcollision();
-            gettimeofday(&prev_time,NULL);
-        }
-		
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
-        {
-            player1->body->SetAngularVelocity(60*DEGTORAD);
-        }
+	if(!isClient)
+	{
+		initPlayer(player1, 200.f,0);
+		initPlayer(player2, 500.f,4);
+	    player1->setHealth(100);
+	    player2->setHealth(100);
+	    gettimeofday(&prev_time,NULL);
+		while(window->isOpen())
+		{
+			sf::Event event;
+	        while (window->pollEvent(event))
+	        {
+	            if (event.type == sf::Event::Closed)
+	                window->close();
+	        }
+			this->world->Step(timeStep, velocityIterations, positionIterations);
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
-        {
-            player1->body->SetAngularVelocity(-60*DEGTORAD);
-        }
+			gettimeofday(&current_time,NULL);
+	        time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-        {
-            player1->body->SetLinearVelocity(b2Vec2(-4,0));
-            player1->body->SetLinearVelocity(b2Vec2(-4,0));
-        }
+	        if(time_difference > 100)
+	        {
+	            checkcollision();
+	            gettimeofday(&prev_time,NULL);
+	        }
+			
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
+	        {
+	            player1->body->SetAngularVelocity(60*DEGTORAD);
+	        }
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-        {
-            player1->body->SetLinearVelocity(b2Vec2(4,0));
-            player1->body->SetLinearVelocity(b2Vec2(4,0));
-        }
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+	        {
+	            player1->body->SetAngularVelocity(-60*DEGTORAD);
+	        }
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        {
-            player1->body->SetLinearVelocity(b2Vec2(0,-4));
-            player1->body->SetLinearVelocity(b2Vec2(0,-4));
-        }
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	        {
+	            player1->body->SetLinearVelocity(b2Vec2(-4,0));
+	            player1->body->SetLinearVelocity(b2Vec2(-4,0));
+	        }
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        {
-            player1->head->SetLinearVelocity(b2Vec2(0,4));
-            player1->body->SetLinearVelocity(b2Vec2(0,4));
-        }
-        updatePlayer(player1);
-        updatePlayer(player2);
-      	groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
-    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
-		window->clear(sf::Color::White);
-		draw(player1);
-		draw(player2);
-        window->draw(this->groundSprite);
-        window->display();
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	        {
+	            player1->body->SetLinearVelocity(b2Vec2(4,0));
+	            player1->body->SetLinearVelocity(b2Vec2(4,0));
+	        }
+
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	        {
+	            player1->body->SetLinearVelocity(b2Vec2(0,-4));
+	            player1->body->SetLinearVelocity(b2Vec2(0,-4));
+	        }
+
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	        {
+	            player1->head->SetLinearVelocity(b2Vec2(0,4));
+	            player1->body->SetLinearVelocity(b2Vec2(0,4));
+	        }
+
+	        sf::Packet packet1,packet2;
+	        socket.receive(packet1);
+	        std::string s;
+	        packet1>>s;
+	        if (s=="D" )
+	        {
+	            player2->body->SetAngularVelocity(60*DEGTORAD);
+	        }
+
+	        if (s=="A" )
+	        {
+	            player2->body->SetAngularVelocity(-60*DEGTORAD);
+	        }
+
+	        if (s=="L")
+	        {
+	            player2->body->SetLinearVelocity(b2Vec2(-4,0));
+	            player2->body->SetLinearVelocity(b2Vec2(-4,0));
+	        }
+
+	        if (s=="R")
+	        {
+	            player2->body->SetLinearVelocity(b2Vec2(4,0));
+	            player2->body->SetLinearVelocity(b2Vec2(4,0));
+	        }
+
+	        if (s=="U")
+	        {
+	            player2->body->SetLinearVelocity(b2Vec2(0,-4));
+	            player2->body->SetLinearVelocity(b2Vec2(0,-4));
+	        }
+
+	        if (s=="B")
+	        {
+	            player2->head->SetLinearVelocity(b2Vec2(0,4));
+	            player2->body->SetLinearVelocity(b2Vec2(0,4));
+	        }
+
+	        packet2<<player1->head->GetPosition().x*SCALE<<player1->head->GetPosition().y*SCALE<<player1->head->GetAngle() * (180/b2_pi);
+	        packet2<<player1->body->GetPosition().x*SCALE<<player1->body->GetPosition().y*SCALE<<player1->body->GetAngle() * (180/b2_pi);
+	        packet2<<player1->left_leg->GetPosition().x*SCALE<<player1->left_leg->GetPosition().y*SCALE<<player1->left_leg->GetAngle() * (180/b2_pi);
+	        packet2<<player1->right_leg->GetPosition().x*SCALE<<player1->right_leg->GetPosition().y*SCALE<<player1->right_leg->GetAngle() * (180/b2_pi);
+	        packet2<<player1->left_hand->GetPosition().x*SCALE<<player1->left_hand->GetPosition().y*SCALE<<player1->left_hand->GetAngle() * (180/b2_pi);	
+	        packet2<<player1->right_hand->GetPosition().x*SCALE<<player1->right_hand->GetPosition().y*SCALE<<player1->right_hand->GetAngle() * (180/b2_pi);
+
+	        packet2<<player2->head->GetPosition().x*SCALE<<player2->head->GetPosition().y*SCALE<<player2->head->GetAngle() * (180/b2_pi);
+	        packet2<<player2->body->GetPosition().x*SCALE<<player2->body->GetPosition().y*SCALE<<player2->body->GetAngle() * (180/b2_pi);
+	        packet2<<player2->left_leg->GetPosition().x*SCALE<<player2->left_leg->GetPosition().y*SCALE<<player2->left_leg->GetAngle() * (180/b2_pi);
+	        packet2<<player2->right_leg->GetPosition().x*SCALE<<player2->right_leg->GetPosition().y*SCALE<<player2->right_leg->GetAngle() * (180/b2_pi);
+	        packet2<<player2->left_hand->GetPosition().x*SCALE<<player2->left_hand->GetPosition().y*SCALE<<player2->left_hand->GetAngle() * (180/b2_pi);	
+	        packet2<<player2->right_hand->GetPosition().x*SCALE<<player2->right_hand->GetPosition().y*SCALE<<player2->right_hand->GetAngle() * (180/b2_pi);
+
+	        socket.send(packet2);
+
+	        updatePlayer(player1);
+	        updatePlayer(player2);
+	      	groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
+	    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
+			window->clear(sf::Color::White);
+			draw(player1);
+			draw(player2);
+	        window->draw(this->groundSprite);
+	        window->display();
+		}
+	}
+	else
+	{
+		while(window->isOpen())
+		{
+			sf::Event event;
+	        while (window->pollEvent(event))
+	        {
+	            if (event.type == sf::Event::Closed)
+	                window->close();
+	        }
+			sf::Packet packet1,packet2;
+			double x[12],y[12],angle[12];
+			std::string s="M";
+			socket.receive(packet1);
+			for(int i=0;i<12;i++)
+				packet1>>x[i]>>y[i]>>angle[i];
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
+	        {
+	            s="D";
+	            packet2<<s;
+	        }
+
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+	        {
+	        	s="A";
+	        	packet2<<s;
+	        }
+
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	        {
+	        	s="L";
+	        	packet2<<s;
+	        }
+
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	        {
+	        	s="R";
+	        	packet2<<s;
+	        }
+
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	        {
+	        	s="U";
+	        	packet2<<s;
+	        }
+
+	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	        {
+	        	s="B";
+	        	packet2<<s;
+	        }
+			socket.send(packet2);
+			player1->headSprite.setPosition(x[0],y[0]);
+		    player1->headSprite.setRotation(angle[0]);
+
+		    player1->bodySprite.setPosition(x[1],y[1]);
+		    player1->bodySprite.setRotation(angle[1]);
+
+		    player1->left_legSprite.setPosition(x[2],y[2]);
+		    player1->left_legSprite.setRotation(angle[2]);
+
+		    player1->right_legSprite.setPosition(x[3],y[3]);
+		    player1->right_legSprite.setRotation(angle[3]);
+
+		    player1->left_handSprite.setPosition(x[4],y[4]);
+		    player1->left_handSprite.setRotation(angle[4]);
+
+		    player1->right_handSprite.setPosition(x[5],y[5]);
+		    player1->right_handSprite.setRotation(angle[5]);
+
+		    player2->headSprite.setPosition(x[6],y[6]);
+		    player2->headSprite.setRotation(angle[6]);
+
+		    player2->bodySprite.setPosition(x[7],y[7]);
+		    player2->bodySprite.setRotation(angle[7]);
+
+		    player2->left_legSprite.setPosition(x[8],y[8]);
+		    player2->left_legSprite.setRotation(angle[8]);
+
+		    player2->right_legSprite.setPosition(x[9],y[9]);
+		    player2->right_legSprite.setRotation(angle[9]);
+
+		    player2->left_handSprite.setPosition(x[10],y[10]);
+		    player2->left_handSprite.setRotation(angle[10]);
+
+		    player2->right_handSprite.setPosition(x[11],y[11]);
+		    player2->right_handSprite.setRotation(angle[11]);
+
+			window->clear(sf::Color::White);
+			draw(player1);
+			draw(player2);
+	        window->display();
+
+		}	
 	}
 }
 
@@ -161,6 +338,8 @@ void Game::updatePlayer(Player *player)
     player->right_handSprite.setPosition(player->right_hand->GetPosition().x*SCALE,player->right_hand->GetPosition().y*SCALE);
     player->right_handSprite.setRotation(player->right_hand->GetAngle() * (180/b2_pi));
 }
+
+
 
 void Game::draw(Player* player)
 {

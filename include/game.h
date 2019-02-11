@@ -4,6 +4,7 @@
 #include "Box2D/Box2D.h"
 #include "player.h"
 #include "myListener.h"
+#include "SFML/Network.hpp"
 #include <queue>
 #include <time.h>
 #include <sys/time.h>
@@ -18,6 +19,8 @@ class Game
 public:
 	Game();
 	sf::RenderWindow *window ;
+	sf::IpAddress ip;
+	sf::TcpSocket socket;
 	b2World* world;
 	b2Body* ground;
 	int groundUserData;
@@ -28,6 +31,7 @@ public:
 	float timeStep = 1.0f / 240.0f;
 	myListener* listener;
 	std::thread worker[30];
+	bool isClient;
 	std::mutex m;
     Player* player1;
     Player* player2;
