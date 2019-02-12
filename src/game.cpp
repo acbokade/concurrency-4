@@ -39,13 +39,13 @@ void Game::gameLoop()
 		this->isClient=false;
 		cout<<this->ip<<endl;
 		sf::TcpListener tcplistener;
-		tcplistener.listen(3000);
+		tcplistener.listen(3002);
 		tcplistener.accept(this->socket);
 	}
 	else
 		{
 			this->isClient=true;
-			this->socket.connect(this->ip,3000);
+			this->socket.connect(this->ip,3002);
 		}
 
 	this->socket.setBlocking(false);
@@ -177,6 +177,8 @@ void Game::gameLoop()
 	}
 	else
 	{
+
+		float x[12],y[12],angle[12];
 		while(window->isOpen())
 		{
 			sf::Event event;
@@ -186,7 +188,6 @@ void Game::gameLoop()
 	                window->close();
 	        }
 			sf::Packet packet1,packet2;
-			double x[12],y[12],angle[12];
 			std::string s="M";
 			socket.receive(packet1);
 			for(int i=0;i<12;i++)
@@ -368,73 +369,49 @@ void Game::checkcollision()
 
 void Game::decrease_hp(int a,int b)
 {
+	int damage1=0,damage2=0;
+	int new_hp1,new_hp2;
 	if( (a==1 && b==5) || (a==5 && b==1) )
 	{
-		m.lock();
-		int new_hp1 = player1->getHealth() - 10;
-		int new_hp2 = player2->getHealth() - 10;
-		player1->setHealth(new_hp1);
-		player2->setHealth(new_hp2);
-		m.unlock();
+		damage1=10;
+		damage2=10;
 	}
 	else if( (a==1 && b==7) || (a==7 && b==1) )
 	{
-		m.lock();
-		int new_hp1 = player1->getHealth() - 10;
-		player1->setHealth(new_hp1);
-		m.unlock();
+		damage1=10;
 	}
 	else if( (a==2 && b==8) || (a==8 && b==2) )
 	{
-		m.lock();
-		int new_hp1 = player1->getHealth() - 10;
-		player1->setHealth(new_hp1);
-		m.unlock();
+		damage1=10;
 	}
 	else if( (a==2 && b==7) || (a==7 && b==2) )
 	{
-		m.lock();
-		int new_hp1 = player1->getHealth() - 5;
-		player1->setHealth(new_hp1);
-		m.unlock();
+		damage1=5;
 	}
 	else if( (a==2 && b==8) || (a==8 && b==2) )
 	{
-		m.lock();
-		int new_hp1 = player1->getHealth() - 5;
-		player1->setHealth(new_hp1);
-		m.unlock();
+		damage1=5;
 	}
 	else if( (a==3 && b==5) || (a==5 && b==3) )
 	{
-		m.lock();
-		int new_hp2 = player2->getHealth() - 10;
-		player2->setHealth(new_hp2);
-		m.unlock();
+		damage2=10;
 	}
 	else if( (a==4 && b==5) || (a==5 && b==4) )
 	{
-		m.lock();
-		int new_hp2 = player2->getHealth() - 10;
-		player2->setHealth(new_hp2);
-		m.unlock();
+		damage2=10;
 	}
 	else if( (a==3 && b==6) || (a==6 && b==3) )
 	{
-		m.lock();
-		int new_hp2 = player2->getHealth() - 5;
-		player2->setHealth(new_hp2);
-		m.unlock();
+		damage2=5;
 	}
 	else if( (a==4 && b==6) || (a==6 && b==4) )
 	{
-		m.lock();
-		int new_hp2 = player2->getHealth() - 5;
-		player2->setHealth(new_hp2);
-		m.unlock();
+		damage2=5;
 	}
 	m.lock();
-    std::cout<<player1->getHealth()<<" "<<a<<" "<<b<<" ";
-    std::cout<<player2->getHealth()<<std::endl;
-    m.unlock();
+	new_hp1 = player1->getHealth() - damage1;
+	new_hp2 = player2->getHealth() - damage2;
+	player1->setHealth(new_hp1);
+	player2->setHealth(new_hp2);
+	m.unlock();
 }
