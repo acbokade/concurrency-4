@@ -22,6 +22,8 @@ Game::Game()
 	this->world->SetContactListener(listener);
 	this->player1 = new Player();
 	this->player2 = new Player();
+	this->player1->init();
+	this->player2->init();
     this->groundTexture.loadFromFile("res/ground.png");
     this->groundSprite.setTexture(groundTexture);
     this->groundSprite.setOrigin(400.f, 8.f);
@@ -310,7 +312,6 @@ void Game::initPlayer(Player *player, float X, int offset)
     player->right_legJoint = player->createRevoluteJoint(world, player->body, player->right_leg, b2Vec2(0.f/SCALE,45.0f/SCALE), b2Vec2(-(temp1-12)/SCALE,-temp1/SCALE), -60, -30);
     player->left_handJoint = player->createRevoluteJoint(world, player->body, player->left_hand, b2Vec2(-10.f/SCALE,-40.0f/SCALE), b2Vec2(25.f/SCALE,0.f/SCALE), -10, 10);
     player->right_handJoint = player->createRevoluteJoint(world, player->body, player->right_hand, b2Vec2(10.f/SCALE,-40.0f/SCALE), b2Vec2(-25.f/SCALE,0.f/SCALE), -10, 10);
-    player->init();
     player->head->SetUserData(&player->headUserData);
     player->body->SetUserData(&player->bodyUserData);
     player->left_hand->SetUserData(&player->left_handUserData);
