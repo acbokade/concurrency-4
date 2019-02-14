@@ -51,15 +51,7 @@ public:
 	b2RevoluteJoint* createRevoluteJoint(b2World *world, b2Body* body1, b2Body* body2, b2Vec2 anchorPoint1, b2Vec2 anchorPoint2, float lowerLimit, float upperLimit);
 	void setHealth(int health);
 	int getHealth();
-
-	void setPosition(b2Vec2 position);
-	b2Vec2 getPosition();
-
-	void setAngle(float angle);
-	float getAngle();
-
-	void updatePosition(b2Vec2 position);
-	void init();
+	void init(bool firstPlayer);
 };
 
 #endif

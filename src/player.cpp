@@ -73,28 +73,13 @@ int Player::getHealth()
 	return this->health;
 }
 
-void Player::setPosition(b2Vec2 position)
+void Player::init(bool firstPlayer)
 {
-
-}
-
-b2Vec2 Player::getPosition()
-{
-	
-}
-
-void Player::updatePosition(b2Vec2 position)
-{
-
-}
-
-void Player::init()
-{
-	this->headTexture.loadFromFile("res/head1.png");
-	this->bodyTexture.loadFromFile("res/body1.png");
-	this->handTexture.loadFromFile("res/hand3.png");
-	this->legTexture.loadFromFile("res/leg1.png");
-	this->headSprite.setTexture(headTexture);
+	(firstPlayer)?this->headTexture.loadFromFile("res/head1.png"):this->headTexture.loadFromFile("res/head2.png");
+    (firstPlayer)?this->bodyTexture.loadFromFile("res/body1.png"):this->bodyTexture.loadFromFile("res/body2.png");
+    (firstPlayer)?this->handTexture.loadFromFile("res/hand3.png"):this->handTexture.loadFromFile("res/hand4.png");
+    (firstPlayer)?this->legTexture.loadFromFile("res/leg1.png"):this->legTexture.loadFromFile("res/leg2.png");
+    this->headSprite.setTexture(headTexture);
     this->headSprite.setOrigin((sf::Vector2f)(headTexture.getSize())/2.f);
     this->bodySprite.setTexture(bodyTexture);
     this->bodySprite.setOrigin((sf::Vector2f)(bodyTexture.getSize())/2.f);

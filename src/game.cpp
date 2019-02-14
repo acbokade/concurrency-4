@@ -22,20 +22,28 @@ Game::Game(GameDataRef data): _data(data)
 	this->world->SetContactListener(listener);
 	this->player1 = new Player();
 	this->player2 = new Player();
-	this->player1->init();
-	this->player2->init();
     this->groundTexture.loadFromFile("res/ground.png");
     this->groundSprite.setTexture(groundTexture);
     this->groundSprite.setOrigin(400.f, 8.f);
+    this->gemTexture.loadFromFile("res/gem1.png");
+    this->gemSprite.setTexture(gemTexture);
+    this->gemSprite.setOrigin((sf::Vector2f)gemTexture.getSize()/2.f);
+    this->player1->init(true);
+	this->player2->init(false);
+	this->gemExists = true;
 };
 
 void Game::gameLoop()
 {
+	srand(time(0));
 	char con;
 	cout<<"(s) for server (c) for client\n";
 	this->ip=sf::IpAddress::getLocalAddress();
 	cin>>con;
 	//cout<<ip;
+	if(!this->buffer.loadFromFile("res/punch.wav"))
+        std::cout<<"error in loading sound"<<std::endl;
+    this->sound.setBuffer(buffer);
 	if(con=='s')
 	{
 		this->isClient=false;
@@ -45,10 +53,10 @@ void Game::gameLoop()
 		tcplistener.accept(this->socket);
 	}
 	else
-		{
-			this->isClient=true;
-			this->socket.connect(this->ip,3002);
-		}
+	{
+		this->isClient=true;
+		this->socket.connect(this->ip,3002);
+	}
 
 	this->socket.setBlocking(false);
 
@@ -59,6 +67,7 @@ void Game::gameLoop()
 	    player1->setHealth(100);
 	    player2->setHealth(100);
 	    gettimeofday(&prev_time,NULL);
+	    gettimeofday(&prev_time1, NULL);
 		while(window->isOpen())
 		{
 			sf::Event event;
@@ -70,12 +79,30 @@ void Game::gameLoop()
 			this->world->Step(timeStep, velocityIterations, positionIterations);
 
 			gettimeofday(&current_time,NULL);
+			gettimeofday(&current_time1, NULL);
 	        time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
 
 	        if(time_difference > 100)
 	        {
 	            checkcollision();
 	            gettimeofday(&prev_time,NULL);
+	        }
+
+	        time_difference1 = (double) ((current_time1.tv_sec * 1000000 + current_time1.tv_usec) - (prev_time1.tv_sec * 1000000 + prev_time1.tv_usec)) / 1000.0;
+	        
+	        if(time_difference1 > 5000)
+	        {
+	        	this->Thread = std::thread(&Game::generateGem, this);
+	        	this->Thread.join();
+	        	gettimeofday(&prev_time1, NULL);
+	        }
+
+	        if(gemExists)
+	        {
+	        	this->Thread1 = std::thread(&Game::isGemCollected, this);
+	        	this->Thread1.join();
+	        	if(!gemExists)
+	        		gettimeofday(&prev_time1, NULL);
 	        }
 			
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
@@ -126,6 +153,8 @@ void Game::gameLoop()
 			draw(player1);
 			draw(player2);
 	        window->draw(this->groundSprite);
+	        if(gemExists)
+	        	window->draw(this->gemSprite);
 	        window->display();
 		}
 	}
@@ -152,6 +181,49 @@ void Game::gameLoop()
 
 		}	
 	}
+}
+
+void Game::generateGem()
+{
+	int x = rand();
+	int y = rand();
+	x = 100 + x % 1000;
+	y = 50 + y % 500; 
+	//std::cout<<x<<" "<<y<<std::endl;
+	this->gemSprite.setPosition(x,y);
+	this->gemExists = true;
+}
+
+void Game::isGemCollected()
+{
+	int gemPositionX = gemSprite.getPosition().x;
+	int gemPositionY = gemSprite.getPosition().y;
+	int p1PositionX = player1->head->GetPosition().x*SCALE;
+	int p1PositionY = player1->head->GetPosition().y*SCALE;
+	int p2PositionX = player2->head->GetPosition().x*SCALE;
+	int p2PositionY = player2->head->GetPosition().y*SCALE;
+	//std::cout<<gemPositionX<<" "<<gemPositionY<<" "<<p1PositionX<< " "<<p1PositionY<<" "<<p2PositionX<<" "<<p2PositionY<<std::endl;
+	if(distance(gemPositionX, gemPositionY, p1PositionX, p1PositionY) <= 50)
+	{
+		//std::cout<<distance(gemPositionX, gemPositionY, p1PositionX, p1PositionY)<<std::endl;
+		player1->setHealth(player1->getHealth()+5);
+		this->gemExists = false;
+	}
+	else if(distance(gemPositionX, gemPositionY, p2PositionX, p2PositionY) <= 50)
+	{
+		//std::cout<<distance(gemPositionX, gemPositionY, p2PositionX, p2PositionY)<<std::endl;
+		player2->setHealth(player2->getHealth()+5);
+		this->gemExists = false;
+	}
+}
+
+float Game::distance(int x1, int y1, int x2, int y2)
+{
+	if(abs(x2-x1) > 50)
+		return 51;
+	if(abs(y2-y1) >50)
+		return 51;
+	return sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
 }
 
 b2Body* Game::createGround(b2Vec2 position)
