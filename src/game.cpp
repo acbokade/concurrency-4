@@ -12,10 +12,10 @@ const float SCALE = 30.f;
 float temp1 = ((75/2)/sqrt(2));
 float temp2 = (60/2);
 
-Game::Game()
+namespace stickman{
+Game::Game(GameDataRef data): _data(data)
 {
-	this->window = new sf::RenderWindow(sf::VideoMode(800, 600, 32), "StickMan Fighter");
-	this->window->setFramerateLimit(240);
+	this->window = &(_data->window);
 	b2Vec2 gravity(0.0f, 0.0f);
 	this->world = new b2World(gravity);
     this->listener = new myListener();
@@ -415,4 +415,5 @@ void Game::decrease_hp(int a,int b)
 	player1->setHealth(new_hp1);
 	player2->setHealth(new_hp2);
 	m.unlock();
+}
 }

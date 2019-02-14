@@ -9,6 +9,7 @@ add_library(src
 		game.cpp
 		player.cpp
 		myListener.cpp
+		mainGame.cpp
 			)
 
 

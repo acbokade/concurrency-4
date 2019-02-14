@@ -42,7 +42,7 @@ namespace stickman
             {
                 if(this->_data->input.IsSpriteClicked(_play_button[i],sf::Mouse::Left,_data->window))
                     {
-                        std::cout<<"Play Button "<<i+1<<" clicked"<<std::endl;
+                        this->_data->machine.AddState(StateRef(new mainGame(_data)), true);
                     }
             }
             
