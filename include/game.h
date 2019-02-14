@@ -48,6 +48,10 @@ public:
 	void draw(Player *player);
 	void checkcollision();
 	void decrease_hp(int a, int b);
+	void server_send();
+	void server_receive();
+	void client_send();
+	void client_receive(float* x,float* y,float* angle);
 private:
 	GameDataRef _data;
 };

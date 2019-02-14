@@ -112,59 +112,11 @@ void Game::gameLoop()
 	            player1->body->SetLinearVelocity(b2Vec2(0,4));
 	        }
 
-	        sf::Packet packet1,packet2;
-	        socket.receive(packet1);
-	        std::string s;
-	        packet1>>s;
-	        if (s=="D" )
-	        {
-	            player2->body->SetAngularVelocity(60*DEGTORAD);
-	        }
-
-	        if (s=="A" )
-	        {
-	            player2->body->SetAngularVelocity(-60*DEGTORAD);
-	        }
-
-	        if (s=="L")
-	        {
-	            player2->body->SetLinearVelocity(b2Vec2(-4,0));
-	            player2->body->SetLinearVelocity(b2Vec2(-4,0));
-	        }
-
-	        if (s=="R")
-	        {
-	            player2->body->SetLinearVelocity(b2Vec2(4,0));
-	            player2->body->SetLinearVelocity(b2Vec2(4,0));
-	        }
-
-	        if (s=="U")
-	        {
-	            player2->body->SetLinearVelocity(b2Vec2(0,-4));
-	            player2->body->SetLinearVelocity(b2Vec2(0,-4));
-	        }
-
-	        if (s=="B")
-	        {
-	            player2->head->SetLinearVelocity(b2Vec2(0,4));
-	            player2->body->SetLinearVelocity(b2Vec2(0,4));
-	        }
-
-	        packet2<<player1->head->GetPosition().x*SCALE<<player1->head->GetPosition().y*SCALE<<player1->head->GetAngle() * (180/b2_pi);
-	        packet2<<player1->body->GetPosition().x*SCALE<<player1->body->GetPosition().y*SCALE<<player1->body->GetAngle() * (180/b2_pi);
-	        packet2<<player1->left_leg->GetPosition().x*SCALE<<player1->left_leg->GetPosition().y*SCALE<<player1->left_leg->GetAngle() * (180/b2_pi);
-	        packet2<<player1->right_leg->GetPosition().x*SCALE<<player1->right_leg->GetPosition().y*SCALE<<player1->right_leg->GetAngle() * (180/b2_pi);
-	        packet2<<player1->left_hand->GetPosition().x*SCALE<<player1->left_hand->GetPosition().y*SCALE<<player1->left_hand->GetAngle() * (180/b2_pi);	
-	        packet2<<player1->right_hand->GetPosition().x*SCALE<<player1->right_hand->GetPosition().y*SCALE<<player1->right_hand->GetAngle() * (180/b2_pi);
-
-	        packet2<<player2->head->GetPosition().x*SCALE<<player2->head->GetPosition().y*SCALE<<player2->head->GetAngle() * (180/b2_pi);
-	        packet2<<player2->body->GetPosition().x*SCALE<<player2->body->GetPosition().y*SCALE<<player2->body->GetAngle() * (180/b2_pi);
-	        packet2<<player2->left_leg->GetPosition().x*SCALE<<player2->left_leg->GetPosition().y*SCALE<<player2->left_leg->GetAngle() * (180/b2_pi);
-	        packet2<<player2->right_leg->GetPosition().x*SCALE<<player2->right_leg->GetPosition().y*SCALE<<player2->right_leg->GetAngle() * (180/b2_pi);
-	        packet2<<player2->left_hand->GetPosition().x*SCALE<<player2->left_hand->GetPosition().y*SCALE<<player2->left_hand->GetAngle() * (180/b2_pi);	
-	        packet2<<player2->right_hand->GetPosition().x*SCALE<<player2->right_hand->GetPosition().y*SCALE<<player2->right_hand->GetAngle() * (180/b2_pi);
-
-	        socket.send(packet2);
+	        std::thread thr1,thr2;
+	        thr1=std::thread(&Game::server_send,this);
+	        thr2=std::thread(&Game::server_receive,this);
+	        thr1.join();
+	        thr2.join();
 
 	        updatePlayer(player1);
 	        updatePlayer(player2);
@@ -179,7 +131,6 @@ void Game::gameLoop()
 	}
 	else
 	{
-
 		float x[12],y[12],angle[12];
 		while(window->isOpen())
 		{
@@ -189,83 +140,11 @@ void Game::gameLoop()
 	            if (event.type == sf::Event::Closed)
 	                window->close();
 	        }
-			sf::Packet packet1,packet2;
-			std::string s="M";
-			socket.receive(packet1);
-			for(int i=0;i<12;i++)
-				packet1>>x[i]>>y[i]>>angle[i];
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
-	        {
-	            s="D";
-	            packet2<<s;
-	        }
-
-	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
-	        {
-	        	s="A";
-	        	packet2<<s;
-	        }
-
-	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	        {
-	        	s="L";
-	        	packet2<<s;
-	        }
-
-	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	        {
-	        	s="R";
-	        	packet2<<s;
-	        }
-
-	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	        {
-	        	s="U";
-	        	packet2<<s;
-	        }
-
-	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	        {
-	        	s="B";
-	        	packet2<<s;
-	        }
-			socket.send(packet2);
-			player1->headSprite.setPosition(x[0],y[0]);
-		    player1->headSprite.setRotation(angle[0]);
-
-		    player1->bodySprite.setPosition(x[1],y[1]);
-		    player1->bodySprite.setRotation(angle[1]);
-
-		    player1->left_legSprite.setPosition(x[2],y[2]);
-		    player1->left_legSprite.setRotation(angle[2]);
-
-		    player1->right_legSprite.setPosition(x[3],y[3]);
-		    player1->right_legSprite.setRotation(angle[3]);
-
-		    player1->left_handSprite.setPosition(x[4],y[4]);
-		    player1->left_handSprite.setRotation(angle[4]);
-
-		    player1->right_handSprite.setPosition(x[5],y[5]);
-		    player1->right_handSprite.setRotation(angle[5]);
-
-		    player2->headSprite.setPosition(x[6],y[6]);
-		    player2->headSprite.setRotation(angle[6]);
-
-		    player2->bodySprite.setPosition(x[7],y[7]);
-		    player2->bodySprite.setRotation(angle[7]);
-
-		    player2->left_legSprite.setPosition(x[8],y[8]);
-		    player2->left_legSprite.setRotation(angle[8]);
-
-		    player2->right_legSprite.setPosition(x[9],y[9]);
-		    player2->right_legSprite.setRotation(angle[9]);
-
-		    player2->left_handSprite.setPosition(x[10],y[10]);
-		    player2->left_handSprite.setRotation(angle[10]);
-
-		    player2->right_handSprite.setPosition(x[11],y[11]);
-		    player2->right_handSprite.setRotation(angle[11]);
-
+	        std::thread thr1,thr2;
+	        thr1=std::thread(&Game::client_send,this);
+	        thr2=std::thread(&Game::client_receive,this,x,y,angle);
+	        thr1.join();
+	        thr2.join();
 			window->clear(sf::Color::White);
 			draw(player1);
 			draw(player2);
@@ -415,5 +294,160 @@ void Game::decrease_hp(int a,int b)
 	player1->setHealth(new_hp1);
 	player2->setHealth(new_hp2);
 	m.unlock();
+}
+void Game::server_send()
+{
+
+	sf::Packet packet2;
+    packet2<<player1->head->GetPosition().x*SCALE<<player1->head->GetPosition().y*SCALE<<player1->head->GetAngle() * (180/b2_pi);
+    packet2<<player1->body->GetPosition().x*SCALE<<player1->body->GetPosition().y*SCALE<<player1->body->GetAngle() * (180/b2_pi);
+    packet2<<player1->left_leg->GetPosition().x*SCALE<<player1->left_leg->GetPosition().y*SCALE<<player1->left_leg->GetAngle() * (180/b2_pi);
+    packet2<<player1->right_leg->GetPosition().x*SCALE<<player1->right_leg->GetPosition().y*SCALE<<player1->right_leg->GetAngle() * (180/b2_pi);
+    packet2<<player1->left_hand->GetPosition().x*SCALE<<player1->left_hand->GetPosition().y*SCALE<<player1->left_hand->GetAngle() * (180/b2_pi);	
+    packet2<<player1->right_hand->GetPosition().x*SCALE<<player1->right_hand->GetPosition().y*SCALE<<player1->right_hand->GetAngle() * (180/b2_pi);
+
+    packet2<<player2->head->GetPosition().x*SCALE<<player2->head->GetPosition().y*SCALE<<player2->head->GetAngle() * (180/b2_pi);
+    packet2<<player2->body->GetPosition().x*SCALE<<player2->body->GetPosition().y*SCALE<<player2->body->GetAngle() * (180/b2_pi);
+    packet2<<player2->left_leg->GetPosition().x*SCALE<<player2->left_leg->GetPosition().y*SCALE<<player2->left_leg->GetAngle() * (180/b2_pi);
+    packet2<<player2->right_leg->GetPosition().x*SCALE<<player2->right_leg->GetPosition().y*SCALE<<player2->right_leg->GetAngle() * (180/b2_pi);
+    packet2<<player2->left_hand->GetPosition().x*SCALE<<player2->left_hand->GetPosition().y*SCALE<<player2->left_hand->GetAngle() * (180/b2_pi);	
+    packet2<<player2->right_hand->GetPosition().x*SCALE<<player2->right_hand->GetPosition().y*SCALE<<player2->right_hand->GetAngle() * (180/b2_pi);
+    packet2<<player1->getHealth()<<player2->getHealth();
+
+    socket.send(packet2);
+}
+
+void Game::server_receive()
+{
+	sf::Packet packet1;
+	socket.receive(packet1);
+    std::string s;
+    packet1>>s;
+    if (s=="D")
+    {
+        player2->body->SetAngularVelocity(60*DEGTORAD);
+    }
+
+    else if (s=="A")
+    {
+        player2->body->SetAngularVelocity(-60*DEGTORAD);
+    }
+
+    else if (s=="L")
+    {
+        player2->body->SetLinearVelocity(b2Vec2(-4,0));
+        player2->body->SetLinearVelocity(b2Vec2(-4,0));
+    }
+
+    else if (s=="R")
+    {
+        player2->body->SetLinearVelocity(b2Vec2(4,0));
+        player2->body->SetLinearVelocity(b2Vec2(4,0));
+    }
+
+    else if (s=="U")
+    {
+        player2->body->SetLinearVelocity(b2Vec2(0,-4));
+        player2->body->SetLinearVelocity(b2Vec2(0,-4));
+    }
+
+    else if (s=="B")
+    {
+        player2->head->SetLinearVelocity(b2Vec2(0,4));
+        player2->body->SetLinearVelocity(b2Vec2(0,4));
+    }
+}
+
+void Game::client_send()
+{
+	sf::Packet packet2;
+	std::string s="M";
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
+    {
+        s="D";
+        packet2<<s;
+    }
+
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+    {
+    	s="A";
+    	packet2<<s;
+    }
+
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+    {
+    	s="L";
+    	packet2<<s;
+    }
+
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+    {
+    	s="R";
+    	packet2<<s;
+    }
+
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    {
+    	s="U";
+    	packet2<<s;
+    }
+
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+    {
+    	s="B";
+    	packet2<<s;
+    }
+	socket.send(packet2);
+}
+
+void Game::client_receive(float* x,float* y ,float* angle)
+{
+	sf::Packet packet1;
+	int hp1,hp2;
+	socket.receive(packet1);
+	for(int i=0;i<12;i++)
+		packet1>>x[i]>>y[i]>>angle[i];
+	packet1>>hp1>>hp2;
+
+	player1->headSprite.setPosition(x[0],y[0]);
+    player1->headSprite.setRotation(angle[0]);
+
+    player1->bodySprite.setPosition(x[1],y[1]);
+    player1->bodySprite.setRotation(angle[1]);
+
+    player1->left_legSprite.setPosition(x[2],y[2]);
+    player1->left_legSprite.setRotation(angle[2]);
+
+    player1->right_legSprite.setPosition(x[3],y[3]);
+    player1->right_legSprite.setRotation(angle[3]);
+
+    player1->left_handSprite.setPosition(x[4],y[4]);
+    player1->left_handSprite.setRotation(angle[4]);
+
+    player1->right_handSprite.setPosition(x[5],y[5]);
+    player1->right_handSprite.setRotation(angle[5]);
+
+    player2->headSprite.setPosition(x[6],y[6]);
+    player2->headSprite.setRotation(angle[6]);
+
+    player2->bodySprite.setPosition(x[7],y[7]);
+    player2->bodySprite.setRotation(angle[7]);
+
+    player2->left_legSprite.setPosition(x[8],y[8]);
+    player2->left_legSprite.setRotation(angle[8]);
+
+    player2->right_legSprite.setPosition(x[9],y[9]);
+    player2->right_legSprite.setRotation(angle[9]);
+
+    player2->left_handSprite.setPosition(x[10],y[10]);
+    player2->left_handSprite.setRotation(angle[10]);
+
+    player2->right_handSprite.setPosition(x[11],y[11]);
+    player2->right_handSprite.setRotation(angle[11]);
+
+    player1->setHealth(hp1);
+    player2->setHealth(hp2);
+
 }
 }
