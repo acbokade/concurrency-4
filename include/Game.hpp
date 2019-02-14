@@ -19,10 +19,10 @@ namespace stickman
 
 	typedef std::shared_ptr<GameData> GameDataRef;
 
-	class Game
+	class Game2
 	{
 	public:
-		Game(int width, int height, std::string title);
+		Game2(int width, int height, std::string title);
 
 	private:
 		// Updates run at 60 per second.

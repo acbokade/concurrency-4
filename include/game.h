@@ -11,13 +11,16 @@
 #include <thread>
 #include <queue>
 #include <mutex>
+#include "State.hpp"
+#include "Game.hpp"
 #include <utility>
 #include <bits/stdc++.h>
 
+namespace stickman {
 class Game
 {
 public:
-	Game();
+	Game(GameDataRef data);
 	sf::RenderWindow *window ;
 	sf::IpAddress ip;
 	sf::TcpSocket socket;
@@ -45,6 +48,9 @@ public:
 	void draw(Player *player);
 	void checkcollision();
 	void decrease_hp(int a, int b);
+private:
+	GameDataRef _data;
 };
+}
 
 #endif

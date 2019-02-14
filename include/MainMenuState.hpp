@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "State.hpp"
+#include "mainGame.hpp"
 #include "Game.hpp"
 
 namespace stickman
