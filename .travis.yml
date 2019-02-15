@@ -1,0 +1,15 @@
+dist: trusty
+sudo: require
+language: cpp
+compiler:
+    - gcc
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - cmake
+script:
+  - cmake .
+  - make
