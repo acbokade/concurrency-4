@@ -27,9 +27,18 @@ public:
 	sf::TcpSocket socket;
 	b2World* world;
 	b2Body* ground;
+b2Body* wall1;
+	b2Body* wall2;
+	b2Body* wall3;
 	int groundUserData;
 	sf::Texture groundTexture;
+	sf::Texture wall1Texture;
+	sf::Texture wall2Texture;
+	sf::Texture wall3Texture;
 	sf::Sprite groundSprite;
+	sf::Sprite wall1Sprite;
+	sf::Sprite wall2Sprite;
+	sf::Sprite wall3Sprite;
 	sf::Texture gemTexture;
 	sf::Sprite gemSprite;
 	int velocityIterations = 10;
@@ -48,7 +57,7 @@ public:
     sf::Sound sound;
 	struct timeval current_time,prev_time,current_time1, prev_time1;
 	double time_difference, time_difference1;
-	b2Body* createGround(b2Vec2 position);
+	b2Body* createGround(b2Vec2 position,int angle);
 	void initPlayer(Player *player, float X, int offset);
 	void gameLoop();
 	void updatePlayer(Player *player);

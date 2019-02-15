@@ -19,8 +19,7 @@ target_link_libraries(stickman src
         		sfml-system
         		sfml-graphics
         		sfml-audio
-        		sfml-network
-        		-d
+        		sfml-network	
 				libBox2D.a
 				pthread
 				)

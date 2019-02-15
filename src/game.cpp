@@ -22,9 +22,18 @@ Game::Game(GameDataRef data): _data(data)
 	this->world->SetContactListener(listener);
 	this->player1 = new Player();
 	this->player2 = new Player();
-    this->groundTexture.loadFromFile("res/ground.png");
+    this->groundTexture.loadFromFile("res/g1.png");
     this->groundSprite.setTexture(groundTexture);
-    this->groundSprite.setOrigin(400.f, 8.f);
+    this->groundSprite.setOrigin(620.f, 8.f);
+    this->wall1Texture.loadFromFile("res/g1.png");
+    this->wall1Sprite.setTexture(wall1Texture);
+    this->wall1Sprite.setOrigin(620.f, 8.f);
+    this->wall2Texture.loadFromFile("res/g2.png");
+    this->wall2Sprite.setTexture(wall2Texture);
+    this->wall2Sprite.setOrigin(314.f, 8.f);
+    this->wall3Texture.loadFromFile("res/g2.png");
+    this->wall3Sprite.setTexture(wall3Texture);
+    this->wall3Sprite.setOrigin(314.f, 8.f);
     this->gemTexture.loadFromFile("res/gem1.png");
     this->gemSprite.setTexture(gemTexture);
     this->gemSprite.setOrigin((sf::Vector2f)gemTexture.getSize()/2.f);
@@ -68,6 +77,19 @@ void Game::gameLoop()
 	    player2->setHealth(100);
 	    gettimeofday(&prev_time,NULL);
 	    gettimeofday(&prev_time1, NULL);
+	    sf::Texture texture;
+		texture.setRepeated(true);
+
+		if (!texture.loadFromFile("res/texture.png"))
+		{
+			std::cout << "Error loading texture" << std::endl;
+		}
+
+		sf::Sprite sprite;
+		sprite.setTexture(texture);
+		sprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
+		sprite.setColor(sf::Color(255,255,255,40));
+		texture.setSmooth(true);
 		while(window->isOpen())
 		{
 			sf::Event event;
@@ -149,9 +171,21 @@ void Game::gameLoop()
 	        updatePlayer(player2);
 	      	groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
 	    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
-			window->clear(sf::Color::White);
+	    	wall1Sprite.setPosition((this->wall1->GetPosition().x * SCALE), this->wall1->GetPosition().y * SCALE);
+    		wall1Sprite.setRotation((180/b2_pi) * this->wall1->GetAngle());
+    		wall2Sprite.setPosition(this->wall2->GetPosition().x * SCALE, (this->wall2->GetPosition().y * SCALE));
+    		wall2Sprite.setRotation((180/b2_pi) * this->wall2->GetAngle());
+    		wall3Sprite.setPosition(((this->wall3->GetPosition().x) * SCALE), ((this->wall3->GetPosition().y )* SCALE));
+    		wall3Sprite.setRotation((180/b2_pi) * this->wall3->GetAngle());
+			window->clear();
+			window->draw(sprite);
 			draw(player1);
 			draw(player2);
+			window->draw(this->groundSprite);
+	        window->draw(this->wall1Sprite);
+      		window->draw(this->wall2Sprite);
+      		window->draw(this->wall3Sprite);
+
 	        window->draw(this->groundSprite);
 	        if(gemExists)
 	        	window->draw(this->gemSprite);
@@ -164,6 +198,7 @@ void Game::gameLoop()
 		while(window->isOpen())
 		{
 			sf::Event event;
+
 	        while (window->pollEvent(event))
 	        {
 	            if (event.type == sf::Event::Closed)
@@ -174,9 +209,33 @@ void Game::gameLoop()
 	        thr2=std::thread(&Game::client_receive,this,x,y,angle);
 	        thr1.join();
 	        thr2.join();
-			window->clear(sf::Color::White);
+	        sf::Texture texture;
+			texture.setRepeated(true);
+			if (!texture.loadFromFile("res/texture.png"))
+			{
+				std::cout << "Error loading texture" << std::endl;
+			}
+	        sf::Sprite sprite;
+			sprite.setTexture(texture);
+			sprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
+			sprite.setColor(sf::Color(255,255,255,40));
+			texture.setSmooth(true);
+			groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
+	    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
+	    	wall1Sprite.setPosition((this->wall1->GetPosition().x * SCALE), this->wall1->GetPosition().y * SCALE);
+    		wall1Sprite.setRotation((180/b2_pi) * this->wall1->GetAngle());
+    		wall2Sprite.setPosition(this->wall2->GetPosition().x * SCALE, (this->wall2->GetPosition().y * SCALE));
+    		wall2Sprite.setRotation((180/b2_pi) * this->wall2->GetAngle());
+    		wall3Sprite.setPosition(((this->wall3->GetPosition().x) * SCALE), ((this->wall3->GetPosition().y )* SCALE));
+    		wall3Sprite.setRotation((180/b2_pi) * this->wall3->GetAngle());
+			window->clear();
+			window->draw(sprite);
 			draw(player1);
 			draw(player2);
+			window->draw(this->groundSprite);
+	        window->draw(this->wall1Sprite);
+      		window->draw(this->wall2Sprite);
+      		window->draw(this->wall3Sprite);
 	        window->display();
 
 		}	
@@ -226,15 +285,16 @@ float Game::distance(int x1, int y1, int x2, int y2)
 	return sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
 }
 
-b2Body* Game::createGround(b2Vec2 position)
+b2Body* Game::createGround(b2Vec2 position,int angle)
 {
     this->groundUserData = -1;
 	b2BodyDef BodyDef;
     BodyDef.position = position;
     BodyDef.type = b2_staticBody;
+    BodyDef.angle=angle *DEGTORAD;
     b2Body* Body = world->CreateBody(&BodyDef);
     b2PolygonShape Shape;
-    Shape.SetAsBox((800.f/2)/SCALE, (16.f/2)/SCALE);
+    Shape.SetAsBox((1366.f/2)/SCALE, (16.f/2)/SCALE);
     b2FixtureDef FixtureDef;
     FixtureDef.restitution=1;
     FixtureDef.density = 0.f;
