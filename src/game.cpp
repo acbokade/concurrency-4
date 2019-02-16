@@ -58,19 +58,20 @@ void Game::gameLoop()
 		this->isClient=false;
 		cout<<this->ip<<endl;
 		sf::TcpListener tcplistener;
-		tcplistener.listen(3002);
+		tcplistener.listen(3005);
 		tcplistener.accept(this->socket);
 	}
 	else
 	{
 		this->isClient=true;
-		this->socket.connect(this->ip,3002);
+		this->socket.connect(this->ip,3005);
 	}
 
 	this->socket.setBlocking(false);
 
 	if(!isClient)
 	{
+		this->isPlaying = true;
 		initPlayer(player1, 200.f,0);
 		initPlayer(player2, 500.f,4);
 	    player1->setHealth(100);
@@ -90,6 +91,7 @@ void Game::gameLoop()
 		sprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
 		sprite.setColor(sf::Color(255,255,255,40));
 		texture.setSmooth(true);
+		this->gemThread = std::thread(&Game::generateGem, this);
 		while(window->isOpen())
 		{
 			sf::Event event;
@@ -99,32 +101,13 @@ void Game::gameLoop()
 	                window->close();
 	        }
 			this->world->Step(timeStep, velocityIterations, positionIterations);
-
 			gettimeofday(&current_time,NULL);
-			gettimeofday(&current_time1, NULL);
 	        time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
 
 	        if(time_difference > 100)
 	        {
 	            checkcollision();
 	            gettimeofday(&prev_time,NULL);
-	        }
-
-	        time_difference1 = (double) ((current_time1.tv_sec * 1000000 + current_time1.tv_usec) - (prev_time1.tv_sec * 1000000 + prev_time1.tv_usec)) / 1000.0;
-	        
-	        if(time_difference1 > 5000)
-	        {
-	        	this->Thread = std::thread(&Game::generateGem, this);
-	        	this->Thread.join();
-	        	gettimeofday(&prev_time1, NULL);
-	        }
-
-	        if(gemExists)
-	        {
-	        	this->Thread1 = std::thread(&Game::isGemCollected, this);
-	        	this->Thread1.join();
-	        	if(!gemExists)
-	        		gettimeofday(&prev_time1, NULL);
 	        }
 			
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
@@ -166,7 +149,6 @@ void Game::gameLoop()
 	        thr2=std::thread(&Game::server_receive,this);
 	        thr1.join();
 	        thr2.join();
-
 	        updatePlayer(player1);
 	        updatePlayer(player2);
 	      	groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
@@ -185,12 +167,15 @@ void Game::gameLoop()
 	        window->draw(this->wall1Sprite);
       		window->draw(this->wall2Sprite);
       		window->draw(this->wall3Sprite);
-
 	        window->draw(this->groundSprite);
+	        m1.lock();
 	        if(gemExists)
 	        	window->draw(this->gemSprite);
+	        m1.unlock();
 	        window->display();
 		}
+		this->isPlaying = false;
+		this->gemThread.join();
 	}
 	else
 	{
@@ -237,43 +222,63 @@ void Game::gameLoop()
       		window->draw(this->wall2Sprite);
       		window->draw(this->wall3Sprite);
 	        window->display();
-
 		}	
 	}
 }
 
 void Game::generateGem()
 {
-	int x = rand();
-	int y = rand();
-	x = 100 + x % 1000;
-	y = 50 + y % 500; 
-	//std::cout<<x<<" "<<y<<std::endl;
-	this->gemSprite.setPosition(x,y);
-	this->gemExists = true;
-}
+	while(isPlaying)
+	{
+		gettimeofday(&current_time1, NULL);
+		time_difference1 = (double) ((current_time1.tv_sec * 1000000 + current_time1.tv_usec) - (prev_time1.tv_sec * 1000000 + prev_time1.tv_usec)) / 1000.0;
+			        
+		if(time_difference1 > 5000)
+		{
+	      	int x = rand();
+			int y = rand();
+			x = 200 + x % 900;
+			y = 100 + y % 500; 
+			//std::cout<<x<<" "<<y<<std::endl;
+			this->gemSprite.setPosition(x,y);
+			m1.lock();
+			this->gemExists = true;
+			m1.unlock();
+		    gettimeofday(&prev_time1, NULL);
+		}
 
-void Game::isGemCollected()
-{
-	int gemPositionX = gemSprite.getPosition().x;
-	int gemPositionY = gemSprite.getPosition().y;
-	int p1PositionX = player1->head->GetPosition().x*SCALE;
-	int p1PositionY = player1->head->GetPosition().y*SCALE;
-	int p2PositionX = player2->head->GetPosition().x*SCALE;
-	int p2PositionY = player2->head->GetPosition().y*SCALE;
-	//std::cout<<gemPositionX<<" "<<gemPositionY<<" "<<p1PositionX<< " "<<p1PositionY<<" "<<p2PositionX<<" "<<p2PositionY<<std::endl;
-	if(distance(gemPositionX, gemPositionY, p1PositionX, p1PositionY) <= 50)
-	{
-		//std::cout<<distance(gemPositionX, gemPositionY, p1PositionX, p1PositionY)<<std::endl;
-		player1->setHealth(player1->getHealth()+5);
-		this->gemExists = false;
-	}
-	else if(distance(gemPositionX, gemPositionY, p2PositionX, p2PositionY) <= 50)
-	{
-		//std::cout<<distance(gemPositionX, gemPositionY, p2PositionX, p2PositionY)<<std::endl;
-		player2->setHealth(player2->getHealth()+5);
-		this->gemExists = false;
-	}
+		if(gemExists)
+		{
+		   	int gemPositionX = gemSprite.getPosition().x;
+			int gemPositionY = gemSprite.getPosition().y;
+			int p1PositionX = player1->head->GetPosition().x*SCALE;
+			int p1PositionY = player1->head->GetPosition().y*SCALE;
+			int p2PositionX = player2->head->GetPosition().x*SCALE;
+			int p2PositionY = player2->head->GetPosition().y*SCALE;
+			if(distance(gemPositionX, gemPositionY, p1PositionX, p1PositionY) <= 50)
+			{
+				m.lock();
+				player1->setHealth(player1->getHealth()+5);
+				m.unlock();
+				m1.lock();
+				this->gemExists = false;
+				m1.unlock();
+			}
+			else if(distance(gemPositionX, gemPositionY, p2PositionX, p2PositionY) <= 50)
+			{
+				m.lock();
+				player2->setHealth(player2->getHealth()+5);
+				m.unlock();
+				m1.lock();
+				this->gemExists = false;
+				m1.unlock();
+			}
+			m1.lock();
+		    if(!gemExists)
+		    	gettimeofday(&prev_time1, NULL);
+		    m1.unlock();
+		}
+	}	
 }
 
 float Game::distance(int x1, int y1, int x2, int y2)
@@ -427,6 +432,7 @@ void Game::decrease_hp(int a,int b)
 	player2->setHealth(new_hp2);
 	m.unlock();
 }
+
 void Game::server_send()
 {
 

@@ -5,7 +5,6 @@ set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
 set(CMAKE_CXX_STANDARD 11)
 
-
 add_subdirectory(src)
 
 include_directories(include)
@@ -19,7 +18,7 @@ target_link_libraries(stickman src
         		sfml-system
         		sfml-graphics
         		sfml-audio
-        		sfml-network	
+        		sfml-network-d	
 				libBox2D.a
 				pthread
 				)
