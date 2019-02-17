@@ -91,18 +91,50 @@ void Game::gameLoop()
 		sprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
 		sprite.setColor(sf::Color(255,255,255,40));
 		texture.setSmooth(true);
+		sf::Texture bar1;
+		sf::Texture bar2;
+    	bar1.loadFromFile("res/bar.png");
+    	bar2.loadFromFile("res/bar.png");
+    	sf::Sprite barsprite1;
+    	barsprite1.setTexture(bar1);
+    	sprite.setColor(sf::Color(255,255,255,100));
+    	barsprite1.setOrigin(260.f,6.f);
+    	barsprite1.setPosition(400.f,35.f);
+    	sf::Sprite barsprite2;
+    	barsprite2.setTexture(bar2);
+    	sprite.setColor(sf::Color(255,255,255,100));
+    	barsprite2.setOrigin(260.f,6.f);
+    	barsprite2.setPosition(966.f,35.f);
 		this->gemThread = std::thread(&Game::generateGem, this);
 		while(window->isOpen())
-		{
+		{	
 			sf::Event event;
 	        while (window->pollEvent(event))
 	        {
 	            if (event.type == sf::Event::Closed)
 	                window->close();
 	        }
+
+	        if(player1->getHealth()>=0 && player1->getHealth()<=100)
+	        	barsprite1.setScale((float) player1->getHealth()/100.f,1.f);
+	        if(player2->getHealth()>=0 && player2->getHealth()<=100)
+	        barsprite2.setScale((float) player2->getHealth()/100.f,1.f);
+	        if(player1->getHealth()<=50)
+	        barsprite1.setColor(sf::Color(255,0,0,255));
+	    	else if(player1->getHealth()>50){
+	    		barsprite1.setColor(sf::Color(255,255,255,255));
+	    	}
+	    	if(player2->getHealth()<=50)
+	        barsprite2.setColor(sf::Color(255,0,0,255));
+	    	else if(player2->getHealth()>50){
+	    		barsprite2.setColor(sf::Color(255,255,255,255));
+	    	}
+	        
+
 			this->world->Step(timeStep, velocityIterations, positionIterations);
 			gettimeofday(&current_time,NULL);
 	        time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
+
 
 	        if(time_difference > 100)
 	        {
@@ -168,6 +200,8 @@ void Game::gameLoop()
       		window->draw(this->wall2Sprite);
       		window->draw(this->wall3Sprite);
 	        window->draw(this->groundSprite);
+	        window->draw(barsprite1);
+	        window->draw(barsprite2);
 	        m1.lock();
 	        if(gemExists)
 	        	window->draw(this->gemSprite);
@@ -205,6 +239,33 @@ void Game::gameLoop()
 			sprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
 			sprite.setColor(sf::Color(255,255,255,40));
 			texture.setSmooth(true);
+			sf::Texture bar1;
+			sf::Texture bar2;
+    		bar1.loadFromFile("res/bar.png");
+    		bar2.loadFromFile("res/bar.png");
+    		sf::Sprite barsprite1;
+    		barsprite1.setTexture(bar1);
+    		sprite.setColor(sf::Color(255,255,255,100));
+    		barsprite1.setOrigin(260.f,6.f);
+    		barsprite1.setPosition(400.f,35.f);
+
+    		sf::Sprite barsprite2;
+    		barsprite2.setTexture(bar2);
+    		sprite.setColor(sf::Color(255,255,255,100));
+    		barsprite2.setOrigin(260.f,6.f);
+    		barsprite2.setPosition(966.f,35.f);
+
+    		if(player1->getHealth()>=0 && player1->getHealth()<=100)
+    			barsprite1.setScale((float) player1->getHealth()/100.f,1.f);
+	        if(player2->getHealth()>=0 && player2->getHealth()<=100)
+	        	barsprite2.setScale((float) player2->getHealth()/100.f,1.f);
+	        if(player1->getHealth()<=50)
+	        barsprite1.setColor(sf::Color(255,0,0,255));
+	    	else if(player1->getHealth()>50){barsprite1.setColor(sf::Color(255,255,255,255));}
+	    	if(player2->getHealth()<=50)
+	        barsprite2.setColor(sf::Color(255,0,0,255));
+	    	else if(player2->getHealth()>50){barsprite2.setColor(sf::Color(255,255,255,255));}
+
 			groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
 	    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
 	    	wall1Sprite.setPosition((this->wall1->GetPosition().x * SCALE), this->wall1->GetPosition().y * SCALE);
@@ -221,6 +282,8 @@ void Game::gameLoop()
 	        window->draw(this->wall1Sprite);
       		window->draw(this->wall2Sprite);
       		window->draw(this->wall3Sprite);
+      		window->draw(barsprite1);
+	        window->draw(barsprite2);
 	        window->display();
 		}	
 	}
