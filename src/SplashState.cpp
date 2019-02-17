@@ -2,6 +2,7 @@
 #include "SplashState.hpp"
 #include "DEFINITIONS.hpp"
 #include "MainMenuState.hpp"
+#include "name.h"
 #include <iostream>
 
 namespace stickman
@@ -36,7 +37,7 @@ namespace stickman
 		if (this->_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME)
 		{
 			// Switch To Main Menu
-			this->_data->machine.AddState(StateRef(new MainMenuState(_data)),true);
+			this->_data->machine.AddState(StateRef(new NameState(_data)),true);
 		}
 	}
 

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "State.hpp"
 #include "Game.hpp"
+#include "name.h"
 
 namespace stickman
 {
