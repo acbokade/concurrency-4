@@ -2,7 +2,6 @@
 #include "name.h"
 #include "DEFINITIONS.hpp"
 #include "MainMenuState.hpp"
-
 #include <iostream>
 namespace stickman
 {
@@ -22,14 +21,19 @@ namespace stickman
         this->_title.setPosition((SCREEN_WIDTH/2)-(_title.getGlobalBounds().width/2),_title.getGlobalBounds().height/4);
         this->_submit_button.setTexture(this->_data->assets.GetTexture("Play Button"));
         this->_submit_button.setPosition(_submit_button.getGlobalBounds().width/2,(_title.getGlobalBounds().height));
+
+        
+    	this->font.loadFromFile("res/arial.ttf");
+		this->playerText.setPosition(60,300);
+		this->playerText.setCharacterSize(40);
+    	this->playerText.setFont(this->font);
+        this->playerText.setColor(sf::Color::Red);
         
 	}
 
 	void NameState::HandleInput()
 	{
 		sf::Event event;
-		playerText.setPosition(60,300);
-        playerText.setColor(sf::Color::Red);
      	while(this->_data->window.pollEvent(event))
         {
         	if (sf::Event::Closed == event.type)
@@ -40,14 +44,17 @@ namespace stickman
             {
 	            if(event.text.unicode < 128)
 	            {
-	                playerInput +=event.text.unicode;
-	                playerText.setString(playerInput);
+	                if(event.text.unicode == 8 && playerInput.size()>0 )
+                        playerInput.pop_back();
+                    else
+                        playerInput +=(char)event.text.unicode;
 	            }
             }
             if(this->_data->input.IsSpriteClicked(_submit_button,sf::Mouse::Left,_data->window))
             {
                 this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
             }
+			playerText.setString(playerInput);
         }
 	}
 	void NameState::Update(float dt)
@@ -57,10 +64,9 @@ namespace stickman
 	void NameState::Draw(float dt)
 	{
 		this->_data->window.clear(sf::Color::White);
-
 		this->_data->window.draw( this->_background );
         this->_data->window.draw( this->_submit_button );
-        this->_data->window.draw( this->playerText);
+        this->_data->window.draw( this->playerText);       
 		this->_data->window.display();
 	}
 }

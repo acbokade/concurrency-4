@@ -1,10 +1,10 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
 #include "State.hpp"
 #include "mainGame.hpp"
 #include "Game.hpp"
-
+#include <string>
+#include "SFML/Graphics.hpp"
 namespace stickman
 {
 	class NameState : public State
@@ -12,8 +12,9 @@ namespace stickman
 	public:
 		NameState(GameDataRef data);
 
-		sf::String playerInput;
         sf::Text playerText;
+		sf::Font font;
+		std::string playerInput;	
 		void Init();
 		void HandleInput();
 		void Draw(float dt);

@@ -16,7 +16,7 @@ namespace stickman
 		this->_data->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_FILEPATH);
         this->_data->assets.LoadTexture("Game Title", GAME_TITLE_FILEPATH);
         this->_data->assets.LoadTexture("Play Button", PLAY_BUTTON_1_FILEPATH);
-
+        
 		this->_background.setTexture(this->_data->assets.GetTexture("Main Menu Background"),true);
         this->_title.setTexture(this->_data->assets.GetTexture("Game Title"));
         this->_title.setPosition((SCREEN_WIDTH/2)-(_title.getGlobalBounds().width/2),_title.getGlobalBounds().height/4);
