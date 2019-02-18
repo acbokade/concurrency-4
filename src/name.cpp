@@ -7,24 +7,32 @@ namespace stickman
 {
 	NameState::NameState(GameDataRef data) : _data(data)
 	{
-
+		
 	}
 
 	void NameState::Init()
 	{
-		this->_data->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_FILEPATH);
+		//this->_data->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_FILEPATH);
         this->_data->assets.LoadTexture("Game Title", GAME_TITLE_FILEPATH);
-        this->_data->assets.LoadTexture("Play Button", PLAY_BUTTON_1_FILEPATH);
+        this->_data->assets.LoadTexture("Play Button", ENTER_BUTTON_1_FILEPATH);
 
-		this->_background.setTexture(this->_data->assets.GetTexture("Main Menu Background"),true);
+		//this->_background.setTexture(this->_data->assets.GetTexture("Main Menu Background"),true);
         this->_title.setTexture(this->_data->assets.GetTexture("Game Title"));
         this->_title.setPosition((SCREEN_WIDTH/2)-(_title.getGlobalBounds().width/2),_title.getGlobalBounds().height/4);
         this->_submit_button.setTexture(this->_data->assets.GetTexture("Play Button"));
-        this->_submit_button.setPosition(_submit_button.getGlobalBounds().width/2,(_title.getGlobalBounds().height));
+        this->_submit_button.setPosition(550,400);
 
-        
+        this->welcomeTexture.loadFromFile("res/welcome.png");
+        this->welcomeSprite.setTexture(welcomeTexture);
+        this->welcomeSprite.setPosition(300,50);
+
     	this->font.loadFromFile("res/arial.ttf");
-		this->playerText.setPosition(60,300);
+    	this->enterName.setPosition(420,180);
+		this->enterName.setCharacterSize(60);
+    	this->enterName.setFont(this->font);
+        this->enterName.setColor(sf::Color::Red);
+        this->enterName.setString("Enter your Name");
+		this->playerText.setPosition(500,300);
 		this->playerText.setCharacterSize(40);
     	this->playerText.setFont(this->font);
         this->playerText.setColor(sf::Color::Red);
@@ -63,10 +71,13 @@ namespace stickman
 	}
 	void NameState::Draw(float dt)
 	{
-		this->_data->window.clear(sf::Color::White);
-		this->_data->window.draw( this->_background );
+		
+		this->_data->window.clear(sf::Color(0,153,255));
+		//this->_data->window.draw( this->_background );
         this->_data->window.draw( this->_submit_button );
-        this->_data->window.draw( this->playerText);       
+        this->_data->window.draw( this->playerText);   
+        this->_data->window.draw( this->enterName); 
+        this->_data->window.draw( this->welcomeSprite);     
 		this->_data->window.display();
 	}
 }

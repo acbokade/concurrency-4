@@ -9,3 +9,4 @@
 #define MAIN_MENU_BACKGROUND_FILEPATH "res/Menu Background.png"
 #define GAME_TITLE_FILEPATH "res/title.png"
 #define PLAY_BUTTON_1_FILEPATH "res/PlayButton.png"
+#define ENTER_BUTTON_1_FILEPATH "res/enter.png"

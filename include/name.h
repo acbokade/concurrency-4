@@ -11,7 +11,9 @@ namespace stickman
 	{
 	public:
 		NameState(GameDataRef data);
-
+		sf::Text enterName;
+		sf::Texture welcomeTexture;
+		sf::Sprite welcomeSprite;
         sf::Text playerText;
 		sf::Font font;
 		std::string playerInput;	
