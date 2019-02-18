@@ -4,12 +4,50 @@ language: cpp
 compiler:
     - gcc
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - cmake
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - libx11-dev
+            - freeglut3-dev
+            - libjpeg-dev
+            - libfreetype6-dev
+            - libxrandr-dev
+            - libglew-dev
+            - libsndfile1-dev
+            - libopenal-dev
+            - libudev-dev
+            - cmake
+
+      env:
+        - MATRIX_EVAL="CC=gcc && CXX=g++"
+
+before_install:
+    - sudo apt-get install libx11-dev freeglut3-dev libjpeg-dev libfreetype6-dev libxrandr-dev libglew-dev libsndfile1-dev libopenal-dev libudev-dev
+    - mkdir sf
+    - cd sf
+    - git clone https://github.com/SFML/SFML.git
+    - cd SFML
+    - cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D BUILD_SHARED_LIBS=TRUE .
+    - make
+    - sudo make install
+    - cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D BUILD_SHARED_LIBS=FALSE .
+    - make
+    - sudo make install
+    - cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release -D BUILD_SHARED_LIBS=TRUE .
+    - make
+    - sudo make install
+    - cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release -D BUILD_SHARED_LIBS=FALSE .
+    - make
+    - sudo make install
+- eval "${MATRIX_EVAL}"
 script:
-  - cmake .
-  - make
+    - gcc -v && g++ -v && cmake --version
+    - cd ..
+    - cd ..
+    - cmake CMakeLists.txt
+- make
