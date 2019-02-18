@@ -44,10 +44,10 @@ before_install:
     - cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release -D BUILD_SHARED_LIBS=FALSE .
     - make
     - sudo make install
-- eval "${MATRIX_EVAL}"
+	- eval "${MATRIX_EVAL}"
 script:
     - gcc -v && g++ -v && cmake --version
     - cd ..
     - cd ..
     - cmake CMakeLists.txt
-- make
+	- make
