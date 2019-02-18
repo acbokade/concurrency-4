@@ -9,6 +9,8 @@ include_directories(include)
 
 link_directories(include)
 
+add_compile_options(-fPIC)
+
 #find_package(SFML 2.5 COMPONENTS window system graphics audio network REQUIRED)
 
 add_executable(stickman main.cpp)
