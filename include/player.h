@@ -2,6 +2,7 @@
 #define PLAYER_H
 #include "SFML/Graphics.hpp"
 #include "Box2D/Box2D.h"
+#include "string"
 #include <iostream>
 
 class Player 
@@ -43,6 +44,8 @@ public:
 	//leg joints
 	b2RevoluteJoint* right_legJoint;
 	b2RevoluteJoint* left_legJoint;
+
+	std::string name;
 
 	Player();
 	~Player();

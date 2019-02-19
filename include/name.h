@@ -25,7 +25,8 @@ namespace stickman
 	private:
 		GameDataRef _data;
 		sf::Sprite _title;
-        sf::Sprite _submit_button;
+        sf::Sprite _host_button;
+        sf::Sprite _join_button;
 		sf::Sprite _background;
 	};
 }

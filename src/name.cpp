@@ -19,8 +19,10 @@ namespace stickman
 		//this->_background.setTexture(this->_data->assets.GetTexture("Main Menu Background"),true);
         this->_title.setTexture(this->_data->assets.GetTexture("Game Title"));
         this->_title.setPosition((SCREEN_WIDTH/2)-(_title.getGlobalBounds().width/2),_title.getGlobalBounds().height/4);
-        this->_submit_button.setTexture(this->_data->assets.GetTexture("Play Button"));
-        this->_submit_button.setPosition(550,400);
+        this->_host_button.setTexture(this->_data->assets.GetTexture("Play Button"));
+        this->_host_button.setPosition(550,400);
+        this->_join_button.setTexture(this->_data->assets.GetTexture("Play Button"));
+        this->_join_button.setPosition(550,500);
 
         this->welcomeTexture.loadFromFile("res/welcome.png");
         this->welcomeSprite.setTexture(welcomeTexture);
@@ -58,9 +60,13 @@ namespace stickman
                         playerInput +=(char)event.text.unicode;
 	            }
             }
-            if(this->_data->input.IsSpriteClicked(_submit_button,sf::Mouse::Left,_data->window))
+            if(this->_data->input.IsSpriteClicked(_host_button,sf::Mouse::Left,_data->window))
             {
-                this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+                this->_data->machine.AddState(StateRef(new MainMenuState(_data,playerInput,false)), true);
+            }
+            else if(this->_data->input.IsSpriteClicked(_join_button,sf::Mouse::Left,_data->window))
+            {
+                this->_data->machine.AddState(StateRef(new MainMenuState(_data,playerInput,true)), true);
             }
 			playerText.setString(playerInput);
         }
@@ -74,7 +80,8 @@ namespace stickman
 		
 		this->_data->window.clear(sf::Color(0,153,255));
 		//this->_data->window.draw( this->_background );
-        this->_data->window.draw( this->_submit_button );
+        this->_data->window.draw( this->_join_button );
+        this->_data->window.draw( this->_host_button );
         this->_data->window.draw( this->playerText);   
         this->_data->window.draw( this->enterName); 
         this->_data->window.draw( this->welcomeSprite);     

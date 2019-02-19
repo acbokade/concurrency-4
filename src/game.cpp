@@ -13,7 +13,7 @@ float temp1 = ((75/2)/sqrt(2));
 float temp2 = (60/2);
 
 namespace stickman{
-Game::Game(GameDataRef data): _data(data)
+Game::Game(GameDataRef data,string s,bool client): _data(data)
 {
 	this->window = &(_data->window);
 	b2Vec2 gravity(0.0f, 0.0f);
@@ -22,6 +22,11 @@ Game::Game(GameDataRef data): _data(data)
 	this->world->SetContactListener(listener);
 	this->player1 = new Player();
 	this->player2 = new Player();
+	if(client==false)
+		this->player1->name = s;
+	else
+		this->player2->name = s;
+	this->isClient = client;
     this->groundTexture.loadFromFile("res/g1.png");
     this->groundSprite.setTexture(groundTexture);
     this->groundSprite.setOrigin(620.f, 8.f);

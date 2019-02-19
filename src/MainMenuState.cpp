@@ -6,9 +6,10 @@
 
 namespace stickman
 {
-	MainMenuState::MainMenuState(GameDataRef data) : _data(data)
+	MainMenuState::MainMenuState(GameDataRef data,string s,bool client) : _data(data)
 	{
-
+		this->playername=s;
+		this->client=client;
 	}
 
 	void MainMenuState::Init()
@@ -42,7 +43,7 @@ namespace stickman
             {
                 if(this->_data->input.IsSpriteClicked(_play_button[i],sf::Mouse::Left,_data->window))
                     {
-                        this->_data->machine.AddState(StateRef(new mainGame(_data)), true);
+                        this->_data->machine.AddState(StateRef(new mainGame(_data,playername,client)), true);
                     }
             }
             

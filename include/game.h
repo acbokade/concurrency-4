@@ -15,13 +15,14 @@
 #include "State.hpp"
 #include "Game.hpp"
 #include <utility>
+#include <string>
 #include <bits/stdc++.h>
 
 namespace stickman {
 class Game
 {
 public:
-	Game(GameDataRef data);
+	Game(GameDataRef data,std::string s,bool client);
 	sf::RenderWindow *window ;
 	sf::IpAddress ip;
 	sf::TcpSocket socket;

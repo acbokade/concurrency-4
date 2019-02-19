@@ -11,7 +11,7 @@ namespace stickman
 	class MainMenuState : public State
 	{
 	public:
-		MainMenuState(GameDataRef data);
+		MainMenuState(GameDataRef data,string s,bool client);
 
 		void Init();
 
@@ -21,7 +21,8 @@ namespace stickman
 
 	private:
 		GameDataRef _data;
-
+		string playername;
+		bool client;
 		sf::Sprite _title;
         sf::Sprite _play_button[3];
 		sf::Sprite _background;
