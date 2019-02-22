@@ -57,6 +57,8 @@ public:
     std::pair<int,int> p;
     sf::SoundBuffer buffer;
     sf::Sound sound;
+    int player1Rounds;
+    int player2Rounds;
 	struct timeval current_time,prev_time,current_time1, prev_time1;
 	double time_difference, time_difference1;
 	b2Body* createGround(b2Vec2 position,int angle);
@@ -71,7 +73,7 @@ public:
 	void server_send();
 	void server_receive();
 	void client_send();
-	void client_receive(float* x,float* y,float* angle);
+	void client_receive(float* x,float* y,float* angle,int* hp);
 private:
 	GameDataRef _data;
 };

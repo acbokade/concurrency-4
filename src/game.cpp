@@ -45,6 +45,8 @@ Game::Game(GameDataRef data,string s,bool client): _data(data)
     this->player1->init(true);
 	this->player2->init(false);
 	this->gemExists = true;
+	player1Rounds = 0;
+	player2Rounds = 0;
 };
 
 void Game::gameLoop()
@@ -63,13 +65,13 @@ void Game::gameLoop()
 		this->isClient=false;
 		cout<<this->ip<<endl;
 		sf::TcpListener tcplistener;
-		tcplistener.listen(3005);
+		tcplistener.listen(3000);
 		tcplistener.accept(this->socket);
 	}
 	else
 	{
 		this->isClient=true;
-		this->socket.connect(this->ip,3005);
+		this->socket.connect(this->ip,3000);
 	}
 
 	this->socket.setBlocking(false);
@@ -212,6 +214,22 @@ void Game::gameLoop()
 	        	window->draw(this->gemSprite);
 	        m1.unlock();
 	        window->display();
+	        if(player1->health <= 0 && player2->health >0)
+	        {
+	        	player2Rounds++;
+	        	break;
+	        }
+	        else if(player1->health > 0 && player2->health <= 0)
+	        {
+	        	player1Rounds++;
+	        	break;
+	        }
+	        else if (player1->health <= 0 && player2->health <=0)
+	        {
+	        	player1Rounds++;
+	        	player2Rounds++;
+	        	break;
+	        }
 		}
 		this->isPlaying = false;
 		this->gemThread.join();
@@ -219,6 +237,7 @@ void Game::gameLoop()
 	else
 	{
 		float x[12],y[12],angle[12];
+		int hp[2];
 		while(window->isOpen())
 		{
 			sf::Event event;
@@ -230,7 +249,7 @@ void Game::gameLoop()
 	        }
 	        std::thread thr1,thr2;
 	        thr1=std::thread(&Game::client_send,this);
-	        thr2=std::thread(&Game::client_receive,this,x,y,angle);
+	        thr2=std::thread(&Game::client_receive,this,x,y,angle,hp);
 	        thr1.join();
 	        thr2.join();
 	        sf::Texture texture;
@@ -290,6 +309,23 @@ void Game::gameLoop()
       		window->draw(barsprite1);
 	        window->draw(barsprite2);
 	        window->display();
+	        std:cout<<player1->health<<" "<<player2->health<<std::endl;
+	        if(player1->health <= 0 && player2->health >0)
+	        {
+	        	player2Rounds++;
+	        	break;
+	        }
+	        else if(player1->health > 0 && player2->health <= 0)
+	        {
+	        	player1Rounds++;
+	        	break;
+	        }
+	        else if (player1->health <= 0 && player2->health <=0)
+	        {
+	        	player1Rounds++;
+	        	player2Rounds++;
+	        	break;
+	        }
 		}	
 	}
 }
@@ -607,14 +643,13 @@ void Game::client_send()
 	socket.send(packet2);
 }
 
-void Game::client_receive(float* x,float* y ,float* angle)
+void Game::client_receive(float* x,float* y ,float* angle,int* hp)
 {
 	sf::Packet packet1;
-	int hp1,hp2;
 	socket.receive(packet1);
 	for(int i=0;i<12;i++)
 		packet1>>x[i]>>y[i]>>angle[i];
-	packet1>>hp1>>hp2;
+	packet1>>hp[0]>>hp[1];
 
 	player1->headSprite.setPosition(x[0],y[0]);
     player1->headSprite.setRotation(angle[0]);
@@ -652,8 +687,8 @@ void Game::client_receive(float* x,float* y ,float* angle)
     player2->right_handSprite.setPosition(x[11],y[11]);
     player2->right_handSprite.setRotation(angle[11]);
 
-    player1->setHealth(hp1);
-    player2->setHealth(hp2);
+    player1->setHealth(hp[0]);
+    player2->setHealth(hp[1]);
 
 }
 }
