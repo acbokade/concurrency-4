@@ -4,6 +4,7 @@
 #include "State.hpp"
 #include "mainGame.hpp"
 #include "Game.hpp"
+#include <string>
 #include "name.h"
 
 namespace stickman
@@ -13,8 +14,11 @@ namespace stickman
 	public:
 		MainMenuState(GameDataRef data,string s,bool client);
 
+		sf::Text playerText;
+		sf::Font font;
+		std::string playerInput;	
+		sf::Text text1,text2;
 		void Init();
-
 		void HandleInput();
 		void Update(float dt);
 		void Draw(float dt);
@@ -23,8 +27,6 @@ namespace stickman
 		GameDataRef _data;
 		string playername;
 		bool client;
-		sf::Sprite _title;
-        sf::Sprite _play_button[3];
-		sf::Sprite _background;
+        sf::Sprite _enter_button;
 	};
 }

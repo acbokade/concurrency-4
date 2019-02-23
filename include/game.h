@@ -22,7 +22,7 @@ namespace stickman {
 class Game
 {
 public:
-	Game(GameDataRef data,std::string s,bool client);
+	Game(GameDataRef data,std::string s,bool client,std::string myip);
 	sf::RenderWindow *window ;
 	sf::IpAddress ip;
 	sf::TcpSocket socket;
@@ -31,6 +31,7 @@ public:
 	b2Body* wall1;
 	b2Body* wall2;
 	b2Body* wall3;
+	std::string myip;
 	int groundUserData;
 	sf::Texture groundTexture;
 	sf::Texture wall1Texture;
@@ -74,6 +75,8 @@ public:
 	void server_receive();
 	void client_send();
 	void client_receive(float* x,float* y,float* angle,int* hp);
+	sf::Text text1;
+	sf::Font font;
 private:
 	GameDataRef _data;
 };

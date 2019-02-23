@@ -17,7 +17,7 @@ namespace stickman
 	class mainGame : public State
 	{
 	public:
-		mainGame(GameDataRef data,string s,bool client);
+		mainGame(GameDataRef data,string s,bool client,string ip);
 
 		void Init();
 
@@ -30,6 +30,7 @@ namespace stickman
 		string s;
 		bool client;
 		sf::Sprite _title;
+		string ip;
         sf::Sprite _play_button[3];
 		sf::Sprite _background;
 	};

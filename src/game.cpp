@@ -13,7 +13,7 @@ float temp1 = ((75/2)/sqrt(2));
 float temp2 = (60/2);
 
 namespace stickman{
-Game::Game(GameDataRef data,string s,bool client): _data(data)
+Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 {
 	this->window = &(_data->window);
 	b2Vec2 gravity(0.0f, 0.0f);
@@ -22,6 +22,7 @@ Game::Game(GameDataRef data,string s,bool client): _data(data)
 	this->world->SetContactListener(listener);
 	this->player1 = new Player();
 	this->player2 = new Player();
+	this->myip = myip;
 	if(client==false)
 		this->player1->name = s;
 	else
@@ -53,28 +54,31 @@ void Game::gameLoop()
 {
 	srand(time(0));
 	char con;
-	cout<<"(s) for server (c) for client\n";
+	//cout<<"(s) for server (c) for client\n";
 	this->ip=sf::IpAddress::getLocalAddress();
-	cin>>con;
 	//cout<<ip;
 	if(!this->buffer.loadFromFile("res/punch.wav"))
         std::cout<<"error in loading sound"<<std::endl;
     this->sound.setBuffer(buffer);
-	if(con=='s')
+	if(!isClient)
 	{
-		this->isClient=false;
-		cout<<this->ip<<endl;
+		this->font.loadFromFile("res/arial.ttf");
+    	this->text1.setPosition(420,180);
+		this->text1.setCharacterSize(60);
+    	this->text1.setFont(this->font);
+        this->text1.setColor(sf::Color::Red);
+		window->clear(sf::Color::Blue);
+        window->draw( this->text1);
 		sf::TcpListener tcplistener;
-		tcplistener.listen(3000);
+		tcplistener.listen(3002);
 		tcplistener.accept(this->socket);
 	}
 	else
 	{
-		this->isClient=true;
-		this->socket.connect(this->ip,3000);
+		this->socket.connect(this->myip,3002);
 	}
 
-	this->socket.setBlocking(false);
+	this->socket.setBlocking(true);
 
 	if(!isClient)
 	{
@@ -309,7 +313,6 @@ void Game::gameLoop()
       		window->draw(barsprite1);
 	        window->draw(barsprite2);
 	        window->display();
-	        std:cout<<player1->health<<" "<<player2->health<<std::endl;
 	        if(player1->health <= 0 && player2->health >0)
 	        {
 	        	player2Rounds++;
