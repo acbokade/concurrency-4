@@ -62,7 +62,7 @@ void Game::connect()
         this->text1.setColor(sf::Color::Red);
 		window->clear(sf::Color::Blue);
         window->draw( this->text1);
-        tcplistener.listen(5006);
+        tcplistener.listen(5013);
         tcplistener.accept(this->socket);
         //tcplistener.close();
 		/*this->tcplistener.listen(15000);
@@ -74,7 +74,7 @@ void Game::connect()
 	}
 	else
 	{
-		this->socket.connect(this->myip,5006);
+		this->socket.connect(this->myip,5013);
 		/*this->sendSocket.connect(this->myip,15000);
 		this->listenSocket.connect(this->myip,8000);*/
 	}
@@ -242,6 +242,7 @@ void Game::gameLoop()
 	        		(listener->Queue).pop();
 	        	}
 	        	player2Rounds++;
+	        	destroyBody();
 	        	break;
 	        }
 	        else if(player1->health > 0 && player2->health <= 0)
@@ -251,6 +252,7 @@ void Game::gameLoop()
 	        		(listener->Queue).pop();
 	        	}
 	        	player1Rounds++;
+	        	destroyBody();
 	        	break;
 	        }
 	        else if (player1->health <= 0 && player2->health <=0)
@@ -261,6 +263,7 @@ void Game::gameLoop()
 	        	}
 	        	player1Rounds++;
 	        	player2Rounds++;
+	        	destroyBody();
 	        	break;
 	        }
 		}
@@ -363,8 +366,8 @@ void Game::gameLoop()
 	        }
 		}	
 	}
-	//tcplistener.close();
-	//socket.disconnect();
+	tcplistener.close();
+	socket.disconnect();
 	/*tcplistener.close();
 	tcplistener1.close();
 	sendSocket.disconnect();
@@ -424,6 +427,22 @@ void Game::generateGem()
 		    m1.unlock();
 		}
 	}	
+}
+
+void Game::destroyBody()
+{
+	world->DestroyBody(player1->head);
+	world->DestroyBody(player1->body);
+	world->DestroyBody(player1->left_hand);
+	world->DestroyBody(player1->right_hand);
+	world->DestroyBody(player1->left_leg);
+	world->DestroyBody(player1->right_leg);
+	world->DestroyBody(player2->head);
+	world->DestroyBody(player2->body);
+	world->DestroyBody(player2->left_hand);
+	world->DestroyBody(player2->right_hand);
+	world->DestroyBody(player2->left_leg);
+	world->DestroyBody(player2->right_leg);
 }
 
 float Game::distance(int x1, int y1, int x2, int y2)
@@ -542,15 +561,15 @@ void Game::decrease_hp(int a,int b)
 	{
 		damage1=10;
 	}
-	else if( (a==2 && b==8) || (a==8 && b==2) )
+	else if( (a==1 && b==8) || (a==8 && b==1) )
 	{
 		damage1=10;
 	}
-	else if( (a==2 && b==7) || (a==7 && b==2) )
+	else if( (a==2 && b==8) || (a==8 && b==2) )
 	{
 		damage1=5;
 	}
-	else if( (a==2 && b==8) || (a==8 && b==2) )
+	else if( (a==2 && b==7) || (a==7 && b==2) )
 	{
 		damage1=5;
 	}
@@ -562,6 +581,7 @@ void Game::decrease_hp(int a,int b)
 	{
 		damage2=10;
 	}
+	
 	else if( (a==3 && b==6) || (a==6 && b==3) )
 	{
 		damage2=5;

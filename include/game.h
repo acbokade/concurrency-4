@@ -81,6 +81,7 @@ public:
 	void client_send();
 	void client_receive(float* x,float* y,float* angle,int* hp);
 	void connect();
+	void destroyBody();
 	sf::Text text1;
 	sf::Font font;
 private:
