@@ -62,7 +62,7 @@ void Game::connect()
         this->text1.setColor(sf::Color::Red);
 		window->clear(sf::Color::Blue);
         window->draw( this->text1);
-        tcplistener.listen(5013);
+        tcplistener.listen(5015);
         tcplistener.accept(this->socket);
         //tcplistener.close();
 		/*this->tcplistener.listen(15000);
@@ -74,7 +74,7 @@ void Game::connect()
 	}
 	else
 	{
-		this->socket.connect(this->myip,5013);
+		this->socket.connect(this->myip,5015);
 		/*this->sendSocket.connect(this->myip,15000);
 		this->listenSocket.connect(this->myip,8000);*/
 	}
@@ -366,8 +366,8 @@ void Game::gameLoop()
 	        }
 		}	
 	}
-	tcplistener.close();
-	socket.disconnect();
+	//tcplistener.close();
+	//socket.disconnect();
 	/*tcplistener.close();
 	tcplistener1.close();
 	sendSocket.disconnect();

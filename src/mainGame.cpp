@@ -23,6 +23,7 @@ namespace stickman
     	{
     		gameState.gameLoop();
     	}
+    	//gameState.socket.disconnect();
 	}
 
 	void mainGame::HandleInput()
