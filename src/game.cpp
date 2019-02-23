@@ -62,7 +62,7 @@ void Game::connect()
         this->text1.setColor(sf::Color::Red);
 		window->clear(sf::Color::Blue);
         window->draw( this->text1);
-        tcplistener.listen(5003);
+        tcplistener.listen(5006);
         tcplistener.accept(this->socket);
         //tcplistener.close();
 		/*this->tcplistener.listen(15000);
@@ -74,10 +74,11 @@ void Game::connect()
 	}
 	else
 	{
-		this->socket.connect(this->myip,5003);
+		this->socket.connect(this->myip,5006);
 		/*this->sendSocket.connect(this->myip,15000);
 		this->listenSocket.connect(this->myip,8000);*/
 	}
+    this->socket.setBlocking(true);
 }
 
 void Game::gameLoop()
@@ -231,18 +232,33 @@ void Game::gameLoop()
 	        	window->draw(this->gemSprite);
 	        m1.unlock();
 	        window->display();
+
+	        std::cout<<player1->getHealth()<<" "<<player2->getHealth()<<std::endl;
+
 	        if(player1->health <= 0 && player2->health >0)
 	        {
+	        	while(!(listener->Queue).empty())
+	        	{
+	        		(listener->Queue).pop();
+	        	}
 	        	player2Rounds++;
 	        	break;
 	        }
 	        else if(player1->health > 0 && player2->health <= 0)
 	        {
+	        	while(!(listener->Queue).empty())
+	        	{
+	        		(listener->Queue).pop();
+	        	}
 	        	player1Rounds++;
 	        	break;
 	        }
 	        else if (player1->health <= 0 && player2->health <=0)
 	        {
+	        	while(!(listener->Queue).empty())
+	        	{
+	        		(listener->Queue).pop();
+	        	}
 	        	player1Rounds++;
 	        	player2Rounds++;
 	        	break;
@@ -256,6 +272,8 @@ void Game::gameLoop()
 	{
 		float x[12],y[12],angle[12];
 		int hp[2];
+		hp[0]=100;
+		hp[1]=100;
 		while(window->isOpen())
 		{
 			sf::Event event;
@@ -329,28 +347,16 @@ void Game::gameLoop()
 	        window->display();
 	        if(player1->health <= 0 && player2->health >0)
 	        {
-	        	while(!(listener->Queue).empty())
-	        	{
-	        		(listener->Queue).pop();
-	        	}
 	        	player2Rounds++;
 	        	break;
 	        }
 	        else if(player1->health > 0 && player2->health <= 0)
 	        {
-	        	while(!(listener->Queue).empty())
-	        	{
-	        		(listener->Queue).pop();
-	        	}
 	        	player1Rounds++;
 	        	break;
 	        }
 	        else if (player1->health <= 0 && player2->health <=0)
 	        {
-	        	while(!(listener->Queue).empty())
-	        	{
-	        		(listener->Queue).pop();
-	        	}
 	        	player1Rounds++;
 	        	player2Rounds++;
 	        	break;
