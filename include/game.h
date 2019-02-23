@@ -26,6 +26,11 @@ public:
 	sf::RenderWindow *window ;
 	sf::IpAddress ip;
 	sf::TcpSocket socket;
+	sf::TcpListener tcplistener;
+	/*sf::TcpSocket sendSocket;
+	sf::TcpSocket listenSocket;
+	sf::TcpListener tcplistener;
+	sf::TcpListener tcplistener1;*/
 	b2World* world;
 	b2Body* ground;
 	b2Body* wall1;
@@ -75,6 +80,7 @@ public:
 	void server_receive();
 	void client_send();
 	void client_receive(float* x,float* y,float* angle,int* hp);
+	void connect();
 	sf::Text text1;
 	sf::Font font;
 private:

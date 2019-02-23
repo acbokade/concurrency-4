@@ -50,18 +50,11 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	player2Rounds = 0;
 };
 
-void Game::gameLoop()
+void Game::connect()
 {
-	srand(time(0));
-	char con;
-	//cout<<"(s) for server (c) for client\n";
-	this->ip=sf::IpAddress::getLocalAddress();
-	//cout<<ip;
-	if(!this->buffer.loadFromFile("res/punch.wav"))
-        std::cout<<"error in loading sound"<<std::endl;
-    this->sound.setBuffer(buffer);
 	if(!isClient)
 	{
+		this->ip=sf::IpAddress::getPublicAddress();
 		this->font.loadFromFile("res/arial.ttf");
     	this->text1.setPosition(420,180);
 		this->text1.setCharacterSize(60);
@@ -69,16 +62,36 @@ void Game::gameLoop()
         this->text1.setColor(sf::Color::Red);
 		window->clear(sf::Color::Blue);
         window->draw( this->text1);
-		sf::TcpListener tcplistener;
-		tcplistener.listen(3002);
-		tcplistener.accept(this->socket);
+        tcplistener.listen(5003);
+        tcplistener.accept(this->socket);
+        //tcplistener.close();
+		/*this->tcplistener.listen(15000);
+		this->tcplistener.accept(this->sendSocket);
+		this->tcplistener.listen(8000);
+		this->tcplistener.accept(this->listenSocket);*/
+		//tcplistener.close();
+		//tcplistener1.close()
 	}
 	else
 	{
-		this->socket.connect(this->myip,3002);
+		this->socket.connect(this->myip,5003);
+		/*this->sendSocket.connect(this->myip,15000);
+		this->listenSocket.connect(this->myip,8000);*/
 	}
+}
 
-	this->socket.setBlocking(true);
+void Game::gameLoop()
+{
+	srand(time(0));
+	char con;
+	//cout<<"(s) for server (c) for client\n";
+	//cout<<ip;
+	if(!this->buffer.loadFromFile("res/punch.wav"))
+        std::cout<<"error in loading sound"<<std::endl;
+    this->sound.setBuffer(buffer);
+
+	/*this->sendSocket.setBlocking(true);
+	this->listenSocket.setBlocking(true);*/
 
 	if(!isClient)
 	{
@@ -129,7 +142,7 @@ void Game::gameLoop()
 	        if(player1->getHealth()>=0 && player1->getHealth()<=100)
 	        	barsprite1.setScale((float) player1->getHealth()/100.f,1.f);
 	        if(player2->getHealth()>=0 && player2->getHealth()<=100)
-	        barsprite2.setScale((float) player2->getHealth()/100.f,1.f);
+	        	barsprite2.setScale((float) player2->getHealth()/100.f,1.f);
 	        if(player1->getHealth()<=50)
 	        barsprite1.setColor(sf::Color(255,0,0,255));
 	    	else if(player1->getHealth()>50){
@@ -238,6 +251,7 @@ void Game::gameLoop()
 		this->isPlaying = false;
 		this->gemThread.join();
 	}
+
 	else
 	{
 		float x[12],y[12],angle[12];
@@ -315,22 +329,40 @@ void Game::gameLoop()
 	        window->display();
 	        if(player1->health <= 0 && player2->health >0)
 	        {
+	        	while(!(listener->Queue).empty())
+	        	{
+	        		(listener->Queue).pop();
+	        	}
 	        	player2Rounds++;
 	        	break;
 	        }
 	        else if(player1->health > 0 && player2->health <= 0)
 	        {
+	        	while(!(listener->Queue).empty())
+	        	{
+	        		(listener->Queue).pop();
+	        	}
 	        	player1Rounds++;
 	        	break;
 	        }
 	        else if (player1->health <= 0 && player2->health <=0)
 	        {
+	        	while(!(listener->Queue).empty())
+	        	{
+	        		(listener->Queue).pop();
+	        	}
 	        	player1Rounds++;
 	        	player2Rounds++;
 	        	break;
 	        }
 		}	
 	}
+	//tcplistener.close();
+	//socket.disconnect();
+	/*tcplistener.close();
+	tcplistener1.close();
+	sendSocket.disconnect();
+	listenSocket.disconnect();*/
 }
 
 void Game::generateGem()
@@ -560,12 +592,14 @@ void Game::server_send()
     packet2<<player1->getHealth()<<player2->getHealth();
 
     socket.send(packet2);
+    //sendSocket.send(packet2);
 }
 
 void Game::server_receive()
 {
 	sf::Packet packet1;
 	socket.receive(packet1);
+	//listenSocket.receive(packet1);
     std::string s;
     packet1>>s;
     if (s=="D")
@@ -643,13 +677,15 @@ void Game::client_send()
     	s="B";
     	packet2<<s;
     }
-	socket.send(packet2);
+    socket.send(packet2);
+	//listenSocket.send(packet2);
 }
 
 void Game::client_receive(float* x,float* y ,float* angle,int* hp)
 {
 	sf::Packet packet1;
 	socket.receive(packet1);
+	//sendSocket.receive(packet1);
 	for(int i=0;i<12;i++)
 		packet1>>x[i]>>y[i]>>angle[i];
 	packet1>>hp[0]>>hp[1];
