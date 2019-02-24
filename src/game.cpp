@@ -23,10 +23,35 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	this->player1 = new Player();
 	this->player2 = new Player();
 	this->myip = myip;
+
 	if(client==false)
 		this->player1->name = s;
 	else
 		this->player2->name = s;
+
+	this->font.loadFromFile("res/arial.ttf");
+	this->rtext.setPosition(420,180);
+	this->rtext.setCharacterSize(60);
+	this->rtext.setFont(this->font);
+    this->rtext.setColor(sf::Color::White);
+    this->rtext.setString("ROUND OVER!!!");
+
+    this->rtext1.setPosition(500,300);
+	this->rtext1.setCharacterSize(60);
+	this->rtext1.setFont(this->font);
+    this->rtext1.setColor(sf::Color::White);
+
+    this->rtext2.setPosition(500,300);
+	this->rtext2.setCharacterSize(60);
+	this->rtext2.setFont(this->font);
+    this->rtext2.setColor(sf::Color::White);
+
+    this->rtext3.setPosition(500,300);
+	this->rtext3.setCharacterSize(60);
+	this->rtext3.setFont(this->font);
+    this->rtext3.setColor(sf::Color::White);
+    this->rtext3.setString("TIE");
+
 	this->isClient = client;
     this->groundTexture.loadFromFile("res/g1.png");
     this->groundSprite.setTexture(groundTexture);
@@ -58,16 +83,8 @@ void Game::connect()
 {
 	if(!isClient)
 	{
-		this->ip=sf::IpAddress::getPublicAddress();
-		this->font.loadFromFile("res/arial.ttf");
-    	this->text1.setPosition(420,180);
-		this->text1.setCharacterSize(60);
-    	this->text1.setFont(this->font);
-        this->text1.setColor(sf::Color::Red);
-		window->clear(sf::Color::Blue);
-        window->draw( this->text1);
-        this->tcplistener.listen(5014);
-        this->tcplistener1.listen(6014);
+        this->tcplistener.listen(5016);
+        this->tcplistener1.listen(6016);
 		this->tcplistener.accept(this->sendSocket);
 		this->tcplistener1.accept(this->listenSocket);
         //tcplistener.listen(5015);
@@ -83,8 +100,8 @@ void Game::connect()
 	else
 	{
 		//this->socket.connect(this->myip,5015);
-		this->sendSocket.connect(this->myip,5014);
-		this->listenSocket.connect(this->myip,6014);
+		this->sendSocket.connect(this->myip,5016);
+		this->listenSocket.connect(this->myip,6016);
 	}
     //this->socket.setBlocking(true);
     this->sendSocket.setBlocking(true);
@@ -138,6 +155,8 @@ void Game::gameLoop()
     	barsprite2.setOrigin(260.f,6.f);
     	barsprite2.setPosition(966.f,35.f);
 		this->gemThread = std::thread(&Game::generateGem, this);
+		this->rtext1.setString("Wins");
+		this->rtext2.setString("Wins");
 		while(window->isOpen())
 		{	
 			sf::Event event;
@@ -254,6 +273,14 @@ void Game::gameLoop()
 	        	{
 	        		(listener->Queue).pop();
 	        	}
+	        	this->_clock.restart();
+	        	while(this->_clock.getElapsedTime().asSeconds() < 3)
+	        	{
+	        		window->clear(sf::Color::Black);
+	        		window->draw(rtext);
+	        		window->draw(rtext2);
+	        		window->display();
+	        	}
 	        	player2Rounds++;
 	        	destroyBody();
 	        	break;
@@ -264,6 +291,14 @@ void Game::gameLoop()
 	        	{
 	        		(listener->Queue).pop();
 	        	}
+	        	this->_clock.restart();
+	        	while(this->_clock.getElapsedTime().asSeconds() < 3)
+	        	{
+	        		window->clear(sf::Color::Black);
+	        		window->draw(rtext);
+	        		window->draw(rtext1);
+	        		window->display();
+	        	}
 	        	player1Rounds++;
 	        	destroyBody();
 	        	break;
@@ -273,6 +308,14 @@ void Game::gameLoop()
 	        	while(!(listener->Queue).empty())
 	        	{
 	        		(listener->Queue).pop();
+	        	}
+	        	this->_clock.restart();
+	        	while(this->_clock.getElapsedTime().asSeconds() < 3)
+	        	{
+	        		window->clear(sf::Color::Black);
+	        		window->draw(rtext);
+	        		window->draw(rtext3);
+	        		window->display();
 	        	}
 	        	player1Rounds++;
 	        	player2Rounds++;
@@ -369,16 +412,40 @@ void Game::gameLoop()
 	        window->display();
 	        if(player1->health <= 0 && player2->health >0)
 	        {
+	        	this->_clock.restart();
+	        	while(this->_clock.getElapsedTime().asSeconds() < 3)
+	        	{
+	        		window->clear(sf::Color::Black);
+	        		window->draw(rtext);
+	        		window->draw(rtext2);
+	        		window->display();
+	        	}
 	        	player2Rounds++;
 	        	break;
 	        }
 	        else if(player1->health > 0 && player2->health <= 0)
 	        {
+	        	this->_clock.restart();
+	        	while(this->_clock.getElapsedTime().asSeconds() < 3)
+	        	{
+	        		window->clear(sf::Color::Black);
+	        		window->draw(rtext);
+	        		window->draw(rtext1);
+	        		window->display();
+	        	}
 	        	player1Rounds++;
 	        	break;
 	        }
 	        else if (player1->health <= 0 && player2->health <=0)
 	        {
+	        	this->_clock.restart();
+	        	while(this->_clock.getElapsedTime().asSeconds() < 3)
+	        	{
+	        		window->clear(sf::Color::Black);
+	        		window->draw(rtext);
+	        		window->draw(rtext3);
+	        		window->display();
+	        	}
 	        	player1Rounds++;
 	        	player2Rounds++;
 	        	break;

@@ -41,8 +41,8 @@ namespace stickman
         	this->text1.setString("Enter the IP Address : ");
 		this->text2.setPosition(500,300);
 		this->text2.setCharacterSize(40);
-    	this->text2.setFont(this->font);
-        this->text2.setColor(sf::Color::Red);
+		this->text2.setFont(this->font);
+    	this->text2.setColor(sf::Color::Red);
         
 	}
 
@@ -92,7 +92,7 @@ namespace stickman
 
 		//this->_data->window.draw( this->_background );
         this->_data->window.draw( this->text1);
-        this->_data->window.draw( this->text2 );
+        this->_data->window.draw( this->text2);
         if(this->client)
         	this->_data->window.draw( this->_enter_button );
 

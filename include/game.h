@@ -83,7 +83,8 @@ public:
 	void client_receive(float* x,float* y,float* angle,int* hp);
 	void connect();
 	void destroyBody();
-	sf::Text text1;
+	sf::Clock _clock;
+	sf::Text rtext,rtext1,rtext2,rtext3;
 	sf::Font font;
 private:
 	GameDataRef _data;
