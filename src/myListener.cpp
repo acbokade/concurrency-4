@@ -20,8 +20,8 @@ void myListener::BeginContact(b2Contact* contact)
         contact->GetWorldManifold(&worldManifold);
         b2Body* bodya = contact->GetFixtureA()->GetBody();
         b2Body* bodyb = contact->GetFixtureB()->GetBody();
-        b2Vec2 impulse = (10*worldManifold.normal.x,10*worldManifold.normal);
-        b2Vec2 impulse2 = (-10*worldManifold.normal.x,-10*worldManifold.normal);
+        b2Vec2 impulse = b2Vec2(10*worldManifold.normal.x,10*worldManifold.normal.y);
+        b2Vec2 impulse2 = b2Vec2(-10*worldManifold.normal.x,-10*worldManifold.normal.y);
         bodya->ApplyLinearImpulse(impulse,bodya->GetWorldCenter(),true);
         bodyb->ApplyLinearImpulse(impulse2,bodyb->GetWorldCenter(),true);
     }
