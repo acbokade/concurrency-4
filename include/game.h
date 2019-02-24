@@ -23,14 +23,15 @@ class Game
 {
 public:
 	Game(GameDataRef data,std::string s,bool client,std::string myip);
+	~Game();
 	sf::RenderWindow *window ;
 	sf::IpAddress ip;
-	sf::TcpSocket socket;
+	//sf::TcpSocket socket;
+	//sf::TcpListener tcplistener;
 	sf::TcpListener tcplistener;
-	/*sf::TcpSocket sendSocket;
+	sf::TcpListener tcplistener1;
+	sf::TcpSocket sendSocket;
 	sf::TcpSocket listenSocket;
-	sf::TcpListener tcplistener;
-	sf::TcpListener tcplistener1;*/
 	b2World* world;
 	b2Body* ground;
 	b2Body* wall1;

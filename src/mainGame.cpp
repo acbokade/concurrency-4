@@ -24,6 +24,7 @@ namespace stickman
     		gameState.gameLoop();
     	}
     	//gameState.socket.disconnect();
+    	//gameState.tcplistener.close();
 	}
 
 	void mainGame::HandleInput()
