@@ -83,10 +83,25 @@ void Game::connect()
 {
 	if(!isClient)
 	{
-        this->tcplistener.listen(5016);
-        this->tcplistener1.listen(6016);
-		this->tcplistener.accept(this->sendSocket);
-		this->tcplistener1.accept(this->listenSocket);
+		std::thread t1(&Game::serverListen,this,false);
+		std::thread t2(&Game::serverListen,this,true);
+		sf::Event event1;
+		while(!(this->accept) || !(this->accept1))
+		{
+			window->pollEvent(event1);
+            if(event1.type==sf::Event::Closed)
+            {
+            	this->tcplistener.close();
+				this->tcplistener1.close();
+            	this->sendSocket.disconnect();
+				this->listenSocket.disconnect();
+                window->close();
+			}
+		}
+		t1.join();
+		t2.join();
+		//this->tcplistener.accept(this->sendSocket);
+		//this->tcplistener1.accept(this->listenSocket);
         //tcplistener.listen(5015);
         //tcplistener.accept(this->socket);
         //tcplistener.close();
@@ -100,12 +115,40 @@ void Game::connect()
 	else
 	{
 		//this->socket.connect(this->myip,5015);
-		this->sendSocket.connect(this->myip,5016);
-		this->listenSocket.connect(this->myip,6016);
+		this->sendSocket.connect(this->myip,5018);
+		this->listenSocket.connect(this->myip,6018);
 	}
     //this->socket.setBlocking(true);
     this->sendSocket.setBlocking(true);
 	this->listenSocket.setBlocking(true);
+}
+
+void Game::serverListen(bool flag)
+{
+	if(flag == false)
+	{
+		tcplistener.listen(5018);
+		tcplistener.accept(sendSocket);
+		/*if(tcplistener.listen(5018)!=sf::Socket::Done){
+    	    std::cerr<<"Server error while listening to port"<<std::endl;
+    	}
+    	if(tcplistener.accept(sendSocket) != sf::Socket::Done){
+    	    std::cerr<<"Error while accepting sendSocket conection"<<std::endl;
+		}*/	
+		this->accept =true;
+	}
+	else
+	{
+		tcplistener1.listen(6018);
+		tcplistener1.accept(listenSocket);
+		/*if(tcplistener1.listen(6018)!=sf::Socket::Done){
+    	    std::cerr<<"Server error while listening @ the port1"<<std::endl;
+    	}
+    	if(tcplistener1.accept(listenSocket) != sf::Socket::Done){
+    	    std::cerr<<"Error while accepting sendSocket conection"<<std::endl;
+		}*/	
+		this->accept1 =true;
+    }
 }
 
 void Game::gameLoop()

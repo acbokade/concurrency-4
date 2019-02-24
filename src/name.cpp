@@ -62,7 +62,7 @@ namespace stickman
             }
             if(this->_data->input.IsSpriteClicked(_host_button,sf::Mouse::Left,_data->window))
             {
-                this->_data->machine.AddState(StateRef(new MainMenuState(_data,playerInput,false)), true);
+                 this->_data->machine.AddState(StateRef(new MainMenuState(_data,playerInput,false)), true);
             }
             else if(this->_data->input.IsSpriteClicked(_join_button,sf::Mouse::Left,_data->window))
             {

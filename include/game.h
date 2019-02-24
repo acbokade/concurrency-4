@@ -83,6 +83,8 @@ public:
 	void client_receive(float* x,float* y,float* angle,int* hp);
 	void connect();
 	void destroyBody();
+	void serverListen(bool flag);
+	bool accept=false,accept1=false;
 	sf::Clock _clock;
 	sf::Text rtext,rtext1,rtext2,rtext3;
 	sf::Font font;
