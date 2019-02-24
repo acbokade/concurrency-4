@@ -73,6 +73,16 @@ int Player::getHealth()
 	return this->health;
 }
 
+void Player::setName(std::string name)
+{
+    this->name = name;
+}
+
+std::string Player::getName()
+{
+    return this->name;
+}
+
 void Player::init(bool firstPlayer)
 {
 	(firstPlayer)?this->headTexture.loadFromFile("res/head1.png"):this->headTexture.loadFromFile("res/head2.png");

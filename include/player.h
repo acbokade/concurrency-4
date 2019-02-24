@@ -53,6 +53,8 @@ public:
 	b2Body* createbody(b2World* world, b2Vec2 position, bool isStatic, float length, float width, float restitution, float density);
 	b2RevoluteJoint* createRevoluteJoint(b2World *world, b2Body* body1, b2Body* body2, b2Vec2 anchorPoint1, b2Vec2 anchorPoint2, float lowerLimit, float upperLimit);
 	void setHealth(int health);
+	void setName(std::string name);
+	std::string getName();
 	int getHealth();
 	void init(bool firstPlayer);
 };

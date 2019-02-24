@@ -25,9 +25,9 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	this->myip = myip;
 
 	if(client==false)
-		this->player1->name = s;
+		this->player1->setName(s);
 	else
-		this->player2->name = s;
+		this->player2->setName(s);
 
 	this->font.loadFromFile("res/arial.ttf");
 	this->rtext.setPosition(420,180);
@@ -115,8 +115,8 @@ void Game::connect()
 	else
 	{
 		//this->socket.connect(this->myip,5015);
-		this->sendSocket.connect(this->myip,5018);
-		this->listenSocket.connect(this->myip,6018);
+		this->sendSocket.connect(this->myip,5020);
+		this->listenSocket.connect(this->myip,6020);
 	}
     //this->socket.setBlocking(true);
     this->sendSocket.setBlocking(true);
@@ -127,7 +127,7 @@ void Game::serverListen(bool flag)
 {
 	if(flag == false)
 	{
-		tcplistener.listen(5018);
+		tcplistener.listen(5020);
 		tcplistener.accept(sendSocket);
 		/*if(tcplistener.listen(5018)!=sf::Socket::Done){
     	    std::cerr<<"Server error while listening to port"<<std::endl;
@@ -139,7 +139,7 @@ void Game::serverListen(bool flag)
 	}
 	else
 	{
-		tcplistener1.listen(6018);
+		tcplistener1.listen(6020);
 		tcplistener1.accept(listenSocket);
 		/*if(tcplistener1.listen(6018)!=sf::Socket::Done){
     	    std::cerr<<"Server error while listening @ the port1"<<std::endl;
@@ -168,6 +168,14 @@ void Game::gameLoop()
 		initPlayer(player2, 500.f,4);
 	    player1->setHealth(100);
 	    player2->setHealth(100);
+	    sf::Packet packet1,packet2;
+		listenSocket.receive(packet1);
+		std::string myName;
+		packet1>>myName;
+		player2->setName(myName);
+		myName = player1->getName();
+		packet2<<myName;
+		sendSocket.send(packet2);
 	    gettimeofday(&prev_time,NULL);
 	    gettimeofday(&prev_time1, NULL);
 	    sf::Texture texture;
@@ -198,8 +206,8 @@ void Game::gameLoop()
     	barsprite2.setOrigin(260.f,6.f);
     	barsprite2.setPosition(966.f,35.f);
 		this->gemThread = std::thread(&Game::generateGem, this);
-		this->rtext1.setString("Wins");
-		this->rtext2.setString("Wins");
+		this->rtext1.setString(player1->getName() + " Wins!!!");
+		this->rtext2.setString(player2->getName() + " Wins!!!");
 		while(window->isOpen())
 		{	
 			sf::Event event;
@@ -372,10 +380,20 @@ void Game::gameLoop()
 
 	else
 	{
-		float x[12],y[12],angle[12];
+		float x[12],y[12],angle[12],gempos[2];
 		int hp[2];
 		hp[0]=100;
 		hp[1]=100;
+		sf::Packet packet1,packet2;
+		std::string myName;
+		myName = player2->getName();
+		packet2<<myName;
+		listenSocket.send(packet2);
+		sendSocket.receive(packet1);
+		packet1>>myName;
+		player1->setName(myName);
+		this->rtext1.setString(player1->getName() + " Wins!!!");
+		this->rtext2.setString(player2->getName() + " Wins!!!");
 		while(window->isOpen())
 		{
 			sf::Event event;
@@ -393,7 +411,7 @@ void Game::gameLoop()
 	        }
 	        std::thread thr1,thr2;
 	        thr1=std::thread(&Game::client_send,this);
-	        thr2=std::thread(&Game::client_receive,this,x,y,angle,hp);
+	        thr2=std::thread(&Game::client_receive,this,x,y,angle,hp,gempos);
 	        thr1.join();
 	        thr2.join();
 	        sf::Texture texture;
@@ -446,6 +464,8 @@ void Game::gameLoop()
 			window->draw(sprite);
 			draw(player1);
 			draw(player2);
+			if(gemExists)
+				window->draw(this->gemSprite);
 			window->draw(this->groundSprite);
 	        window->draw(this->wall1Sprite);
       		window->draw(this->wall2Sprite);
@@ -745,6 +765,7 @@ void Game::server_send()
     packet2<<player2->left_hand->GetPosition().x*SCALE<<player2->left_hand->GetPosition().y*SCALE<<player2->left_hand->GetAngle() * (180/b2_pi);	
     packet2<<player2->right_hand->GetPosition().x*SCALE<<player2->right_hand->GetPosition().y*SCALE<<player2->right_hand->GetAngle() * (180/b2_pi);
     packet2<<player1->getHealth()<<player2->getHealth();
+    packet2<<gemExists<<gemSprite.getPosition().x<<gemSprite.getPosition().y;
 
     //socket.send(packet2);
     sendSocket.send(packet2);
@@ -836,7 +857,7 @@ void Game::client_send()
 	listenSocket.send(packet2);
 }
 
-void Game::client_receive(float* x,float* y ,float* angle,int* hp)
+void Game::client_receive(float* x,float* y ,float* angle,int* hp,float* gempos)
 {
 	sf::Packet packet1;
 	//socket.receive(packet1);
@@ -844,6 +865,9 @@ void Game::client_receive(float* x,float* y ,float* angle,int* hp)
 	for(int i=0;i<12;i++)
 		packet1>>x[i]>>y[i]>>angle[i];
 	packet1>>hp[0]>>hp[1];
+	packet1>>this->gemExists>>gempos[0]>>gempos[1];
+
+	this->gemSprite.setPosition(gempos[0],gempos[1]);
 
 	player1->headSprite.setPosition(x[0],y[0]);
     player1->headSprite.setRotation(angle[0]);

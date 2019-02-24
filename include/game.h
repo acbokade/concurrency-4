@@ -80,7 +80,7 @@ public:
 	void server_send();
 	void server_receive();
 	void client_send();
-	void client_receive(float* x,float* y,float* angle,int* hp);
+	void client_receive(float* x,float* y,float* angle,int* hp,float* gempos);
 	void connect();
 	void destroyBody();
 	void serverListen(bool flag);
