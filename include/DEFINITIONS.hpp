@@ -10,3 +10,6 @@
 #define GAME_TITLE_FILEPATH "res/title.png"
 #define PLAY_BUTTON_1_FILEPATH "res/PlayButton.png"
 #define ENTER_BUTTON_1_FILEPATH "res/enter.png"
+#define HOST_BUTTON "res/host.png"
+#define JOIN_BUTTON "res/join.png"
+#define HELP_BUTTON "res/help.png"

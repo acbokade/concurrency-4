@@ -27,6 +27,7 @@ namespace stickman
 		sf::Sprite _title;
         sf::Sprite _host_button;
         sf::Sprite _join_button;
+        sf::Sprite _help_button;
 		sf::Sprite _background;
 	};
 }

@@ -70,7 +70,7 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
     this->gemSprite.setOrigin((sf::Vector2f)gemTexture.getSize()/2.f);
     this->player1->init(true);
 	this->player2->init(false);
-	this->gemExists = true;
+	this->gemExists = false;
 	player1Rounds = 0;
 	player2Rounds = 0;
 };
@@ -86,6 +86,7 @@ void Game::connect()
 		std::thread t1(&Game::serverListen,this,false);
 		std::thread t2(&Game::serverListen,this,true);
 		sf::Event event1;
+		int flag =0;
 		while(!(this->accept) || !(this->accept1))
 		{
 			window->pollEvent(event1);
@@ -95,11 +96,16 @@ void Game::connect()
 				this->tcplistener1.close();
             	this->sendSocket.disconnect();
 				this->listenSocket.disconnect();
-                window->close();
+				window->close();
+				flag=1;
+                break;
 			}
 		}
-		t1.join();
-		t2.join();
+		if(flag==0)
+		{
+			t1.join();
+			t2.join();
+		}
 		//this->tcplistener.accept(this->sendSocket);
 		//this->tcplistener1.accept(this->listenSocket);
         //tcplistener.listen(5015);
@@ -115,8 +121,8 @@ void Game::connect()
 	else
 	{
 		//this->socket.connect(this->myip,5015);
-		this->sendSocket.connect(this->myip,5020);
-		this->listenSocket.connect(this->myip,6020);
+		this->sendSocket.connect(this->myip,5060);
+		this->listenSocket.connect(this->myip,6060);
 	}
     //this->socket.setBlocking(true);
     this->sendSocket.setBlocking(true);
@@ -127,7 +133,7 @@ void Game::serverListen(bool flag)
 {
 	if(flag == false)
 	{
-		tcplistener.listen(5020);
+		tcplistener.listen(5060);
 		tcplistener.accept(sendSocket);
 		/*if(tcplistener.listen(5018)!=sf::Socket::Done){
     	    std::cerr<<"Server error while listening to port"<<std::endl;
@@ -139,7 +145,7 @@ void Game::serverListen(bool flag)
 	}
 	else
 	{
-		tcplistener1.listen(6020);
+		tcplistener1.listen(6060);
 		tcplistener1.accept(listenSocket);
 		/*if(tcplistener1.listen(6018)!=sf::Socket::Done){
     	    std::cerr<<"Server error while listening @ the port1"<<std::endl;
@@ -157,9 +163,9 @@ void Game::gameLoop()
 	char con;
 	//cout<<"(s) for server (c) for client\n";
 	//cout<<ip;
-	if(!this->buffer.loadFromFile("res/punch.wav"))
+	/*if(!this->buffer.loadFromFile("res/punch.wav"))
         std::cout<<"error in loading sound"<<std::endl;
-    this->sound.setBuffer(buffer);
+    this->sound.setBuffer(buffer);*/
 
 	if(!isClient)
 	{
@@ -534,8 +540,8 @@ void Game::generateGem()
 		{
 	      	int x = rand();
 			int y = rand();
-			x = 200 + x % 900;
-			y = 100 + y % 500; 
+			x = 100 + x % 550;
+			y = 100 + y % 1100; 
 			//std::cout<<x<<" "<<y<<std::endl;
 			this->gemSprite.setPosition(x,y);
 			m1.lock();

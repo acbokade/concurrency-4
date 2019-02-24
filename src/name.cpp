@@ -15,14 +15,20 @@ namespace stickman
 		//this->_data->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_FILEPATH);
         this->_data->assets.LoadTexture("Game Title", GAME_TITLE_FILEPATH);
         this->_data->assets.LoadTexture("Play Button", ENTER_BUTTON_1_FILEPATH);
+        this->_data->assets.LoadTexture("Host Button", HOST_BUTTON);
+        this->_data->assets.LoadTexture("Join Button", JOIN_BUTTON);
+        this->_data->assets.LoadTexture("Help Button", HELP_BUTTON);
+
 
 		//this->_background.setTexture(this->_data->assets.GetTexture("Main Menu Background"),true);
         this->_title.setTexture(this->_data->assets.GetTexture("Game Title"));
         this->_title.setPosition((SCREEN_WIDTH/2)-(_title.getGlobalBounds().width/2),_title.getGlobalBounds().height/4);
-        this->_host_button.setTexture(this->_data->assets.GetTexture("Play Button"));
+        this->_host_button.setTexture(this->_data->assets.GetTexture("Host Button"));
         this->_host_button.setPosition(550,400);
-        this->_join_button.setTexture(this->_data->assets.GetTexture("Play Button"));
+        this->_join_button.setTexture(this->_data->assets.GetTexture("Join Button"));
         this->_join_button.setPosition(550,500);
+        this->_help_button.setTexture(this->_data->assets.GetTexture("Help Button"));
+        this->_help_button.setPosition(600,580);
 
         this->welcomeTexture.loadFromFile("res/welcome.png");
         this->welcomeSprite.setTexture(welcomeTexture);
@@ -82,6 +88,7 @@ namespace stickman
 		//this->_data->window.draw( this->_background );
         this->_data->window.draw( this->_join_button );
         this->_data->window.draw( this->_host_button );
+        this->_data->window.draw( this->_help_button );
         this->_data->window.draw( this->playerText);   
         this->_data->window.draw( this->enterName); 
         this->_data->window.draw( this->welcomeSprite);     
