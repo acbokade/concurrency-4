@@ -122,8 +122,8 @@ void Game::connect()
 	else
 	{
 		//this->socket.connect(this->myip,5015);
-		this->sendSocket.connect(this->myip,5060);
-		this->listenSocket.connect(this->myip,6060);
+		this->sendSocket.connect(this->myip,5070);
+		this->listenSocket.connect(this->myip,6070);
 	}
     //this->socket.setBlocking(true);
     this->sendSocket.setBlocking(true);
@@ -134,7 +134,7 @@ void Game::serverListen(bool flag)
 {
 	if(flag == false)
 	{
-		tcplistener.listen(5060);
+		tcplistener.listen(5070);
 		tcplistener.accept(sendSocket);
 		/*if(tcplistener.listen(5018)!=sf::Socket::Done){
     	    std::cerr<<"Server error while listening to port"<<std::endl;
@@ -146,7 +146,7 @@ void Game::serverListen(bool flag)
 	}
 	else
 	{
-		tcplistener1.listen(6060);
+		tcplistener1.listen(6070);
 		tcplistener1.accept(listenSocket);
 		/*if(tcplistener1.listen(6018)!=sf::Socket::Done){
     	    std::cerr<<"Server error while listening @ the port1"<<std::endl;

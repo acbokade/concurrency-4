@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.0)
 project (stickman)
 set(CMAKE_CXX_STANDARD 11)
-set(SFML_DIR "SFML/lib/cmake/SFML")
+set(SFML_DIR "SFML-2.5.1/lib/cmake/SFML")
 
 add_subdirectory(src)
 
@@ -20,7 +20,7 @@ target_link_libraries(stickman src
 				sfml-window
         		sfml-graphics
         		sfml-audio
-        		sfml-network-d
+        		sfml-network
 				libBox2D.a
 				pthread
 				)
