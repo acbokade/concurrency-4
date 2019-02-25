@@ -52,6 +52,31 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
     this->rtext3.setColor(sf::Color::White);
     this->rtext3.setString("TIE");
 
+    this->player1NameText.setPosition(350,2);
+	this->player1NameText.setCharacterSize(25);
+	this->player1NameText.setFont(this->font);
+    this->player1NameText.setColor(sf::Color::Red);
+
+    this->player2NameText.setPosition(966,2);
+	this->player2NameText.setCharacterSize(25);
+	this->player2NameText.setFont(this->font);
+    this->player2NameText.setColor(sf::Color::Red);
+
+    player1Rounds = 0;
+	player2Rounds = 0;
+
+    this->player1RoundsText.setPosition(630.f,15.f);
+	this->player1RoundsText.setCharacterSize(35);
+	this->player1RoundsText.setFont(this->font);
+    this->player1RoundsText.setColor(sf::Color::Red);
+    this->player1RoundsText.setString(std::to_string(this->player1Rounds));
+
+    this->player2RoundsText.setPosition(725.f,15.f);
+	this->player2RoundsText.setCharacterSize(35);
+	this->player2RoundsText.setFont(this->font);
+    this->player2RoundsText.setColor(sf::Color::Red);
+    this->player2RoundsText.setString(std::to_string(this->player2Rounds));
+
 	this->isClient = client;
     this->groundTexture.loadFromFile("res/g1.png");
     this->groundSprite.setTexture(groundTexture);
@@ -68,11 +93,18 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
     this->gemTexture.loadFromFile("res/gem1.png");
     this->gemSprite.setTexture(gemTexture);
     this->gemSprite.setOrigin((sf::Vector2f)gemTexture.getSize()/2.f);
+    this->roundTexture.loadFromFile("res/box2.png");
+    this->player1RoundsSprite.setTexture(roundTexture);
+    this->player1RoundsSprite.setOrigin((sf::Vector2f)roundTexture.getSize()/2.f);
+    this->player1RoundsSprite.setPosition(640.f,35.f);
+    //this->player1RoundsSprite.setColor(sf::Color::Transparent);
+    this->player2RoundsSprite.setTexture(roundTexture);
+    this->player2RoundsSprite.setOrigin((sf::Vector2f)roundTexture.getSize()/2.f);
+    this->player2RoundsSprite.setPosition(736.f,35.f);
+    //this->player2RoundsSprite.setColor(sf::Color::Transparent);
     this->player1->init(true);
 	this->player2->init(false);
 	this->gemExists = false;
-	player1Rounds = 0;
-	player2Rounds = 0;
 	this->isExiting = false;
 };
 
@@ -107,23 +139,12 @@ void Game::connect()
 			t1.join();
 			t2.join();
 		}
-		//this->tcplistener.accept(this->sendSocket);
-		//this->tcplistener1.accept(this->listenSocket);
-        //tcplistener.listen(5015);
-        //tcplistener.accept(this->socket);
-        //tcplistener.close();
-		/*std::thread t1(&Game::serverListen,this,5009,0);
-		std::thread t2(&Game::serverListen,this,6009,1);
-		t1.join();
-		t2.join();*/
-		//tcplistener.close();
-		//tcplistener1.close()
 	}
 	else
 	{
 		//this->socket.connect(this->myip,5015);
-		this->sendSocket.connect(this->myip,5070);
-		this->listenSocket.connect(this->myip,6070);
+		this->sendSocket.connect(this->myip,5090);
+		this->listenSocket.connect(this->myip,6090);
 	}
     //this->socket.setBlocking(true);
     this->sendSocket.setBlocking(true);
@@ -134,7 +155,7 @@ void Game::serverListen(bool flag)
 {
 	if(flag == false)
 	{
-		tcplistener.listen(5070);
+		tcplistener.listen(5090);
 		tcplistener.accept(sendSocket);
 		/*if(tcplistener.listen(5018)!=sf::Socket::Done){
     	    std::cerr<<"Server error while listening to port"<<std::endl;
@@ -146,7 +167,7 @@ void Game::serverListen(bool flag)
 	}
 	else
 	{
-		tcplistener1.listen(6070);
+		tcplistener1.listen(6090);
 		tcplistener1.accept(listenSocket);
 		/*if(tcplistener1.listen(6018)!=sf::Socket::Done){
     	    std::cerr<<"Server error while listening @ the port1"<<std::endl;
@@ -206,15 +227,17 @@ void Game::gameLoop()
     	barsprite1.setTexture(bar1);
     	sprite.setColor(sf::Color(255,255,255,100));
     	barsprite1.setOrigin(260.f,6.f);
-    	barsprite1.setPosition(400.f,35.f);
+    	barsprite1.setPosition(350.f,35.f);
     	sf::Sprite barsprite2;
     	barsprite2.setTexture(bar2);
     	sprite.setColor(sf::Color(255,255,255,100));
     	barsprite2.setOrigin(260.f,6.f);
-    	barsprite2.setPosition(966.f,35.f);
+    	barsprite2.setPosition(1026.f,35.f);
 		this->gemThread = std::thread(&Game::generateGem, this);
 		this->rtext1.setString(player1->getName() + " Wins!!!");
 		this->rtext2.setString(player2->getName() + " Wins!!!");
+		this->player1NameText.setString(player1->getName());
+		this->player2NameText.setString(player2->getName());
 		while(window->isOpen())
 		{	
 			sf::Event event;
@@ -316,8 +339,14 @@ void Game::gameLoop()
       		window->draw(this->wall2Sprite);
       		window->draw(this->wall3Sprite);
 	        window->draw(this->groundSprite);
+	        window->draw(this->player1RoundsSprite);
+	        window->draw(this->player2RoundsSprite);
 	        window->draw(barsprite1);
 	        window->draw(barsprite2);
+	        window->draw(this->player1NameText);
+	        window->draw(this->player2NameText);
+	        window->draw(this->player1RoundsText);
+	        window->draw(this->player2RoundsText);
 	        m1.lock();
 	        if(gemExists)
 	        	window->draw(this->gemSprite);
@@ -381,6 +410,9 @@ void Game::gameLoop()
 	        	destroyBody();
 	        	break;
 	        }
+	        this->player1RoundsText.setString(std::to_string(this->player1Rounds));
+	        this->player2RoundsText.setString(std::to_string(this->player2Rounds));
+
 		}
 		this->isPlaying = false;
 		this->gemThread.join();
@@ -402,6 +434,8 @@ void Game::gameLoop()
 		player1->setName(myName);
 		this->rtext1.setString(player1->getName() + " Wins!!!");
 		this->rtext2.setString(player2->getName() + " Wins!!!");
+		this->player1NameText.setString(player1->getName());
+		this->player2NameText.setString(player2->getName());
 		while(window->isOpen())
 		{
 			sf::Event event;
@@ -442,13 +476,13 @@ void Game::gameLoop()
     		barsprite1.setTexture(bar1);
     		sprite.setColor(sf::Color(255,255,255,100));
     		barsprite1.setOrigin(260.f,6.f);
-    		barsprite1.setPosition(400.f,35.f);
+    		barsprite1.setPosition(350.f,35.f);
 
     		sf::Sprite barsprite2;
     		barsprite2.setTexture(bar2);
     		sprite.setColor(sf::Color(255,255,255,100));
     		barsprite2.setOrigin(260.f,6.f);
-    		barsprite2.setPosition(966.f,35.f);
+    		barsprite2.setPosition(1026.f,35.f);
 
     		if(player1->getHealth()>=0 && player1->getHealth()<=100)
     			barsprite1.setScale((float) player1->getHealth()/100.f,1.f);
@@ -481,6 +515,12 @@ void Game::gameLoop()
       		window->draw(this->wall3Sprite);
       		window->draw(barsprite1);
 	        window->draw(barsprite2);
+	        window->draw(this->player1RoundsSprite);
+	        window->draw(this->player2RoundsSprite);
+	        window->draw(this->player1NameText);
+	        window->draw(this->player2NameText);
+	        window->draw(this->player1RoundsText);
+	        window->draw(this->player2RoundsText);
 	        window->display();
 	        if(player1->health <= 0 && player2->health >0)
 	        {
@@ -522,6 +562,8 @@ void Game::gameLoop()
 	        	player2Rounds++;
 	        	break;
 	        }
+	        this->player1RoundsText.setString(std::to_string(this->player1Rounds));
+	        this->player2RoundsText.setString(std::to_string(this->player2Rounds));
 		}	
 	}
 	//tcplistener.close();
@@ -564,7 +606,8 @@ void Game::generateGem()
 			if(distance(gemPositionX, gemPositionY, p1PositionX, p1PositionY) <= 50)
 			{
 				m.lock();
-				player1->setHealth(player1->getHealth()+5);
+				if(player1->getHealth()<=95)
+					player1->setHealth(player1->getHealth()+5);
 				m.unlock();
 				m1.lock();
 				this->gemExists = false;
@@ -573,7 +616,8 @@ void Game::generateGem()
 			else if(distance(gemPositionX, gemPositionY, p2PositionX, p2PositionY) <= 50)
 			{
 				m.lock();
-				player2->setHealth(player2->getHealth()+5);
+				if(player2->getHealth()<=95)
+					player2->setHealth(player2->getHealth()+5);
 				m.unlock();
 				m1.lock();
 				this->gemExists = false;

@@ -43,11 +43,14 @@ public:
 	sf::Texture wall1Texture;
 	sf::Texture wall2Texture;
 	sf::Texture wall3Texture;
+	sf::Texture roundTexture;
+	sf::Texture gemTexture;
 	sf::Sprite groundSprite;
 	sf::Sprite wall1Sprite;
 	sf::Sprite wall2Sprite;
 	sf::Sprite wall3Sprite;
-	sf::Texture gemTexture;
+	sf::Sprite player1RoundsSprite;
+	sf::Sprite player2RoundsSprite;
 	sf::Sprite gemSprite;
 	int velocityIterations = 10;
 	int positionIterations = 10;
@@ -88,6 +91,7 @@ public:
 	bool accept=false,accept1=false;
 	sf::Clock _clock;
 	sf::Text rtext,rtext1,rtext2,rtext3;
+	sf::Text player1NameText, player2NameText, player1RoundsText, player2RoundsText;
 	sf::Font font;
 private:
 	GameDataRef _data;
