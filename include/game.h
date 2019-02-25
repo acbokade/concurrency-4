@@ -58,6 +58,7 @@ public:
 	bool isClient;
 	bool gemExists;
 	bool isPlaying;
+	bool isExiting;
 	std::mutex m,m1;
     Player* player1;
     Player* player2;

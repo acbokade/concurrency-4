@@ -19,7 +19,7 @@ namespace stickman
     	gameState.wall2 = gameState.createGround(b2Vec2(71.f/SCALE, 384.f/SCALE),90);
     	gameState.wall3 = gameState.createGround(b2Vec2(1295.f/SCALE, 384.f/SCALE),90);
     	gameState.connect();
-    	while(gameState.player1Rounds <=3 && gameState.player2Rounds <=3)
+    	while(gameState.player1Rounds <=3 && gameState.player2Rounds <=3 && !gameState.isExiting)
     	{
     		gameState.gameLoop();
     	}

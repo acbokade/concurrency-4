@@ -73,6 +73,7 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	this->gemExists = false;
 	player1Rounds = 0;
 	player2Rounds = 0;
+	this->isExiting = false;
 };
 
 Game::~Game()
@@ -225,6 +226,7 @@ void Game::gameLoop()
 					this->tcplistener1.close();
 	            	this->sendSocket.disconnect();
 					this->listenSocket.disconnect();
+					this->isExiting = true;
 	                window->close();
 	            }
 	        }
@@ -412,6 +414,7 @@ void Game::gameLoop()
 					this->tcplistener1.close();
 	            	this->sendSocket.disconnect();
 					this->listenSocket.disconnect();
+					this->isExiting = true;
 	                window->close();
 	            }
 	        }
