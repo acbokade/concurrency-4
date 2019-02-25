@@ -6,6 +6,7 @@
 #include <sstream>
 #include "State.hpp"
 #include "Game.hpp"
+#include "GameOver.h"
 #include <bits/stdc++.h>
 using namespace std;
 #define DEGTORAD 0.0174532925199432957f

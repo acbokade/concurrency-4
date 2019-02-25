@@ -11,6 +11,7 @@ add_library(src
 		myListener.cpp
 		mainGame.cpp
 		name.cpp
+		GameOver.cpp
 			)
 
 

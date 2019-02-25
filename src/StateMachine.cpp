@@ -44,8 +44,8 @@ namespace stickman
 			}
 
 			this->_states.push(std::move(this->_newState));
-			this->_states.top()->Init();
 			this->_isAdding = false;
+			this->_states.top()->Init();
 		}
 	}
 
