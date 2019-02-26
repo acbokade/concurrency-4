@@ -756,41 +756,41 @@ void Game::decrease_hp(int a,int b)
 	int new_hp1,new_hp2;
 	if( (a==1 && b==5) || (a==5 && b==1) )
 	{
-		damage1=10;
-		damage2=10;
+		damage1=5;
+		damage2=5;
 	}
 	else if( (a==1 && b==7) || (a==7 && b==1) )
 	{
-		damage1=10;
+		damage1=5;
 	}
 	else if( (a==1 && b==8) || (a==8 && b==1) )
 	{
-		damage1=10;
+		damage1=5;
 	}
 	else if( (a==2 && b==8) || (a==8 && b==2) )
 	{
-		damage1=5;
+		damage1=3;
 	}
 	else if( (a==2 && b==7) || (a==7 && b==2) )
 	{
-		damage1=5;
+		damage1=3;
 	}
 	else if( (a==3 && b==5) || (a==5 && b==3) )
 	{
-		damage2=10;
+		damage2=5;
 	}
 	else if( (a==4 && b==5) || (a==5 && b==4) )
 	{
-		damage2=10;
+		damage2=5;
 	}
 	
 	else if( (a==3 && b==6) || (a==6 && b==3) )
 	{
-		damage2=5;
+		damage2=3;
 	}
 	else if( (a==4 && b==6) || (a==6 && b==4) )
 	{
-		damage2=5;
+		damage2=3;
 	}
 	m.lock();
 	new_hp1 = player1->getHealth() - damage1;

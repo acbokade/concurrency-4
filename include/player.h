@@ -188,7 +188,7 @@ public:
 	void setHealth(int health);
 	/**
 	*	@brief Sets the name of player.
-	*	@param health Stores the name to be set.
+	*	@param name Stores the name to be set.
 	*/
 	void setName(std::string name);
 	/**
@@ -201,10 +201,6 @@ public:
 	*	@return Health point of player.
 	*/
 	int getHealth();
-	/**
-	*	@brief Returns the health of player.
-	*	@return Health point of player.
-	*/
 	/**
 	*	@brief Initialises the textures and sprites of a player.
 	*	@param firstPlayer Stores the information whether the player is first player or second.
