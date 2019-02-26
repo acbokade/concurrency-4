@@ -1,0 +1,305 @@
+\hypertarget{classPlayer}{}\doxysection{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+Contains all the information about the player.  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\label{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}} 
+\mbox{\hyperlink{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}\label{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}} 
+\mbox{\hyperlink{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}{$\sim$\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classPlayer_a6d5db0ae0857ce541978a134ea618de3}{createhead}} (b2\+World $\ast$world, b2\+Vec2 position, bool is\+Static, float radius, float restitution, float density)
+\begin{DoxyCompactList}\small\item\em Creates a circular Box2D object for head of player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classPlayer_a2f0d1c29868614527bb2f0fcefb9e080}{createbody}} (b2\+World $\ast$world, b2\+Vec2 position, bool is\+Static, float length, float width, float restitution, float density)
+\begin{DoxyCompactList}\small\item\em Creates a rectangular Box2D object for each body part(body, hands, legs) of player. \end{DoxyCompactList}\item 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classPlayer_a3f08fd556d21cc1b212e54360b0cf610}{create\+Revolute\+Joint}} (b2\+World $\ast$world, b2\+Body $\ast$body1, b2\+Body $\ast$body2, b2\+Vec2 anchor\+Point1, b2\+Vec2 anchor\+Point2, float lower\+Limit, float upper\+Limit)
+\begin{DoxyCompactList}\small\item\em Revolute joints can be think of as hinge which allows rotation of body parts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a8f28f6b069f7388877e02ae0a175d4ab}{set\+Health}} (int \mbox{\hyperlink{classPlayer_aad33b52bfe73c4c978a3135172f286a0}{health}})
+\begin{DoxyCompactList}\small\item\em Sets the health point of player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a95d2b46eee230ad3e31612ff2bc681da}{set\+Name}} (std\+::string \mbox{\hyperlink{classPlayer_af9c920fabaafdeb7961a645315b521ff}{name}})
+\begin{DoxyCompactList}\small\item\em Sets the name of player. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPlayer_af1aa472885d589516f483e26e786600e}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of player. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPlayer_abcb15d249bed9a4ab0ab86b52b0d747a}{get\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Returns the health of player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a53ec3c40e880cf3d75ae8ad5c7aee43c}{init}} (bool first\+Player)
+\begin{DoxyCompactList}\small\item\em Returns the health of player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlayer_aad33b52bfe73c4c978a3135172f286a0}\label{classPlayer_aad33b52bfe73c4c978a3135172f286a0}} 
+int \mbox{\hyperlink{classPlayer_aad33b52bfe73c4c978a3135172f286a0}{health}}
+\begin{DoxyCompactList}\small\item\em Health of player Contains the current health point of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a492a1be47c29b23df75dd15e6b07c4ae}\label{classPlayer_a492a1be47c29b23df75dd15e6b07c4ae}} 
+b2\+Body $\ast$ \mbox{\hyperlink{classPlayer_a492a1be47c29b23df75dd15e6b07c4ae}{head}}
+\begin{DoxyCompactList}\small\item\em Head of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a4be5ecc1dd08196fd574dbb455762914}\label{classPlayer_a4be5ecc1dd08196fd574dbb455762914}} 
+int \mbox{\hyperlink{classPlayer_a4be5ecc1dd08196fd574dbb455762914}{head\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of head Used to detect head in collision of two body parts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_aae9701beaab8771c5bb97e246e0a2bcc}\label{classPlayer_aae9701beaab8771c5bb97e246e0a2bcc}} 
+sf\+::\+Texture \mbox{\hyperlink{classPlayer_aae9701beaab8771c5bb97e246e0a2bcc}{head\+Texture}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Texture to be loaded for head of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_ab9174b873b44e7ce3dc5f672068ff971}\label{classPlayer_ab9174b873b44e7ce3dc5f672068ff971}} 
+sf\+::\+Sprite \mbox{\hyperlink{classPlayer_ab9174b873b44e7ce3dc5f672068ff971}{head\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for head of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_aa0bbd4ba33921c9e7ccbc0801560a712}\label{classPlayer_aa0bbd4ba33921c9e7ccbc0801560a712}} 
+b2\+Body $\ast$ \mbox{\hyperlink{classPlayer_aa0bbd4ba33921c9e7ccbc0801560a712}{body}}
+\begin{DoxyCompactList}\small\item\em Body of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a8606cd53996e6e657799a1e4a758a899}\label{classPlayer_a8606cd53996e6e657799a1e4a758a899}} 
+int \mbox{\hyperlink{classPlayer_a8606cd53996e6e657799a1e4a758a899}{body\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of body Used to detect body in collision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a17cdbb61c63eeb63f5b6d8f3261b4f7a}\label{classPlayer_a17cdbb61c63eeb63f5b6d8f3261b4f7a}} 
+sf\+::\+Texture \mbox{\hyperlink{classPlayer_a17cdbb61c63eeb63f5b6d8f3261b4f7a}{body\+Texture}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Texture to be loaded for body of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a733f1c1836db49256809c56363b8400c}\label{classPlayer_a733f1c1836db49256809c56363b8400c}} 
+sf\+::\+Sprite \mbox{\hyperlink{classPlayer_a733f1c1836db49256809c56363b8400c}{body\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for body of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a118caf1bc1171b6e2d63d0544a12eae6}\label{classPlayer_a118caf1bc1171b6e2d63d0544a12eae6}} 
+b2\+Body $\ast$ \mbox{\hyperlink{classPlayer_a118caf1bc1171b6e2d63d0544a12eae6}{left\+\_\+hand}}
+\begin{DoxyCompactList}\small\item\em Left Hand of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s left hand. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_ae468da9b2edefa6fad9c15be21429c5f}\label{classPlayer_ae468da9b2edefa6fad9c15be21429c5f}} 
+int \mbox{\hyperlink{classPlayer_ae468da9b2edefa6fad9c15be21429c5f}{left\+\_\+hand\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of player\textquotesingle{}s left hand Used to detect left hand in collision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a06155e942d34d2d817bd5d83d58363b3}\label{classPlayer_a06155e942d34d2d817bd5d83d58363b3}} 
+sf\+::\+Texture \mbox{\hyperlink{classPlayer_a06155e942d34d2d817bd5d83d58363b3}{hand\+Texture}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Texture to be loaded for both the hands of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a475bc21a49ec0646543d453aad5165eb}\label{classPlayer_a475bc21a49ec0646543d453aad5165eb}} 
+sf\+::\+Sprite \mbox{\hyperlink{classPlayer_a475bc21a49ec0646543d453aad5165eb}{left\+\_\+hand\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for left hand of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_aa83d401949b18dcc9e8e3c43832a8b7b}\label{classPlayer_aa83d401949b18dcc9e8e3c43832a8b7b}} 
+b2\+Body $\ast$ \mbox{\hyperlink{classPlayer_aa83d401949b18dcc9e8e3c43832a8b7b}{right\+\_\+hand}}
+\begin{DoxyCompactList}\small\item\em Right Hand of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s right hand. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a247af93e3e7dc477f0ebcc1caf549702}\label{classPlayer_a247af93e3e7dc477f0ebcc1caf549702}} 
+int \mbox{\hyperlink{classPlayer_a247af93e3e7dc477f0ebcc1caf549702}{right\+\_\+hand\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of player\textquotesingle{}s right hand Used to detect right hand in collision of two body parts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a6b1bfc31c3a3887210534a4912f2f0a7}\label{classPlayer_a6b1bfc31c3a3887210534a4912f2f0a7}} 
+sf\+::\+Sprite \mbox{\hyperlink{classPlayer_a6b1bfc31c3a3887210534a4912f2f0a7}{right\+\_\+hand\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for right hand of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_ac930c6d977230e6bca5988e5253dd2c5}\label{classPlayer_ac930c6d977230e6bca5988e5253dd2c5}} 
+b2\+Body $\ast$ \mbox{\hyperlink{classPlayer_ac930c6d977230e6bca5988e5253dd2c5}{left\+\_\+leg}}
+\begin{DoxyCompactList}\small\item\em Left Leg of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s left leg. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a14c712cf7642ba3a2bbc7a5d14e52d08}\label{classPlayer_a14c712cf7642ba3a2bbc7a5d14e52d08}} 
+int \mbox{\hyperlink{classPlayer_a14c712cf7642ba3a2bbc7a5d14e52d08}{left\+\_\+leg\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of player\textquotesingle{}s left leg Used to detect left leg in collision of two body parts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a2c95a26d22e3fa825def2c052fa74386}\label{classPlayer_a2c95a26d22e3fa825def2c052fa74386}} 
+sf\+::\+Texture \mbox{\hyperlink{classPlayer_a2c95a26d22e3fa825def2c052fa74386}{leg\+Texture}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Texture to be loaded for both the legs of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_abfe364077a19821b3a39808aea631ffb}\label{classPlayer_abfe364077a19821b3a39808aea631ffb}} 
+sf\+::\+Sprite \mbox{\hyperlink{classPlayer_abfe364077a19821b3a39808aea631ffb}{left\+\_\+leg\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for left leg of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_adac783fb254555227a475b06d389592c}\label{classPlayer_adac783fb254555227a475b06d389592c}} 
+b2\+Body $\ast$ \mbox{\hyperlink{classPlayer_adac783fb254555227a475b06d389592c}{right\+\_\+leg}}
+\begin{DoxyCompactList}\small\item\em Right Leg of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s right leg. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_ae336b27e8c956d137738cf4dbcceb34d}\label{classPlayer_ae336b27e8c956d137738cf4dbcceb34d}} 
+int \mbox{\hyperlink{classPlayer_ae336b27e8c956d137738cf4dbcceb34d}{right\+\_\+leg\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of player\textquotesingle{}s right leg Used to detect right leg in collision of two body parts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a87167462e082399561b35139a33e6496}\label{classPlayer_a87167462e082399561b35139a33e6496}} 
+sf\+::\+Sprite \mbox{\hyperlink{classPlayer_a87167462e082399561b35139a33e6496}{right\+\_\+leg\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for right leg of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_ad6c64e7709cde35a4654ab2c28ffb274}\label{classPlayer_ad6c64e7709cde35a4654ab2c28ffb274}} 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classPlayer_ad6c64e7709cde35a4654ab2c28ffb274}{head\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between head and body of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a295975c80f1ac2e9d0ad4b286c9fd9b8}\label{classPlayer_a295975c80f1ac2e9d0ad4b286c9fd9b8}} 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classPlayer_a295975c80f1ac2e9d0ad4b286c9fd9b8}{right\+\_\+hand\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between right hand and body of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a3acd106181348da0d02d16f5f8ce9b0e}\label{classPlayer_a3acd106181348da0d02d16f5f8ce9b0e}} 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classPlayer_a3acd106181348da0d02d16f5f8ce9b0e}{left\+\_\+hand\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between left hand and body of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_a1aeff634e4d1851cf57a06de09014744}\label{classPlayer_a1aeff634e4d1851cf57a06de09014744}} 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classPlayer_a1aeff634e4d1851cf57a06de09014744}{right\+\_\+leg\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between right leg and body of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_aaa58c13189790f25dcbb9eab2fcd6599}\label{classPlayer_aaa58c13189790f25dcbb9eab2fcd6599}} 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classPlayer_aaa58c13189790f25dcbb9eab2fcd6599}{left\+\_\+leg\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between left leg and body of player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPlayer_af9c920fabaafdeb7961a645315b521ff}\label{classPlayer_af9c920fabaafdeb7961a645315b521ff}} 
+std\+::string \mbox{\hyperlink{classPlayer_af9c920fabaafdeb7961a645315b521ff}{name}}
+\begin{DoxyCompactList}\small\item\em Name of player Stores the name of player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains all the information about the player. 
+
+\begin{DoxyVerb} Contains information about the player including its name, health point, textures, sprites and Box2D body
+ pointers along with some joints.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer_a2f0d1c29868614527bb2f0fcefb9e080}\label{classPlayer_a2f0d1c29868614527bb2f0fcefb9e080}} 
+\index{Player@{Player}!createbody@{createbody}}
+\index{createbody@{createbody}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{createbody()}{createbody()}}
+{\footnotesize\ttfamily b2\+Body $\ast$ Player\+::createbody (\begin{DoxyParamCaption}\item[{b2\+World $\ast$}]{world,  }\item[{b2\+Vec2}]{position,  }\item[{bool}]{is\+Static,  }\item[{float}]{length,  }\item[{float}]{width,  }\item[{float}]{restitution,  }\item[{float}]{density }\end{DoxyParamCaption})}
+
+
+
+Creates a rectangular Box2D object for each body part(body, hands, legs) of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Box2D world in which player is initialised. \\
+\hline
+{\em position} & Contains the position where body part is to be created. \\
+\hline
+{\em is\+Static} & Denotes whether the object is static or dynamic. \\
+\hline
+{\em length} & Contains the length of body part of player. \\
+\hline
+{\em length} & Contains the width of body part of player. \\
+\hline
+{\em restitution} & Contains the coefficient of restituion of body part of player. \\
+\hline
+{\em density} & Stores the density of body part of player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Box2D object pointer of body part. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a6d5db0ae0857ce541978a134ea618de3}\label{classPlayer_a6d5db0ae0857ce541978a134ea618de3}} 
+\index{Player@{Player}!createhead@{createhead}}
+\index{createhead@{createhead}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{createhead()}{createhead()}}
+{\footnotesize\ttfamily b2\+Body $\ast$ Player\+::createhead (\begin{DoxyParamCaption}\item[{b2\+World $\ast$}]{world,  }\item[{b2\+Vec2}]{position,  }\item[{bool}]{is\+Static,  }\item[{float}]{radius,  }\item[{float}]{restitution,  }\item[{float}]{density }\end{DoxyParamCaption})}
+
+
+
+Creates a circular Box2D object for head of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Box2D world in which player is initialised. \\
+\hline
+{\em position} & Contains the position where head is to be created. \\
+\hline
+{\em is\+Static} & Denotes whether the object is static or dynamic. \\
+\hline
+{\em radius} & Contains the radius of head of player. \\
+\hline
+{\em restitution} & Contains the coefficient of restituion for head of player. \\
+\hline
+{\em density} & Stores the density of head of player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Box2D object pointer of head. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a3f08fd556d21cc1b212e54360b0cf610}\label{classPlayer_a3f08fd556d21cc1b212e54360b0cf610}} 
+\index{Player@{Player}!createRevoluteJoint@{createRevoluteJoint}}
+\index{createRevoluteJoint@{createRevoluteJoint}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{createRevoluteJoint()}{createRevoluteJoint()}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint $\ast$ Player\+::create\+Revolute\+Joint (\begin{DoxyParamCaption}\item[{b2\+World $\ast$}]{world,  }\item[{b2\+Body $\ast$}]{body1,  }\item[{b2\+Body $\ast$}]{body2,  }\item[{b2\+Vec2}]{anchor\+Point1,  }\item[{b2\+Vec2}]{anchor\+Point2,  }\item[{float}]{lower\+Limit,  }\item[{float}]{upper\+Limit }\end{DoxyParamCaption})}
+
+
+
+Revolute joints can be think of as hinge which allows rotation of body parts. 
+
+Creates a Revolute joint between two body parts. 
+\begin{DoxyParams}{Parameters}
+{\em world} & Box2D world in which player is initialised. \\
+\hline
+{\em body1} & Contains the Box2D object pointer denoting the first body part in joint. \\
+\hline
+{\em body2} & Contains the Box2D object pointer denoting the second body part in joint. \\
+\hline
+{\em anchor\+Point1} & Contains the local position in first body where joint has to be initialised. \\
+\hline
+{\em anchor\+Point2} & Contains the local position in second body where joint has to be initialised. \\
+\hline
+{\em lower\+Limit} & Stores the lower limit of angle of rotation for the Revolute joint. \\
+\hline
+{\em upper\+Limit} & Stores the upper limit of angle of rotation for the Revolute joint. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Box2D Revolute joint pointer denoting the joint. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_abcb15d249bed9a4ab0ab86b52b0d747a}\label{classPlayer_abcb15d249bed9a4ab0ab86b52b0d747a}} 
+\index{Player@{Player}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily int Player\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the health of player. 
+
+\begin{DoxyReturn}{Returns}
+Health point of player. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_af1aa472885d589516f483e26e786600e}\label{classPlayer_af1aa472885d589516f483e26e786600e}} 
+\index{Player@{Player}!getName@{getName}}
+\index{getName@{getName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Player\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the name of player. 
+
+\begin{DoxyReturn}{Returns}
+Name of player. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a53ec3c40e880cf3d75ae8ad5c7aee43c}\label{classPlayer_a53ec3c40e880cf3d75ae8ad5c7aee43c}} 
+\index{Player@{Player}!init@{init}}
+\index{init@{init}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Player\+::init (\begin{DoxyParamCaption}\item[{bool}]{first\+Player }\end{DoxyParamCaption})}
+
+
+
+Returns the health of player. 
+
+\begin{DoxyReturn}{Returns}
+Health point of player.\+Initialises the textures and sprites of a player. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Player} & Stores the information whether the player is first player or second. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a8f28f6b069f7388877e02ae0a175d4ab}\label{classPlayer_a8f28f6b069f7388877e02ae0a175d4ab}} 
+\index{Player@{Player}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily void Player\+::set\+Health (\begin{DoxyParamCaption}\item[{int}]{health }\end{DoxyParamCaption})}
+
+
+
+Sets the health point of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & Stores the health to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a95d2b46eee230ad3e31612ff2bc681da}\label{classPlayer_a95d2b46eee230ad3e31612ff2bc681da}} 
+\index{Player@{Player}!setName@{setName}}
+\index{setName@{setName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Player\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets the name of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & Stores the name to be set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+player.\+h\item 
+player.\+cpp\end{DoxyCompactItemize}
