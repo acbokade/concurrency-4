@@ -15,3 +15,4 @@
 #define HOST_BUTTON "res/host.png"
 #define JOIN_BUTTON "res/join.png"
 #define HELP_BUTTON "res/help.png"
+#define BACK_BUTTON "res/back_button.png"

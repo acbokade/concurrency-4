@@ -12,6 +12,7 @@ add_library(src
 		mainGame.cpp
 		name.cpp
 		GameOver.cpp
+		HelpState.cpp
 			)
 
 

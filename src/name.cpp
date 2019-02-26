@@ -74,6 +74,10 @@ namespace stickman
             {
                 this->_data->machine.AddState(StateRef(new MainMenuState(_data,playerInput,true)), true);
             }
+            else if(this->_data->input.IsSpriteClicked(_help_button,sf::Mouse::Left,_data->window))
+            {
+                this->_data->machine.AddState(StateRef(new HelpState(_data)));
+            }
 			playerText.setString(playerInput);
         }
 	}

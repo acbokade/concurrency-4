@@ -2,6 +2,7 @@
 
 #include "State.hpp"
 #include "mainGame.hpp"
+#include <HelpState.hpp>
 #include "Game.hpp"
 #include <string>
 #include "SFML/Graphics.hpp"
