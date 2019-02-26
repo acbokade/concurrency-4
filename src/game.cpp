@@ -5,7 +5,6 @@
 #include "Box2D/Box2D.h"
 #include "myListener.h"
 #include <iostream>
-using namespace std;
 #define DEGTORAD 0.0174532925199432957f
 
 const float SCALE = 30.f;
@@ -13,7 +12,7 @@ float temp1 = ((75/2)/sqrt(2));
 float temp2 = (60/2);
 
 namespace stickman{
-Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
+Game::Game(GameDataRef data,std::string s,bool client,std::string myip): _data(data)
 {
 	this->window = &(_data->window);
 	b2Vec2 gravity(0.0f, 0.0f);
