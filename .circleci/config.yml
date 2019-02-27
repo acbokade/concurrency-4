@@ -2,23 +2,25 @@ version: 2
 jobs:
   build:
     docker:
-      - image:  "debian:stretch"
-
+    - image: circleci/ruby:stretch
     steps:
-      - checkout  # check out src code into working directory
-
-      - run:
-          name: Set up
-          command: |
-            apt-get update
-            apt-get install git
-            git submodule sync; git submodule update --init # initialize git submodules
-            apt-get install libsfml-dev                # version 2.4.2
-            apt-get install libyaml-cpp-dev            # version 0.5.2-4
-            apt-get install cmake
-      - run:
-          name: Compile
-          command: cmake CMakeLists.txt
-      - run:
-          name: Make
-          command: make
+    - checkout
+    - run:
+        name: Set up
+        command: |
+          sudo apt-get update
+          git submodule sync; git submodule update --init # initialize git submodules
+          sudo apt-get install libsfml-dev                # version 2.4.2
+          sudo apt-get install libyaml-cpp-dev            # version 0.5.2-4
+          sudo apt-get install cmake
+    - run:
+        name: Compile
+        command: cmake CMakeLists.txt
+    - run:
+        name: Make
+        command: make
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build
