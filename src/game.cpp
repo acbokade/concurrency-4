@@ -141,9 +141,9 @@ void Game::connect()
 	}
 	else
 	{
-		if(this->sendSocket.connect(this->myip,5090)!=sf::Socket::Done)
+		if(this->sendSocket.connect(this->myip,5080)!=sf::Socket::Done)
 			std::cerr<<"Failed to connect!"<<std::endl;
-		if(this->listenSocket.connect(this->myip,6090)!=sf::Socket::Done)
+		if(this->listenSocket.connect(this->myip,6080)!=sf::Socket::Done)
 			std::cerr<<"Failed to connect!"<<std::endl;
 	}
     this->sendSocket.setBlocking(true);
@@ -154,7 +154,7 @@ void Game::serverListen(bool flag)
 {
 	if(flag == false)
 	{
-		if(tcplistener.listen(5090)!=sf::Socket::Done)
+		if(tcplistener.listen(5080)!=sf::Socket::Done)
 			std::cerr<<"Server error while listening !"<<std::endl;
 		if(tcplistener.accept(sendSocket)!=sf::Socket::Done)
 			std::cerr<<"Error while accepting conection !"<<std::endl;	
@@ -162,7 +162,7 @@ void Game::serverListen(bool flag)
 	}
 	else
 	{
-		if(tcplistener1.listen(6090)!=sf::Socket::Done)
+		if(tcplistener1.listen(6080)!=sf::Socket::Done)
 			std::cerr<<"Server error while listening !"<<std::endl;
 		if(tcplistener1.accept(listenSocket)!=sf::Socket::Done)
 			std::cerr<<"Error while accepting conection !"<<std::endl;
