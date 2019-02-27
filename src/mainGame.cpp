@@ -25,6 +25,11 @@ namespace stickman
     	}
     	if(!gameState.isExiting)
     	{
+            gameState.tcplistener.close();
+            gameState.tcplistener1.close();
+            gameState.sendSocket.disconnect();
+            gameState.listenSocket.disconnect();
+            gameState.isExiting = true;
             if(gameState.player1Rounds == 3 && gameState.player2Rounds < 3)
             {
                 this->_data->machine.AddState(StateRef(new GameOver(_data,gameState.player1->name,1)), true);
