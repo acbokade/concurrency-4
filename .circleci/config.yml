@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image:  circleci/ruby:stretch
+      - image:  circleci/debian:stretch
 
     steps:
       - checkout  # check out src code into working directory
