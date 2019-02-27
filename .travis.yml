@@ -45,6 +45,12 @@ before_install:
     - make
     - sudo make install
     - eval "${MATRIX_EVAL}"
+    - sudo apt-get install libgtest-dev
+    - cd /usr/src/gtest
+    - sudo cmake CMakeLists.txt
+    - sudo mak
+    - sudo cp *.a /usr/lib
+    
 script:
     - gcc -v && g++ -v && cmake --version
     - cd ..
