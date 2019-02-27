@@ -26,5 +26,11 @@ namespace stickman
 		sf::Sprite _background;
 		sf::Sprite _logo;
 		sf::Sprite _Press;
+
+		sf::Sprite _create;
+		sf::Sprite _name1;
+		sf::Sprite _name2;
+		sf::Sprite _name3;
+		sf::Sprite _name4;
 	};
 }

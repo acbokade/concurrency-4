@@ -25,7 +25,6 @@ namespace stickman
     	}
     	if(!gameState.isExiting)
     	{
-            std::cout<<"Entered"<<std::endl;
             if(gameState.player1Rounds == 3 && gameState.player2Rounds < 3)
             {
                 this->_data->machine.AddState(StateRef(new GameOver(_data,gameState.player1->name,1)), true);

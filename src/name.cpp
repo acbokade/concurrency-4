@@ -74,10 +74,6 @@ namespace stickman
             {
                 this->_data->machine.AddState(StateRef(new MainMenuState(_data,playerInput,true)), true);
             }
-            else if(this->_data->input.IsSpriteClicked(_help_button,sf::Mouse::Left,_data->window))
-            {
-                this->_data->machine.AddState(StateRef(new HelpState(_data)));
-            }
 			playerText.setString(playerInput);
         }
 	}
@@ -88,7 +84,7 @@ namespace stickman
 	void NameState::Draw(float dt)
 	{
 		
-		this->_data->window.clear(sf::Color(0,153,255));
+		this->_data->window.clear(sf::Color(32,32,32));
 		//this->_data->window.draw( this->_background );
         this->_data->window.draw( this->_join_button );
         this->_data->window.draw( this->_host_button );

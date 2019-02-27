@@ -14,6 +14,7 @@ namespace stickman
 		GameOver(GameDataRef data,std::string name,int result);
 		sf::Font font;
         sf::Text gtext,gtext1;
+	
 		void Init();
 		void HandleInput();
 		void Update(float dt);
@@ -24,5 +25,6 @@ namespace stickman
 		std::string name;
 		int result;
         sf::Sprite _play_again_button;
+	sf::Sprite baloon,baloon1,baloon2,baloon3,baloon4,baloon5;
 	};
 }

@@ -456,7 +456,7 @@ void Game::gameLoop()
 			sf::Texture bar2;
     		if(!bar1.loadFromFile("res/bar.png"))
     			std::cerr<<"Failed to load texture!"<<std::endl;
-    		if(bar2.loadFromFile("res/bar.png"))
+    		if(!bar2.loadFromFile("res/bar.png"))
     			std::cerr<<"Failed to load texture!"<<std::endl;
     		sf::Sprite barsprite1;
     		barsprite1.setTexture(bar1);

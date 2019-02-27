@@ -88,7 +88,7 @@ namespace stickman
 
 	void MainMenuState::Draw(float dt)
 	{
-		this->_data->window.clear(sf::Color(0,153,255));
+		this->_data->window.clear(sf::Color(32,32,32));
 
 		//this->_data->window.draw( this->_background );
         this->_data->window.draw( this->text1);
