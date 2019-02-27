@@ -75,244 +75,1037 @@ $(function() {
 <div class="title">stickman::Game Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contains all basic entities required in game like window, players object, TcpListener, Send and receive sockets, Box2D world, walls,ground, sprites of all bodies to be displayed in window and functions to check collision, decrease health points, sending and receving packets from client to server and vice versa, worker threads which checks for collision and gem thread used to generate gem.  
+ <a href="classstickman_1_1Game.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="game_8h_source.html">game.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f9e3d3ebf62f39b6e462dd14bfffd9f"><td class="memItemLeft" align="right" valign="top"><a id="a3f9e3d3ebf62f39b6e462dd14bfffd9f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b> (GameDataRef data, std::string s, bool client, std::string myip)</td></tr>
+<tr class="memitem:a3f9e3d3ebf62f39b6e462dd14bfffd9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a3f9e3d3ebf62f39b6e462dd14bfffd9f">Game</a> (GameDataRef data, std::string s, bool client, std::string <a class="el" href="classstickman_1_1Game.html#a059d9e40d08315beb832b4db3066bd6f">myip</a>)</td></tr>
+<tr class="memdesc:a3f9e3d3ebf62f39b6e462dd14bfffd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for game.  <a href="#a3f9e3d3ebf62f39b6e462dd14bfffd9f">More...</a><br /></td></tr>
 <tr class="separator:a3f9e3d3ebf62f39b6e462dd14bfffd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabb270452a1c694499f5b7b0d90e0818"><td class="memItemLeft" align="right" valign="top"><a id="aabb270452a1c694499f5b7b0d90e0818"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>createGround</b> (b2Vec2 position, int angle)</td></tr>
+<tr class="memitem:aafc3c7c1d7442815f8f9a9031d8dcc10"><td class="memItemLeft" align="right" valign="top"><a id="aafc3c7c1d7442815f8f9a9031d8dcc10"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aafc3c7c1d7442815f8f9a9031d8dcc10">~Game</a> ()</td></tr>
+<tr class="memdesc:aafc3c7c1d7442815f8f9a9031d8dcc10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for game. <br /></td></tr>
+<tr class="separator:aafc3c7c1d7442815f8f9a9031d8dcc10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb270452a1c694499f5b7b0d90e0818"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aabb270452a1c694499f5b7b0d90e0818">createGround</a> (b2Vec2 position, int angle)</td></tr>
+<tr class="memdesc:aabb270452a1c694499f5b7b0d90e0818"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is used to create ground Box2D body in the Box2D world.  <a href="#aabb270452a1c694499f5b7b0d90e0818">More...</a><br /></td></tr>
 <tr class="separator:aabb270452a1c694499f5b7b0d90e0818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2c9a3bd6e3c78a38bf3912fe62d6c75"><td class="memItemLeft" align="right" valign="top"><a id="ab2c9a3bd6e3c78a38bf3912fe62d6c75"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initPlayer</b> (<a class="el" href="classPlayer.html">Player</a> *player, float X, int offset)</td></tr>
+<tr class="memitem:ab2c9a3bd6e3c78a38bf3912fe62d6c75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#ab2c9a3bd6e3c78a38bf3912fe62d6c75">initPlayer</a> (<a class="el" href="classPlayer.html">Player</a> *player, float X, int offset)</td></tr>
+<tr class="memdesc:ab2c9a3bd6e3c78a38bf3912fe62d6c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of player object.  <a href="#ab2c9a3bd6e3c78a38bf3912fe62d6c75">More...</a><br /></td></tr>
 <tr class="separator:ab2c9a3bd6e3c78a38bf3912fe62d6c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f0f2aa935fc9d390ac9e38adc581544"><td class="memItemLeft" align="right" valign="top"><a id="a4f0f2aa935fc9d390ac9e38adc581544"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gameLoop</b> ()</td></tr>
+<tr class="memitem:a4f0f2aa935fc9d390ac9e38adc581544"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a4f0f2aa935fc9d390ac9e38adc581544">gameLoop</a> ()</td></tr>
+<tr class="memdesc:a4f0f2aa935fc9d390ac9e38adc581544"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classstickman_1_1Game.html" title="Contains all basic entities required in game like window, players object, TcpListener,...">Game</a> loop which runs until game is finished.  <a href="#a4f0f2aa935fc9d390ac9e38adc581544">More...</a><br /></td></tr>
 <tr class="separator:a4f0f2aa935fc9d390ac9e38adc581544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ae0067d136962a6434b41830fc205a"><td class="memItemLeft" align="right" valign="top"><a id="a28ae0067d136962a6434b41830fc205a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updatePlayer</b> (<a class="el" href="classPlayer.html">Player</a> *player)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a28ae0067d136962a6434b41830fc205a">updatePlayer</a> (<a class="el" href="classPlayer.html">Player</a> *player)</td></tr>
+<tr class="memdesc:a28ae0067d136962a6434b41830fc205a"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is used to update positions and angle of all body parts of each player after each time frame. <br /></td></tr>
 <tr class="separator:a28ae0067d136962a6434b41830fc205a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dc1273394ab5d53ad14e0aed6854b6c"><td class="memItemLeft" align="right" valign="top"><a id="a3dc1273394ab5d53ad14e0aed6854b6c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (<a class="el" href="classPlayer.html">Player</a> *player)</td></tr>
+<tr class="memitem:a3dc1273394ab5d53ad14e0aed6854b6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a3dc1273394ab5d53ad14e0aed6854b6c">draw</a> (<a class="el" href="classPlayer.html">Player</a> *player)</td></tr>
+<tr class="memdesc:a3dc1273394ab5d53ad14e0aed6854b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is used to draw different body parts like head, body, hands and legs of player in window.  <a href="#a3dc1273394ab5d53ad14e0aed6854b6c">More...</a><br /></td></tr>
 <tr class="separator:a3dc1273394ab5d53ad14e0aed6854b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa95a69d1f51557804e592e7869c2de68"><td class="memItemLeft" align="right" valign="top"><a id="aa95a69d1f51557804e592e7869c2de68"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkcollision</b> ()</td></tr>
+<tr class="memitem:aa95a69d1f51557804e592e7869c2de68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aa95a69d1f51557804e592e7869c2de68">checkcollision</a> ()</td></tr>
+<tr class="memdesc:aa95a69d1f51557804e592e7869c2de68"><td class="mdescLeft">&#160;</td><td class="mdescRight">It checks collision between body parts of first player and second player.  <a href="#aa95a69d1f51557804e592e7869c2de68">More...</a><br /></td></tr>
 <tr class="separator:aa95a69d1f51557804e592e7869c2de68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a531abd436b7c1dd6364950ad89d8588e"><td class="memItemLeft" align="right" valign="top"><a id="a531abd436b7c1dd6364950ad89d8588e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>decrease_hp</b> (int a, int b)</td></tr>
+<tr class="memitem:a531abd436b7c1dd6364950ad89d8588e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a531abd436b7c1dd6364950ad89d8588e">decrease_hp</a> (int a, int b)</td></tr>
+<tr class="memdesc:a531abd436b7c1dd6364950ad89d8588e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is used to decrease health point of player according to collision of different body parts of each player.  <a href="#a531abd436b7c1dd6364950ad89d8588e">More...</a><br /></td></tr>
 <tr class="separator:a531abd436b7c1dd6364950ad89d8588e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a174cdd8a257dc1d12338b0daec2fe1b9"><td class="memItemLeft" align="right" valign="top"><a id="a174cdd8a257dc1d12338b0daec2fe1b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>generateGem</b> ()</td></tr>
+<tr class="memitem:a174cdd8a257dc1d12338b0daec2fe1b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a174cdd8a257dc1d12338b0daec2fe1b9">generateGem</a> ()</td></tr>
+<tr class="memdesc:a174cdd8a257dc1d12338b0daec2fe1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It generates gem at random positions in the window after every 5 seconds and checks if any player has collected gem and accordingly increases its health points by 5.  <a href="#a174cdd8a257dc1d12338b0daec2fe1b9">More...</a><br /></td></tr>
 <tr class="separator:a174cdd8a257dc1d12338b0daec2fe1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7914c9a4f8ef224a79d4123079604459"><td class="memItemLeft" align="right" valign="top"><a id="a7914c9a4f8ef224a79d4123079604459"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b> (int x1, int y1, int x2, int y2)</td></tr>
+<tr class="memitem:a7914c9a4f8ef224a79d4123079604459"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a7914c9a4f8ef224a79d4123079604459">distance</a> (int x1, int y1, int x2, int y2)</td></tr>
+<tr class="memdesc:a7914c9a4f8ef224a79d4123079604459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cacluclates distance between two points in the window.  <a href="#a7914c9a4f8ef224a79d4123079604459">More...</a><br /></td></tr>
 <tr class="separator:a7914c9a4f8ef224a79d4123079604459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f3f6bea1944ce4b03ad1dcc657bd8a2"><td class="memItemLeft" align="right" valign="top"><a id="a0f3f6bea1944ce4b03ad1dcc657bd8a2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>server_send</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a0f3f6bea1944ce4b03ad1dcc657bd8a2">server_send</a> ()</td></tr>
+<tr class="memdesc:a0f3f6bea1944ce4b03ad1dcc657bd8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send packets of information like position of all body parts of each player and position of gem from server side to client side. <br /></td></tr>
 <tr class="separator:a0f3f6bea1944ce4b03ad1dcc657bd8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25c06feeebc9c899e0c0ac697a3e913a"><td class="memItemLeft" align="right" valign="top"><a id="a25c06feeebc9c899e0c0ac697a3e913a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>server_receive</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a25c06feeebc9c899e0c0ac697a3e913a">server_receive</a> ()</td></tr>
+<tr class="memdesc:a25c06feeebc9c899e0c0ac697a3e913a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to receive packets of information in server side of the key pressed by client so that server can simulate it in its world. <br /></td></tr>
 <tr class="separator:a25c06feeebc9c899e0c0ac697a3e913a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd9b80c5567bdea3493acf6f5ae98a02"><td class="memItemLeft" align="right" valign="top"><a id="abd9b80c5567bdea3493acf6f5ae98a02"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>client_send</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#abd9b80c5567bdea3493acf6f5ae98a02">client_send</a> ()</td></tr>
+<tr class="memdesc:abd9b80c5567bdea3493acf6f5ae98a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send packets of information like the key pressed by client to move the player in client side to server side. <br /></td></tr>
 <tr class="separator:abd9b80c5567bdea3493acf6f5ae98a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a976ebccd249e93581504ff52d6cb59a1"><td class="memItemLeft" align="right" valign="top"><a id="a976ebccd249e93581504ff52d6cb59a1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>client_receive</b> (float *x, float *y, float *angle, int *hp, float *gempos)</td></tr>
+<tr class="memitem:a976ebccd249e93581504ff52d6cb59a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a976ebccd249e93581504ff52d6cb59a1">client_receive</a> (float *x, float *y, float *angle, int *hp, float *gempos)</td></tr>
+<tr class="memdesc:a976ebccd249e93581504ff52d6cb59a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to reveive packets of information like both player's position, angle, hp and gem's position in client side from server side.  <a href="#a976ebccd249e93581504ff52d6cb59a1">More...</a><br /></td></tr>
 <tr class="separator:a976ebccd249e93581504ff52d6cb59a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1aece19364e3627eba167bae62a7e89"><td class="memItemLeft" align="right" valign="top"><a id="af1aece19364e3627eba167bae62a7e89"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>connect</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#af1aece19364e3627eba167bae62a7e89">connect</a> ()</td></tr>
+<tr class="memdesc:af1aece19364e3627eba167bae62a7e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">In server side, TCP listener listens to client on first and second port and on client side, it is used to connect to IP address of server and the two ports. <br /></td></tr>
 <tr class="separator:af1aece19364e3627eba167bae62a7e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f7380299108a1f592080d8c4a587007"><td class="memItemLeft" align="right" valign="top"><a id="a8f7380299108a1f592080d8c4a587007"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>destroyBody</b> ()</td></tr>
+<tr class="memitem:a8f7380299108a1f592080d8c4a587007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a8f7380299108a1f592080d8c4a587007">destroyBody</a> ()</td></tr>
+<tr class="memdesc:a8f7380299108a1f592080d8c4a587007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to destroy Box2D bodies that is head, body, right and left hand and legs of player object.  <a href="#a8f7380299108a1f592080d8c4a587007">More...</a><br /></td></tr>
 <tr class="separator:a8f7380299108a1f592080d8c4a587007"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c8b238a790a04a2fef019d35d79839"><td class="memItemLeft" align="right" valign="top"><a id="a47c8b238a790a04a2fef019d35d79839"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>serverListen</b> (bool flag)</td></tr>
+<tr class="memitem:a47c8b238a790a04a2fef019d35d79839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a47c8b238a790a04a2fef019d35d79839">serverListen</a> (bool flag)</td></tr>
+<tr class="memdesc:a47c8b238a790a04a2fef019d35d79839"><td class="mdescLeft">&#160;</td><td class="mdescRight">TCP listener on server side listens if client has connected to any port on server's IP Address.  <a href="#a47c8b238a790a04a2fef019d35d79839">More...</a><br /></td></tr>
 <tr class="separator:a47c8b238a790a04a2fef019d35d79839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ab05a9fe8ed3933fad24f07b73805d534"><td class="memItemLeft" align="right" valign="top"><a id="ab05a9fe8ed3933fad24f07b73805d534"></a>
-sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>window</b></td></tr>
+sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#ab05a9fe8ed3933fad24f07b73805d534">window</a></td></tr>
+<tr class="memdesc:ab05a9fe8ed3933fad24f07b73805d534"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main SFML window of type RenderWindow over which game is displayed. <br /></td></tr>
 <tr class="separator:ab05a9fe8ed3933fad24f07b73805d534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c2c22aba132a3fda8df3bb30aa811a0"><td class="memItemLeft" align="right" valign="top"><a id="a1c2c22aba132a3fda8df3bb30aa811a0"></a>
-sf::IpAddress&#160;</td><td class="memItemRight" valign="bottom"><b>ip</b></td></tr>
+sf::IpAddress&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a1c2c22aba132a3fda8df3bb30aa811a0">ip</a></td></tr>
+<tr class="memdesc:a1c2c22aba132a3fda8df3bb30aa811a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes the IP Address over which server hosts. <br /></td></tr>
 <tr class="separator:a1c2c22aba132a3fda8df3bb30aa811a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accf3887162ae48fd6a8c2ecef995580a"><td class="memItemLeft" align="right" valign="top"><a id="accf3887162ae48fd6a8c2ecef995580a"></a>
-sf::TcpListener&#160;</td><td class="memItemRight" valign="bottom"><b>tcplistener</b></td></tr>
+sf::TcpListener&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#accf3887162ae48fd6a8c2ecef995580a">tcplistener</a></td></tr>
+<tr class="memdesc:accf3887162ae48fd6a8c2ecef995580a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basically, it is a TCP listener listens to a particular port and accepts if client connects. <br /></td></tr>
 <tr class="separator:accf3887162ae48fd6a8c2ecef995580a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb3b6e8719e34c352519475348fa63cc"><td class="memItemLeft" align="right" valign="top"><a id="abb3b6e8719e34c352519475348fa63cc"></a>
-sf::TcpListener&#160;</td><td class="memItemRight" valign="bottom"><b>tcplistener1</b></td></tr>
+sf::TcpListener&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#abb3b6e8719e34c352519475348fa63cc">tcplistener1</a></td></tr>
+<tr class="memdesc:abb3b6e8719e34c352519475348fa63cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a TCP listener whichlistens to a particular port and accepts if client connects. <br /></td></tr>
 <tr class="separator:abb3b6e8719e34c352519475348fa63cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0b95cad56f6faaa9a06ae0e61b55f78"><td class="memItemLeft" align="right" valign="top"><a id="aa0b95cad56f6faaa9a06ae0e61b55f78"></a>
-sf::TcpSocket&#160;</td><td class="memItemRight" valign="bottom"><b>sendSocket</b></td></tr>
+sf::TcpSocket&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aa0b95cad56f6faaa9a06ae0e61b55f78">sendSocket</a></td></tr>
+<tr class="memdesc:aa0b95cad56f6faaa9a06ae0e61b55f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a TCP Socket used for sending packets from server side and receiving packets in client side. <br /></td></tr>
 <tr class="separator:aa0b95cad56f6faaa9a06ae0e61b55f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a435f871ae09fdc269340289f44817932"><td class="memItemLeft" align="right" valign="top"><a id="a435f871ae09fdc269340289f44817932"></a>
-sf::TcpSocket&#160;</td><td class="memItemRight" valign="bottom"><b>listenSocket</b></td></tr>
+sf::TcpSocket&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a435f871ae09fdc269340289f44817932">listenSocket</a></td></tr>
+<tr class="memdesc:a435f871ae09fdc269340289f44817932"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a TCP Socket used for sending packets from client side and receving packets in client side. <br /></td></tr>
 <tr class="separator:a435f871ae09fdc269340289f44817932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07f6c1c7da88502731542e1da8a3346b"><td class="memItemLeft" align="right" valign="top"><a id="a07f6c1c7da88502731542e1da8a3346b"></a>
-b2World *&#160;</td><td class="memItemRight" valign="bottom"><b>world</b></td></tr>
+b2World *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a07f6c1c7da88502731542e1da8a3346b">world</a></td></tr>
+<tr class="memdesc:a07f6c1c7da88502731542e1da8a3346b"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is Box2D world object pointer where all the bodies of player reside. <br /></td></tr>
 <tr class="separator:a07f6c1c7da88502731542e1da8a3346b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86d4317d7782e7e5d4e44990d2e6e7b9"><td class="memItemLeft" align="right" valign="top"><a id="a86d4317d7782e7e5d4e44990d2e6e7b9"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>ground</b></td></tr>
+b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a86d4317d7782e7e5d4e44990d2e6e7b9">ground</a></td></tr>
+<tr class="memdesc:a86d4317d7782e7e5d4e44990d2e6e7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a Box2D body object pointer which is denoting the ground situated in world. <br /></td></tr>
 <tr class="separator:a86d4317d7782e7e5d4e44990d2e6e7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5797f5d529f11e4d1c1b0602b01c2b8"><td class="memItemLeft" align="right" valign="top"><a id="ab5797f5d529f11e4d1c1b0602b01c2b8"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>wall1</b></td></tr>
+b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#ab5797f5d529f11e4d1c1b0602b01c2b8">wall1</a></td></tr>
+<tr class="memdesc:ab5797f5d529f11e4d1c1b0602b01c2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a Box2D body object pointer which is denoting the upper wall situated in world. <br /></td></tr>
 <tr class="separator:ab5797f5d529f11e4d1c1b0602b01c2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acef29eb9c037b1de7946f37f785af07c"><td class="memItemLeft" align="right" valign="top"><a id="acef29eb9c037b1de7946f37f785af07c"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>wall2</b></td></tr>
+b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#acef29eb9c037b1de7946f37f785af07c">wall2</a></td></tr>
+<tr class="memdesc:acef29eb9c037b1de7946f37f785af07c"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a Box2D body object pointer which is denoting the left most wall situated in world. <br /></td></tr>
 <tr class="separator:acef29eb9c037b1de7946f37f785af07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a820ecef6790dbe8e7695ff9d3a9e922d"><td class="memItemLeft" align="right" valign="top"><a id="a820ecef6790dbe8e7695ff9d3a9e922d"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>wall3</b></td></tr>
+b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a820ecef6790dbe8e7695ff9d3a9e922d">wall3</a></td></tr>
+<tr class="memdesc:a820ecef6790dbe8e7695ff9d3a9e922d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a Box2D body object pointer which is denoting the right most wall situated in world. <br /></td></tr>
 <tr class="separator:a820ecef6790dbe8e7695ff9d3a9e922d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a059d9e40d08315beb832b4db3066bd6f"><td class="memItemLeft" align="right" valign="top"><a id="a059d9e40d08315beb832b4db3066bd6f"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>myip</b></td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a059d9e40d08315beb832b4db3066bd6f">myip</a></td></tr>
+<tr class="memdesc:a059d9e40d08315beb832b4db3066bd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is a string containing IP Address of server. <br /></td></tr>
 <tr class="separator:a059d9e40d08315beb832b4db3066bd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ecd107e27d4d6eabef8bfc3ca49bf46"><td class="memItemLeft" align="right" valign="top"><a id="a9ecd107e27d4d6eabef8bfc3ca49bf46"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>groundUserData</b></td></tr>
+<tr class="memitem:a9ecd107e27d4d6eabef8bfc3ca49bf46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a9ecd107e27d4d6eabef8bfc3ca49bf46">groundUserData</a></td></tr>
+<tr class="memdesc:a9ecd107e27d4d6eabef8bfc3ca49bf46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the userData of ground.  <a href="#a9ecd107e27d4d6eabef8bfc3ca49bf46">More...</a><br /></td></tr>
 <tr class="separator:a9ecd107e27d4d6eabef8bfc3ca49bf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abba61ef52c6aa10a64074f7d7437f103"><td class="memItemLeft" align="right" valign="top"><a id="abba61ef52c6aa10a64074f7d7437f103"></a>
-sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><b>groundTexture</b></td></tr>
+sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#abba61ef52c6aa10a64074f7d7437f103">groundTexture</a></td></tr>
+<tr class="memdesc:abba61ef52c6aa10a64074f7d7437f103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes texture of ground where images of ground is to loaded. <br /></td></tr>
 <tr class="separator:abba61ef52c6aa10a64074f7d7437f103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746e63a5d62ee09a5ce269da61b1e02f"><td class="memItemLeft" align="right" valign="top"><a id="a746e63a5d62ee09a5ce269da61b1e02f"></a>
-sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><b>wall1Texture</b></td></tr>
+sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a746e63a5d62ee09a5ce269da61b1e02f">wall1Texture</a></td></tr>
+<tr class="memdesc:a746e63a5d62ee09a5ce269da61b1e02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes texture of upper wall where image of ground is to loaded. <br /></td></tr>
 <tr class="separator:a746e63a5d62ee09a5ce269da61b1e02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d75bbd05641d2b4db1d9e8f57cdf9c7"><td class="memItemLeft" align="right" valign="top"><a id="a4d75bbd05641d2b4db1d9e8f57cdf9c7"></a>
-sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><b>wall2Texture</b></td></tr>
+sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a4d75bbd05641d2b4db1d9e8f57cdf9c7">wall2Texture</a></td></tr>
+<tr class="memdesc:a4d75bbd05641d2b4db1d9e8f57cdf9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes texture of left most wall where image of wall is to loaded. <br /></td></tr>
 <tr class="separator:a4d75bbd05641d2b4db1d9e8f57cdf9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a407409e32b7310dc7aea276990290f54"><td class="memItemLeft" align="right" valign="top"><a id="a407409e32b7310dc7aea276990290f54"></a>
-sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><b>wall3Texture</b></td></tr>
+sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a407409e32b7310dc7aea276990290f54">wall3Texture</a></td></tr>
+<tr class="memdesc:a407409e32b7310dc7aea276990290f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes texture of right most wall where image of wall is to loaded. <br /></td></tr>
 <tr class="separator:a407409e32b7310dc7aea276990290f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b49db78386a47dcd57702c4e1ca96a6"><td class="memItemLeft" align="right" valign="top"><a id="a4b49db78386a47dcd57702c4e1ca96a6"></a>
-sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><b>roundTexture</b></td></tr>
+sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a4b49db78386a47dcd57702c4e1ca96a6">roundTexture</a></td></tr>
+<tr class="memdesc:a4b49db78386a47dcd57702c4e1ca96a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes texture of background where number of rounds won by each player is displayed. <br /></td></tr>
 <tr class="separator:a4b49db78386a47dcd57702c4e1ca96a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42ab943142dc407a8b02e777b4bcbd32"><td class="memItemLeft" align="right" valign="top"><a id="a42ab943142dc407a8b02e777b4bcbd32"></a>
-sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><b>gemTexture</b></td></tr>
+sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a42ab943142dc407a8b02e777b4bcbd32">gemTexture</a></td></tr>
+<tr class="memdesc:a42ab943142dc407a8b02e777b4bcbd32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes texture of gem which gets generated in the game every 5 seconds. <br /></td></tr>
 <tr class="separator:a42ab943142dc407a8b02e777b4bcbd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43af142452734f123fada42b54ee79d4"><td class="memItemLeft" align="right" valign="top"><a id="a43af142452734f123fada42b54ee79d4"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>groundSprite</b></td></tr>
+sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a43af142452734f123fada42b54ee79d4">groundSprite</a></td></tr>
+<tr class="memdesc:a43af142452734f123fada42b54ee79d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes Sprite of ground used to display ground in window. <br /></td></tr>
 <tr class="separator:a43af142452734f123fada42b54ee79d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ca074b8674f5aa2cd515b79143a276c"><td class="memItemLeft" align="right" valign="top"><a id="a5ca074b8674f5aa2cd515b79143a276c"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>wall1Sprite</b></td></tr>
+sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a5ca074b8674f5aa2cd515b79143a276c">wall1Sprite</a></td></tr>
+<tr class="memdesc:a5ca074b8674f5aa2cd515b79143a276c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes Sprite of upper wall used to display upper wall in window. <br /></td></tr>
 <tr class="separator:a5ca074b8674f5aa2cd515b79143a276c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af365e63faa5c1b6d8173139c095b8376"><td class="memItemLeft" align="right" valign="top"><a id="af365e63faa5c1b6d8173139c095b8376"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>wall2Sprite</b></td></tr>
+sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#af365e63faa5c1b6d8173139c095b8376">wall2Sprite</a></td></tr>
+<tr class="memdesc:af365e63faa5c1b6d8173139c095b8376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes Sprite of lefmost wall used to display leftmost wall in window. <br /></td></tr>
 <tr class="separator:af365e63faa5c1b6d8173139c095b8376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71a6f3aa1de1766bf9cdafd73425cfc2"><td class="memItemLeft" align="right" valign="top"><a id="a71a6f3aa1de1766bf9cdafd73425cfc2"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>wall3Sprite</b></td></tr>
+sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a71a6f3aa1de1766bf9cdafd73425cfc2">wall3Sprite</a></td></tr>
+<tr class="memdesc:a71a6f3aa1de1766bf9cdafd73425cfc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes Sprite of rightmost wall used to display rightmost wall in window. <br /></td></tr>
 <tr class="separator:a71a6f3aa1de1766bf9cdafd73425cfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a525c91a535f11b553f3aa6c383dba2c1"><td class="memItemLeft" align="right" valign="top"><a id="a525c91a535f11b553f3aa6c383dba2c1"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>player1RoundsSprite</b></td></tr>
+sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a525c91a535f11b553f3aa6c383dba2c1">player1RoundsSprite</a></td></tr>
+<tr class="memdesc:a525c91a535f11b553f3aa6c383dba2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes Sprite of background where number of rounds won by first player is displayed. <br /></td></tr>
 <tr class="separator:a525c91a535f11b553f3aa6c383dba2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29dd4e4221f9c11e49014e3e4f1e61d5"><td class="memItemLeft" align="right" valign="top"><a id="a29dd4e4221f9c11e49014e3e4f1e61d5"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>player2RoundsSprite</b></td></tr>
+sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a29dd4e4221f9c11e49014e3e4f1e61d5">player2RoundsSprite</a></td></tr>
+<tr class="memdesc:a29dd4e4221f9c11e49014e3e4f1e61d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes Sprite of background where number of rounds won by second player is displayed. <br /></td></tr>
 <tr class="separator:a29dd4e4221f9c11e49014e3e4f1e61d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8f834a106c546956786c90826e2d58d"><td class="memItemLeft" align="right" valign="top"><a id="ab8f834a106c546956786c90826e2d58d"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>gemSprite</b></td></tr>
+sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#ab8f834a106c546956786c90826e2d58d">gemSprite</a></td></tr>
+<tr class="memdesc:ab8f834a106c546956786c90826e2d58d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes Sprite of gem which gets generated in the game every 5 seconds used to display gem in window. <br /></td></tr>
 <tr class="separator:ab8f834a106c546956786c90826e2d58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2858b4c6c3fbec949ea8a5d7ad72b2c0"><td class="memItemLeft" align="right" valign="top"><a id="a2858b4c6c3fbec949ea8a5d7ad72b2c0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>velocityIterations</b> = 10</td></tr>
+<tr class="memitem:a2858b4c6c3fbec949ea8a5d7ad72b2c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a2858b4c6c3fbec949ea8a5d7ad72b2c0">velocityIterations</a> = 10</td></tr>
+<tr class="memdesc:a2858b4c6c3fbec949ea8a5d7ad72b2c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes the iterations count of velocity in velocity phase of constraint solver in Box2D.  <a href="#a2858b4c6c3fbec949ea8a5d7ad72b2c0">More...</a><br /></td></tr>
 <tr class="separator:a2858b4c6c3fbec949ea8a5d7ad72b2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa6c915736976d1b806bbdab7e43c282"><td class="memItemLeft" align="right" valign="top"><a id="aaa6c915736976d1b806bbdab7e43c282"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>positionIterations</b> = 10</td></tr>
+<tr class="memitem:aaa6c915736976d1b806bbdab7e43c282"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aaa6c915736976d1b806bbdab7e43c282">positionIterations</a> = 10</td></tr>
+<tr class="memdesc:aaa6c915736976d1b806bbdab7e43c282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes the iterations count of position in position phase of constraint solver in Box2D.  <a href="#aaa6c915736976d1b806bbdab7e43c282">More...</a><br /></td></tr>
 <tr class="separator:aaa6c915736976d1b806bbdab7e43c282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57f8793d332c934172d9d81e4eece840"><td class="memItemLeft" align="right" valign="top"><a id="a57f8793d332c934172d9d81e4eece840"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>timeStep</b> = 1.0f / 240.0f</td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a57f8793d332c934172d9d81e4eece840">timeStep</a> = 1.0f / 240.0f</td></tr>
+<tr class="memdesc:a57f8793d332c934172d9d81e4eece840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestemp for Box2D integrator. <br /></td></tr>
 <tr class="separator:a57f8793d332c934172d9d81e4eece840"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea76de846ca81992ea4003f58a2ab096"><td class="memItemLeft" align="right" valign="top"><a id="aea76de846ca81992ea4003f58a2ab096"></a>
-<a class="el" href="classmyListener.html">myListener</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>listener</b></td></tr>
+<tr class="memitem:aea76de846ca81992ea4003f58a2ab096"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmyListener.html">myListener</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aea76de846ca81992ea4003f58a2ab096">listener</a></td></tr>
+<tr class="memdesc:aea76de846ca81992ea4003f58a2ab096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to object listener of class type <a class="el" href="classmyListener.html">myListener</a> of Box2D.  <a href="#aea76de846ca81992ea4003f58a2ab096">More...</a><br /></td></tr>
 <tr class="separator:aea76de846ca81992ea4003f58a2ab096"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07ef4e470e90786f6f5d32ad6912c59c"><td class="memItemLeft" align="right" valign="top"><a id="a07ef4e470e90786f6f5d32ad6912c59c"></a>
-std::thread&#160;</td><td class="memItemRight" valign="bottom"><b>worker</b> [30]</td></tr>
+<tr class="memitem:a07ef4e470e90786f6f5d32ad6912c59c"><td class="memItemLeft" align="right" valign="top">std::thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a07ef4e470e90786f6f5d32ad6912c59c">worker</a> [30]</td></tr>
+<tr class="memdesc:a07ef4e470e90786f6f5d32ad6912c59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Worker threads initialized to 30.  <a href="#a07ef4e470e90786f6f5d32ad6912c59c">More...</a><br /></td></tr>
 <tr class="separator:a07ef4e470e90786f6f5d32ad6912c59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af362a077b002095ed4c568a59d16e39f"><td class="memItemLeft" align="right" valign="top"><a id="af362a077b002095ed4c568a59d16e39f"></a>
-std::thread&#160;</td><td class="memItemRight" valign="bottom"><b>gemThread</b></td></tr>
+<tr class="memitem:af362a077b002095ed4c568a59d16e39f"><td class="memItemLeft" align="right" valign="top">std::thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#af362a077b002095ed4c568a59d16e39f">gemThread</a></td></tr>
+<tr class="memdesc:af362a077b002095ed4c568a59d16e39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread used to generate gem in window.  <a href="#af362a077b002095ed4c568a59d16e39f">More...</a><br /></td></tr>
 <tr class="separator:af362a077b002095ed4c568a59d16e39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf5b2ec2fa5a57b450f8eb4f9f94bd9d"><td class="memItemLeft" align="right" valign="top"><a id="aaf5b2ec2fa5a57b450f8eb4f9f94bd9d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isClient</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aaf5b2ec2fa5a57b450f8eb4f9f94bd9d">isClient</a></td></tr>
+<tr class="memdesc:aaf5b2ec2fa5a57b450f8eb4f9f94bd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes Sprite of gem which gets generated in the game every 5 seconds used to display gem in window. <br /></td></tr>
 <tr class="separator:aaf5b2ec2fa5a57b450f8eb4f9f94bd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd629cd123e0647cc4db3092eb78967f"><td class="memItemLeft" align="right" valign="top"><a id="abd629cd123e0647cc4db3092eb78967f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>gemExists</b></td></tr>
+<tr class="memitem:abd629cd123e0647cc4db3092eb78967f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#abd629cd123e0647cc4db3092eb78967f">gemExists</a></td></tr>
+<tr class="memdesc:abd629cd123e0647cc4db3092eb78967f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean variable which is true if gem exists in window, else false.  <a href="#abd629cd123e0647cc4db3092eb78967f">More...</a><br /></td></tr>
 <tr class="separator:abd629cd123e0647cc4db3092eb78967f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0284e719e11c20611d27fd3d7175fca8"><td class="memItemLeft" align="right" valign="top"><a id="a0284e719e11c20611d27fd3d7175fca8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPlaying</b></td></tr>
+<tr class="memitem:a0284e719e11c20611d27fd3d7175fca8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a0284e719e11c20611d27fd3d7175fca8">isPlaying</a></td></tr>
+<tr class="memdesc:a0284e719e11c20611d27fd3d7175fca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean variable which is true until game finishes.  <a href="#a0284e719e11c20611d27fd3d7175fca8">More...</a><br /></td></tr>
 <tr class="separator:a0284e719e11c20611d27fd3d7175fca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1c1d29be124332fd736f59ae6e318a6"><td class="memItemLeft" align="right" valign="top"><a id="ab1c1d29be124332fd736f59ae6e318a6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isExiting</b></td></tr>
+<tr class="memitem:ab1c1d29be124332fd736f59ae6e318a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#ab1c1d29be124332fd736f59ae6e318a6">isExiting</a></td></tr>
+<tr class="memdesc:ab1c1d29be124332fd736f59ae6e318a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean variable which is true while window is open, and becomes false when window is closed.  <a href="#ab1c1d29be124332fd736f59ae6e318a6">More...</a><br /></td></tr>
 <tr class="separator:ab1c1d29be124332fd736f59ae6e318a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15f7931d63930331d0d683d2e7f621e7"><td class="memItemLeft" align="right" valign="top"><a id="a15f7931d63930331d0d683d2e7f621e7"></a>
-std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m</b></td></tr>
+std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a15f7931d63930331d0d683d2e7f621e7">m</a></td></tr>
+<tr class="memdesc:a15f7931d63930331d0d683d2e7f621e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex lock used to protect and avoid simultaneous access to shared variable of first player health points and second player health points by multiple threads. <br /></td></tr>
 <tr class="separator:a15f7931d63930331d0d683d2e7f621e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd674c3d38b59e86b32a1aa298ea3a3"><td class="memItemLeft" align="right" valign="top"><a id="a2dd674c3d38b59e86b32a1aa298ea3a3"></a>
-std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m1</b></td></tr>
+std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a2dd674c3d38b59e86b32a1aa298ea3a3">m1</a></td></tr>
+<tr class="memdesc:a2dd674c3d38b59e86b32a1aa298ea3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex lock used to protect and avoid simultaneous access to shared boolean variable gemExists by multiple threads. <br /></td></tr>
 <tr class="separator:a2dd674c3d38b59e86b32a1aa298ea3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b27765555fde348c673be2812941780"><td class="memItemLeft" align="right" valign="top"><a id="a2b27765555fde348c673be2812941780"></a>
-<a class="el" href="classPlayer.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>player1</b></td></tr>
+<tr class="memitem:a2b27765555fde348c673be2812941780"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlayer.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a2b27765555fde348c673be2812941780">player1</a></td></tr>
+<tr class="memdesc:a2b27765555fde348c673be2812941780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to first player's <a class="el" href="classPlayer.html" title="Contains all the information about the player.">Player</a> object.  <a href="#a2b27765555fde348c673be2812941780">More...</a><br /></td></tr>
 <tr class="separator:a2b27765555fde348c673be2812941780"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60cea6609b63373ec027695c819cbaf0"><td class="memItemLeft" align="right" valign="top"><a id="a60cea6609b63373ec027695c819cbaf0"></a>
-<a class="el" href="classPlayer.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>player2</b></td></tr>
+<tr class="memitem:a60cea6609b63373ec027695c819cbaf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlayer.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a60cea6609b63373ec027695c819cbaf0">player2</a></td></tr>
+<tr class="memdesc:a60cea6609b63373ec027695c819cbaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to second player's <a class="el" href="classPlayer.html" title="Contains all the information about the player.">Player</a> object.  <a href="#a60cea6609b63373ec027695c819cbaf0">More...</a><br /></td></tr>
 <tr class="separator:a60cea6609b63373ec027695c819cbaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea7acdf6fcd4d7409a863474e4d74729"><td class="memItemLeft" align="right" valign="top"><a id="aea7acdf6fcd4d7409a863474e4d74729"></a>
-std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>p</b></td></tr>
+<tr class="memitem:aea7acdf6fcd4d7409a863474e4d74729"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aea7acdf6fcd4d7409a863474e4d74729">p</a></td></tr>
+<tr class="memdesc:aea7acdf6fcd4d7409a863474e4d74729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to second player's <a class="el" href="classPlayer.html" title="Contains all the information about the player.">Player</a> object.  <a href="#aea7acdf6fcd4d7409a863474e4d74729">More...</a><br /></td></tr>
 <tr class="separator:aea7acdf6fcd4d7409a863474e4d74729"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c4e77d08253633396a5c95af3e61804"><td class="memItemLeft" align="right" valign="top"><a id="a8c4e77d08253633396a5c95af3e61804"></a>
-sf::SoundBuffer&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b></td></tr>
-<tr class="separator:a8c4e77d08253633396a5c95af3e61804"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60ae7780c5fb66bc7c8772e884c46314"><td class="memItemLeft" align="right" valign="top"><a id="a60ae7780c5fb66bc7c8772e884c46314"></a>
-sf::Sound&#160;</td><td class="memItemRight" valign="bottom"><b>sound</b></td></tr>
-<tr class="separator:a60ae7780c5fb66bc7c8772e884c46314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5127a0f3884bb156dcb12f02df142505"><td class="memItemLeft" align="right" valign="top"><a id="a5127a0f3884bb156dcb12f02df142505"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>player1Rounds</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a5127a0f3884bb156dcb12f02df142505">player1Rounds</a></td></tr>
+<tr class="memdesc:a5127a0f3884bb156dcb12f02df142505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes the number of rounds won by first player. <br /></td></tr>
 <tr class="separator:a5127a0f3884bb156dcb12f02df142505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7245c4b63510ac8f7a7153852934d97b"><td class="memItemLeft" align="right" valign="top"><a id="a7245c4b63510ac8f7a7153852934d97b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>player2Rounds</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a7245c4b63510ac8f7a7153852934d97b">player2Rounds</a></td></tr>
+<tr class="memdesc:a7245c4b63510ac8f7a7153852934d97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes the number of rounds won by second player. <br /></td></tr>
 <tr class="separator:a7245c4b63510ac8f7a7153852934d97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3454cbd42409b203d3a5889c97cf64d"><td class="memItemLeft" align="right" valign="top"><a id="af3454cbd42409b203d3a5889c97cf64d"></a>
-struct timeval current_time prev_time current_time1&#160;</td><td class="memItemRight" valign="bottom"><b>prev_time1</b></td></tr>
-<tr class="separator:af3454cbd42409b203d3a5889c97cf64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e88507fa2bb7997c26f0b5eae7ef7b4"><td class="memItemLeft" align="right" valign="top">struct timeval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a5e88507fa2bb7997c26f0b5eae7ef7b4">current_time</a></td></tr>
+<tr class="memdesc:a5e88507fa2bb7997c26f0b5eae7ef7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure of timeval which gives the current time in seconds and microseconds.  <a href="#a5e88507fa2bb7997c26f0b5eae7ef7b4">More...</a><br /></td></tr>
+<tr class="separator:a5e88507fa2bb7997c26f0b5eae7ef7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644f81fab1d7c7e88c7b0c44aea15a6f"><td class="memItemLeft" align="right" valign="top">struct timeval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a644f81fab1d7c7e88c7b0c44aea15a6f">prev_time</a></td></tr>
+<tr class="memdesc:a644f81fab1d7c7e88c7b0c44aea15a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure of timeval which gives the current time in seconds and microseconds.  <a href="#a644f81fab1d7c7e88c7b0c44aea15a6f">More...</a><br /></td></tr>
+<tr class="separator:a644f81fab1d7c7e88c7b0c44aea15a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae621248a33b1db963c315c7372e6436f"><td class="memItemLeft" align="right" valign="top">struct timeval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#ae621248a33b1db963c315c7372e6436f">current_time1</a></td></tr>
+<tr class="memdesc:ae621248a33b1db963c315c7372e6436f"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure of timeval which gives the current time in seconds and microseconds.  <a href="#ae621248a33b1db963c315c7372e6436f">More...</a><br /></td></tr>
+<tr class="separator:ae621248a33b1db963c315c7372e6436f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72f302c91bef0af604e9e09752eafe7b"><td class="memItemLeft" align="right" valign="top">struct timeval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a72f302c91bef0af604e9e09752eafe7b">prev_time1</a></td></tr>
+<tr class="memdesc:a72f302c91bef0af604e9e09752eafe7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure of timeval which gives the current time in seconds and microseconds.  <a href="#a72f302c91bef0af604e9e09752eafe7b">More...</a><br /></td></tr>
+<tr class="separator:a72f302c91bef0af604e9e09752eafe7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf31cf0fa6e33c89ab4de3c562808fc3"><td class="memItemLeft" align="right" valign="top"><a id="aaf31cf0fa6e33c89ab4de3c562808fc3"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>time_difference</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aaf31cf0fa6e33c89ab4de3c562808fc3">time_difference</a></td></tr>
+<tr class="memdesc:aaf31cf0fa6e33c89ab4de3c562808fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to check collision when time difference becomes greater than 100 milliseconds that is after every 100 milliseconds. <br /></td></tr>
 <tr class="separator:aaf31cf0fa6e33c89ab4de3c562808fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b767b4be2255b044375b6539d5113fc"><td class="memItemLeft" align="right" valign="top"><a id="a0b767b4be2255b044375b6539d5113fc"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>time_difference1</b></td></tr>
+<tr class="memitem:a0b767b4be2255b044375b6539d5113fc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a0b767b4be2255b044375b6539d5113fc">time_difference1</a></td></tr>
+<tr class="memdesc:a0b767b4be2255b044375b6539d5113fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to generate gem when time difference becomes greater than 5 seconds that is after every 5 seconds.  <a href="#a0b767b4be2255b044375b6539d5113fc">More...</a><br /></td></tr>
 <tr class="separator:a0b767b4be2255b044375b6539d5113fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1d3d71d32e9ab62fe0181ee4f5cc919"><td class="memItemLeft" align="right" valign="top"><a id="aa1d3d71d32e9ab62fe0181ee4f5cc919"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>accept</b> =false</td></tr>
+<tr class="memitem:aa1d3d71d32e9ab62fe0181ee4f5cc919"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#aa1d3d71d32e9ab62fe0181ee4f5cc919">accept</a> =false</td></tr>
+<tr class="memdesc:aa1d3d71d32e9ab62fe0181ee4f5cc919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean variable containing status of connection of client to first port of server intialized to false Contains status of connection of client to server.  <a href="#aa1d3d71d32e9ab62fe0181ee4f5cc919">More...</a><br /></td></tr>
 <tr class="separator:aa1d3d71d32e9ab62fe0181ee4f5cc919"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51347206d86e4211e1fb42c4fd75fe3e"><td class="memItemLeft" align="right" valign="top"><a id="a51347206d86e4211e1fb42c4fd75fe3e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>accept1</b> =false</td></tr>
+<tr class="memitem:a51347206d86e4211e1fb42c4fd75fe3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a51347206d86e4211e1fb42c4fd75fe3e">accept1</a> =false</td></tr>
+<tr class="memdesc:a51347206d86e4211e1fb42c4fd75fe3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean variable containing status of connection of client to second port of server intialized to false Contains status of connection of client to server.  <a href="#a51347206d86e4211e1fb42c4fd75fe3e">More...</a><br /></td></tr>
 <tr class="separator:a51347206d86e4211e1fb42c4fd75fe3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7f3c2d31dc4dad800d2d391d805cc8d"><td class="memItemLeft" align="right" valign="top"><a id="ac7f3c2d31dc4dad800d2d391d805cc8d"></a>
-sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><b>_clock</b></td></tr>
+sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#ac7f3c2d31dc4dad800d2d391d805cc8d">_clock</a></td></tr>
+<tr class="memdesc:ac7f3c2d31dc4dad800d2d391d805cc8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML Clock Used to display text about result of round after every round is finished for stipulated amount of time, here 3 seconds. <br /></td></tr>
 <tr class="separator:ac7f3c2d31dc4dad800d2d391d805cc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a7b191c1e1eb055fa17621bfceb3138"><td class="memItemLeft" align="right" valign="top"><a id="a1a7b191c1e1eb055fa17621bfceb3138"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>rtext</b></td></tr>
+sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a1a7b191c1e1eb055fa17621bfceb3138">rtext</a></td></tr>
+<tr class="memdesc:a1a7b191c1e1eb055fa17621bfceb3138"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML Text Text containing string "ROUND OVER" displayed after every round is finished. <br /></td></tr>
 <tr class="separator:a1a7b191c1e1eb055fa17621bfceb3138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a785decb3c11462bc44d566d5e230f3ca"><td class="memItemLeft" align="right" valign="top"><a id="a785decb3c11462bc44d566d5e230f3ca"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>rtext1</b></td></tr>
+sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a785decb3c11462bc44d566d5e230f3ca">rtext1</a></td></tr>
+<tr class="memdesc:a785decb3c11462bc44d566d5e230f3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML Text Text containing the string "first player's name wins" displayed after round is over if first player wins that round. <br /></td></tr>
 <tr class="separator:a785decb3c11462bc44d566d5e230f3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fb3672f9822d0399d0d70b23d18aa4d"><td class="memItemLeft" align="right" valign="top"><a id="a3fb3672f9822d0399d0d70b23d18aa4d"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>rtext2</b></td></tr>
+sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a3fb3672f9822d0399d0d70b23d18aa4d">rtext2</a></td></tr>
+<tr class="memdesc:a3fb3672f9822d0399d0d70b23d18aa4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML Text Text containing the string "second player's name wins" displayed after round is over if second player wins that round. <br /></td></tr>
 <tr class="separator:a3fb3672f9822d0399d0d70b23d18aa4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30fd0ed59b81e61ae9c63c2eeaa4d659"><td class="memItemLeft" align="right" valign="top"><a id="a30fd0ed59b81e61ae9c63c2eeaa4d659"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>rtext3</b></td></tr>
+sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#a30fd0ed59b81e61ae9c63c2eeaa4d659">rtext3</a></td></tr>
+<tr class="memdesc:a30fd0ed59b81e61ae9c63c2eeaa4d659"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML Text TText containing string "TIE" displayed if result of round is tie. <br /></td></tr>
 <tr class="separator:a30fd0ed59b81e61ae9c63c2eeaa4d659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac737d6285838242bf257214ad469f8a1"><td class="memItemLeft" align="right" valign="top"><a id="ac737d6285838242bf257214ad469f8a1"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>player1NameText</b></td></tr>
+sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#ac737d6285838242bf257214ad469f8a1">player1NameText</a></td></tr>
+<tr class="memdesc:ac737d6285838242bf257214ad469f8a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML Text Text containing first player name which is displayed on window. <br /></td></tr>
 <tr class="separator:ac737d6285838242bf257214ad469f8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f63887dfcce03ba51f112463af087d8"><td class="memItemLeft" align="right" valign="top"><a id="a8f63887dfcce03ba51f112463af087d8"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>player2NameText</b></td></tr>
-<tr class="separator:a8f63887dfcce03ba51f112463af087d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b37daf2edacf15ce0f6f7daf39dc803"><td class="memItemLeft" align="right" valign="top"><a id="a8b37daf2edacf15ce0f6f7daf39dc803"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>player1RoundsText</b></td></tr>
-<tr class="separator:a8b37daf2edacf15ce0f6f7daf39dc803"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac25eee9d06eb6238c6c67e479c27aee5"><td class="memItemLeft" align="right" valign="top"><a id="ac25eee9d06eb6238c6c67e479c27aee5"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>player2RoundsText</b></td></tr>
-<tr class="separator:ac25eee9d06eb6238c6c67e479c27aee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abad44e00d1334a5a4ef08e05ed0d63c9"><td class="memItemLeft" align="right" valign="top"><a id="abad44e00d1334a5a4ef08e05ed0d63c9"></a>
-sf::Font&#160;</td><td class="memItemRight" valign="bottom"><b>font</b></td></tr>
+sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1Game.html#abad44e00d1334a5a4ef08e05ed0d63c9">font</a></td></tr>
+<tr class="memdesc:abad44e00d1334a5a4ef08e05ed0d63c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML Font Contains the font which is to be loaded to text to display it on window. <br /></td></tr>
 <tr class="separator:abad44e00d1334a5a4ef08e05ed0d63c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains all basic entities required in game like window, players object, TcpListener, Send and receive sockets, Box2D world, walls,ground, sprites of all bodies to be displayed in window and functions to check collision, decrease health points, sending and receving packets from client to server and vice versa, worker threads which checks for collision and gem thread used to generate gem. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3f9e3d3ebf62f39b6e462dd14bfffd9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9e3d3ebf62f39b6e462dd14bfffd9f">&#9670;&nbsp;</a></span>Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">stickman::Game::Game </td>
+          <td>(</td>
+          <td class="paramtype">GameDataRef&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>client</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>myip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Contains <a class="el" href="classstickman_1_1StateMachine.html">StateMachine</a> of <a class="el" href="classstickman_1_1Game.html" title="Contains all basic entities required in game like window, players object, TcpListener,...">Game</a>, Render Window, over which game is displayed, <a class="el" href="classstickman_1_1AssetManager.html">AssetManager</a> of game, <a class="el" href="classstickman_1_1InputManager.html">InputManager</a> of <a class="el" href="classstickman_1_1Game.html" title="Contains all basic entities required in game like window, players object, TcpListener,...">Game</a>. </td></tr>
+    <tr><td class="paramname">s</td><td>Contains name of player. </td></tr>
+    <tr><td class="paramname">client</td><td>Boolean which is true if its client, false for server. </td></tr>
+    <tr><td class="paramname">myip</td><td>Contains IP over which server hosts the server used by client to connect to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa95a69d1f51557804e592e7869c2de68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa95a69d1f51557804e592e7869c2de68">&#9670;&nbsp;</a></span>checkcollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::checkcollision </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It checks collision between body parts of first player and second player. </p>
+<p>Here, Worker threads call the function decrease hp, for all type collisions happened simultaneously betweeen different body parts of first and second player. After collisions are handled, the worker threads are joined with main thread. </p>
+
+</div>
+</div>
+<a id="a976ebccd249e93581504ff52d6cb59a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a976ebccd249e93581504ff52d6cb59a1">&#9670;&nbsp;</a></span>client_receive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::client_receive </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>hp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>gempos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to reveive packets of information like both player's position, angle, hp and gem's position in client side from server side. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>It is an array consisting of x coordinates of different body parts of first and second player's position in the world. </td></tr>
+    <tr><td class="paramname">y</td><td>It is an array consisting of y coordinates of different body parts of first and second player's position in the world. </td></tr>
+    <tr><td class="paramname">angle</td><td>It is an array consisting of angle of different body parts of first and second player's position in the world. </td></tr>
+    <tr><td class="paramname">hp</td><td>It is an array consisting of health points of first and second player. </td></tr>
+    <tr><td class="paramname">gempos</td><td>It is an array consisting of x and y coordinates of gem in the window. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aabb270452a1c694499f5b7b0d90e0818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb270452a1c694499f5b7b0d90e0818">&#9670;&nbsp;</a></span>createGround()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Body * stickman::Game::createGround </td>
+          <td>(</td>
+          <td class="paramtype">b2Vec2&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>angle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It is used to create ground Box2D body in the Box2D world. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Denotes the position of ground to be set in world. </td></tr>
+    <tr><td class="paramname">angle</td><td>Denotes the angle of ground with respect to X-axis. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a531abd436b7c1dd6364950ad89d8588e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a531abd436b7c1dd6364950ad89d8588e">&#9670;&nbsp;</a></span>decrease_hp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::decrease_hp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It is used to decrease health point of player according to collision of different body parts of each player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Denotes User Data of body part of first player in collision. </td></tr>
+    <tr><td class="paramname">b</td><td>Denotes User Data of body part of second player in collision. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8f7380299108a1f592080d8c4a587007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7380299108a1f592080d8c4a587007">&#9670;&nbsp;</a></span>destroyBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::destroyBody </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to destroy Box2D bodies that is head, body, right and left hand and legs of player object. </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="a7914c9a4f8ef224a79d4123079604459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7914c9a4f8ef224a79d4123079604459">&#9670;&nbsp;</a></span>distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float stickman::Game::distance </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cacluclates distance between two points in the window. </p>
+<p>Used to check if gem overlaps with head of any player and accordingly increase the player's health points. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>X-coordinate of first point. </td></tr>
+    <tr><td class="paramname">y1</td><td>Y-coordinate of first point. </td></tr>
+    <tr><td class="paramname">x2</td><td>X-coordinate of second point. </td></tr>
+    <tr><td class="paramname">y2</td><td>Y-coordinate of second point. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3dc1273394ab5d53ad14e0aed6854b6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc1273394ab5d53ad14e0aed6854b6c">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPlayer.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It is used to draw different body parts like head, body, hands and legs of player in window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Takes pointer of object player to update its position. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4f0f2aa935fc9d390ac9e38adc581544"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0f2aa935fc9d390ac9e38adc581544">&#9670;&nbsp;</a></span>gameLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::gameLoop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classstickman_1_1Game.html" title="Contains all basic entities required in game like window, players object, TcpListener,...">Game</a> loop which runs until game is finished. </p>
+<p>Separate game loop for client and server. </p>
+
+</div>
+</div>
+<a id="a174cdd8a257dc1d12338b0daec2fe1b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a174cdd8a257dc1d12338b0daec2fe1b9">&#9670;&nbsp;</a></span>generateGem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::generateGem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It generates gem at random positions in the window after every 5 seconds and checks if any player has collected gem and accordingly increases its health points by 5. </p>
+<p>It runs on separate thread until game is running. </p>
+
+</div>
+</div>
+<a id="ab2c9a3bd6e3c78a38bf3912fe62d6c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c9a3bd6e3c78a38bf3912fe62d6c75">&#9670;&nbsp;</a></span>initPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::initPlayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPlayer.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialization of player object. </p>
+<p>Used to create Box2D bodies of head, body, hands, legs and set their user data. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Takes pointer of onject player whose initalization is to done. </td></tr>
+    <tr><td class="paramname">X</td><td>Denotes inital X coordinate of player during initialization. </td></tr>
+    <tr><td class="paramname">offset</td><td>Used to set the user data for differnt bodies of each player. For first player offset is 0 and for second player it is 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47c8b238a790a04a2fef019d35d79839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c8b238a790a04a2fef019d35d79839">&#9670;&nbsp;</a></span>serverListen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::Game::serverListen </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TCP listener on server side listens if client has connected to any port on server's IP Address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>If flag is false, TCP listener listens on first port and if flag is true, it listens on second port. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa1d3d71d32e9ab62fe0181ee4f5cc919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d3d71d32e9ab62fe0181ee4f5cc919">&#9670;&nbsp;</a></span>accept</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stickman::Game::accept =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boolean variable containing status of connection of client to first port of server intialized to false Contains status of connection of client to server. </p>
+<p>It becomes true if client connects to first port and TCP listener on server side accepts it. </p>
+
+</div>
+</div>
+<a id="a51347206d86e4211e1fb42c4fd75fe3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51347206d86e4211e1fb42c4fd75fe3e">&#9670;&nbsp;</a></span>accept1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stickman::Game::accept1 =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boolean variable containing status of connection of client to second port of server intialized to false Contains status of connection of client to server. </p>
+<p>It becomes true if client connects to second port and TCP listener on server side accepts it. </p>
+
+</div>
+</div>
+<a id="a5e88507fa2bb7997c26f0b5eae7ef7b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e88507fa2bb7997c26f0b5eae7ef7b4">&#9670;&nbsp;</a></span>current_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timeval stickman::Game::current_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>structure of timeval which gives the current time in seconds and microseconds. </p>
+<p>Used to store current time to check collision. </p>
+
+</div>
+</div>
+<a id="ae621248a33b1db963c315c7372e6436f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae621248a33b1db963c315c7372e6436f">&#9670;&nbsp;</a></span>current_time1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timeval stickman::Game::current_time1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>structure of timeval which gives the current time in seconds and microseconds. </p>
+<p>Used to store current time to generate gem. </p>
+
+</div>
+</div>
+<a id="abd629cd123e0647cc4db3092eb78967f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd629cd123e0647cc4db3092eb78967f">&#9670;&nbsp;</a></span>gemExists</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stickman::Game::gemExists</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boolean variable which is true if gem exists in window, else false. </p>
+<p>Used to display the gem in window if the boolean is true. </p>
+
+</div>
+</div>
+<a id="af362a077b002095ed4c568a59d16e39f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af362a077b002095ed4c568a59d16e39f">&#9670;&nbsp;</a></span>gemThread</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::thread stickman::Game::gemThread</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Thread used to generate gem in window. </p>
+<p>Thread generates gem in window after every 5 seconds and checks if gem has been consumed by player or not. Thread runs until game is finished and joins with the main thread. </p>
+
+</div>
+</div>
+<a id="a9ecd107e27d4d6eabef8bfc3ca49bf46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ecd107e27d4d6eabef8bfc3ca49bf46">&#9670;&nbsp;</a></span>groundUserData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stickman::Game::groundUserData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Contains the userData of ground. </p>
+<pre class="fragment">Used to detect rcollision of a body part of player with ground.
+</pre> 
+</div>
+</div>
+<a id="ab1c1d29be124332fd736f59ae6e318a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c1d29be124332fd736f59ae6e318a6">&#9670;&nbsp;</a></span>isExiting</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stickman::Game::isExiting</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boolean variable which is true while window is open, and becomes false when window is closed. </p>
+<p>Used to run game loop until window is closed or either of player wins the game. </p>
+
+</div>
+</div>
+<a id="a0284e719e11c20611d27fd3d7175fca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0284e719e11c20611d27fd3d7175fca8">&#9670;&nbsp;</a></span>isPlaying</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stickman::Game::isPlaying</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boolean variable which is true until game finishes. </p>
+<p>Used to generate and display gem until the boolean is true. </p>
+
+</div>
+</div>
+<a id="aea76de846ca81992ea4003f58a2ab096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea76de846ca81992ea4003f58a2ab096">&#9670;&nbsp;</a></span>listener</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmyListener.html">myListener</a>* stickman::Game::listener</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to object listener of class type <a class="el" href="classmyListener.html">myListener</a> of Box2D. </p>
+<p>It is used to detect collisions between bodies and give the information about the point of contact of colliding bodies and impulse applied during collision. </p>
+
+</div>
+</div>
+<a id="aea7acdf6fcd4d7409a863474e4d74729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea7acdf6fcd4d7409a863474e4d74729">&#9670;&nbsp;</a></span>p</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;int,int&gt; stickman::Game::p</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to second player's <a class="el" href="classPlayer.html" title="Contains all the information about the player.">Player</a> object. </p>
+<p>It contains information about everything about second player.</p>
+<p>Pointer is needed to move and rotate the player, set its health points. <br  />
+ </p>
+
+</div>
+</div>
+<a id="a2b27765555fde348c673be2812941780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b27765555fde348c673be2812941780">&#9670;&nbsp;</a></span>player1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPlayer.html">Player</a>* stickman::Game::player1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to first player's <a class="el" href="classPlayer.html" title="Contains all the information about the player.">Player</a> object. </p>
+<p>It contains information about everything about first player.</p>
+<p>Pointer is needed to move and rotate the player, set its health points. <br  />
+ </p>
+
+</div>
+</div>
+<a id="a60cea6609b63373ec027695c819cbaf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60cea6609b63373ec027695c819cbaf0">&#9670;&nbsp;</a></span>player2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPlayer.html">Player</a>* stickman::Game::player2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to second player's <a class="el" href="classPlayer.html" title="Contains all the information about the player.">Player</a> object. </p>
+<p>It contains information about everything about second player.</p>
+<p>Pointer is needed to move and rotate the player, set its health points. <br  />
+ </p>
+
+</div>
+</div>
+<a id="aaa6c915736976d1b806bbdab7e43c282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa6c915736976d1b806bbdab7e43c282">&#9670;&nbsp;</a></span>positionIterations</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stickman::Game::positionIterations = 10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Denotes the iterations count of position in position phase of constraint solver in Box2D. </p>
+<p>In the position phase the solver adjusts the positions of the bodies to reduce overlap and joint detachment. </p>
+
+</div>
+</div>
+<a id="a644f81fab1d7c7e88c7b0c44aea15a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a644f81fab1d7c7e88c7b0c44aea15a6f">&#9670;&nbsp;</a></span>prev_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timeval stickman::Game::prev_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>structure of timeval which gives the current time in seconds and microseconds. </p>
+<p>Used to store previous time to check collision. </p>
+
+</div>
+</div>
+<a id="a72f302c91bef0af604e9e09752eafe7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72f302c91bef0af604e9e09752eafe7b">&#9670;&nbsp;</a></span>prev_time1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timeval stickman::Game::prev_time1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>structure of timeval which gives the current time in seconds and microseconds. </p>
+<p>Used to store previous time to generate gem. </p>
+
+</div>
+</div>
+<a id="a0b767b4be2255b044375b6539d5113fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b767b4be2255b044375b6539d5113fc">&#9670;&nbsp;</a></span>time_difference1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double stickman::Game::time_difference1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to generate gem when time difference becomes greater than 5 seconds that is after every 5 seconds. </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="a2858b4c6c3fbec949ea8a5d7ad72b2c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2858b4c6c3fbec949ea8a5d7ad72b2c0">&#9670;&nbsp;</a></span>velocityIterations</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stickman::Game::velocityIterations = 10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Denotes the iterations count of velocity in velocity phase of constraint solver in Box2D. </p>
+<p>In the velocity phase the solver computes the impulses necessary for the bodies to move correctly. </p>
+
+</div>
+</div>
+<a id="a07ef4e470e90786f6f5d32ad6912c59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ef4e470e90786f6f5d32ad6912c59c">&#9670;&nbsp;</a></span>worker</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::thread stickman::Game::worker[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Worker threads initialized to 30. </p>
+<p>Used to detect collision between multiple body parts of two players or body parts of a player with ground or walls and modify health points accordingly simultaneously. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="game_8h_source.html">game.h</a></li>
 <li>game.cpp</li>

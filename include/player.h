@@ -10,13 +10,13 @@
  *      Contains information about the player including its name, health point, textures, sprites and Box2D body
  *      pointers along with some joints.
  *      
-    */
+*/
 class Player 
 {
 public:
 	/** @brief Health of player
     *	 	   	Contains the current health point of player. 
-     */
+    */
 	int health;
 
 	/** @brief Head of player
@@ -139,11 +139,11 @@ public:
 	std::string name;
 	/**
      * @brief Constructor for player.
-     */
+    */
 	Player();
 	/**
      * @brief Destructor for player.
-     */
+    */
 	~Player();
 	/**
      * @brief Creates a circular Box2D object for head of player.

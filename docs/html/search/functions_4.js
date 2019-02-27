@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sethealth',['setHealth',['../classPlayer.html#a8f28f6b069f7388877e02ae0a175d4ab',1,'Player']]],
-  ['setname',['setName',['../classPlayer.html#a95d2b46eee230ad3e31612ff2bc681da',1,'Player']]]
+  ['player',['Player',['../classPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player']]]
 ];

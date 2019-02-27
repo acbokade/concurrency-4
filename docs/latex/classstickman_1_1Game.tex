@@ -1,243 +1,621 @@
 \hypertarget{classstickman_1_1Game}{}\doxysection{stickman\+::Game Class Reference}
 \label{classstickman_1_1Game}\index{stickman::Game@{stickman::Game}}
+
+
+Contains all basic entities required in game like window, players object, Tcp\+Listener, Send and receive sockets, Box2D world, walls,ground, sprites of all bodies to be displayed in window and functions to check collision, decrease health points, sending and receving packets from client to server and vice versa, worker threads which checks for collision and gem thread used to generate gem.  
+
+
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1Game_a3f9e3d3ebf62f39b6e462dd14bfffd9f}\label{classstickman_1_1Game_a3f9e3d3ebf62f39b6e462dd14bfffd9f}} 
-{\bfseries Game} (Game\+Data\+Ref data, std\+::string s, bool client, std\+::string myip)
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_aabb270452a1c694499f5b7b0d90e0818}\label{classstickman_1_1Game_aabb270452a1c694499f5b7b0d90e0818}} 
-b2\+Body $\ast$ {\bfseries create\+Ground} (b2\+Vec2 position, int angle)
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_ab2c9a3bd6e3c78a38bf3912fe62d6c75}\label{classstickman_1_1Game_ab2c9a3bd6e3c78a38bf3912fe62d6c75}} 
-void {\bfseries init\+Player} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player, float X, int offset)
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a4f0f2aa935fc9d390ac9e38adc581544}\label{classstickman_1_1Game_a4f0f2aa935fc9d390ac9e38adc581544}} 
-void {\bfseries game\+Loop} ()
-\item 
+\mbox{\hyperlink{classstickman_1_1Game_a3f9e3d3ebf62f39b6e462dd14bfffd9f}{Game}} (Game\+Data\+Ref data, std\+::string s, bool client, std\+::string \mbox{\hyperlink{classstickman_1_1Game_a059d9e40d08315beb832b4db3066bd6f}{myip}})
+\begin{DoxyCompactList}\small\item\em Constructor for game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstickman_1_1Game_aafc3c7c1d7442815f8f9a9031d8dcc10}\label{classstickman_1_1Game_aafc3c7c1d7442815f8f9a9031d8dcc10}} 
+\mbox{\hyperlink{classstickman_1_1Game_aafc3c7c1d7442815f8f9a9031d8dcc10}{$\sim$\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for game. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Game_aabb270452a1c694499f5b7b0d90e0818}{create\+Ground}} (b2\+Vec2 position, int angle)
+\begin{DoxyCompactList}\small\item\em It is used to create ground Box2D body in the Box2D world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_ab2c9a3bd6e3c78a38bf3912fe62d6c75}{init\+Player}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player, float X, int offset)
+\begin{DoxyCompactList}\small\item\em Initialization of player object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a4f0f2aa935fc9d390ac9e38adc581544}{game\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classstickman_1_1Game}{Game}} loop which runs until game is finished. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a28ae0067d136962a6434b41830fc205a}\label{classstickman_1_1Game_a28ae0067d136962a6434b41830fc205a}} 
-void {\bfseries update\+Player} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player)
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a3dc1273394ab5d53ad14e0aed6854b6c}\label{classstickman_1_1Game_a3dc1273394ab5d53ad14e0aed6854b6c}} 
-void {\bfseries draw} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player)
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_aa95a69d1f51557804e592e7869c2de68}\label{classstickman_1_1Game_aa95a69d1f51557804e592e7869c2de68}} 
-void {\bfseries checkcollision} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a531abd436b7c1dd6364950ad89d8588e}\label{classstickman_1_1Game_a531abd436b7c1dd6364950ad89d8588e}} 
-void {\bfseries decrease\+\_\+hp} (int a, int b)
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a174cdd8a257dc1d12338b0daec2fe1b9}\label{classstickman_1_1Game_a174cdd8a257dc1d12338b0daec2fe1b9}} 
-void {\bfseries generate\+Gem} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a7914c9a4f8ef224a79d4123079604459}\label{classstickman_1_1Game_a7914c9a4f8ef224a79d4123079604459}} 
-float {\bfseries distance} (int x1, int y1, int x2, int y2)
-\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a28ae0067d136962a6434b41830fc205a}{update\+Player}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player)
+\begin{DoxyCompactList}\small\item\em It is used to update positions and angle of all body parts of each player after each time frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a3dc1273394ab5d53ad14e0aed6854b6c}{draw}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player)
+\begin{DoxyCompactList}\small\item\em It is used to draw different body parts like head, body, hands and legs of player in window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_aa95a69d1f51557804e592e7869c2de68}{checkcollision}} ()
+\begin{DoxyCompactList}\small\item\em It checks collision between body parts of first player and second player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a531abd436b7c1dd6364950ad89d8588e}{decrease\+\_\+hp}} (int a, int b)
+\begin{DoxyCompactList}\small\item\em It is used to decrease health point of player according to collision of different body parts of each player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a174cdd8a257dc1d12338b0daec2fe1b9}{generate\+Gem}} ()
+\begin{DoxyCompactList}\small\item\em It generates gem at random positions in the window after every 5 seconds and checks if any player has collected gem and accordingly increases its health points by 5. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classstickman_1_1Game_a7914c9a4f8ef224a79d4123079604459}{distance}} (int x1, int y1, int x2, int y2)
+\begin{DoxyCompactList}\small\item\em Cacluclates distance between two points in the window. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a0f3f6bea1944ce4b03ad1dcc657bd8a2}\label{classstickman_1_1Game_a0f3f6bea1944ce4b03ad1dcc657bd8a2}} 
-void {\bfseries server\+\_\+send} ()
-\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a0f3f6bea1944ce4b03ad1dcc657bd8a2}{server\+\_\+send}} ()
+\begin{DoxyCompactList}\small\item\em Used to send packets of information like position of all body parts of each player and position of gem from server side to client side. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a25c06feeebc9c899e0c0ac697a3e913a}\label{classstickman_1_1Game_a25c06feeebc9c899e0c0ac697a3e913a}} 
-void {\bfseries server\+\_\+receive} ()
-\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a25c06feeebc9c899e0c0ac697a3e913a}{server\+\_\+receive}} ()
+\begin{DoxyCompactList}\small\item\em Used to receive packets of information in server side of the key pressed by client so that server can simulate it in its world. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_abd9b80c5567bdea3493acf6f5ae98a02}\label{classstickman_1_1Game_abd9b80c5567bdea3493acf6f5ae98a02}} 
-void {\bfseries client\+\_\+send} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a976ebccd249e93581504ff52d6cb59a1}\label{classstickman_1_1Game_a976ebccd249e93581504ff52d6cb59a1}} 
-void {\bfseries client\+\_\+receive} (float $\ast$x, float $\ast$y, float $\ast$angle, int $\ast$hp, float $\ast$gempos)
-\item 
+void \mbox{\hyperlink{classstickman_1_1Game_abd9b80c5567bdea3493acf6f5ae98a02}{client\+\_\+send}} ()
+\begin{DoxyCompactList}\small\item\em Used to send packets of information like the key pressed by client to move the player in client side to server side. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a976ebccd249e93581504ff52d6cb59a1}{client\+\_\+receive}} (float $\ast$x, float $\ast$y, float $\ast$angle, int $\ast$hp, float $\ast$gempos)
+\begin{DoxyCompactList}\small\item\em Used to reveive packets of information like both player\textquotesingle{}s position, angle, hp and gem\textquotesingle{}s position in client side from server side. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_af1aece19364e3627eba167bae62a7e89}\label{classstickman_1_1Game_af1aece19364e3627eba167bae62a7e89}} 
-void {\bfseries connect} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a8f7380299108a1f592080d8c4a587007}\label{classstickman_1_1Game_a8f7380299108a1f592080d8c4a587007}} 
-void {\bfseries destroy\+Body} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a47c8b238a790a04a2fef019d35d79839}\label{classstickman_1_1Game_a47c8b238a790a04a2fef019d35d79839}} 
-void {\bfseries server\+Listen} (bool flag)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classstickman_1_1Game_af1aece19364e3627eba167bae62a7e89}{connect}} ()
+\begin{DoxyCompactList}\small\item\em In server side, T\+CP listener listens to client on first and second port and on client side, it is used to connect to IP address of server and the two ports. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a8f7380299108a1f592080d8c4a587007}{destroy\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Used to destroy Box2D bodies that is head, body, right and left hand and legs of player object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Game_a47c8b238a790a04a2fef019d35d79839}{server\+Listen}} (bool flag)
+\begin{DoxyCompactList}\small\item\em T\+CP listener on server side listens if client has connected to any port on server\textquotesingle{}s IP Address. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classstickman_1_1Game_ab05a9fe8ed3933fad24f07b73805d534}\label{classstickman_1_1Game_ab05a9fe8ed3933fad24f07b73805d534}} 
-sf\+::\+Render\+Window $\ast$ {\bfseries window}
-\item 
+sf\+::\+Render\+Window $\ast$ \mbox{\hyperlink{classstickman_1_1Game_ab05a9fe8ed3933fad24f07b73805d534}{window}}
+\begin{DoxyCompactList}\small\item\em The main S\+F\+ML window of type Render\+Window over which game is displayed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a1c2c22aba132a3fda8df3bb30aa811a0}\label{classstickman_1_1Game_a1c2c22aba132a3fda8df3bb30aa811a0}} 
-sf\+::\+Ip\+Address {\bfseries ip}
-\item 
+sf\+::\+Ip\+Address \mbox{\hyperlink{classstickman_1_1Game_a1c2c22aba132a3fda8df3bb30aa811a0}{ip}}
+\begin{DoxyCompactList}\small\item\em Denotes the IP Address over which server hosts. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_accf3887162ae48fd6a8c2ecef995580a}\label{classstickman_1_1Game_accf3887162ae48fd6a8c2ecef995580a}} 
-sf\+::\+Tcp\+Listener {\bfseries tcplistener}
-\item 
+sf\+::\+Tcp\+Listener \mbox{\hyperlink{classstickman_1_1Game_accf3887162ae48fd6a8c2ecef995580a}{tcplistener}}
+\begin{DoxyCompactList}\small\item\em Basically, it is a T\+CP listener listens to a particular port and accepts if client connects. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_abb3b6e8719e34c352519475348fa63cc}\label{classstickman_1_1Game_abb3b6e8719e34c352519475348fa63cc}} 
-sf\+::\+Tcp\+Listener {\bfseries tcplistener1}
-\item 
+sf\+::\+Tcp\+Listener \mbox{\hyperlink{classstickman_1_1Game_abb3b6e8719e34c352519475348fa63cc}{tcplistener1}}
+\begin{DoxyCompactList}\small\item\em It is a T\+CP listener whichlistens to a particular port and accepts if client connects. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_aa0b95cad56f6faaa9a06ae0e61b55f78}\label{classstickman_1_1Game_aa0b95cad56f6faaa9a06ae0e61b55f78}} 
-sf\+::\+Tcp\+Socket {\bfseries send\+Socket}
-\item 
+sf\+::\+Tcp\+Socket \mbox{\hyperlink{classstickman_1_1Game_aa0b95cad56f6faaa9a06ae0e61b55f78}{send\+Socket}}
+\begin{DoxyCompactList}\small\item\em It is a T\+CP Socket used for sending packets from server side and receiving packets in client side. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a435f871ae09fdc269340289f44817932}\label{classstickman_1_1Game_a435f871ae09fdc269340289f44817932}} 
-sf\+::\+Tcp\+Socket {\bfseries listen\+Socket}
-\item 
+sf\+::\+Tcp\+Socket \mbox{\hyperlink{classstickman_1_1Game_a435f871ae09fdc269340289f44817932}{listen\+Socket}}
+\begin{DoxyCompactList}\small\item\em It is a T\+CP Socket used for sending packets from client side and receving packets in client side. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a07f6c1c7da88502731542e1da8a3346b}\label{classstickman_1_1Game_a07f6c1c7da88502731542e1da8a3346b}} 
-b2\+World $\ast$ {\bfseries world}
-\item 
+b2\+World $\ast$ \mbox{\hyperlink{classstickman_1_1Game_a07f6c1c7da88502731542e1da8a3346b}{world}}
+\begin{DoxyCompactList}\small\item\em It is Box2D world object pointer where all the bodies of player reside. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a86d4317d7782e7e5d4e44990d2e6e7b9}\label{classstickman_1_1Game_a86d4317d7782e7e5d4e44990d2e6e7b9}} 
-b2\+Body $\ast$ {\bfseries ground}
-\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Game_a86d4317d7782e7e5d4e44990d2e6e7b9}{ground}}
+\begin{DoxyCompactList}\small\item\em It is a Box2D body object pointer which is denoting the ground situated in world. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_ab5797f5d529f11e4d1c1b0602b01c2b8}\label{classstickman_1_1Game_ab5797f5d529f11e4d1c1b0602b01c2b8}} 
-b2\+Body $\ast$ {\bfseries wall1}
-\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Game_ab5797f5d529f11e4d1c1b0602b01c2b8}{wall1}}
+\begin{DoxyCompactList}\small\item\em It is a Box2D body object pointer which is denoting the upper wall situated in world. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_acef29eb9c037b1de7946f37f785af07c}\label{classstickman_1_1Game_acef29eb9c037b1de7946f37f785af07c}} 
-b2\+Body $\ast$ {\bfseries wall2}
-\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Game_acef29eb9c037b1de7946f37f785af07c}{wall2}}
+\begin{DoxyCompactList}\small\item\em It is a Box2D body object pointer which is denoting the left most wall situated in world. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a820ecef6790dbe8e7695ff9d3a9e922d}\label{classstickman_1_1Game_a820ecef6790dbe8e7695ff9d3a9e922d}} 
-b2\+Body $\ast$ {\bfseries wall3}
-\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Game_a820ecef6790dbe8e7695ff9d3a9e922d}{wall3}}
+\begin{DoxyCompactList}\small\item\em It is a Box2D body object pointer which is denoting the right most wall situated in world. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a059d9e40d08315beb832b4db3066bd6f}\label{classstickman_1_1Game_a059d9e40d08315beb832b4db3066bd6f}} 
-std\+::string {\bfseries myip}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a9ecd107e27d4d6eabef8bfc3ca49bf46}\label{classstickman_1_1Game_a9ecd107e27d4d6eabef8bfc3ca49bf46}} 
-int {\bfseries ground\+User\+Data}
-\item 
+std\+::string \mbox{\hyperlink{classstickman_1_1Game_a059d9e40d08315beb832b4db3066bd6f}{myip}}
+\begin{DoxyCompactList}\small\item\em It is a string containing IP Address of server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Game_a9ecd107e27d4d6eabef8bfc3ca49bf46}{ground\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of ground. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_abba61ef52c6aa10a64074f7d7437f103}\label{classstickman_1_1Game_abba61ef52c6aa10a64074f7d7437f103}} 
-sf\+::\+Texture {\bfseries ground\+Texture}
-\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Game_abba61ef52c6aa10a64074f7d7437f103}{ground\+Texture}}
+\begin{DoxyCompactList}\small\item\em Denotes texture of ground where images of ground is to loaded. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a746e63a5d62ee09a5ce269da61b1e02f}\label{classstickman_1_1Game_a746e63a5d62ee09a5ce269da61b1e02f}} 
-sf\+::\+Texture {\bfseries wall1\+Texture}
-\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Game_a746e63a5d62ee09a5ce269da61b1e02f}{wall1\+Texture}}
+\begin{DoxyCompactList}\small\item\em Denotes texture of upper wall where image of ground is to loaded. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a4d75bbd05641d2b4db1d9e8f57cdf9c7}\label{classstickman_1_1Game_a4d75bbd05641d2b4db1d9e8f57cdf9c7}} 
-sf\+::\+Texture {\bfseries wall2\+Texture}
-\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Game_a4d75bbd05641d2b4db1d9e8f57cdf9c7}{wall2\+Texture}}
+\begin{DoxyCompactList}\small\item\em Denotes texture of left most wall where image of wall is to loaded. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a407409e32b7310dc7aea276990290f54}\label{classstickman_1_1Game_a407409e32b7310dc7aea276990290f54}} 
-sf\+::\+Texture {\bfseries wall3\+Texture}
-\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Game_a407409e32b7310dc7aea276990290f54}{wall3\+Texture}}
+\begin{DoxyCompactList}\small\item\em Denotes texture of right most wall where image of wall is to loaded. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a4b49db78386a47dcd57702c4e1ca96a6}\label{classstickman_1_1Game_a4b49db78386a47dcd57702c4e1ca96a6}} 
-sf\+::\+Texture {\bfseries round\+Texture}
-\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Game_a4b49db78386a47dcd57702c4e1ca96a6}{round\+Texture}}
+\begin{DoxyCompactList}\small\item\em Denotes texture of background where number of rounds won by each player is displayed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a42ab943142dc407a8b02e777b4bcbd32}\label{classstickman_1_1Game_a42ab943142dc407a8b02e777b4bcbd32}} 
-sf\+::\+Texture {\bfseries gem\+Texture}
-\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Game_a42ab943142dc407a8b02e777b4bcbd32}{gem\+Texture}}
+\begin{DoxyCompactList}\small\item\em Denotes texture of gem which gets generated in the game every 5 seconds. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a43af142452734f123fada42b54ee79d4}\label{classstickman_1_1Game_a43af142452734f123fada42b54ee79d4}} 
-sf\+::\+Sprite {\bfseries ground\+Sprite}
-\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Game_a43af142452734f123fada42b54ee79d4}{ground\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Denotes Sprite of ground used to display ground in window. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a5ca074b8674f5aa2cd515b79143a276c}\label{classstickman_1_1Game_a5ca074b8674f5aa2cd515b79143a276c}} 
-sf\+::\+Sprite {\bfseries wall1\+Sprite}
-\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Game_a5ca074b8674f5aa2cd515b79143a276c}{wall1\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Denotes Sprite of upper wall used to display upper wall in window. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_af365e63faa5c1b6d8173139c095b8376}\label{classstickman_1_1Game_af365e63faa5c1b6d8173139c095b8376}} 
-sf\+::\+Sprite {\bfseries wall2\+Sprite}
-\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Game_af365e63faa5c1b6d8173139c095b8376}{wall2\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Denotes Sprite of lefmost wall used to display leftmost wall in window. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a71a6f3aa1de1766bf9cdafd73425cfc2}\label{classstickman_1_1Game_a71a6f3aa1de1766bf9cdafd73425cfc2}} 
-sf\+::\+Sprite {\bfseries wall3\+Sprite}
-\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Game_a71a6f3aa1de1766bf9cdafd73425cfc2}{wall3\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Denotes Sprite of rightmost wall used to display rightmost wall in window. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a525c91a535f11b553f3aa6c383dba2c1}\label{classstickman_1_1Game_a525c91a535f11b553f3aa6c383dba2c1}} 
-sf\+::\+Sprite {\bfseries player1\+Rounds\+Sprite}
-\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Game_a525c91a535f11b553f3aa6c383dba2c1}{player1\+Rounds\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Denotes Sprite of background where number of rounds won by first player is displayed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a29dd4e4221f9c11e49014e3e4f1e61d5}\label{classstickman_1_1Game_a29dd4e4221f9c11e49014e3e4f1e61d5}} 
-sf\+::\+Sprite {\bfseries player2\+Rounds\+Sprite}
-\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Game_a29dd4e4221f9c11e49014e3e4f1e61d5}{player2\+Rounds\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Denotes Sprite of background where number of rounds won by second player is displayed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_ab8f834a106c546956786c90826e2d58d}\label{classstickman_1_1Game_ab8f834a106c546956786c90826e2d58d}} 
-sf\+::\+Sprite {\bfseries gem\+Sprite}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a2858b4c6c3fbec949ea8a5d7ad72b2c0}\label{classstickman_1_1Game_a2858b4c6c3fbec949ea8a5d7ad72b2c0}} 
-int {\bfseries velocity\+Iterations} = 10
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_aaa6c915736976d1b806bbdab7e43c282}\label{classstickman_1_1Game_aaa6c915736976d1b806bbdab7e43c282}} 
-int {\bfseries position\+Iterations} = 10
-\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Game_ab8f834a106c546956786c90826e2d58d}{gem\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Denotes Sprite of gem which gets generated in the game every 5 seconds used to display gem in window. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Game_a2858b4c6c3fbec949ea8a5d7ad72b2c0}{velocity\+Iterations}} = 10
+\begin{DoxyCompactList}\small\item\em Denotes the iterations count of velocity in velocity phase of constraint solver in Box2D. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Game_aaa6c915736976d1b806bbdab7e43c282}{position\+Iterations}} = 10
+\begin{DoxyCompactList}\small\item\em Denotes the iterations count of position in position phase of constraint solver in Box2D. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a57f8793d332c934172d9d81e4eece840}\label{classstickman_1_1Game_a57f8793d332c934172d9d81e4eece840}} 
-float {\bfseries time\+Step} = 1.\+0f / 240.\+0f
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_aea76de846ca81992ea4003f58a2ab096}\label{classstickman_1_1Game_aea76de846ca81992ea4003f58a2ab096}} 
-\mbox{\hyperlink{classmyListener}{my\+Listener}} $\ast$ {\bfseries listener}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a07ef4e470e90786f6f5d32ad6912c59c}\label{classstickman_1_1Game_a07ef4e470e90786f6f5d32ad6912c59c}} 
-std\+::thread {\bfseries worker} \mbox{[}30\mbox{]}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_af362a077b002095ed4c568a59d16e39f}\label{classstickman_1_1Game_af362a077b002095ed4c568a59d16e39f}} 
-std\+::thread {\bfseries gem\+Thread}
-\item 
+float \mbox{\hyperlink{classstickman_1_1Game_a57f8793d332c934172d9d81e4eece840}{time\+Step}} = 1.\+0f / 240.\+0f
+\begin{DoxyCompactList}\small\item\em Timestemp for Box2D integrator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmyListener}{my\+Listener}} $\ast$ \mbox{\hyperlink{classstickman_1_1Game_aea76de846ca81992ea4003f58a2ab096}{listener}}
+\begin{DoxyCompactList}\small\item\em Pointer to object listener of class type \mbox{\hyperlink{classmyListener}{my\+Listener}} of Box2D. \end{DoxyCompactList}\item 
+std\+::thread \mbox{\hyperlink{classstickman_1_1Game_a07ef4e470e90786f6f5d32ad6912c59c}{worker}} \mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em Worker threads initialized to 30. \end{DoxyCompactList}\item 
+std\+::thread \mbox{\hyperlink{classstickman_1_1Game_af362a077b002095ed4c568a59d16e39f}{gem\+Thread}}
+\begin{DoxyCompactList}\small\item\em Thread used to generate gem in window. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_aaf5b2ec2fa5a57b450f8eb4f9f94bd9d}\label{classstickman_1_1Game_aaf5b2ec2fa5a57b450f8eb4f9f94bd9d}} 
-bool {\bfseries is\+Client}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_abd629cd123e0647cc4db3092eb78967f}\label{classstickman_1_1Game_abd629cd123e0647cc4db3092eb78967f}} 
-bool {\bfseries gem\+Exists}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a0284e719e11c20611d27fd3d7175fca8}\label{classstickman_1_1Game_a0284e719e11c20611d27fd3d7175fca8}} 
-bool {\bfseries is\+Playing}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_ab1c1d29be124332fd736f59ae6e318a6}\label{classstickman_1_1Game_ab1c1d29be124332fd736f59ae6e318a6}} 
-bool {\bfseries is\+Exiting}
-\item 
+bool \mbox{\hyperlink{classstickman_1_1Game_aaf5b2ec2fa5a57b450f8eb4f9f94bd9d}{is\+Client}}
+\begin{DoxyCompactList}\small\item\em Denotes Sprite of gem which gets generated in the game every 5 seconds used to display gem in window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classstickman_1_1Game_abd629cd123e0647cc4db3092eb78967f}{gem\+Exists}}
+\begin{DoxyCompactList}\small\item\em Boolean variable which is true if gem exists in window, else false. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classstickman_1_1Game_a0284e719e11c20611d27fd3d7175fca8}{is\+Playing}}
+\begin{DoxyCompactList}\small\item\em Boolean variable which is true until game finishes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classstickman_1_1Game_ab1c1d29be124332fd736f59ae6e318a6}{is\+Exiting}}
+\begin{DoxyCompactList}\small\item\em Boolean variable which is true while window is open, and becomes false when window is closed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a15f7931d63930331d0d683d2e7f621e7}\label{classstickman_1_1Game_a15f7931d63930331d0d683d2e7f621e7}} 
-std\+::mutex {\bfseries m}
-\item 
+std\+::mutex \mbox{\hyperlink{classstickman_1_1Game_a15f7931d63930331d0d683d2e7f621e7}{m}}
+\begin{DoxyCompactList}\small\item\em Mutex lock used to protect and avoid simultaneous access to shared variable of first player health points and second player health points by multiple threads. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a2dd674c3d38b59e86b32a1aa298ea3a3}\label{classstickman_1_1Game_a2dd674c3d38b59e86b32a1aa298ea3a3}} 
-std\+::mutex {\bfseries m1}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a2b27765555fde348c673be2812941780}\label{classstickman_1_1Game_a2b27765555fde348c673be2812941780}} 
-\mbox{\hyperlink{classPlayer}{Player}} $\ast$ {\bfseries player1}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a60cea6609b63373ec027695c819cbaf0}\label{classstickman_1_1Game_a60cea6609b63373ec027695c819cbaf0}} 
-\mbox{\hyperlink{classPlayer}{Player}} $\ast$ {\bfseries player2}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_aea7acdf6fcd4d7409a863474e4d74729}\label{classstickman_1_1Game_aea7acdf6fcd4d7409a863474e4d74729}} 
-std\+::pair$<$ int, int $>$ {\bfseries p}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a8c4e77d08253633396a5c95af3e61804}\label{classstickman_1_1Game_a8c4e77d08253633396a5c95af3e61804}} 
-sf\+::\+Sound\+Buffer {\bfseries buffer}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a60ae7780c5fb66bc7c8772e884c46314}\label{classstickman_1_1Game_a60ae7780c5fb66bc7c8772e884c46314}} 
-sf\+::\+Sound {\bfseries sound}
-\item 
+std\+::mutex \mbox{\hyperlink{classstickman_1_1Game_a2dd674c3d38b59e86b32a1aa298ea3a3}{m1}}
+\begin{DoxyCompactList}\small\item\em Mutex lock used to protect and avoid simultaneous access to shared boolean variable gem\+Exists by multiple threads. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classstickman_1_1Game_a2b27765555fde348c673be2812941780}{player1}}
+\begin{DoxyCompactList}\small\item\em Pointer to first player\textquotesingle{}s \mbox{\hyperlink{classPlayer}{Player}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classstickman_1_1Game_a60cea6609b63373ec027695c819cbaf0}{player2}}
+\begin{DoxyCompactList}\small\item\em Pointer to second player\textquotesingle{}s \mbox{\hyperlink{classPlayer}{Player}} object. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classstickman_1_1Game_aea7acdf6fcd4d7409a863474e4d74729}{p}}
+\begin{DoxyCompactList}\small\item\em Pointer to second player\textquotesingle{}s \mbox{\hyperlink{classPlayer}{Player}} object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a5127a0f3884bb156dcb12f02df142505}\label{classstickman_1_1Game_a5127a0f3884bb156dcb12f02df142505}} 
-int {\bfseries player1\+Rounds}
-\item 
+int \mbox{\hyperlink{classstickman_1_1Game_a5127a0f3884bb156dcb12f02df142505}{player1\+Rounds}}
+\begin{DoxyCompactList}\small\item\em Denotes the number of rounds won by first player. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a7245c4b63510ac8f7a7153852934d97b}\label{classstickman_1_1Game_a7245c4b63510ac8f7a7153852934d97b}} 
-int {\bfseries player2\+Rounds}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_af3454cbd42409b203d3a5889c97cf64d}\label{classstickman_1_1Game_af3454cbd42409b203d3a5889c97cf64d}} 
-struct timeval current\+\_\+time prev\+\_\+time current\+\_\+time1 {\bfseries prev\+\_\+time1}
-\item 
+int \mbox{\hyperlink{classstickman_1_1Game_a7245c4b63510ac8f7a7153852934d97b}{player2\+Rounds}}
+\begin{DoxyCompactList}\small\item\em Denotes the number of rounds won by second player. \end{DoxyCompactList}\item 
+struct timeval \mbox{\hyperlink{classstickman_1_1Game_a5e88507fa2bb7997c26f0b5eae7ef7b4}{current\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em structure of timeval which gives the current time in seconds and microseconds. \end{DoxyCompactList}\item 
+struct timeval \mbox{\hyperlink{classstickman_1_1Game_a644f81fab1d7c7e88c7b0c44aea15a6f}{prev\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em structure of timeval which gives the current time in seconds and microseconds. \end{DoxyCompactList}\item 
+struct timeval \mbox{\hyperlink{classstickman_1_1Game_ae621248a33b1db963c315c7372e6436f}{current\+\_\+time1}}
+\begin{DoxyCompactList}\small\item\em structure of timeval which gives the current time in seconds and microseconds. \end{DoxyCompactList}\item 
+struct timeval \mbox{\hyperlink{classstickman_1_1Game_a72f302c91bef0af604e9e09752eafe7b}{prev\+\_\+time1}}
+\begin{DoxyCompactList}\small\item\em structure of timeval which gives the current time in seconds and microseconds. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_aaf31cf0fa6e33c89ab4de3c562808fc3}\label{classstickman_1_1Game_aaf31cf0fa6e33c89ab4de3c562808fc3}} 
-double {\bfseries time\+\_\+difference}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a0b767b4be2255b044375b6539d5113fc}\label{classstickman_1_1Game_a0b767b4be2255b044375b6539d5113fc}} 
-double {\bfseries time\+\_\+difference1}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_aa1d3d71d32e9ab62fe0181ee4f5cc919}\label{classstickman_1_1Game_aa1d3d71d32e9ab62fe0181ee4f5cc919}} 
-bool {\bfseries accept} =false
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a51347206d86e4211e1fb42c4fd75fe3e}\label{classstickman_1_1Game_a51347206d86e4211e1fb42c4fd75fe3e}} 
-bool {\bfseries accept1} =false
-\item 
+double \mbox{\hyperlink{classstickman_1_1Game_aaf31cf0fa6e33c89ab4de3c562808fc3}{time\+\_\+difference}}
+\begin{DoxyCompactList}\small\item\em Used to check collision when time difference becomes greater than 100 milliseconds that is after every 100 milliseconds. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classstickman_1_1Game_a0b767b4be2255b044375b6539d5113fc}{time\+\_\+difference1}}
+\begin{DoxyCompactList}\small\item\em Used to generate gem when time difference becomes greater than 5 seconds that is after every 5 seconds. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classstickman_1_1Game_aa1d3d71d32e9ab62fe0181ee4f5cc919}{accept}} =false
+\begin{DoxyCompactList}\small\item\em Boolean variable containing status of connection of client to first port of server intialized to false Contains status of connection of client to server. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classstickman_1_1Game_a51347206d86e4211e1fb42c4fd75fe3e}{accept1}} =false
+\begin{DoxyCompactList}\small\item\em Boolean variable containing status of connection of client to second port of server intialized to false Contains status of connection of client to server. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_ac7f3c2d31dc4dad800d2d391d805cc8d}\label{classstickman_1_1Game_ac7f3c2d31dc4dad800d2d391d805cc8d}} 
-sf\+::\+Clock {\bfseries \+\_\+clock}
-\item 
+sf\+::\+Clock \mbox{\hyperlink{classstickman_1_1Game_ac7f3c2d31dc4dad800d2d391d805cc8d}{\+\_\+clock}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Clock Used to display text about result of round after every round is finished for stipulated amount of time, here 3 seconds. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a1a7b191c1e1eb055fa17621bfceb3138}\label{classstickman_1_1Game_a1a7b191c1e1eb055fa17621bfceb3138}} 
-sf\+::\+Text {\bfseries rtext}
-\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1Game_a1a7b191c1e1eb055fa17621bfceb3138}{rtext}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Text Text containing string \char`\"{}\+R\+O\+U\+N\+D O\+V\+E\+R\char`\"{} displayed after every round is finished. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a785decb3c11462bc44d566d5e230f3ca}\label{classstickman_1_1Game_a785decb3c11462bc44d566d5e230f3ca}} 
-sf\+::\+Text {\bfseries rtext1}
-\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1Game_a785decb3c11462bc44d566d5e230f3ca}{rtext1}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Text Text containing the string \char`\"{}first player\textquotesingle{}s name wins\char`\"{} displayed after round is over if first player wins that round. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a3fb3672f9822d0399d0d70b23d18aa4d}\label{classstickman_1_1Game_a3fb3672f9822d0399d0d70b23d18aa4d}} 
-sf\+::\+Text {\bfseries rtext2}
-\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1Game_a3fb3672f9822d0399d0d70b23d18aa4d}{rtext2}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Text Text containing the string \char`\"{}second player\textquotesingle{}s name wins\char`\"{} displayed after round is over if second player wins that round. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_a30fd0ed59b81e61ae9c63c2eeaa4d659}\label{classstickman_1_1Game_a30fd0ed59b81e61ae9c63c2eeaa4d659}} 
-sf\+::\+Text {\bfseries rtext3}
-\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1Game_a30fd0ed59b81e61ae9c63c2eeaa4d659}{rtext3}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Text T\+Text containing string \char`\"{}\+T\+I\+E\char`\"{} displayed if result of round is tie. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_ac737d6285838242bf257214ad469f8a1}\label{classstickman_1_1Game_ac737d6285838242bf257214ad469f8a1}} 
-sf\+::\+Text {\bfseries player1\+Name\+Text}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a8f63887dfcce03ba51f112463af087d8}\label{classstickman_1_1Game_a8f63887dfcce03ba51f112463af087d8}} 
-sf\+::\+Text {\bfseries player2\+Name\+Text}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_a8b37daf2edacf15ce0f6f7daf39dc803}\label{classstickman_1_1Game_a8b37daf2edacf15ce0f6f7daf39dc803}} 
-sf\+::\+Text {\bfseries player1\+Rounds\+Text}
-\item 
-\mbox{\Hypertarget{classstickman_1_1Game_ac25eee9d06eb6238c6c67e479c27aee5}\label{classstickman_1_1Game_ac25eee9d06eb6238c6c67e479c27aee5}} 
-sf\+::\+Text {\bfseries player2\+Rounds\+Text}
-\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1Game_ac737d6285838242bf257214ad469f8a1}{player1\+Name\+Text}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Text Text containing first player name which is displayed on window. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classstickman_1_1Game_abad44e00d1334a5a4ef08e05ed0d63c9}\label{classstickman_1_1Game_abad44e00d1334a5a4ef08e05ed0d63c9}} 
-sf\+::\+Font {\bfseries font}
-\end{DoxyCompactItemize}
+sf\+::\+Font \mbox{\hyperlink{classstickman_1_1Game_abad44e00d1334a5a4ef08e05ed0d63c9}{font}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Font Contains the font which is to be loaded to text to display it on window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Contains all basic entities required in game like window, players object, Tcp\+Listener, Send and receive sockets, Box2D world, walls,ground, sprites of all bodies to be displayed in window and functions to check collision, decrease health points, sending and receving packets from client to server and vice versa, worker threads which checks for collision and gem thread used to generate gem. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1Game_a3f9e3d3ebf62f39b6e462dd14bfffd9f}\label{classstickman_1_1Game_a3f9e3d3ebf62f39b6e462dd14bfffd9f}} 
+\index{stickman::Game@{stickman::Game}!Game@{Game}}
+\index{Game@{Game}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily stickman\+::\+Game\+::\+Game (\begin{DoxyParamCaption}\item[{Game\+Data\+Ref}]{data,  }\item[{std\+::string}]{s,  }\item[{bool}]{client,  }\item[{std\+::string}]{myip }\end{DoxyParamCaption})}
+
+
+
+Constructor for game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Contains \mbox{\hyperlink{classstickman_1_1StateMachine}{State\+Machine}} of \mbox{\hyperlink{classstickman_1_1Game}{Game}}, Render Window, over which game is displayed, \mbox{\hyperlink{classstickman_1_1AssetManager}{Asset\+Manager}} of game, \mbox{\hyperlink{classstickman_1_1InputManager}{Input\+Manager}} of \mbox{\hyperlink{classstickman_1_1Game}{Game}}. \\
+\hline
+{\em s} & Contains name of player. \\
+\hline
+{\em client} & Boolean which is true if its client, false for server. \\
+\hline
+{\em myip} & Contains IP over which server hosts the server used by client to connect to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstickman_1_1Game_aa95a69d1f51557804e592e7869c2de68}\label{classstickman_1_1Game_aa95a69d1f51557804e592e7869c2de68}} 
+\index{stickman::Game@{stickman::Game}!checkcollision@{checkcollision}}
+\index{checkcollision@{checkcollision}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{checkcollision()}{checkcollision()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::checkcollision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It checks collision between body parts of first player and second player. 
+
+Here, Worker threads call the function decrease hp, for all type collisions happened simultaneously betweeen different body parts of first and second player. After collisions are handled, the worker threads are joined with main thread. \mbox{\Hypertarget{classstickman_1_1Game_a976ebccd249e93581504ff52d6cb59a1}\label{classstickman_1_1Game_a976ebccd249e93581504ff52d6cb59a1}} 
+\index{stickman::Game@{stickman::Game}!client\_receive@{client\_receive}}
+\index{client\_receive@{client\_receive}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{client\_receive()}{client\_receive()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::client\+\_\+receive (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float $\ast$}]{y,  }\item[{float $\ast$}]{angle,  }\item[{int $\ast$}]{hp,  }\item[{float $\ast$}]{gempos }\end{DoxyParamCaption})}
+
+
+
+Used to reveive packets of information like both player\textquotesingle{}s position, angle, hp and gem\textquotesingle{}s position in client side from server side. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & It is an array consisting of x coordinates of different body parts of first and second player\textquotesingle{}s position in the world. \\
+\hline
+{\em y} & It is an array consisting of y coordinates of different body parts of first and second player\textquotesingle{}s position in the world. \\
+\hline
+{\em angle} & It is an array consisting of angle of different body parts of first and second player\textquotesingle{}s position in the world. \\
+\hline
+{\em hp} & It is an array consisting of health points of first and second player. \\
+\hline
+{\em gempos} & It is an array consisting of x and y coordinates of gem in the window. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1Game_aabb270452a1c694499f5b7b0d90e0818}\label{classstickman_1_1Game_aabb270452a1c694499f5b7b0d90e0818}} 
+\index{stickman::Game@{stickman::Game}!createGround@{createGround}}
+\index{createGround@{createGround}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{createGround()}{createGround()}}
+{\footnotesize\ttfamily b2\+Body $\ast$ stickman\+::\+Game\+::create\+Ground (\begin{DoxyParamCaption}\item[{b2\+Vec2}]{position,  }\item[{int}]{angle }\end{DoxyParamCaption})}
+
+
+
+It is used to create ground Box2D body in the Box2D world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Denotes the position of ground to be set in world. \\
+\hline
+{\em angle} & Denotes the angle of ground with respect to X-\/axis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1Game_a531abd436b7c1dd6364950ad89d8588e}\label{classstickman_1_1Game_a531abd436b7c1dd6364950ad89d8588e}} 
+\index{stickman::Game@{stickman::Game}!decrease\_hp@{decrease\_hp}}
+\index{decrease\_hp@{decrease\_hp}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{decrease\_hp()}{decrease\_hp()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::decrease\+\_\+hp (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+It is used to decrease health point of player according to collision of different body parts of each player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Denotes User Data of body part of first player in collision. \\
+\hline
+{\em b} & Denotes User Data of body part of second player in collision. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1Game_a8f7380299108a1f592080d8c4a587007}\label{classstickman_1_1Game_a8f7380299108a1f592080d8c4a587007}} 
+\index{stickman::Game@{stickman::Game}!destroyBody@{destroyBody}}
+\index{destroyBody@{destroyBody}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{destroyBody()}{destroyBody()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::destroy\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to destroy Box2D bodies that is head, body, right and left hand and legs of player object. 
+
+~\newline
+ \mbox{\Hypertarget{classstickman_1_1Game_a7914c9a4f8ef224a79d4123079604459}\label{classstickman_1_1Game_a7914c9a4f8ef224a79d4123079604459}} 
+\index{stickman::Game@{stickman::Game}!distance@{distance}}
+\index{distance@{distance}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily float stickman\+::\+Game\+::distance (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2 }\end{DoxyParamCaption})}
+
+
+
+Cacluclates distance between two points in the window. 
+
+Used to check if gem overlaps with head of any player and accordingly increase the player\textquotesingle{}s health points. 
+\begin{DoxyParams}{Parameters}
+{\em x1} & X-\/coordinate of first point. \\
+\hline
+{\em y1} & Y-\/coordinate of first point. \\
+\hline
+{\em x2} & X-\/coordinate of second point. \\
+\hline
+{\em y2} & Y-\/coordinate of second point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1Game_a3dc1273394ab5d53ad14e0aed6854b6c}\label{classstickman_1_1Game_a3dc1273394ab5d53ad14e0aed6854b6c}} 
+\index{stickman::Game@{stickman::Game}!draw@{draw}}
+\index{draw@{draw}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player }\end{DoxyParamCaption})}
+
+
+
+It is used to draw different body parts like head, body, hands and legs of player in window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Takes pointer of object player to update its position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1Game_a4f0f2aa935fc9d390ac9e38adc581544}\label{classstickman_1_1Game_a4f0f2aa935fc9d390ac9e38adc581544}} 
+\index{stickman::Game@{stickman::Game}!gameLoop@{gameLoop}}
+\index{gameLoop@{gameLoop}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{gameLoop()}{gameLoop()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::game\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classstickman_1_1Game}{Game}} loop which runs until game is finished. 
+
+Separate game loop for client and server. \mbox{\Hypertarget{classstickman_1_1Game_a174cdd8a257dc1d12338b0daec2fe1b9}\label{classstickman_1_1Game_a174cdd8a257dc1d12338b0daec2fe1b9}} 
+\index{stickman::Game@{stickman::Game}!generateGem@{generateGem}}
+\index{generateGem@{generateGem}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{generateGem()}{generateGem()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::generate\+Gem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It generates gem at random positions in the window after every 5 seconds and checks if any player has collected gem and accordingly increases its health points by 5. 
+
+It runs on separate thread until game is running. \mbox{\Hypertarget{classstickman_1_1Game_ab2c9a3bd6e3c78a38bf3912fe62d6c75}\label{classstickman_1_1Game_ab2c9a3bd6e3c78a38bf3912fe62d6c75}} 
+\index{stickman::Game@{stickman::Game}!initPlayer@{initPlayer}}
+\index{initPlayer@{initPlayer}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{initPlayer()}{initPlayer()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::init\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player,  }\item[{float}]{X,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Initialization of player object. 
+
+Used to create Box2D bodies of head, body, hands, legs and set their user data. 
+\begin{DoxyParams}{Parameters}
+{\em player} & Takes pointer of onject player whose initalization is to done. \\
+\hline
+{\em X} & Denotes inital X coordinate of player during initialization. \\
+\hline
+{\em offset} & Used to set the user data for differnt bodies of each player. For first player offset is 0 and for second player it is 1. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1Game_a47c8b238a790a04a2fef019d35d79839}\label{classstickman_1_1Game_a47c8b238a790a04a2fef019d35d79839}} 
+\index{stickman::Game@{stickman::Game}!serverListen@{serverListen}}
+\index{serverListen@{serverListen}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{serverListen()}{serverListen()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+::server\+Listen (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+T\+CP listener on server side listens if client has connected to any port on server\textquotesingle{}s IP Address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & If flag is false, T\+CP listener listens on first port and if flag is true, it listens on second port. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstickman_1_1Game_aa1d3d71d32e9ab62fe0181ee4f5cc919}\label{classstickman_1_1Game_aa1d3d71d32e9ab62fe0181ee4f5cc919}} 
+\index{stickman::Game@{stickman::Game}!accept@{accept}}
+\index{accept@{accept}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{accept}{accept}}
+{\footnotesize\ttfamily bool stickman\+::\+Game\+::accept =false}
+
+
+
+Boolean variable containing status of connection of client to first port of server intialized to false Contains status of connection of client to server. 
+
+It becomes true if client connects to first port and T\+CP listener on server side accepts it. \mbox{\Hypertarget{classstickman_1_1Game_a51347206d86e4211e1fb42c4fd75fe3e}\label{classstickman_1_1Game_a51347206d86e4211e1fb42c4fd75fe3e}} 
+\index{stickman::Game@{stickman::Game}!accept1@{accept1}}
+\index{accept1@{accept1}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{accept1}{accept1}}
+{\footnotesize\ttfamily bool stickman\+::\+Game\+::accept1 =false}
+
+
+
+Boolean variable containing status of connection of client to second port of server intialized to false Contains status of connection of client to server. 
+
+It becomes true if client connects to second port and T\+CP listener on server side accepts it. \mbox{\Hypertarget{classstickman_1_1Game_a5e88507fa2bb7997c26f0b5eae7ef7b4}\label{classstickman_1_1Game_a5e88507fa2bb7997c26f0b5eae7ef7b4}} 
+\index{stickman::Game@{stickman::Game}!current\_time@{current\_time}}
+\index{current\_time@{current\_time}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{current\_time}{current\_time}}
+{\footnotesize\ttfamily struct timeval stickman\+::\+Game\+::current\+\_\+time}
+
+
+
+structure of timeval which gives the current time in seconds and microseconds. 
+
+Used to store current time to check collision. \mbox{\Hypertarget{classstickman_1_1Game_ae621248a33b1db963c315c7372e6436f}\label{classstickman_1_1Game_ae621248a33b1db963c315c7372e6436f}} 
+\index{stickman::Game@{stickman::Game}!current\_time1@{current\_time1}}
+\index{current\_time1@{current\_time1}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{current\_time1}{current\_time1}}
+{\footnotesize\ttfamily struct timeval stickman\+::\+Game\+::current\+\_\+time1}
+
+
+
+structure of timeval which gives the current time in seconds and microseconds. 
+
+Used to store current time to generate gem. \mbox{\Hypertarget{classstickman_1_1Game_abd629cd123e0647cc4db3092eb78967f}\label{classstickman_1_1Game_abd629cd123e0647cc4db3092eb78967f}} 
+\index{stickman::Game@{stickman::Game}!gemExists@{gemExists}}
+\index{gemExists@{gemExists}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{gemExists}{gemExists}}
+{\footnotesize\ttfamily bool stickman\+::\+Game\+::gem\+Exists}
+
+
+
+Boolean variable which is true if gem exists in window, else false. 
+
+Used to display the gem in window if the boolean is true. \mbox{\Hypertarget{classstickman_1_1Game_af362a077b002095ed4c568a59d16e39f}\label{classstickman_1_1Game_af362a077b002095ed4c568a59d16e39f}} 
+\index{stickman::Game@{stickman::Game}!gemThread@{gemThread}}
+\index{gemThread@{gemThread}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{gemThread}{gemThread}}
+{\footnotesize\ttfamily std\+::thread stickman\+::\+Game\+::gem\+Thread}
+
+
+
+Thread used to generate gem in window. 
+
+Thread generates gem in window after every 5 seconds and checks if gem has been consumed by player or not. Thread runs until game is finished and joins with the main thread. \mbox{\Hypertarget{classstickman_1_1Game_a9ecd107e27d4d6eabef8bfc3ca49bf46}\label{classstickman_1_1Game_a9ecd107e27d4d6eabef8bfc3ca49bf46}} 
+\index{stickman::Game@{stickman::Game}!groundUserData@{groundUserData}}
+\index{groundUserData@{groundUserData}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{groundUserData}{groundUserData}}
+{\footnotesize\ttfamily int stickman\+::\+Game\+::ground\+User\+Data}
+
+
+
+Contains the user\+Data of ground. 
+
+\begin{DoxyVerb}Used to detect rcollision of a body part of player with ground.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classstickman_1_1Game_ab1c1d29be124332fd736f59ae6e318a6}\label{classstickman_1_1Game_ab1c1d29be124332fd736f59ae6e318a6}} 
+\index{stickman::Game@{stickman::Game}!isExiting@{isExiting}}
+\index{isExiting@{isExiting}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{isExiting}{isExiting}}
+{\footnotesize\ttfamily bool stickman\+::\+Game\+::is\+Exiting}
+
+
+
+Boolean variable which is true while window is open, and becomes false when window is closed. 
+
+Used to run game loop until window is closed or either of player wins the game. \mbox{\Hypertarget{classstickman_1_1Game_a0284e719e11c20611d27fd3d7175fca8}\label{classstickman_1_1Game_a0284e719e11c20611d27fd3d7175fca8}} 
+\index{stickman::Game@{stickman::Game}!isPlaying@{isPlaying}}
+\index{isPlaying@{isPlaying}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{isPlaying}{isPlaying}}
+{\footnotesize\ttfamily bool stickman\+::\+Game\+::is\+Playing}
+
+
+
+Boolean variable which is true until game finishes. 
+
+Used to generate and display gem until the boolean is true. \mbox{\Hypertarget{classstickman_1_1Game_aea76de846ca81992ea4003f58a2ab096}\label{classstickman_1_1Game_aea76de846ca81992ea4003f58a2ab096}} 
+\index{stickman::Game@{stickman::Game}!listener@{listener}}
+\index{listener@{listener}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{listener}{listener}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmyListener}{my\+Listener}}$\ast$ stickman\+::\+Game\+::listener}
+
+
+
+Pointer to object listener of class type \mbox{\hyperlink{classmyListener}{my\+Listener}} of Box2D. 
+
+It is used to detect collisions between bodies and give the information about the point of contact of colliding bodies and impulse applied during collision. \mbox{\Hypertarget{classstickman_1_1Game_aea7acdf6fcd4d7409a863474e4d74729}\label{classstickman_1_1Game_aea7acdf6fcd4d7409a863474e4d74729}} 
+\index{stickman::Game@{stickman::Game}!p@{p}}
+\index{p@{p}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily std\+::pair$<$int,int$>$ stickman\+::\+Game\+::p}
+
+
+
+Pointer to second player\textquotesingle{}s \mbox{\hyperlink{classPlayer}{Player}} object. 
+
+It contains information about everything about second player.
+
+Pointer is needed to move and rotate the player, set its health points. ~\newline
+ \mbox{\Hypertarget{classstickman_1_1Game_a2b27765555fde348c673be2812941780}\label{classstickman_1_1Game_a2b27765555fde348c673be2812941780}} 
+\index{stickman::Game@{stickman::Game}!player1@{player1}}
+\index{player1@{player1}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{player1}{player1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}}$\ast$ stickman\+::\+Game\+::player1}
+
+
+
+Pointer to first player\textquotesingle{}s \mbox{\hyperlink{classPlayer}{Player}} object. 
+
+It contains information about everything about first player.
+
+Pointer is needed to move and rotate the player, set its health points. ~\newline
+ \mbox{\Hypertarget{classstickman_1_1Game_a60cea6609b63373ec027695c819cbaf0}\label{classstickman_1_1Game_a60cea6609b63373ec027695c819cbaf0}} 
+\index{stickman::Game@{stickman::Game}!player2@{player2}}
+\index{player2@{player2}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{player2}{player2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}}$\ast$ stickman\+::\+Game\+::player2}
+
+
+
+Pointer to second player\textquotesingle{}s \mbox{\hyperlink{classPlayer}{Player}} object. 
+
+It contains information about everything about second player.
+
+Pointer is needed to move and rotate the player, set its health points. ~\newline
+ \mbox{\Hypertarget{classstickman_1_1Game_aaa6c915736976d1b806bbdab7e43c282}\label{classstickman_1_1Game_aaa6c915736976d1b806bbdab7e43c282}} 
+\index{stickman::Game@{stickman::Game}!positionIterations@{positionIterations}}
+\index{positionIterations@{positionIterations}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{positionIterations}{positionIterations}}
+{\footnotesize\ttfamily int stickman\+::\+Game\+::position\+Iterations = 10}
+
+
+
+Denotes the iterations count of position in position phase of constraint solver in Box2D. 
+
+In the position phase the solver adjusts the positions of the bodies to reduce overlap and joint detachment. \mbox{\Hypertarget{classstickman_1_1Game_a644f81fab1d7c7e88c7b0c44aea15a6f}\label{classstickman_1_1Game_a644f81fab1d7c7e88c7b0c44aea15a6f}} 
+\index{stickman::Game@{stickman::Game}!prev\_time@{prev\_time}}
+\index{prev\_time@{prev\_time}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{prev\_time}{prev\_time}}
+{\footnotesize\ttfamily struct timeval stickman\+::\+Game\+::prev\+\_\+time}
+
+
+
+structure of timeval which gives the current time in seconds and microseconds. 
+
+Used to store previous time to check collision. \mbox{\Hypertarget{classstickman_1_1Game_a72f302c91bef0af604e9e09752eafe7b}\label{classstickman_1_1Game_a72f302c91bef0af604e9e09752eafe7b}} 
+\index{stickman::Game@{stickman::Game}!prev\_time1@{prev\_time1}}
+\index{prev\_time1@{prev\_time1}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{prev\_time1}{prev\_time1}}
+{\footnotesize\ttfamily struct timeval stickman\+::\+Game\+::prev\+\_\+time1}
+
+
+
+structure of timeval which gives the current time in seconds and microseconds. 
+
+Used to store previous time to generate gem. \mbox{\Hypertarget{classstickman_1_1Game_a0b767b4be2255b044375b6539d5113fc}\label{classstickman_1_1Game_a0b767b4be2255b044375b6539d5113fc}} 
+\index{stickman::Game@{stickman::Game}!time\_difference1@{time\_difference1}}
+\index{time\_difference1@{time\_difference1}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{time\_difference1}{time\_difference1}}
+{\footnotesize\ttfamily double stickman\+::\+Game\+::time\+\_\+difference1}
+
+
+
+Used to generate gem when time difference becomes greater than 5 seconds that is after every 5 seconds. 
+
+~\newline
+ \mbox{\Hypertarget{classstickman_1_1Game_a2858b4c6c3fbec949ea8a5d7ad72b2c0}\label{classstickman_1_1Game_a2858b4c6c3fbec949ea8a5d7ad72b2c0}} 
+\index{stickman::Game@{stickman::Game}!velocityIterations@{velocityIterations}}
+\index{velocityIterations@{velocityIterations}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{velocityIterations}{velocityIterations}}
+{\footnotesize\ttfamily int stickman\+::\+Game\+::velocity\+Iterations = 10}
+
+
+
+Denotes the iterations count of velocity in velocity phase of constraint solver in Box2D. 
+
+In the velocity phase the solver computes the impulses necessary for the bodies to move correctly. \mbox{\Hypertarget{classstickman_1_1Game_a07ef4e470e90786f6f5d32ad6912c59c}\label{classstickman_1_1Game_a07ef4e470e90786f6f5d32ad6912c59c}} 
+\index{stickman::Game@{stickman::Game}!worker@{worker}}
+\index{worker@{worker}!stickman::Game@{stickman::Game}}
+\doxysubsubsection{\texorpdfstring{worker}{worker}}
+{\footnotesize\ttfamily std\+::thread stickman\+::\+Game\+::worker\mbox{[}30\mbox{]}}
+
+
+
+Worker threads initialized to 30. 
+
+Used to detect collision between multiple body parts of two players or body parts of a player with ground or walls and modify health points accordingly simultaneously. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,12 +1,19 @@
 var searchData=
 [
-  ['left_5fhand',['left_hand',['../classPlayer.html#a118caf1bc1171b6e2d63d0544a12eae6',1,'Player']]],
-  ['left_5fhandjoint',['left_handJoint',['../classPlayer.html#a3acd106181348da0d02d16f5f8ce9b0e',1,'Player']]],
-  ['left_5fhandsprite',['left_handSprite',['../classPlayer.html#a475bc21a49ec0646543d453aad5165eb',1,'Player']]],
-  ['left_5fhanduserdata',['left_handUserData',['../classPlayer.html#ae468da9b2edefa6fad9c15be21429c5f',1,'Player']]],
-  ['left_5fleg',['left_leg',['../classPlayer.html#ac930c6d977230e6bca5988e5253dd2c5',1,'Player']]],
-  ['left_5flegjoint',['left_legJoint',['../classPlayer.html#aaa58c13189790f25dcbb9eab2fcd6599',1,'Player']]],
-  ['left_5flegsprite',['left_legSprite',['../classPlayer.html#abfe364077a19821b3a39808aea631ffb',1,'Player']]],
-  ['left_5fleguserdata',['left_legUserData',['../classPlayer.html#a14c712cf7642ba3a2bbc7a5d14e52d08',1,'Player']]],
-  ['legtexture',['legTexture',['../classPlayer.html#a2c95a26d22e3fa825def2c052fa74386',1,'Player']]]
+  ['game',['Game',['../classstickman_1_1Game.html',1,'stickman::Game'],['../classstickman_1_1Game.html#a3f9e3d3ebf62f39b6e462dd14bfffd9f',1,'stickman::Game::Game()']]],
+  ['game2',['Game2',['../classstickman_1_1Game2.html',1,'stickman']]],
+  ['gamedata',['GameData',['../structstickman_1_1GameData.html',1,'stickman']]],
+  ['gameloop',['gameLoop',['../classstickman_1_1Game.html#a4f0f2aa935fc9d390ac9e38adc581544',1,'stickman::Game']]],
+  ['gameover',['GameOver',['../classstickman_1_1GameOver.html',1,'stickman']]],
+  ['gemexists',['gemExists',['../classstickman_1_1Game.html#abd629cd123e0647cc4db3092eb78967f',1,'stickman::Game']]],
+  ['gemsprite',['gemSprite',['../classstickman_1_1Game.html#ab8f834a106c546956786c90826e2d58d',1,'stickman::Game']]],
+  ['gemtexture',['gemTexture',['../classstickman_1_1Game.html#a42ab943142dc407a8b02e777b4bcbd32',1,'stickman::Game']]],
+  ['gemthread',['gemThread',['../classstickman_1_1Game.html#af362a077b002095ed4c568a59d16e39f',1,'stickman::Game']]],
+  ['generategem',['generateGem',['../classstickman_1_1Game.html#a174cdd8a257dc1d12338b0daec2fe1b9',1,'stickman::Game']]],
+  ['gethealth',['getHealth',['../classPlayer.html#abcb15d249bed9a4ab0ab86b52b0d747a',1,'Player']]],
+  ['getname',['getName',['../classPlayer.html#af1aa472885d589516f483e26e786600e',1,'Player']]],
+  ['ground',['ground',['../classstickman_1_1Game.html#a86d4317d7782e7e5d4e44990d2e6e7b9',1,'stickman::Game']]],
+  ['groundsprite',['groundSprite',['../classstickman_1_1Game.html#a43af142452734f123fada42b54ee79d4',1,'stickman::Game']]],
+  ['groundtexture',['groundTexture',['../classstickman_1_1Game.html#abba61ef52c6aa10a64074f7d7437f103',1,'stickman::Game']]],
+  ['grounduserdata',['groundUserData',['../classstickman_1_1Game.html#a9ecd107e27d4d6eabef8bfc3ca49bf46',1,'stickman::Game']]]
 ];

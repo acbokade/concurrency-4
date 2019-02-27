@@ -97,11 +97,9 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
     this->player1RoundsSprite.setTexture(roundTexture);
     this->player1RoundsSprite.setOrigin((sf::Vector2f)roundTexture.getSize()/2.f);
     this->player1RoundsSprite.setPosition(640.f,35.f);
-    //this->player1RoundsSprite.setColor(sf::Color::Transparent);
     this->player2RoundsSprite.setTexture(roundTexture);
     this->player2RoundsSprite.setOrigin((sf::Vector2f)roundTexture.getSize()/2.f);
     this->player2RoundsSprite.setPosition(736.f,35.f);
-    //this->player2RoundsSprite.setColor(sf::Color::Transparent);
     this->player1->init(true);
 	this->player2->init(false);
 	this->gemExists = false;
@@ -142,11 +140,9 @@ void Game::connect()
 	}
 	else
 	{
-		//this->socket.connect(this->myip,5015);
 		this->sendSocket.connect(this->myip,5090);
 		this->listenSocket.connect(this->myip,6090);
 	}
-    //this->socket.setBlocking(true);
     this->sendSocket.setBlocking(true);
 	this->listenSocket.setBlocking(true);
 }
@@ -183,12 +179,6 @@ void Game::gameLoop()
 {
 	srand(time(0));
 	char con;
-	//cout<<"(s) for server (c) for client\n";
-	//cout<<ip;
-	/*if(!this->buffer.loadFromFile("res/punch.wav"))
-        std::cout<<"error in loading sound"<<std::endl;
-    this->sound.setBuffer(buffer);*/
-
 	if(!isClient)
 	{
 		this->isPlaying = true;
@@ -260,16 +250,17 @@ void Game::gameLoop()
 	        	barsprite2.setScale((float) player2->getHealth()/100.f,1.f);
 	        if(player1->getHealth()<=50)
 	        barsprite1.setColor(sf::Color(255,0,0,255));
-	    	else if(player1->getHealth()>50){
+	    	else if(player1->getHealth()>50)
+	    	{
 	    		barsprite1.setColor(sf::Color(255,255,255,255));
 	    	}
 	    	if(player2->getHealth()<=50)
 	        barsprite2.setColor(sf::Color(255,0,0,255));
-	    	else if(player2->getHealth()>50){
+	    	else if(player2->getHealth()>50)
+	    	{
 	    		barsprite2.setColor(sf::Color(255,255,255,255));
 	    	}
 	        
-
 			this->world->Step(timeStep, velocityIterations, positionIterations);
 			gettimeofday(&current_time,NULL);
 	        time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
@@ -294,24 +285,20 @@ void Game::gameLoop()
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	        {
 	            player1->body->SetLinearVelocity(b2Vec2(-4,0));
-	            player1->body->SetLinearVelocity(b2Vec2(-4,0));
 	        }
 
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	        {
-	            player1->body->SetLinearVelocity(b2Vec2(4,0));
 	            player1->body->SetLinearVelocity(b2Vec2(4,0));
 	        }
 
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	        {
 	            player1->body->SetLinearVelocity(b2Vec2(0,-4));
-	            player1->body->SetLinearVelocity(b2Vec2(0,-4));
 	        }
 
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	        {
-	            player1->head->SetLinearVelocity(b2Vec2(0,4));
 	            player1->body->SetLinearVelocity(b2Vec2(0,4));
 	        }
 
@@ -352,8 +339,6 @@ void Game::gameLoop()
 	        	window->draw(this->gemSprite);
 	        m1.unlock();
 	        window->display();
-
-	        // std::cout<<player1->getHealth()<<" "<<player2->getHealth()<<std::endl;
 
 	        if(player1->health <= 0 && player2->health >0)
 	        {
@@ -587,7 +572,6 @@ void Game::generateGem()
 			int y = rand();
 			x = 100 + x % 550;
 			y = 100 + y % 1100; 
-			//std::cout<<x<<" "<<y<<std::endl;
 			this->gemSprite.setPosition(x,y);
 			m1.lock();
 			this->gemExists = true;
@@ -819,15 +803,12 @@ void Game::server_send()
     packet2<<player2->right_hand->GetPosition().x*SCALE<<player2->right_hand->GetPosition().y*SCALE<<player2->right_hand->GetAngle() * (180/b2_pi);
     packet2<<player1->getHealth()<<player2->getHealth();
     packet2<<gemExists<<gemSprite.getPosition().x<<gemSprite.getPosition().y;
-
-    //socket.send(packet2);
     sendSocket.send(packet2);
 }
 
 void Game::server_receive()
 {
 	sf::Packet packet1;
-	//socket.receive(packet1);
 	listenSocket.receive(packet1);
     std::string s;
     packet1>>s;
@@ -844,24 +825,20 @@ void Game::server_receive()
     else if (s=="L")
     {
         player2->body->SetLinearVelocity(b2Vec2(-4,0));
-        player2->body->SetLinearVelocity(b2Vec2(-4,0));
     }
 
     else if (s=="R")
     {
-        player2->body->SetLinearVelocity(b2Vec2(4,0));
         player2->body->SetLinearVelocity(b2Vec2(4,0));
     }
 
     else if (s=="U")
     {
         player2->body->SetLinearVelocity(b2Vec2(0,-4));
-        player2->body->SetLinearVelocity(b2Vec2(0,-4));
     }
 
     else if (s=="B")
     {
-        player2->head->SetLinearVelocity(b2Vec2(0,4));
         player2->body->SetLinearVelocity(b2Vec2(0,4));
     }
 }
@@ -906,14 +883,12 @@ void Game::client_send()
     	s="B";
     	packet2<<s;
     }
-    //socket.send(packet2);
 	listenSocket.send(packet2);
 }
 
 void Game::client_receive(float* x,float* y ,float* angle,int* hp,float* gempos)
 {
 	sf::Packet packet1;
-	//socket.receive(packet1);
 	sendSocket.receive(packet1);
 	for(int i=0;i<12;i++)
 		packet1>>x[i]>>y[i]>>angle[i];

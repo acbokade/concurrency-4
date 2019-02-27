@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['body',['body',['../classPlayer.html#aa0bbd4ba33921c9e7ccbc0801560a712',1,'Player']]],
-  ['bodysprite',['bodySprite',['../classPlayer.html#a733f1c1836db49256809c56363b8400c',1,'Player']]],
-  ['bodytexture',['bodyTexture',['../classPlayer.html#a17cdbb61c63eeb63f5b6d8f3261b4f7a',1,'Player']]],
-  ['bodyuserdata',['bodyUserData',['../classPlayer.html#a8606cd53996e6e657799a1e4a758a899',1,'Player']]]
+  ['accept',['accept',['../classstickman_1_1Game.html#aa1d3d71d32e9ab62fe0181ee4f5cc919',1,'stickman::Game']]],
+  ['accept1',['accept1',['../classstickman_1_1Game.html#a51347206d86e4211e1fb42c4fd75fe3e',1,'stickman::Game']]],
+  ['assetmanager',['AssetManager',['../classstickman_1_1AssetManager.html',1,'stickman']]]
 ];
