@@ -25,6 +25,7 @@ public:
 	b2Body* head;
 	/** @brief 
     *	 	Contains the userData of head 
+    *
     *		Used to detect head in collision of two body parts. 
      */
 	int headUserData;
@@ -42,6 +43,7 @@ public:
 	b2Body* body;
 	/** @brief 
     *	 	Contains the userData of body 
+    *
     *		Used to detect body in collision. 
      */
 	int bodyUserData;
@@ -59,6 +61,7 @@ public:
 	b2Body* left_hand;
 	/** @brief 
     *	 	Contains the userData of player's left hand
+    *
     *	    Used to detect left hand in collision
      */
 	int left_handUserData;
@@ -76,6 +79,7 @@ public:
 	b2Body* right_hand;
 	/** @brief 
     *	 	Contains the userData of player's right hand 
+    *
   	*  		Used to detect right hand in collision of two body parts. 
      */
 	int right_handUserData;
@@ -89,6 +93,7 @@ public:
 	b2Body* left_leg;
 	/** @brief 
     *	 	Contains the userData of player's left leg
+    *
    	* 		Used to detect left leg in collision of two body parts. 
      */
 	int left_legUserData;
@@ -106,6 +111,7 @@ public:
 	b2Body* right_leg;
 	/** @brief 
     *	 	Contains the userData of player's right leg
+    *
    	* 		Used to detect right leg in collision of two body parts. 
      */
 	int right_legUserData;
