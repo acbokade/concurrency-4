@@ -14,6 +14,7 @@ jobs:
             git submodule sync; git submodule update --init # initialize git submodules
             sudo apt-get install libsfml-dev                # version 2.4.2
             sudo apt-get install libyaml-cpp-dev            # version 0.5.2-4
+            sudo apt-get install cmake
       - run:
           name: Compile
           command: cmake CMakeLists.txt
