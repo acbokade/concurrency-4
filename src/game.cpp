@@ -62,8 +62,8 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	this->player2NameText.setFont(this->font);
     this->player2NameText.setColor(sf::Color::Red);
 
-    player1Rounds = 0;
-	player2Rounds = 0;
+    setPlayerRounds(true, 0);
+    setPlayerRounds(false, 0);
 
     this->player1RoundsText.setPosition(630.f,15.f);
 	this->player1RoundsText.setCharacterSize(35);
@@ -354,7 +354,7 @@ void Game::gameLoop()
 	        		window->draw(rtext2);
 	        		window->display();
 	        	}
-	        	player2Rounds++;
+	        	setPlayerRounds(false,getPlayerRounds(false)+1);
 	        	destroyBody();
 	        	break;
 	        }
@@ -372,7 +372,7 @@ void Game::gameLoop()
 	        		window->draw(rtext1);
 	        		window->display();
 	        	}
-	        	player1Rounds++;
+	        	setPlayerRounds(true,getPlayerRounds(true)+1);
 	        	destroyBody();
 	        	break;
 	        }
@@ -390,8 +390,8 @@ void Game::gameLoop()
 	        		window->draw(rtext3);
 	        		window->display();
 	        	}
-	        	player1Rounds++;
-	        	player2Rounds++;
+	        	setPlayerRounds(false,getPlayerRounds(false)+1);
+	        	setPlayerRounds(true,getPlayerRounds(true)+1);
 	        	destroyBody();
 	        	break;
 	        }
@@ -517,7 +517,7 @@ void Game::gameLoop()
 	        		window->draw(rtext2);
 	        		window->display();
 	        	}
-	        	player2Rounds++;
+	        	setPlayerRounds(false,getPlayerRounds(false)+1);
 	        	break;
 	        }
 	        else if(player1->health > 0 && player2->health <= 0)
@@ -530,7 +530,7 @@ void Game::gameLoop()
 	        		window->draw(rtext1);
 	        		window->display();
 	        	}
-	        	player1Rounds++;
+	        	setPlayerRounds(true,getPlayerRounds(true)+1);
 	        	break;
 	        }
 	        else if (player1->health <= 0 && player2->health <=0)
@@ -543,8 +543,8 @@ void Game::gameLoop()
 	        		window->draw(rtext3);
 	        		window->display();
 	        	}
-	        	player1Rounds++;
-	        	player2Rounds++;
+	        	setPlayerRounds(false,getPlayerRounds(false)+1);
+	        	setPlayerRounds(true,getPlayerRounds(true)+1);
 	        	break;
 	        }
 	        this->player1RoundsText.setString(std::to_string(this->player1Rounds));
@@ -557,6 +557,22 @@ void Game::gameLoop()
 	tcplistener1.close();
 	sendSocket.disconnect();
 	listenSocket.disconnect();*/
+}
+
+int Game::getPlayerRounds(bool player)
+{
+	if(player)
+		return this->player1Rounds;
+	else
+		return this->player2Rounds;
+}
+
+void Game::setPlayerRounds(bool player, int rounds)
+{
+	if(player)
+		this->player1Rounds = rounds;
+	else
+		this->player2Rounds = rounds;
 }
 
 void Game::generateGem()

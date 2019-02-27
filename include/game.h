@@ -187,9 +187,8 @@ public:
     *	Pointer is needed to move and rotate the player, set its health points.  
     */
     Player* player2;
-    /** @brief Pointer to second player's Player object. It contains information about everything about second player.
-    *
-    *	Pointer is needed to move and rotate the player, set its health points.  
+    /** @brief Pair of integers where first paramter contains user data of body part of first player and second parameter
+    *	contains user data of body part of second player which were involved in collision. 
     */
     std::pair<int,int> p;
     /** @brief Denotes the number of rounds won by first player.
@@ -302,10 +301,15 @@ public:
 		@param flag If flag is false, TCP listener listens on first port and if flag is true, it listens on second port.
     */
 	void serverListen(bool flag);
-	/** @brief Boolean variable containing status of connection of client to first port of  server intialized to false 
-	*			Contains status of connection of client to server. It becomes true if client connects to first port and TCP
-	*			listener on server side accepts it. 
+    /** @brief It returns number of rounds won by player.
+		@param flag if player is true, it returns rounds won by first player, else second player.
     */
+    int getPlayerRounds(bool player);
+    /** @brief	Sets the number of rounds won by player
+		@param player if player is true, it sets rounds of first player, else second player.
+		@param rounds Number of rounds to be set.
+    */
+    void setPlayerRounds(bool player, int rounds);
 	bool accept=false;
 	/** @brief Boolean variable containing status of connection of client to second port of server intialized to false 
 	*			Contains status of connection of client to server. It becomes true if client connects to second port and TCP
