@@ -29,7 +29,8 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	else
 		this->player2->setName(s);
 
-	this->font.loadFromFile("res/arial.ttf");
+	if(!this->font.loadFromFile("res/arial.ttf"))
+		std::cerr<<"Failed to load font!"<<std::endl;
 	this->rtext.setPosition(420,180);
 	this->rtext.setCharacterSize(60);
 	this->rtext.setFont(this->font);
@@ -140,8 +141,10 @@ void Game::connect()
 	}
 	else
 	{
-		this->sendSocket.connect(this->myip,5090);
-		this->listenSocket.connect(this->myip,6090);
+		if(this->sendSocket.connect(this->myip,5090)!=sf::Socket::Done)
+			std::cerr<<"Failed to connect!"<<std::endl;
+		if(this->listenSocket.connect(this->myip,6090)!=sf::Socket::Done)
+			std::cerr<<"Failed to connect!"<<std::endl;
 	}
     this->sendSocket.setBlocking(true);
 	this->listenSocket.setBlocking(true);
@@ -151,26 +154,18 @@ void Game::serverListen(bool flag)
 {
 	if(flag == false)
 	{
-		tcplistener.listen(5090);
-		tcplistener.accept(sendSocket);
-		/*if(tcplistener.listen(5018)!=sf::Socket::Done){
-    	    std::cerr<<"Server error while listening to port"<<std::endl;
-    	}
-    	if(tcplistener.accept(sendSocket) != sf::Socket::Done){
-    	    std::cerr<<"Error while accepting sendSocket conection"<<std::endl;
-		}*/	
+		if(tcplistener.listen(5090)!=sf::Socket::Done)
+			std::cerr<<"Server error while listening !"<<std::endl;
+		if(tcplistener.accept(sendSocket)!=sf::Socket::Done)
+			std::cerr<<"Error while accepting conection !"<<std::endl;	
 		this->accept =true;
 	}
 	else
 	{
-		tcplistener1.listen(6090);
-		tcplistener1.accept(listenSocket);
-		/*if(tcplistener1.listen(6018)!=sf::Socket::Done){
-    	    std::cerr<<"Server error while listening @ the port1"<<std::endl;
-    	}
-    	if(tcplistener1.accept(listenSocket) != sf::Socket::Done){
-    	    std::cerr<<"Error while accepting sendSocket conection"<<std::endl;
-		}*/	
+		if(tcplistener1.listen(6090)!=sf::Socket::Done)
+			std::cerr<<"Server error while listening !"<<std::endl;
+		if(tcplistener1.accept(listenSocket)!=sf::Socket::Done)
+			std::cerr<<"Error while accepting conection !"<<std::endl;
 		this->accept1 =true;
     }
 }
@@ -187,13 +182,15 @@ void Game::gameLoop()
 	    player1->setHealth(100);
 	    player2->setHealth(100);
 	    sf::Packet packet1,packet2;
-		listenSocket.receive(packet1);
+		if(listenSocket.receive(packet1)!=sf::Socket::Done)
+			std::cerr<<"Error while receiving packet !"<<std::endl;
 		std::string myName;
 		packet1>>myName;
 		player2->setName(myName);
 		myName = player1->getName();
 		packet2<<myName;
-		sendSocket.send(packet2);
+		if(sendSocket.send(packet2)!=sf::Socket::Done)
+			std::cerr<<"Error while sending packet !"<<std::endl;
 	    gettimeofday(&prev_time,NULL);
 	    gettimeofday(&prev_time1, NULL);
 	    sf::Texture texture;
@@ -201,7 +198,7 @@ void Game::gameLoop()
 
 		if (!texture.loadFromFile("res/texture.png"))
 		{
-			std::cout << "Error loading texture" << std::endl;
+			std::cerr<<"Failed to load texture!"<<std::endl;
 		}
 
 		sf::Sprite sprite;
@@ -249,13 +246,13 @@ void Game::gameLoop()
 	        if(player2->getHealth()>=0 && player2->getHealth()<=100)
 	        	barsprite2.setScale((float) player2->getHealth()/100.f,1.f);
 	        if(player1->getHealth()<=50)
-	        barsprite1.setColor(sf::Color(255,0,0,255));
+	        	barsprite1.setColor(sf::Color(255,0,0,255));
 	    	else if(player1->getHealth()>50)
 	    	{
 	    		barsprite1.setColor(sf::Color(255,255,255,255));
 	    	}
 	    	if(player2->getHealth()<=50)
-	        barsprite2.setColor(sf::Color(255,0,0,255));
+	        	barsprite2.setColor(sf::Color(255,0,0,255));
 	    	else if(player2->getHealth()>50)
 	    	{
 	    		barsprite2.setColor(sf::Color(255,255,255,255));
@@ -413,8 +410,10 @@ void Game::gameLoop()
 		std::string myName;
 		myName = player2->getName();
 		packet2<<myName;
-		listenSocket.send(packet2);
-		sendSocket.receive(packet1);
+		if(listenSocket.send(packet2)!=sf::Socket::Done)
+			std::cerr<<"Error while sending packet !"<<std::endl;
+		if(sendSocket.receive(packet1)!=sf::Socket::Done)
+			std::cerr<<"Error while receiving packet !"<<std::endl;
 		packet1>>myName;
 		player1->setName(myName);
 		this->rtext1.setString(player1->getName() + " Wins!!!");
@@ -446,7 +445,7 @@ void Game::gameLoop()
 			texture.setRepeated(true);
 			if (!texture.loadFromFile("res/texture.png"))
 			{
-				std::cout << "Error loading texture" << std::endl;
+				std::cerr<<"Failed to load texture!"<<std::endl;
 			}
 	        sf::Sprite sprite;
 			sprite.setTexture(texture);
@@ -455,8 +454,10 @@ void Game::gameLoop()
 			texture.setSmooth(true);
 			sf::Texture bar1;
 			sf::Texture bar2;
-    		bar1.loadFromFile("res/bar.png");
-    		bar2.loadFromFile("res/bar.png");
+    		if(!bar1.loadFromFile("res/bar.png"))
+    			std::cerr<<"Failed to load texture!"<<std::endl;
+    		if(bar2.loadFromFile("res/bar.png"))
+    			std::cerr<<"Failed to load texture!"<<std::endl;
     		sf::Sprite barsprite1;
     		barsprite1.setTexture(bar1);
     		sprite.setColor(sf::Color(255,255,255,100));
@@ -474,11 +475,13 @@ void Game::gameLoop()
 	        if(player2->getHealth()>=0 && player2->getHealth()<=100)
 	        	barsprite2.setScale((float) player2->getHealth()/100.f,1.f);
 	        if(player1->getHealth()<=50)
-	        barsprite1.setColor(sf::Color(255,0,0,255));
-	    	else if(player1->getHealth()>50){barsprite1.setColor(sf::Color(255,255,255,255));}
+	        	barsprite1.setColor(sf::Color(255,0,0,255));
+	    	else if(player1->getHealth()>50)
+	    		barsprite1.setColor(sf::Color(255,255,255,255));
 	    	if(player2->getHealth()<=50)
-	        barsprite2.setColor(sf::Color(255,0,0,255));
-	    	else if(player2->getHealth()>50){barsprite2.setColor(sf::Color(255,255,255,255));}
+	        	barsprite2.setColor(sf::Color(255,0,0,255));
+	    	else if(player2->getHealth()>50)
+	    		barsprite2.setColor(sf::Color(255,255,255,255));
 
 			groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
 	    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
@@ -551,12 +554,6 @@ void Game::gameLoop()
 	        this->player2RoundsText.setString(std::to_string(this->player2Rounds));
 		}	
 	}
-	//tcplistener.close();
-	//socket.disconnect();
-	/*tcplistener.close();
-	tcplistener1.close();
-	sendSocket.disconnect();
-	listenSocket.disconnect();*/
 }
 
 int Game::getPlayerRounds(bool player)
@@ -819,13 +816,15 @@ void Game::server_send()
     packet2<<player2->right_hand->GetPosition().x*SCALE<<player2->right_hand->GetPosition().y*SCALE<<player2->right_hand->GetAngle() * (180/b2_pi);
     packet2<<player1->getHealth()<<player2->getHealth();
     packet2<<gemExists<<gemSprite.getPosition().x<<gemSprite.getPosition().y;
-    sendSocket.send(packet2);
+    if(sendSocket.send(packet2)!=sf::Socket::Done)
+		std::cerr<<"Error while sending packet from server !"<<std::endl;
 }
 
 void Game::server_receive()
 {
 	sf::Packet packet1;
-	listenSocket.receive(packet1);
+	if(listenSocket.receive(packet1)!=sf::Socket::Done)
+		std::cerr<<"Error while receiving packet from client!"<<std::endl;
     std::string s;
     packet1>>s;
     if (s=="D")
@@ -899,13 +898,15 @@ void Game::client_send()
     	s="B";
     	packet2<<s;
     }
-	listenSocket.send(packet2);
+	if(listenSocket.send(packet2)!=sf::Socket::Done)
+			std::cerr<<"Error while sending packet from client !"<<std::endl;
 }
 
 void Game::client_receive(float* x,float* y ,float* angle,int* hp,float* gempos)
 {
 	sf::Packet packet1;
-	sendSocket.receive(packet1);
+	if(sendSocket.receive(packet1)!=sf::Socket::Done)
+			std::cerr<<"Error while receiving packet from server!"<<std::endl;
 	for(int i=0;i<12;i++)
 		packet1>>x[i]>>y[i]>>angle[i];
 	packet1>>hp[0]>>hp[1];
