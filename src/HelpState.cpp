@@ -28,7 +28,8 @@ namespace stickman
 	    string("\n\nDamage due to collision of head of First Player and head of Second")+
 	    string(" Player is 5 to each.\nDamage due to collision of head of First Player")+
 	    string(" and hands or legs of Second Player is 5 to\nFirst Player and vice versa.\nDamage due to collision of body of First Player and hands or legs of Second Player ")+
-	    string("is 3 to\nFirst Player and vice versa.");
+	    string("is 3 to\nFirst Player and vice versa.\n\n A gem appears after every 5 seconds at random location.\n If a player's head overlaps with the gem,")+
+	    string("then its health points get increased by 5 points.");
 	    this->infoText.setString(s);
 	}
 
