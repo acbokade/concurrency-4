@@ -24,7 +24,7 @@ namespace stickman{
 /**
  * @brief      A struct passed for testing game functions
  */
-struct mainGame : testing::Test
+struct mainGamel : testing::Test
 {
 	GameDataRef *data;
 	Game *temp;
@@ -34,7 +34,7 @@ struct mainGame : testing::Test
 	/**
 	 * @brief      Constructor of struct
 	 */
-	mainGame()
+	mainGamel()
 	{
 		data=new GameDataRef;
 		temp=new Game(*data,t1,t2,t1);
@@ -42,7 +42,7 @@ struct mainGame : testing::Test
 	/**
 	 * @brief      Destroys the object.
 	 */
-	virtual ~mainGame()
+	virtual ~mainGamel()
 	{
 		delete data;
 		delete temp;
@@ -52,7 +52,7 @@ struct mainGame : testing::Test
 /**
  * Runs the test initializeData
  */
-TEST_F(mainGame,initializeData)
+TEST_F(mainGamel,initializeData)
 {
 	int success=0;
 	if(temp->player1!=NULL)success=1;
@@ -65,14 +65,89 @@ TEST_F(mainGame,initializeData)
 	EXPECT_EQ(1,success);
 	if(temp->listener==NULL)success=0;
 	EXPECT_EQ(1,success);
+	if(temp->ground==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->wall1==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->wall2==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->wall3==NULL)success=0;
+	EXPECT_EQ(1,success);
 	sf::Vector2f a(620.f, 8.f);
 	EXPECT_EQ(a,temp->groundSprite.getOrigin());
 }
 
 /**
+ * Runs the test for the function initPlayer
+ */
+TEST_F(mainGamel,initPlayerTest)
+{
+	int success=0;
+	temp->initPlayer(temp->player1,100.f,2);
+	if(temp->player1->head!=NULL)success=1;
+	EXPECT_EQ(1,success);
+	if(temp->player1->body==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->left_hand==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->right_hand==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->left_leg==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->right_leg==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->headJoint==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->left_legJoint==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->right_legJoint==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->left_handJoint==NULL)success=0;
+	EXPECT_EQ(1,success);
+	if(temp->player1->right_handJoint==NULL)success=0;
+	EXPECT_EQ(1,success);
+	
+}
+
+
+struct testNameString
+{
+	std::string something;
+};
+
+struct setNameTestStruct:mainGamel,testing::WithParamInterface<testNameString>
+{
+
+};
+/**
+ * Runs the test for the setter function of health
+ */
+TEST_F(mainGamel,setHealthTest)
+{
+	for (int i = 1; i < 100; ++i)
+	{
+		temp->player1->setHealth(i);
+		EXPECT_EQ(temp->player1->health,temp->player1->getHealth());
+	}
+	
+}
+
+/**
+ * Runs the test for the setter function of name
+ */
+TEST_P(setNameTestStruct,setNameTest)
+{
+	auto as =GetParam();
+	temp->player1->setName(as.something);
+	EXPECT_EQ(temp->player1->name,temp->player1->getName());
+}
+
+INSTANTIATE_TEST_CASE_P(Default,setNameTestStruct,testing::Values(testNameString{"TestString1"},testNameString{"ksahdhksda"},testNameString{"okufahsidha"},testNameString{"gowqiyfjalUHUKJHd"},testNameString{"fksaiodhusnl"},testNameString{"KHKgYGYgHG"},testNameString{"uhfuhJHKUHguiGUg"}));
+
+/**
  * test for generate gem function
  */
-TEST_F(mainGame,generateGem)
+TEST_F(mainGamel,generateGem)
 {
 	temp->isPlaying=true;
 	// temp->generateGem();
@@ -84,7 +159,7 @@ TEST_F(mainGame,generateGem)
 /**
  * Test for the distance function
  */
-TEST_F(mainGame,checkDistance)
+TEST_F(mainGamel,checkDistance)
 {
 	int x1=0,x2=0,y1=0,y2=0;
 	for (int i = 0; i < 10; ++i)
