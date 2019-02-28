@@ -17,9 +17,9 @@ namespace stickman
 		/**
 		 * @brief      Constructs the object.
 		 *
-		 * @param[in]  data    The data which contains information about the game
-		 * @param[in]  name    The name
-		 * @param[in]  result  The result
+		 * @param  data    The data which contains information about the game
+		 * @param  name    Stores the name of winner
+		 * @param  result  Stores the result if there is a win / tie.
 		 */
 		GameOver(GameDataRef data,std::string name,int result);
 		/**
@@ -27,7 +27,7 @@ namespace stickman
 		 */
 		sf::Font font;
 		/**
-		 * Stores some text to display
+		 * Stores text to be displayed
 		 */
         sf::Text gtext,gtext1;
 	
@@ -42,35 +42,35 @@ namespace stickman
 		/**
 		 * @brief      Virtual function Update which may be overloaded which may be used to update game logic
 		 *
-		 * @param[in]  dt    The difference in frames to syncronise with framerate
+		 * @param  dt    The difference in frames to syncronise with framerate
 		 */
 		void Update(float dt);
 		/**
 		 * @brief      Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration
 		 *
-		 * @param[in]  dt    The difference in frames to syncronise with framerate
+		 * @param  dt    The difference in frames to syncronise with framerate
 		 */
 		void Draw(float dt);
 
 	private:
 		/**
-		 * Takes the data of the game from the previous state
+		 *@brief Takes the data of the game from the previous state
 		 */
 		GameDataRef _data;
 		/**
-		 * A string to store a name
+		 *@brief A string to store a name
 		 */
 		std::string name;
 		/**
-		 * A string to store the result
+		 *@brief A string to store the result
 		 */
 		int result;
 		/**
-		 * A sprite which has the play again button sprite
+		 *@brief A sprite which has the play again button sprite
 		 */
         sf::Sprite _play_again_button;
         /**
-         * Different sprites
+         *@brief Different sprites for baloons to be diplayed
          */
 	sf::Sprite baloon,baloon1,baloon2,baloon3,baloon4,baloon5;
 	};

@@ -24,10 +24,10 @@ namespace stickman
 		/**
 		 * @brief      Constructs the object.
 		 *
-		 * @param[in]  data    The data which contains information about the game
-		 * @param[in]  s       { parameter_description }
-		 * @param[in]  client  The client
-		 * @param[in]  ip      { parameter_description }
+		 * @param  data    The data which contains information about the game
+		 * @param  s       Stores the name of player
+		 * @param  client  Stores the information whether the system is client/server
+		 * @param  ip      IP to be connected
 		 */
 		mainGame(GameDataRef data,string s,bool client,string ip);
 
@@ -42,13 +42,13 @@ namespace stickman
 		/**
 		 * @brief      Virtual function Update which may be overloaded which may be used to update game logic
 		 *
-		 * @param[in]  dt    The difference in frames to syncronise with framerate
+		 * @param  dt    The difference in frames to syncronise with framerate
 		 */
 		void Update(float dt);
 		/**
 		 * @brief      Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration
 		 *
-		 * @param[in]  dt    The difference in frames to syncronise with framerate
+		 * @param  dt    The difference in frames to syncronise with framerate
 		 */
 		void Draw(float dt);
 
@@ -57,11 +57,17 @@ namespace stickman
 		 * Takes the data of the game from the previous state
 		 */
 		GameDataRef _data;
+		/**
+     	* @brief Stores the name of player.
+    	*/
 		string s;
+		/**
+     	* @brief Stores whether the system is client/server.
+    	*/
 		bool client;
-		sf::Sprite _title;
+		/**
+     	* @brief Stores the IP to be connected.
+    	*/
 		string ip;
-        sf::Sprite _play_button[3];
-		sf::Sprite _background;
 	};
 }

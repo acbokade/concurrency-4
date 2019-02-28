@@ -16,7 +16,6 @@
 #include "Game.hpp"
 #include <utility>
 #include <string>
-#include <bits/stdc++.h>
 
 namespace stickman {
 /**@class Game

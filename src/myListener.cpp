@@ -1,6 +1,7 @@
 #include "myListener.h"
 #include "Box2D/Box2D.h"
 
+namespace stickman{
 myListener::myListener()
 {
 }
@@ -25,4 +26,5 @@ void myListener::BeginContact(b2Contact* contact)
         bodya->ApplyLinearImpulse(impulse,bodya->GetWorldCenter(),true);
         bodyb->ApplyLinearImpulse(impulse2,bodyb->GetWorldCenter(),true);
     }
+}
 }

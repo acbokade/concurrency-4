@@ -34,24 +34,24 @@ namespace stickman
 		/**
 		 * @brief      Creates the window with the given resolution,framerate and title while also adding the first state
 		 *
-		 * @param[in]  width   The width
-		 * @param[in]  height  The height
-		 * @param[in]  title   The title
+		 * @param  width   The width of screen
+		 * @param  height  The height of screen
+		 * @param  title   The title of window screen
 		 */
 		Game2(int width, int height, std::string title);
 
 	private:
 		/**
-		 * Updates run at 60 fps
+		 *@brief Updates run at 60 fps
 		 */
 		const float dt = 1.0f / 60.0f;
 		/**
-		 * clock for calculations
+		 *@brief clock for time calculations
 		 */
 		sf::Clock _clock;
 
 		/**
-		 * Wraps the game data in a shared pointer
+		 *@brief Wraps the game data in a shared pointer
 		 */
 		GameDataRef _data = std::make_shared<GameData>();
 

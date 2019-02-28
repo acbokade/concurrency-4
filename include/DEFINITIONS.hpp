@@ -22,9 +22,6 @@
 /**
  * Assets for the main menu state
  */
-#define MAIN_MENU_BACKGROUND_FILEPATH "res/Menu Background.png"
-#define GAME_TITLE_FILEPATH "res/title.png"
-#define PLAY_BUTTON_1_FILEPATH "res/PlayButton.png"
 #define SPLASH_SCENE_BALOON_FILEPATH "res/baloon.png"
 #define SPLASH_SCENE_BALOON1_FILEPATH "res/baloon1.png"
 #define ENTER_BUTTON_1_FILEPATH "res/enter.png"

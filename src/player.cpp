@@ -5,6 +5,7 @@
 
 const float SCALE = 30.f;
 
+namespace stickman{
 Player::Player()
 {
 
@@ -101,4 +102,5 @@ void Player::init(bool firstPlayer)
     this->left_legSprite.setOrigin((sf::Vector2f)(legTexture.getSize())/2.f);
     this->right_legSprite.setTexture(legTexture);
     this->right_legSprite.setOrigin((sf::Vector2f)(legTexture.getSize())/2.f);
+}
 }

@@ -17,7 +17,7 @@ namespace stickman
 		/**
 		 * @brief      Constructs the object.
 		 *
-		 * @param[in]  data  The data which contains information about the game
+		 * @param  data  The data which contains information about the game
 		 */
 		HelpState(GameDataRef data);
 		/**
@@ -25,7 +25,7 @@ namespace stickman
 		 */
 		sf::Font font;
 		/**
-		 * Stores some text to display
+		 * Stores text to be displayed
 		 */
 		sf::Text infoText,rulesText,rule1Text,rule2Text,rule3Text;
 		/**
@@ -39,27 +39,27 @@ namespace stickman
 		/**
 		 * @brief      Virtual function Update which may be overloaded which may be used to update game logic
 		 *
-		 * @param[in]  dt    The difference in frames to syncronise with framerate
+		 * @param  dt    The difference in frames to syncronise with framerate
 		 */
 		void Update(float dt);
 		/**
 		 * @brief      Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration
 		 *
-		 * @param[in]  dt    The difference in frames to syncronise with framerate
+		 * @param  dt    The difference in frames to syncronise with framerate
 		 */
 		void Draw(float dt);
 		/**
 		 * @brief      Sets the text onto a particular position
 		 *
-		 * @param[in]  text  The text
-		 * @param[in]  xPos  The x position
-		 * @param[in]  yPos  The y position
-		 * @param[in]  size  The size
-		 * @param[in]  s     { parameter_description }
+		 * @param  text  The text
+		 * @param  xPos  The x position
+		 * @param  yPos  The y position
+		 * @param  size  The size
+		 * @param  s     Text to be set
 		 */
 		void setText(sf::Text text,int xPos,int yPos,int size,string s);
 		/**
-		 * Sprite which stores the backsprite
+		 * Sprite which stores the back button sprite
 		 */
 		sf::Sprite backSprite;
 

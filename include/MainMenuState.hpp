@@ -18,16 +18,31 @@ namespace stickman
 		/**
 		 * @brief      Constructs the object.
 		 *
-		 * @param[in]  data    Takes the data of the game from the previous state
-		 * @param[in]  s       { parameter_description }
-		 * @param[in]  client  The client
+		 * @param  data    Takes the data of the game from the previous state
+		 * @param  s       Stores the name of player
+		 * @param  client  Stores the information whether the system is client/server
 		 */
 		MainMenuState(GameDataRef data,string s,bool client);
-
+		/**
+     	* @brief  SFML text to be displayed as input is taken.
+    	*/
 		sf::Text playerText;
+		/**
+     	* @brief  SFML font to be loaded.
+    	*/
 		sf::Font font;
-		std::string playerInput;	
-		sf::Text text1,text2;
+		/**
+     	* @brief  String containing the ip to be connected.
+    	*/
+		std::string playerInput;
+		/**
+     	* @brief  SFML Text to be diplayed.
+    	*/	
+		sf::Text text1;
+		/**
+     	* @brief  SFML Text to be diplayed.
+    	*/	
+		sf::Text text2;
 		/**
 		 * @brief      Virtual function init that may be overloaded which runs at the start of the state
 		 */
@@ -39,23 +54,32 @@ namespace stickman
 		/**
 		 * @brief      Virtual function Update which may be overloaded which may be used to update game logic
 		 *
-		 * @param[in]  dt    The difference in frames to syncronise with framerate
+		 * @param  dt    The difference in frames to syncronise with framerate
 		 */
 		void Update(float dt);
 		/**
 		 * @brief      Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration
 		 *
-		 * @param[in]  dt    The difference in frames to syncronise with framerate
+		 * @param  dt    The difference in frames to syncronise with framerate
 		 */
 		void Draw(float dt);
 
 	private:
 		/**
-		 * Takes the data of the game from the previous state
+		 *@brief Takes the data of the game from the previous state
 		 */
 		GameDataRef _data;
+		/**
+     	* @brief Stores the name of player.
+    	*/
 		string playername;
+		/**
+     	* @brief Stores whether the system is client/server.
+    	*/
 		bool client;
+		/**
+     	* @brief Sprite for enter button.
+    	*/
         sf::Sprite _enter_button;
 	};
 }

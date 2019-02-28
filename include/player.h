@@ -4,6 +4,7 @@
 #include "Box2D/Box2D.h"
 #include "string"
 #include <iostream>
+namespace stickman{
 /**@class Player
  * @brief Contains all the information about the player.
  *
@@ -213,5 +214,6 @@ public:
 	*/
 	void init(bool firstPlayer);
 };
+}
 
 #endif
