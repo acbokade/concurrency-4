@@ -88,26 +88,27 @@ void Player::init(bool firstPlayer)
 {
     if(firstPlayer)
     {
-        if (!headTexture.loadFromFile("res/head1.png"))
+        if (!this->headTexture.loadFromFile("res/head1.png"))
             std::cerr<<"Failed to load head texture!"<<std::endl;
-        if (!bodyTexture.loadFromFile("res/body1.png"))
+        if (!this->bodyTexture.loadFromFile("res/body1.png"))
             std::cerr<<"Failed to load body texture!"<<std::endl;
-        if (!handTexture.loadFromFile("res/hand3.png"))
+        if (!this->handTexture.loadFromFile("res/hand3.png"))
             std::cerr<<"Failed to load hand texture!"<<std::endl;
-        if (!legTexture.loadFromFile("res/leg1.png"))
+        if (!this->legTexture.loadFromFile("res/leg1.png"))
             std::cerr<<"Failed to load leg texture!"<<std::endl;
     }
     else
     {
-        if (!headTexture.loadFromFile("res/head2.png"))
+        if (!this->headTexture.loadFromFile("res/head2.png"))
             std::cerr<<"Failed to load head texture!"<<std::endl;
-        if (!bodyTexture.loadFromFile("res/body2.png"))
+        if (!this->bodyTexture.loadFromFile("res/body2.png"))
             std::cerr<<"Failed to load body texture!"<<std::endl;
-        if (!handTexture.loadFromFile("res/hand4.png"))
+        if (!this->handTexture.loadFromFile("res/hand4.png"))
             std::cerr<<"Failed to load hand texture!"<<std::endl;
-        if (!legTexture.loadFromFile("res/leg2.png"))
+        if (!this->legTexture.loadFromFile("res/leg2.png"))
             std::cerr<<"Failed to load leg texture!"<<std::endl;
     }
+    this->headSprite.setTexture(headTexture);
     this->headSprite.setOrigin((sf::Vector2f)(headTexture.getSize())/2.f);
     this->bodySprite.setTexture(bodyTexture);
     this->bodySprite.setOrigin((sf::Vector2f)(bodyTexture.getSize())/2.f);
