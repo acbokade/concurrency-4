@@ -1,23 +1,111 @@
 \hypertarget{classstickman_1_1StateMachine}{}\doxysection{stickman\+::State\+Machine Class Reference}
 \label{classstickman_1_1StateMachine}\index{stickman::StateMachine@{stickman::StateMachine}}
+
+
+Class which is responsible for running a state when it gets loaded.  
+
+
+
+
+{\ttfamily \#include $<$State\+Machine.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classstickman_1_1StateMachine_acb1670387882473fc02e8afc5e75e193}{State\+Machine}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstickman_1_1StateMachine_a489ae6a692dfc6703022983292a977fc}{$\sim$\+State\+Machine}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1StateMachine_af31e88ef2f1da17fc5a06e3639807a42}{Add\+State}} (\mbox{\hyperlink{namespacestickman_a707bbc31863cc54199f46a75a1d498db}{State\+Ref}} new\+State, bool is\+Replacing=true)
+\begin{DoxyCompactList}\small\item\em Marks a state for adding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1StateMachine_abf3a0887563761fcc548529e9e4671ba}{Remove\+State}} ()
+\begin{DoxyCompactList}\small\item\em Marks a state for removal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1StateMachine_a413411361b59eafbe30af0994910f7de}{Process\+State\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em This is the function which replaces the states and adds new stats while deleting previous ones. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacestickman_a707bbc31863cc54199f46a75a1d498db}{State\+Ref}} \& \mbox{\hyperlink{classstickman_1_1StateMachine_a716b7ed79a506d768c556f58bac04323}{Get\+Active\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the active state which is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class which is responsible for running a state when it gets loaded. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1StateMachine_acb1670387882473fc02e8afc5e75e193}\label{classstickman_1_1StateMachine_acb1670387882473fc02e8afc5e75e193}} 
+\index{stickman::StateMachine@{stickman::StateMachine}!StateMachine@{StateMachine}}
+\index{StateMachine@{StateMachine}!stickman::StateMachine@{stickman::StateMachine}}
+\doxysubsubsection{\texorpdfstring{StateMachine()}{StateMachine()}}
+{\footnotesize\ttfamily stickman\+::\+State\+Machine\+::\+State\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the object. 
+
+\mbox{\Hypertarget{classstickman_1_1StateMachine_a489ae6a692dfc6703022983292a977fc}\label{classstickman_1_1StateMachine_a489ae6a692dfc6703022983292a977fc}} 
+\index{stickman::StateMachine@{stickman::StateMachine}!````~StateMachine@{$\sim$StateMachine}}
+\index{````~StateMachine@{$\sim$StateMachine}!stickman::StateMachine@{stickman::StateMachine}}
+\doxysubsubsection{\texorpdfstring{$\sim$StateMachine()}{~StateMachine()}}
+{\footnotesize\ttfamily stickman\+::\+State\+Machine\+::$\sim$\+State\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroys the object. 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classstickman_1_1StateMachine_af31e88ef2f1da17fc5a06e3639807a42}\label{classstickman_1_1StateMachine_af31e88ef2f1da17fc5a06e3639807a42}} 
-void {\bfseries Add\+State} (State\+Ref new\+State, bool is\+Replacing=true)
-\item 
-\mbox{\Hypertarget{classstickman_1_1StateMachine_abf3a0887563761fcc548529e9e4671ba}\label{classstickman_1_1StateMachine_abf3a0887563761fcc548529e9e4671ba}} 
-void {\bfseries Remove\+State} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1StateMachine_a413411361b59eafbe30af0994910f7de}\label{classstickman_1_1StateMachine_a413411361b59eafbe30af0994910f7de}} 
-void {\bfseries Process\+State\+Changes} ()
-\item 
+\index{stickman::StateMachine@{stickman::StateMachine}!AddState@{AddState}}
+\index{AddState@{AddState}!stickman::StateMachine@{stickman::StateMachine}}
+\doxysubsubsection{\texorpdfstring{AddState()}{AddState()}}
+{\footnotesize\ttfamily void stickman\+::\+State\+Machine\+::\+Add\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestickman_a707bbc31863cc54199f46a75a1d498db}{State\+Ref}}}]{new\+State,  }\item[{bool}]{is\+Replacing = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Marks a state for adding. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+State} & The new state which will be added \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Replacing} & Indicates if replacing the old state or just pausing it \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classstickman_1_1StateMachine_a716b7ed79a506d768c556f58bac04323}\label{classstickman_1_1StateMachine_a716b7ed79a506d768c556f58bac04323}} 
-State\+Ref \& {\bfseries Get\+Active\+State} ()
-\end{DoxyCompactItemize}
+\index{stickman::StateMachine@{stickman::StateMachine}!GetActiveState@{GetActiveState}}
+\index{GetActiveState@{GetActiveState}!stickman::StateMachine@{stickman::StateMachine}}
+\doxysubsubsection{\texorpdfstring{GetActiveState()}{GetActiveState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacestickman_a707bbc31863cc54199f46a75a1d498db}{State\+Ref}} \& stickman\+::\+State\+Machine\+::\+Get\+Active\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the active state which is running. 
+
+\begin{DoxyReturn}{Returns}
+The active state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1StateMachine_a413411361b59eafbe30af0994910f7de}\label{classstickman_1_1StateMachine_a413411361b59eafbe30af0994910f7de}} 
+\index{stickman::StateMachine@{stickman::StateMachine}!ProcessStateChanges@{ProcessStateChanges}}
+\index{ProcessStateChanges@{ProcessStateChanges}!stickman::StateMachine@{stickman::StateMachine}}
+\doxysubsubsection{\texorpdfstring{ProcessStateChanges()}{ProcessStateChanges()}}
+{\footnotesize\ttfamily void stickman\+::\+State\+Machine\+::\+Process\+State\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the function which replaces the states and adds new stats while deleting previous ones. 
+
+It may also pause or resume states \mbox{\Hypertarget{classstickman_1_1StateMachine_abf3a0887563761fcc548529e9e4671ba}\label{classstickman_1_1StateMachine_abf3a0887563761fcc548529e9e4671ba}} 
+\index{stickman::StateMachine@{stickman::StateMachine}!RemoveState@{RemoveState}}
+\index{RemoveState@{RemoveState}!stickman::StateMachine@{stickman::StateMachine}}
+\doxysubsubsection{\texorpdfstring{RemoveState()}{RemoveState()}}
+{\footnotesize\ttfamily void stickman\+::\+State\+Machine\+::\+Remove\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Marks a state for removal. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-State\+Machine.\+hpp\item 
-State\+Machine.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{StateMachine_8hpp}{State\+Machine.\+hpp}}\item 
+\mbox{\hyperlink{StateMachine_8cpp}{State\+Machine.\+cpp}}\end{DoxyCompactItemize}

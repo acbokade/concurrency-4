@@ -1,17 +1,97 @@
 \hypertarget{classstickman_1_1InputManager}{}\doxysection{stickman\+::Input\+Manager Class Reference}
 \label{classstickman_1_1InputManager}\index{stickman::InputManager@{stickman::InputManager}}
+
+
+Class for input manager.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Manager.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1InputManager_ac9ed7138bcc4979628205346933e66df}\label{classstickman_1_1InputManager_ac9ed7138bcc4979628205346933e66df}} 
-bool {\bfseries Is\+Sprite\+Clicked} (sf\+::\+Sprite object, sf\+::\+Mouse\+::\+Button button, sf\+::\+Render\+Window \&window)
-\item 
+\mbox{\hyperlink{classstickman_1_1InputManager_ae4c50cfbd4de2668b95d46572c28a03a}{Input\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstickman_1_1InputManager_a5fa1e35113ef5498e8084fc9944077f9}{$\sim$\+Input\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classstickman_1_1InputManager_ac9ed7138bcc4979628205346933e66df}{Is\+Sprite\+Clicked}} (sf\+::\+Sprite object, sf\+::\+Mouse\+::\+Button button, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Determines if sprite is clicked. \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{classstickman_1_1InputManager_a948093eace270f9d4bf8799679651958}{Get\+Mouse\+Position}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Gets the mouse position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for input manager. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1InputManager_ae4c50cfbd4de2668b95d46572c28a03a}\label{classstickman_1_1InputManager_ae4c50cfbd4de2668b95d46572c28a03a}} 
+\index{stickman::InputManager@{stickman::InputManager}!InputManager@{InputManager}}
+\index{InputManager@{InputManager}!stickman::InputManager@{stickman::InputManager}}
+\doxysubsubsection{\texorpdfstring{InputManager()}{InputManager()}}
+{\footnotesize\ttfamily stickman\+::\+Input\+Manager\+::\+Input\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the object. 
+
+\mbox{\Hypertarget{classstickman_1_1InputManager_a5fa1e35113ef5498e8084fc9944077f9}\label{classstickman_1_1InputManager_a5fa1e35113ef5498e8084fc9944077f9}} 
+\index{stickman::InputManager@{stickman::InputManager}!````~InputManager@{$\sim$InputManager}}
+\index{````~InputManager@{$\sim$InputManager}!stickman::InputManager@{stickman::InputManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputManager()}{~InputManager()}}
+{\footnotesize\ttfamily stickman\+::\+Input\+Manager\+::$\sim$\+Input\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroys the object. 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classstickman_1_1InputManager_a948093eace270f9d4bf8799679651958}\label{classstickman_1_1InputManager_a948093eace270f9d4bf8799679651958}} 
-sf\+::\+Vector2i {\bfseries Get\+Mouse\+Position} (sf\+::\+Render\+Window \&window)
-\end{DoxyCompactItemize}
+\index{stickman::InputManager@{stickman::InputManager}!GetMousePosition@{GetMousePosition}}
+\index{GetMousePosition@{GetMousePosition}!stickman::InputManager@{stickman::InputManager}}
+\doxysubsubsection{\texorpdfstring{GetMousePosition()}{GetMousePosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i stickman\+::\+Input\+Manager\+::\+Get\+Mouse\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Gets the mouse position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window on which the game is running\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mouse position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1InputManager_ac9ed7138bcc4979628205346933e66df}\label{classstickman_1_1InputManager_ac9ed7138bcc4979628205346933e66df}} 
+\index{stickman::InputManager@{stickman::InputManager}!IsSpriteClicked@{IsSpriteClicked}}
+\index{IsSpriteClicked@{IsSpriteClicked}!stickman::InputManager@{stickman::InputManager}}
+\doxysubsubsection{\texorpdfstring{IsSpriteClicked()}{IsSpriteClicked()}}
+{\footnotesize\ttfamily bool stickman\+::\+Input\+Manager\+::\+Is\+Sprite\+Clicked (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite}]{object,  }\item[{sf\+::\+Mouse\+::\+Button}]{button,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Determines if sprite is clicked. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em object} & The sprite with which we are checking \\
+\hline
+\mbox{\texttt{ in}}  & {\em button} & The button which should be pressed \\
+\hline
+ & {\em window} & The window on which the game is running\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sprite clicked, False otherwise. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Input\+Manager.\+hpp\item 
-Input\+Manager.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{InputManager_8hpp}{Input\+Manager.\+hpp}}\item 
+\mbox{\hyperlink{InputManager_8cpp}{Input\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,5 +1,14 @@
 \hypertarget{classstickman_1_1State}{}\doxysection{stickman\+::State Class Reference}
 \label{classstickman_1_1State}\index{stickman::State@{stickman::State}}
+
+
+Class for state which has functions which can be overloaded so that a particular state of the game can run using these functions.  
+
+
+
+
+{\ttfamily \#include $<$State.\+hpp$>$}
+
 Inheritance diagram for stickman\+::State\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,26 +18,112 @@ Inheritance diagram for stickman\+::State\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}\label{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}} 
-virtual void {\bfseries Init} ()=0
-\item 
-\mbox{\Hypertarget{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}\label{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}} 
-virtual void {\bfseries Handle\+Input} ()=0
-\item 
-\mbox{\Hypertarget{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}\label{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}} 
-virtual void {\bfseries Update} (float dt)=0
-\item 
+virtual void \mbox{\hyperlink{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}{Init}} ()=0
+\begin{DoxyCompactList}\small\item\em A virtual fucntion which runs at the start when a state is loaded. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}{Handle\+Input}} ()=0
+\begin{DoxyCompactList}\small\item\em A virtual function which may be used to handle input during each iteration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}{Update}} (float dt)=0
+\begin{DoxyCompactList}\small\item\em A virtual funciton which may be used to update game logic. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}{Draw}} (float dt)=0
+\begin{DoxyCompactList}\small\item\em A virtual function which may be used to draw objects. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classstickman_1_1State_ac3100cc347b094fc9ae68d7ce53a5561}{Pause}} ()
+\begin{DoxyCompactList}\small\item\em A function which may be used to pause a state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classstickman_1_1State_aa079e983d1390f00c3a6e62883058468}{Resume}} ()
+\begin{DoxyCompactList}\small\item\em A function which may be used to resume a state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for state which has functions which can be overloaded so that a particular state of the game can run using these functions. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}\label{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}} 
-virtual void {\bfseries Draw} (float dt)=0
-\item 
+\index{stickman::State@{stickman::State}!Draw@{Draw}}
+\index{Draw@{Draw}!stickman::State@{stickman::State}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily virtual void stickman\+::\+State\+::\+Draw (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A virtual function which may be used to draw objects. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classstickman_1_1MainMenuState_a374ee05ef9a54ff9c325bcbb94acbb20}{stickman\+::\+Main\+Menu\+State}}, \mbox{\hyperlink{classstickman_1_1NameState_a96520056674e15df93473c3f4db6c923}{stickman\+::\+Name\+State}}, \mbox{\hyperlink{classstickman_1_1GameOver_a1869093489ef56b2c117e7887803bcc8}{stickman\+::\+Game\+Over}}, \mbox{\hyperlink{classstickman_1_1mainGame_a50924c559b475adea752539708ad4a8a}{stickman\+::main\+Game}}, \mbox{\hyperlink{classstickman_1_1HelpState_ad29b1f2d91f2a98253c9b3582a119118}{stickman\+::\+Help\+State}}, and \mbox{\hyperlink{classstickman_1_1SplashState_a9bec36a73e46ec106fe7671e20e3d00b}{stickman\+::\+Splash\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}\label{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}} 
+\index{stickman::State@{stickman::State}!HandleInput@{HandleInput}}
+\index{HandleInput@{HandleInput}!stickman::State@{stickman::State}}
+\doxysubsubsection{\texorpdfstring{HandleInput()}{HandleInput()}}
+{\footnotesize\ttfamily virtual void stickman\+::\+State\+::\+Handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A virtual function which may be used to handle input during each iteration. 
+
+
+
+Implemented in \mbox{\hyperlink{classstickman_1_1NameState_ac09939e23c60b6f2f70348cd1aa102e2}{stickman\+::\+Name\+State}}, \mbox{\hyperlink{classstickman_1_1MainMenuState_abc46a398737d396338ca215ba305c571}{stickman\+::\+Main\+Menu\+State}}, \mbox{\hyperlink{classstickman_1_1GameOver_a4c26891b134d180525a14a46efc6b15c}{stickman\+::\+Game\+Over}}, \mbox{\hyperlink{classstickman_1_1mainGame_ab220ed203bb5dac50e3cf2dd6b46ebb0}{stickman\+::main\+Game}}, \mbox{\hyperlink{classstickman_1_1HelpState_ac4292c337e03bcc2d6071a730e44c906}{stickman\+::\+Help\+State}}, and \mbox{\hyperlink{classstickman_1_1SplashState_af0cb5c88110ec0237e08cbd1dc948c2f}{stickman\+::\+Splash\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}\label{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}} 
+\index{stickman::State@{stickman::State}!Init@{Init}}
+\index{Init@{Init}!stickman::State@{stickman::State}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual void stickman\+::\+State\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A virtual fucntion which runs at the start when a state is loaded. 
+
+
+
+Implemented in \mbox{\hyperlink{classstickman_1_1NameState_aefa56baa2422434844e32da99e0aa9eb}{stickman\+::\+Name\+State}}, \mbox{\hyperlink{classstickman_1_1MainMenuState_aa036ab40ddef231b39f6284b697563d3}{stickman\+::\+Main\+Menu\+State}}, \mbox{\hyperlink{classstickman_1_1GameOver_a5ca60f252f26e2c216b1787261040128}{stickman\+::\+Game\+Over}}, \mbox{\hyperlink{classstickman_1_1mainGame_a9d4759bde755a58d0d1d811a8671f61d}{stickman\+::main\+Game}}, \mbox{\hyperlink{classstickman_1_1HelpState_a5a3dd712088e2fa89d6701b77f845c27}{stickman\+::\+Help\+State}}, and \mbox{\hyperlink{classstickman_1_1SplashState_ad9206a3ab4c75bee1b004dbe75d9e9bf}{stickman\+::\+Splash\+State}}.
+
 \mbox{\Hypertarget{classstickman_1_1State_ac3100cc347b094fc9ae68d7ce53a5561}\label{classstickman_1_1State_ac3100cc347b094fc9ae68d7ce53a5561}} 
-virtual void {\bfseries Pause} ()
-\item 
+\index{stickman::State@{stickman::State}!Pause@{Pause}}
+\index{Pause@{Pause}!stickman::State@{stickman::State}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily virtual void stickman\+::\+State\+::\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+A function which may be used to pause a state. 
+
 \mbox{\Hypertarget{classstickman_1_1State_aa079e983d1390f00c3a6e62883058468}\label{classstickman_1_1State_aa079e983d1390f00c3a6e62883058468}} 
-virtual void {\bfseries Resume} ()
-\end{DoxyCompactItemize}
+\index{stickman::State@{stickman::State}!Resume@{Resume}}
+\index{Resume@{Resume}!stickman::State@{stickman::State}}
+\doxysubsubsection{\texorpdfstring{Resume()}{Resume()}}
+{\footnotesize\ttfamily virtual void stickman\+::\+State\+::\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+A function which may be used to resume a state. 
+
+\mbox{\Hypertarget{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}\label{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}} 
+\index{stickman::State@{stickman::State}!Update@{Update}}
+\index{Update@{Update}!stickman::State@{stickman::State}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void stickman\+::\+State\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A virtual funciton which may be used to update game logic. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classstickman_1_1NameState_a7e39e0d621be1ef87645829e0e874783}{stickman\+::\+Name\+State}}, \mbox{\hyperlink{classstickman_1_1MainMenuState_a59582ab699bea20eca435ad8003e277a}{stickman\+::\+Main\+Menu\+State}}, \mbox{\hyperlink{classstickman_1_1GameOver_a5146f8b4a09c5ecadfb143a7fca451d5}{stickman\+::\+Game\+Over}}, \mbox{\hyperlink{classstickman_1_1mainGame_a7401339ef2a9cbb6306d4113aa311d01}{stickman\+::main\+Game}}, \mbox{\hyperlink{classstickman_1_1HelpState_a0d16af20f0f748539ddf07a6efe26cb7}{stickman\+::\+Help\+State}}, and \mbox{\hyperlink{classstickman_1_1SplashState_af6dfe88a7cad53cf324bb59c827da1dd}{stickman\+::\+Splash\+State}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-State.\+hpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{State_8hpp}{State.\+hpp}}\end{DoxyCompactItemize}

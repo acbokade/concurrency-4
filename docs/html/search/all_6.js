@@ -1,19 +1,4 @@
 var searchData=
 [
-  ['game',['Game',['../classstickman_1_1Game.html',1,'stickman::Game'],['../classstickman_1_1Game.html#a3f9e3d3ebf62f39b6e462dd14bfffd9f',1,'stickman::Game::Game()']]],
-  ['game2',['Game2',['../classstickman_1_1Game2.html',1,'stickman']]],
-  ['gamedata',['GameData',['../structstickman_1_1GameData.html',1,'stickman']]],
-  ['gameloop',['gameLoop',['../classstickman_1_1Game.html#a4f0f2aa935fc9d390ac9e38adc581544',1,'stickman::Game']]],
-  ['gameover',['GameOver',['../classstickman_1_1GameOver.html',1,'stickman']]],
-  ['gemexists',['gemExists',['../classstickman_1_1Game.html#abd629cd123e0647cc4db3092eb78967f',1,'stickman::Game']]],
-  ['gemsprite',['gemSprite',['../classstickman_1_1Game.html#ab8f834a106c546956786c90826e2d58d',1,'stickman::Game']]],
-  ['gemtexture',['gemTexture',['../classstickman_1_1Game.html#a42ab943142dc407a8b02e777b4bcbd32',1,'stickman::Game']]],
-  ['gemthread',['gemThread',['../classstickman_1_1Game.html#af362a077b002095ed4c568a59d16e39f',1,'stickman::Game']]],
-  ['generategem',['generateGem',['../classstickman_1_1Game.html#a174cdd8a257dc1d12338b0daec2fe1b9',1,'stickman::Game']]],
-  ['gethealth',['getHealth',['../classPlayer.html#abcb15d249bed9a4ab0ab86b52b0d747a',1,'Player']]],
-  ['getname',['getName',['../classPlayer.html#af1aa472885d589516f483e26e786600e',1,'Player']]],
-  ['ground',['ground',['../classstickman_1_1Game.html#a86d4317d7782e7e5d4e44990d2e6e7b9',1,'stickman::Game']]],
-  ['groundsprite',['groundSprite',['../classstickman_1_1Game.html#a43af142452734f123fada42b54ee79d4',1,'stickman::Game']]],
-  ['groundtexture',['groundTexture',['../classstickman_1_1Game.html#abba61ef52c6aa10a64074f7d7437f103',1,'stickman::Game']]],
-  ['grounduserdata',['groundUserData',['../classstickman_1_1Game.html#a9ecd107e27d4d6eabef8bfc3ca49bf46',1,'stickman::Game']]]
+  ['font',['font',['../classstickman_1_1Game.html#abad44e00d1334a5a4ef08e05ed0d63c9',1,'stickman::Game::font()'],['../classstickman_1_1GameOver.html#a67daf3aec65862047a929c23e661e719',1,'stickman::GameOver::font()'],['../classstickman_1_1HelpState.html#aa955bbd42a05872004d24a2bf2f79869',1,'stickman::HelpState::font()'],['../classstickman_1_1MainMenuState.html#af3cf70c8c9f3b9307e830f3f44c3a74e',1,'stickman::MainMenuState::font()'],['../classstickman_1_1NameState.html#afb038771066e6d1f158e67446318e147',1,'stickman::NameState::font()']]]
 ];

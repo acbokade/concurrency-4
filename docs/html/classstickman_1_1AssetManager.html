@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>stickman</b></li><li class="navelem"><a class="el" href="classstickman_1_1AssetManager.html">AssetManager</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacestickman.html">stickman</a></li><li class="navelem"><a class="el" href="classstickman_1_1AssetManager.html">AssetManager</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,25 +74,222 @@ $(function() {
 <div class="title">stickman::AssetManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for asset manager.This class loads a texture and creates a map between textures and strings so that we don't have to load the same texture and sprite again and again.  
+ <a href="classstickman_1_1AssetManager.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="AssetManager_8hpp_source.html">AssetManager.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e146a546303098e1df0080f324d0a1c"><td class="memItemLeft" align="right" valign="top"><a id="a2e146a546303098e1df0080f324d0a1c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadTexture</b> (std::string name, std::string fileName)</td></tr>
+<tr class="memitem:a226dc50a4e982e582ed85112bf44993d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1AssetManager.html#a226dc50a4e982e582ed85112bf44993d">AssetManager</a> ()</td></tr>
+<tr class="memdesc:a226dc50a4e982e582ed85112bf44993d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the object.  <a href="#a226dc50a4e982e582ed85112bf44993d">More...</a><br /></td></tr>
+<tr class="separator:a226dc50a4e982e582ed85112bf44993d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22212749fc4f02993f4b5b0e6db2378"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1AssetManager.html#ad22212749fc4f02993f4b5b0e6db2378">~AssetManager</a> ()</td></tr>
+<tr class="memdesc:ad22212749fc4f02993f4b5b0e6db2378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the object.  <a href="#ad22212749fc4f02993f4b5b0e6db2378">More...</a><br /></td></tr>
+<tr class="separator:ad22212749fc4f02993f4b5b0e6db2378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e146a546303098e1df0080f324d0a1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1AssetManager.html#a2e146a546303098e1df0080f324d0a1c">LoadTexture</a> (std::string name, std::string fileName)</td></tr>
+<tr class="memdesc:a2e146a546303098e1df0080f324d0a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a texture and maps it to a string.  <a href="#a2e146a546303098e1df0080f324d0a1c">More...</a><br /></td></tr>
 <tr class="separator:a2e146a546303098e1df0080f324d0a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adedb9099fb7bdfd7b2b1f4408bae0fc4"><td class="memItemLeft" align="right" valign="top"><a id="adedb9099fb7bdfd7b2b1f4408bae0fc4"></a>
-sf::Texture &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetTexture</b> (std::string name)</td></tr>
+<tr class="memitem:adedb9099fb7bdfd7b2b1f4408bae0fc4"><td class="memItemLeft" align="right" valign="top">sf::Texture &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1AssetManager.html#adedb9099fb7bdfd7b2b1f4408bae0fc4">GetTexture</a> (std::string name)</td></tr>
+<tr class="memdesc:adedb9099fb7bdfd7b2b1f4408bae0fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a texture by its name as specified in the dictionary.  <a href="#adedb9099fb7bdfd7b2b1f4408bae0fc4">More...</a><br /></td></tr>
 <tr class="separator:adedb9099fb7bdfd7b2b1f4408bae0fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49c5179437de9463df2221ac37dc42df"><td class="memItemLeft" align="right" valign="top"><a id="a49c5179437de9463df2221ac37dc42df"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadFont</b> (std::string name, std::string fileName)</td></tr>
+<tr class="memitem:a49c5179437de9463df2221ac37dc42df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1AssetManager.html#a49c5179437de9463df2221ac37dc42df">LoadFont</a> (std::string name, std::string fileName)</td></tr>
+<tr class="memdesc:a49c5179437de9463df2221ac37dc42df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a font and maps it to a string.  <a href="#a49c5179437de9463df2221ac37dc42df">More...</a><br /></td></tr>
 <tr class="separator:a49c5179437de9463df2221ac37dc42df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b040244ecedba4042e231c0abfc54a6"><td class="memItemLeft" align="right" valign="top"><a id="a0b040244ecedba4042e231c0abfc54a6"></a>
-sf::Font &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetFont</b> (std::string name)</td></tr>
+<tr class="memitem:a0b040244ecedba4042e231c0abfc54a6"><td class="memItemLeft" align="right" valign="top">sf::Font &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1AssetManager.html#a0b040244ecedba4042e231c0abfc54a6">GetFont</a> (std::string name)</td></tr>
+<tr class="memdesc:a0b040244ecedba4042e231c0abfc54a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a font by its name as specified in the dictionary.  <a href="#a0b040244ecedba4042e231c0abfc54a6">More...</a><br /></td></tr>
 <tr class="separator:a0b040244ecedba4042e231c0abfc54a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for asset manager.This class loads a texture and creates a map between textures and strings so that we don't have to load the same texture and sprite again and again. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a226dc50a4e982e582ed85112bf44993d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a226dc50a4e982e582ed85112bf44993d">&#9670;&nbsp;</a></span>AssetManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stickman::AssetManager::AssetManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the object. </p>
+
+</div>
+</div>
+<a id="ad22212749fc4f02993f4b5b0e6db2378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad22212749fc4f02993f4b5b0e6db2378">&#9670;&nbsp;</a></span>~AssetManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stickman::AssetManager::~AssetManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0b040244ecedba4042e231c0abfc54a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b040244ecedba4042e231c0abfc54a6">&#9670;&nbsp;</a></span>GetFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font &amp; stickman::AssetManager::GetFont </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a font by its name as specified in the dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the font to fetch</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The font. </dd></dl>
+
+</div>
+</div>
+<a id="adedb9099fb7bdfd7b2b1f4408bae0fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adedb9099fb7bdfd7b2b1f4408bae0fc4">&#9670;&nbsp;</a></span>GetTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture &amp; stickman::AssetManager::GetTexture </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a texture by its name as specified in the dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the texture to fetch</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The texture. </dd></dl>
+
+</div>
+</div>
+<a id="a49c5179437de9463df2221ac37dc42df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c5179437de9463df2221ac37dc42df">&#9670;&nbsp;</a></span>LoadFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::AssetManager::LoadFont </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads a font and maps it to a string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The string with which it will be mapped. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fileName</td><td>The string which has the filepath to the font. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e146a546303098e1df0080f324d0a1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e146a546303098e1df0080f324d0a1c">&#9670;&nbsp;</a></span>LoadTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::AssetManager::LoadTexture </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads a texture and maps it to a string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The string with which it will be mapped. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fileName</td><td>The string which has the filepath to the texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="AssetManager_8hpp_source.html">AssetManager.hpp</a></li>
-<li>AssetManager.cpp</li>
+<li><a class="el" href="AssetManager_8cpp.html">AssetManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

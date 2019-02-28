@@ -1,5 +1,14 @@
 \hypertarget{classstickman_1_1GameOver}{}\doxysection{stickman\+::Game\+Over Class Reference}
 \label{classstickman_1_1GameOver}\index{stickman::GameOver@{stickman::GameOver}}
+
+
+Class for game over state.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Over.\+h$>$}
+
 Inheritance diagram for stickman\+::Game\+Over\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,36 +18,151 @@ Inheritance diagram for stickman\+::Game\+Over\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1GameOver_ad85ac081484e8ca8f5121a19b5f3dbb0}\label{classstickman_1_1GameOver_ad85ac081484e8ca8f5121a19b5f3dbb0}} 
-{\bfseries Game\+Over} (Game\+Data\+Ref data, std\+::string name, int result)
-\item 
-\mbox{\Hypertarget{classstickman_1_1GameOver_a5ca60f252f26e2c216b1787261040128}\label{classstickman_1_1GameOver_a5ca60f252f26e2c216b1787261040128}} 
-void {\bfseries Init} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1GameOver_a4c26891b134d180525a14a46efc6b15c}\label{classstickman_1_1GameOver_a4c26891b134d180525a14a46efc6b15c}} 
-void {\bfseries Handle\+Input} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1GameOver_a5146f8b4a09c5ecadfb143a7fca451d5}\label{classstickman_1_1GameOver_a5146f8b4a09c5ecadfb143a7fca451d5}} 
-void {\bfseries Update} (float dt)
-\item 
-\mbox{\Hypertarget{classstickman_1_1GameOver_a1869093489ef56b2c117e7887803bcc8}\label{classstickman_1_1GameOver_a1869093489ef56b2c117e7887803bcc8}} 
-void {\bfseries Draw} (float dt)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classstickman_1_1GameOver_ad85ac081484e8ca8f5121a19b5f3dbb0}{Game\+Over}} (\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}} data, std\+::string name, int result)
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1GameOver_a5ca60f252f26e2c216b1787261040128}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function init that may be overloaded which runs at the start of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1GameOver_a4c26891b134d180525a14a46efc6b15c}{Handle\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function Handle\+Input that may be overloaded which may be used to handle some input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1GameOver_a5146f8b4a09c5ecadfb143a7fca451d5}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function Update which may be overloaded which may be used to update game logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1GameOver_a1869093489ef56b2c117e7887803bcc8}{Draw}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1GameOver_a67daf3aec65862047a929c23e661e719}\label{classstickman_1_1GameOver_a67daf3aec65862047a929c23e661e719}} 
-sf\+::\+Font {\bfseries font}
-\item 
-\mbox{\Hypertarget{classstickman_1_1GameOver_a757889c990f6dfbfcb6fb195656a84d6}\label{classstickman_1_1GameOver_a757889c990f6dfbfcb6fb195656a84d6}} 
-sf\+::\+Text {\bfseries gtext}
-\item 
-\mbox{\Hypertarget{classstickman_1_1GameOver_aa4b8c9519c124476208e89ddfcdf6372}\label{classstickman_1_1GameOver_aa4b8c9519c124476208e89ddfcdf6372}} 
-sf\+::\+Text {\bfseries gtext1}
+sf\+::\+Font \mbox{\hyperlink{classstickman_1_1GameOver_a67daf3aec65862047a929c23e661e719}{font}}
+\begin{DoxyCompactList}\small\item\em Stores a font. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1GameOver_a757889c990f6dfbfcb6fb195656a84d6}{gtext}}
+\begin{DoxyCompactList}\small\item\em Stores text to be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1GameOver_aa4b8c9519c124476208e89ddfcdf6372}{gtext1}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for game over state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1GameOver_ad85ac081484e8ca8f5121a19b5f3dbb0}\label{classstickman_1_1GameOver_ad85ac081484e8ca8f5121a19b5f3dbb0}} 
+\index{stickman::GameOver@{stickman::GameOver}!GameOver@{GameOver}}
+\index{GameOver@{GameOver}!stickman::GameOver@{stickman::GameOver}}
+\doxysubsubsection{\texorpdfstring{GameOver()}{GameOver()}}
+{\footnotesize\ttfamily stickman\+::\+Game\+Over\+::\+Game\+Over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}}}]{data,  }\item[{std\+::string}]{name,  }\item[{int}]{result }\end{DoxyParamCaption})}
+
+
+
+Constructs the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data which contains information about the game \\
+\hline
+{\em name} & Stores the name of winner \\
+\hline
+{\em result} & Stores the result if there is a win / tie. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstickman_1_1GameOver_a1869093489ef56b2c117e7887803bcc8}\label{classstickman_1_1GameOver_a1869093489ef56b2c117e7887803bcc8}} 
+\index{stickman::GameOver@{stickman::GameOver}!Draw@{Draw}}
+\index{Draw@{Draw}!stickman::GameOver@{stickman::GameOver}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+Over\+::\+Draw (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1GameOver_a4c26891b134d180525a14a46efc6b15c}\label{classstickman_1_1GameOver_a4c26891b134d180525a14a46efc6b15c}} 
+\index{stickman::GameOver@{stickman::GameOver}!HandleInput@{HandleInput}}
+\index{HandleInput@{HandleInput}!stickman::GameOver@{stickman::GameOver}}
+\doxysubsubsection{\texorpdfstring{HandleInput()}{HandleInput()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+Over\+::\+Handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Handle\+Input that may be overloaded which may be used to handle some input. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1GameOver_a5ca60f252f26e2c216b1787261040128}\label{classstickman_1_1GameOver_a5ca60f252f26e2c216b1787261040128}} 
+\index{stickman::GameOver@{stickman::GameOver}!Init@{Init}}
+\index{Init@{Init}!stickman::GameOver@{stickman::GameOver}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+Over\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function init that may be overloaded which runs at the start of the state. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1GameOver_a5146f8b4a09c5ecadfb143a7fca451d5}\label{classstickman_1_1GameOver_a5146f8b4a09c5ecadfb143a7fca451d5}} 
+\index{stickman::GameOver@{stickman::GameOver}!Update@{Update}}
+\index{Update@{Update}!stickman::GameOver@{stickman::GameOver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void stickman\+::\+Game\+Over\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Update which may be overloaded which may be used to update game logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}{stickman\+::\+State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstickman_1_1GameOver_a67daf3aec65862047a929c23e661e719}\label{classstickman_1_1GameOver_a67daf3aec65862047a929c23e661e719}} 
+\index{stickman::GameOver@{stickman::GameOver}!font@{font}}
+\index{font@{font}!stickman::GameOver@{stickman::GameOver}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily sf\+::\+Font stickman\+::\+Game\+Over\+::font}
+
+
+
+Stores a font. 
+
+\mbox{\Hypertarget{classstickman_1_1GameOver_a757889c990f6dfbfcb6fb195656a84d6}\label{classstickman_1_1GameOver_a757889c990f6dfbfcb6fb195656a84d6}} 
+\index{stickman::GameOver@{stickman::GameOver}!gtext@{gtext}}
+\index{gtext@{gtext}!stickman::GameOver@{stickman::GameOver}}
+\doxysubsubsection{\texorpdfstring{gtext}{gtext}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Game\+Over\+::gtext}
+
+
+
+Stores text to be displayed. 
+
+\mbox{\Hypertarget{classstickman_1_1GameOver_aa4b8c9519c124476208e89ddfcdf6372}\label{classstickman_1_1GameOver_aa4b8c9519c124476208e89ddfcdf6372}} 
+\index{stickman::GameOver@{stickman::GameOver}!gtext1@{gtext1}}
+\index{gtext1@{gtext1}!stickman::GameOver@{stickman::GameOver}}
+\doxysubsubsection{\texorpdfstring{gtext1}{gtext1}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Game\+Over\+::gtext1}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Game\+Over.\+h\item 
-Game\+Over.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{GameOver_8h}{Game\+Over.\+h}}\item 
+\mbox{\hyperlink{GameOver_8cpp}{Game\+Over.\+cpp}}\end{DoxyCompactItemize}

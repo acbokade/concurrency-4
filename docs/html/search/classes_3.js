@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inputmanager',['InputManager',['../classstickman_1_1InputManager.html',1,'stickman']]]
+  ['helpstate',['HelpState',['../classstickman_1_1HelpState.html',1,'stickman']]]
 ];

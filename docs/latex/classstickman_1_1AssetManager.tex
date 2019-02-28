@@ -1,23 +1,131 @@
 \hypertarget{classstickman_1_1AssetManager}{}\doxysection{stickman\+::Asset\+Manager Class Reference}
 \label{classstickman_1_1AssetManager}\index{stickman::AssetManager@{stickman::AssetManager}}
+
+
+Class for asset manager.\+This class loads a texture and creates a map between textures and strings so that we don\textquotesingle{}t have to load the same texture and sprite again and again.  
+
+
+
+
+{\ttfamily \#include $<$Asset\+Manager.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1AssetManager_a2e146a546303098e1df0080f324d0a1c}\label{classstickman_1_1AssetManager_a2e146a546303098e1df0080f324d0a1c}} 
-void {\bfseries Load\+Texture} (std\+::string name, std\+::string file\+Name)
-\item 
-\mbox{\Hypertarget{classstickman_1_1AssetManager_adedb9099fb7bdfd7b2b1f4408bae0fc4}\label{classstickman_1_1AssetManager_adedb9099fb7bdfd7b2b1f4408bae0fc4}} 
-sf\+::\+Texture \& {\bfseries Get\+Texture} (std\+::string name)
-\item 
-\mbox{\Hypertarget{classstickman_1_1AssetManager_a49c5179437de9463df2221ac37dc42df}\label{classstickman_1_1AssetManager_a49c5179437de9463df2221ac37dc42df}} 
-void {\bfseries Load\+Font} (std\+::string name, std\+::string file\+Name)
-\item 
+\mbox{\hyperlink{classstickman_1_1AssetManager_a226dc50a4e982e582ed85112bf44993d}{Asset\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstickman_1_1AssetManager_ad22212749fc4f02993f4b5b0e6db2378}{$\sim$\+Asset\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1AssetManager_a2e146a546303098e1df0080f324d0a1c}{Load\+Texture}} (std\+::string name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads a texture and maps it to a string. \end{DoxyCompactList}\item 
+sf\+::\+Texture \& \mbox{\hyperlink{classstickman_1_1AssetManager_adedb9099fb7bdfd7b2b1f4408bae0fc4}{Get\+Texture}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Gets a texture by its name as specified in the dictionary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1AssetManager_a49c5179437de9463df2221ac37dc42df}{Load\+Font}} (std\+::string name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads a font and maps it to a string. \end{DoxyCompactList}\item 
+sf\+::\+Font \& \mbox{\hyperlink{classstickman_1_1AssetManager_a0b040244ecedba4042e231c0abfc54a6}{Get\+Font}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Gets a font by its name as specified in the dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for asset manager.\+This class loads a texture and creates a map between textures and strings so that we don\textquotesingle{}t have to load the same texture and sprite again and again. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1AssetManager_a226dc50a4e982e582ed85112bf44993d}\label{classstickman_1_1AssetManager_a226dc50a4e982e582ed85112bf44993d}} 
+\index{stickman::AssetManager@{stickman::AssetManager}!AssetManager@{AssetManager}}
+\index{AssetManager@{AssetManager}!stickman::AssetManager@{stickman::AssetManager}}
+\doxysubsubsection{\texorpdfstring{AssetManager()}{AssetManager()}}
+{\footnotesize\ttfamily stickman\+::\+Asset\+Manager\+::\+Asset\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the object. 
+
+\mbox{\Hypertarget{classstickman_1_1AssetManager_ad22212749fc4f02993f4b5b0e6db2378}\label{classstickman_1_1AssetManager_ad22212749fc4f02993f4b5b0e6db2378}} 
+\index{stickman::AssetManager@{stickman::AssetManager}!````~AssetManager@{$\sim$AssetManager}}
+\index{````~AssetManager@{$\sim$AssetManager}!stickman::AssetManager@{stickman::AssetManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$AssetManager()}{~AssetManager()}}
+{\footnotesize\ttfamily stickman\+::\+Asset\+Manager\+::$\sim$\+Asset\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroys the object. 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classstickman_1_1AssetManager_a0b040244ecedba4042e231c0abfc54a6}\label{classstickman_1_1AssetManager_a0b040244ecedba4042e231c0abfc54a6}} 
-sf\+::\+Font \& {\bfseries Get\+Font} (std\+::string name)
-\end{DoxyCompactItemize}
+\index{stickman::AssetManager@{stickman::AssetManager}!GetFont@{GetFont}}
+\index{GetFont@{GetFont}!stickman::AssetManager@{stickman::AssetManager}}
+\doxysubsubsection{\texorpdfstring{GetFont()}{GetFont()}}
+{\footnotesize\ttfamily sf\+::\+Font \& stickman\+::\+Asset\+Manager\+::\+Get\+Font (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Gets a font by its name as specified in the dictionary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The name of the font to fetch\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The font. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1AssetManager_adedb9099fb7bdfd7b2b1f4408bae0fc4}\label{classstickman_1_1AssetManager_adedb9099fb7bdfd7b2b1f4408bae0fc4}} 
+\index{stickman::AssetManager@{stickman::AssetManager}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!stickman::AssetManager@{stickman::AssetManager}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily sf\+::\+Texture \& stickman\+::\+Asset\+Manager\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Gets a texture by its name as specified in the dictionary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The name of the texture to fetch\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The texture. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1AssetManager_a49c5179437de9463df2221ac37dc42df}\label{classstickman_1_1AssetManager_a49c5179437de9463df2221ac37dc42df}} 
+\index{stickman::AssetManager@{stickman::AssetManager}!LoadFont@{LoadFont}}
+\index{LoadFont@{LoadFont}!stickman::AssetManager@{stickman::AssetManager}}
+\doxysubsubsection{\texorpdfstring{LoadFont()}{LoadFont()}}
+{\footnotesize\ttfamily void stickman\+::\+Asset\+Manager\+::\+Load\+Font (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Loads a font and maps it to a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The string with which it will be mapped. \\
+\hline
+\mbox{\texttt{ in}}  & {\em file\+Name} & The string which has the filepath to the font. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1AssetManager_a2e146a546303098e1df0080f324d0a1c}\label{classstickman_1_1AssetManager_a2e146a546303098e1df0080f324d0a1c}} 
+\index{stickman::AssetManager@{stickman::AssetManager}!LoadTexture@{LoadTexture}}
+\index{LoadTexture@{LoadTexture}!stickman::AssetManager@{stickman::AssetManager}}
+\doxysubsubsection{\texorpdfstring{LoadTexture()}{LoadTexture()}}
+{\footnotesize\ttfamily void stickman\+::\+Asset\+Manager\+::\+Load\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Loads a texture and maps it to a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The string with which it will be mapped. \\
+\hline
+\mbox{\texttt{ in}}  & {\em file\+Name} & The string which has the filepath to the texture. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Asset\+Manager.\+hpp\item 
-Asset\+Manager.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{AssetManager_8hpp}{Asset\+Manager.\+hpp}}\item 
+\mbox{\hyperlink{AssetManager_8cpp}{Asset\+Manager.\+cpp}}\end{DoxyCompactItemize}

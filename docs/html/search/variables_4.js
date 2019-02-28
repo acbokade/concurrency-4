@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['font',['font',['../classstickman_1_1Game.html#abad44e00d1334a5a4ef08e05ed0d63c9',1,'stickman::Game']]]
+  ['data',['data',['../classstickman_1_1mainGame.html#ab5a923acd1295ec08af270ac4ed87e6a',1,'stickman::mainGame::data()'],['../structstickman_1_1playerdata.html#a08b47ece0d37dea92b353f0e5371dec0',1,'stickman::playerdata::data()']]]
 ];

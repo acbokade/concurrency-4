@@ -14,10 +14,6 @@ namespace stickman
 	{
 		//creating ground
 		Game gameState(this->_data,s,client,ip);
-    	gameState.ground = gameState.createGround(b2Vec2(683.f/SCALE, 70.f/SCALE),0);
-    	gameState.wall1 = gameState.createGround(b2Vec2(683.f/SCALE, 698.f/SCALE),0);
-    	gameState.wall2 = gameState.createGround(b2Vec2(71.f/SCALE, 384.f/SCALE),90);
-    	gameState.wall3 = gameState.createGround(b2Vec2(1295.f/SCALE, 384.f/SCALE),90);
     	gameState.connect();
     	while(gameState.player1Rounds <= 2 && gameState.player2Rounds <= 2 && !gameState.isExiting)
     	{

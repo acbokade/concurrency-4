@@ -1,5 +1,14 @@
-\hypertarget{classstickman_1_1mainGame}{}\doxysection{stickman\+::main\+Game Class Reference}
+\hypertarget{classstickman_1_1mainGame}{}\doxysection{stickman\+::main\+Game Struct Reference}
 \label{classstickman_1_1mainGame}\index{stickman::mainGame@{stickman::mainGame}}
+
+
+Class for main game.  
+
+
+
+
+{\ttfamily \#include $<$main\+Game.\+hpp$>$}
+
 Inheritance diagram for stickman\+::main\+Game\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,24 +18,180 @@ Inheritance diagram for stickman\+::main\+Game\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1mainGame_ac2a1b867072cc3da4cb0d24bba7ca0d0}\label{classstickman_1_1mainGame_ac2a1b867072cc3da4cb0d24bba7ca0d0}} 
-{\bfseries main\+Game} (Game\+Data\+Ref data, string s, bool client, string ip)
+\mbox{\hyperlink{classstickman_1_1mainGame_ac2a1b867072cc3da4cb0d24bba7ca0d0}{main\+Game}} (\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}} \mbox{\hyperlink{classstickman_1_1mainGame_ab5a923acd1295ec08af270ac4ed87e6a}{data}}, string s, bool client, string ip)
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1mainGame_a9d4759bde755a58d0d1d811a8671f61d}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function init that may be overloaded which runs at the start of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1mainGame_ab220ed203bb5dac50e3cf2dd6b46ebb0}{Handle\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function Handle\+Input that may be overloaded which may be used to handle some input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1mainGame_a7401339ef2a9cbb6306d4113aa311d01}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function Update which may be overloaded which may be used to update game logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1mainGame_a50924c559b475adea752539708ad4a8a}{Draw}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstickman_1_1mainGame_a200bbdb00c1277ffa303c637feba9ed1}{main\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Constructor of struct. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classstickman_1_1mainGame_acdb445635871de817f6a3eb2c581c034}{$\sim$main\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1mainGame_a9d4759bde755a58d0d1d811a8671f61d}\label{classstickman_1_1mainGame_a9d4759bde755a58d0d1d811a8671f61d}} 
-void {\bfseries Init} ()
+\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}} $\ast$ \mbox{\hyperlink{classstickman_1_1mainGame_ab5a923acd1295ec08af270ac4ed87e6a}{data}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1mainGame_ab220ed203bb5dac50e3cf2dd6b46ebb0}\label{classstickman_1_1mainGame_ab220ed203bb5dac50e3cf2dd6b46ebb0}} 
-void {\bfseries Handle\+Input} ()
+\mbox{\hyperlink{classstickman_1_1Game}{Game}} $\ast$ \mbox{\hyperlink{classstickman_1_1mainGame_ac60f0dc19ecaea0e658a47c715ec29f9}{temp}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1mainGame_a7401339ef2a9cbb6306d4113aa311d01}\label{classstickman_1_1mainGame_a7401339ef2a9cbb6306d4113aa311d01}} 
-void {\bfseries Update} (float dt)
+std\+::string \mbox{\hyperlink{classstickman_1_1mainGame_a9d82a307c98981f8c6c290113746c1e5}{t1}} =\char`\"{}a\char`\"{}
 \item 
-\mbox{\Hypertarget{classstickman_1_1mainGame_a50924c559b475adea752539708ad4a8a}\label{classstickman_1_1mainGame_a50924c559b475adea752539708ad4a8a}} 
-void {\bfseries Draw} (float dt)
+bool \mbox{\hyperlink{classstickman_1_1mainGame_adece4237f54f53b4eb912b65490e4dc0}{t2}} =true
 \end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\doxysubsection{Detailed Description}
+Class for main game. 
+
+A struct passed for testing game functions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1mainGame_ac2a1b867072cc3da4cb0d24bba7ca0d0}\label{classstickman_1_1mainGame_ac2a1b867072cc3da4cb0d24bba7ca0d0}} 
+\index{stickman::mainGame@{stickman::mainGame}!mainGame@{mainGame}}
+\index{mainGame@{mainGame}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{mainGame()}{mainGame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily stickman\+::main\+Game\+::main\+Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}}}]{data,  }\item[{string}]{s,  }\item[{bool}]{client,  }\item[{string}]{ip }\end{DoxyParamCaption})}
+
+
+
+Constructs the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data which contains information about the game \\
+\hline
+{\em s} & Stores the name of player \\
+\hline
+{\em client} & Stores the information whether the system is client/server \\
+\hline
+{\em ip} & IP to be connected \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1mainGame_a200bbdb00c1277ffa303c637feba9ed1}\label{classstickman_1_1mainGame_a200bbdb00c1277ffa303c637feba9ed1}} 
+\index{stickman::mainGame@{stickman::mainGame}!mainGame@{mainGame}}
+\index{mainGame@{mainGame}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{mainGame()}{mainGame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily stickman\+::main\+Game\+::main\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of struct. 
+
+\mbox{\Hypertarget{classstickman_1_1mainGame_acdb445635871de817f6a3eb2c581c034}\label{classstickman_1_1mainGame_acdb445635871de817f6a3eb2c581c034}} 
+\index{stickman::mainGame@{stickman::mainGame}!````~mainGame@{$\sim$mainGame}}
+\index{````~mainGame@{$\sim$mainGame}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{$\sim$mainGame()}{~mainGame()}}
+{\footnotesize\ttfamily virtual stickman\+::main\+Game\+::$\sim$main\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destroys the object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstickman_1_1mainGame_a50924c559b475adea752539708ad4a8a}\label{classstickman_1_1mainGame_a50924c559b475adea752539708ad4a8a}} 
+\index{stickman::mainGame@{stickman::mainGame}!Draw@{Draw}}
+\index{Draw@{Draw}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void stickman\+::main\+Game\+::\+Draw (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1mainGame_ab220ed203bb5dac50e3cf2dd6b46ebb0}\label{classstickman_1_1mainGame_ab220ed203bb5dac50e3cf2dd6b46ebb0}} 
+\index{stickman::mainGame@{stickman::mainGame}!HandleInput@{HandleInput}}
+\index{HandleInput@{HandleInput}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{HandleInput()}{HandleInput()}}
+{\footnotesize\ttfamily void stickman\+::main\+Game\+::\+Handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Handle\+Input that may be overloaded which may be used to handle some input. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1mainGame_a9d4759bde755a58d0d1d811a8671f61d}\label{classstickman_1_1mainGame_a9d4759bde755a58d0d1d811a8671f61d}} 
+\index{stickman::mainGame@{stickman::mainGame}!Init@{Init}}
+\index{Init@{Init}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void stickman\+::main\+Game\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function init that may be overloaded which runs at the start of the state. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1mainGame_a7401339ef2a9cbb6306d4113aa311d01}\label{classstickman_1_1mainGame_a7401339ef2a9cbb6306d4113aa311d01}} 
+\index{stickman::mainGame@{stickman::mainGame}!Update@{Update}}
+\index{Update@{Update}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void stickman\+::main\+Game\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Update which may be overloaded which may be used to update game logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}{stickman\+::\+State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstickman_1_1mainGame_ab5a923acd1295ec08af270ac4ed87e6a}\label{classstickman_1_1mainGame_ab5a923acd1295ec08af270ac4ed87e6a}} 
+\index{stickman::mainGame@{stickman::mainGame}!data@{data}}
+\index{data@{data}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}}$\ast$ stickman\+::main\+Game\+::data}
+
+\mbox{\Hypertarget{classstickman_1_1mainGame_a9d82a307c98981f8c6c290113746c1e5}\label{classstickman_1_1mainGame_a9d82a307c98981f8c6c290113746c1e5}} 
+\index{stickman::mainGame@{stickman::mainGame}!t1@{t1}}
+\index{t1@{t1}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{t1}{t1}}
+{\footnotesize\ttfamily std\+::string stickman\+::main\+Game\+::t1 =\char`\"{}a\char`\"{}}
+
+\mbox{\Hypertarget{classstickman_1_1mainGame_adece4237f54f53b4eb912b65490e4dc0}\label{classstickman_1_1mainGame_adece4237f54f53b4eb912b65490e4dc0}} 
+\index{stickman::mainGame@{stickman::mainGame}!t2@{t2}}
+\index{t2@{t2}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{t2}{t2}}
+{\footnotesize\ttfamily bool stickman\+::main\+Game\+::t2 =true}
+
+\mbox{\Hypertarget{classstickman_1_1mainGame_ac60f0dc19ecaea0e658a47c715ec29f9}\label{classstickman_1_1mainGame_ac60f0dc19ecaea0e658a47c715ec29f9}} 
+\index{stickman::mainGame@{stickman::mainGame}!temp@{temp}}
+\index{temp@{temp}!stickman::mainGame@{stickman::mainGame}}
+\doxysubsubsection{\texorpdfstring{temp}{temp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstickman_1_1Game}{Game}}$\ast$ stickman\+::main\+Game\+::temp}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-main\+Game.\+hpp\item 
-main\+Game.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{mainGame_8hpp}{main\+Game.\+hpp}}\item 
+\mbox{\hyperlink{tests_8hpp}{tests.\+hpp}}\item 
+\mbox{\hyperlink{mainGame_8cpp}{main\+Game.\+cpp}}\end{DoxyCompactItemize}

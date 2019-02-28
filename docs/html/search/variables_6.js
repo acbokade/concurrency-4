@@ -1,10 +1,4 @@
 var searchData=
 [
-  ['handtexture',['handTexture',['../classPlayer.html#a06155e942d34d2d817bd5d83d58363b3',1,'Player']]],
-  ['head',['head',['../classPlayer.html#a492a1be47c29b23df75dd15e6b07c4ae',1,'Player']]],
-  ['headjoint',['headJoint',['../classPlayer.html#ad6c64e7709cde35a4654ab2c28ffb274',1,'Player']]],
-  ['headsprite',['headSprite',['../classPlayer.html#ab9174b873b44e7ce3dc5f672068ff971',1,'Player']]],
-  ['headtexture',['headTexture',['../classPlayer.html#aae9701beaab8771c5bb97e246e0a2bcc',1,'Player']]],
-  ['headuserdata',['headUserData',['../classPlayer.html#a4be5ecc1dd08196fd574dbb455762914',1,'Player']]],
-  ['health',['health',['../classPlayer.html#aad33b52bfe73c4c978a3135172f286a0',1,'Player']]]
+  ['font',['font',['../classstickman_1_1Game.html#abad44e00d1334a5a4ef08e05ed0d63c9',1,'stickman::Game::font()'],['../classstickman_1_1GameOver.html#a67daf3aec65862047a929c23e661e719',1,'stickman::GameOver::font()'],['../classstickman_1_1HelpState.html#aa955bbd42a05872004d24a2bf2f79869',1,'stickman::HelpState::font()'],['../classstickman_1_1MainMenuState.html#af3cf70c8c9f3b9307e830f3f44c3a74e',1,'stickman::MainMenuState::font()'],['../classstickman_1_1NameState.html#afb038771066e6d1f158e67446318e147',1,'stickman::NameState::font()']]]
 ];

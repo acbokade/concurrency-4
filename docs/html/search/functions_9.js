@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['removestate',['RemoveState',['../classstickman_1_1StateMachine.html#abf3a0887563761fcc548529e9e4671ba',1,'stickman::StateMachine']]],
-  ['resume',['Resume',['../classstickman_1_1State.html#aa079e983d1390f00c3a6e62883058468',1,'stickman::State']]]
+  ['namestate',['NameState',['../classstickman_1_1NameState.html#a68519b810f8859240bfabe17a5c7e9f2',1,'stickman::NameState']]]
 ];

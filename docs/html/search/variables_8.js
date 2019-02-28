@@ -1,14 +1,10 @@
 var searchData=
 [
-  ['left_5fhand',['left_hand',['../classPlayer.html#a118caf1bc1171b6e2d63d0544a12eae6',1,'Player']]],
-  ['left_5fhandjoint',['left_handJoint',['../classPlayer.html#a3acd106181348da0d02d16f5f8ce9b0e',1,'Player']]],
-  ['left_5fhandsprite',['left_handSprite',['../classPlayer.html#a475bc21a49ec0646543d453aad5165eb',1,'Player']]],
-  ['left_5fhanduserdata',['left_handUserData',['../classPlayer.html#ae468da9b2edefa6fad9c15be21429c5f',1,'Player']]],
-  ['left_5fleg',['left_leg',['../classPlayer.html#ac930c6d977230e6bca5988e5253dd2c5',1,'Player']]],
-  ['left_5flegjoint',['left_legJoint',['../classPlayer.html#aaa58c13189790f25dcbb9eab2fcd6599',1,'Player']]],
-  ['left_5flegsprite',['left_legSprite',['../classPlayer.html#abfe364077a19821b3a39808aea631ffb',1,'Player']]],
-  ['left_5fleguserdata',['left_legUserData',['../classPlayer.html#a14c712cf7642ba3a2bbc7a5d14e52d08',1,'Player']]],
-  ['legtexture',['legTexture',['../classPlayer.html#a2c95a26d22e3fa825def2c052fa74386',1,'Player']]],
-  ['listener',['listener',['../classstickman_1_1Game.html#aea76de846ca81992ea4003f58a2ab096',1,'stickman::Game']]],
-  ['listensocket',['listenSocket',['../classstickman_1_1Game.html#a435f871ae09fdc269340289f44817932',1,'stickman::Game']]]
+  ['handtexture',['handTexture',['../classstickman_1_1Player.html#ad1eb37889054a5ae84cd538a4c4a724e',1,'stickman::Player']]],
+  ['head',['head',['../classstickman_1_1Player.html#a02d6d36d12beea739b479716579c190d',1,'stickman::Player']]],
+  ['headjoint',['headJoint',['../classstickman_1_1Player.html#a9eb558689e62aa1e7341ced39f10b9b1',1,'stickman::Player']]],
+  ['headsprite',['headSprite',['../classstickman_1_1Player.html#aaad96a55b2a4c4fdbae34fdd572c37a0',1,'stickman::Player']]],
+  ['headtexture',['headTexture',['../classstickman_1_1Player.html#acd8f2ab00e628e2461ebfb9280910034',1,'stickman::Player']]],
+  ['headuserdata',['headUserData',['../classstickman_1_1Player.html#a0c4f2957bfd99741935fd9c3042fc016',1,'stickman::Player']]],
+  ['health',['health',['../classstickman_1_1Player.html#aac9543cdac20e20badb04ad2c70575c0',1,'stickman::Player']]]
 ];

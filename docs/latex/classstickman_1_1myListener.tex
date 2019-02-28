@@ -1,0 +1,100 @@
+\hypertarget{classstickman_1_1myListener}{}\doxysection{stickman\+::my\+Listener Class Reference}
+\label{classstickman_1_1myListener}\index{stickman::myListener@{stickman::myListener}}
+
+
+Listens to collision between any two objects in Box2D world.  
+
+
+
+
+{\ttfamily \#include $<$my\+Listener.\+h$>$}
+
+Inheritance diagram for stickman\+::my\+Listener\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classstickman_1_1myListener}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstickman_1_1myListener_a6ed7c5de4e5277eb2ee46658bbd800c9}{my\+Listener}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for listener. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstickman_1_1myListener_ae1fe963ba2703f680666be3f3a4d1df1}{$\sim$my\+Listener}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for listener. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1myListener_a49eba51251d58cec45ffd6444cd98027}{Begin\+Contact}} (b2\+Contact $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Called when an object starts collision with other object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::queue$<$ std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classstickman_1_1myListener_a01a37fbad98d4606aa3f1100a931de89}{Queue}}
+\begin{DoxyCompactList}\small\item\em Stores the id of two body parts which collided. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Listens to collision between any two objects in Box2D world. 
+
+\begin{DoxyVerb}Subclass of b2ContactListener which implements the virtual method BeginContact  
+
+Contains the queue in which id of body part is stored which is further processed to decrease health point
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1myListener_a6ed7c5de4e5277eb2ee46658bbd800c9}\label{classstickman_1_1myListener_a6ed7c5de4e5277eb2ee46658bbd800c9}} 
+\index{stickman::myListener@{stickman::myListener}!myListener@{myListener}}
+\index{myListener@{myListener}!stickman::myListener@{stickman::myListener}}
+\doxysubsubsection{\texorpdfstring{myListener()}{myListener()}}
+{\footnotesize\ttfamily stickman\+::my\+Listener\+::my\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for listener. 
+
+\mbox{\Hypertarget{classstickman_1_1myListener_ae1fe963ba2703f680666be3f3a4d1df1}\label{classstickman_1_1myListener_ae1fe963ba2703f680666be3f3a4d1df1}} 
+\index{stickman::myListener@{stickman::myListener}!````~myListener@{$\sim$myListener}}
+\index{````~myListener@{$\sim$myListener}!stickman::myListener@{stickman::myListener}}
+\doxysubsubsection{\texorpdfstring{$\sim$myListener()}{~myListener()}}
+{\footnotesize\ttfamily stickman\+::my\+Listener\+::$\sim$my\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for listener. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstickman_1_1myListener_a49eba51251d58cec45ffd6444cd98027}\label{classstickman_1_1myListener_a49eba51251d58cec45ffd6444cd98027}} 
+\index{stickman::myListener@{stickman::myListener}!BeginContact@{BeginContact}}
+\index{BeginContact@{BeginContact}!stickman::myListener@{stickman::myListener}}
+\doxysubsubsection{\texorpdfstring{BeginContact()}{BeginContact()}}
+{\footnotesize\ttfamily void stickman\+::my\+Listener\+::\+Begin\+Contact (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact }\end{DoxyParamCaption})}
+
+
+
+Called when an object starts collision with other object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & Stores the contact information of two objects in Box2D world. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstickman_1_1myListener_a01a37fbad98d4606aa3f1100a931de89}\label{classstickman_1_1myListener_a01a37fbad98d4606aa3f1100a931de89}} 
+\index{stickman::myListener@{stickman::myListener}!Queue@{Queue}}
+\index{Queue@{Queue}!stickman::myListener@{stickman::myListener}}
+\doxysubsubsection{\texorpdfstring{Queue}{Queue}}
+{\footnotesize\ttfamily std\+::queue$<$ std\+::pair$<$int,int$>$ $>$ stickman\+::my\+Listener\+::\+Queue}
+
+
+
+Stores the id of two body parts which collided. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{myListener_8h}{my\+Listener.\+h}}\item 
+\mbox{\hyperlink{myListener_8cpp}{my\+Listener.\+cpp}}\end{DoxyCompactItemize}

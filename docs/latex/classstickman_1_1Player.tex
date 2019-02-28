@@ -1,0 +1,587 @@
+\hypertarget{classstickman_1_1Player}{}\doxysection{stickman\+::Player Class Reference}
+\label{classstickman_1_1Player}\index{stickman::Player@{stickman::Player}}
+
+
+Contains all the information about the player.  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstickman_1_1Player_aadffdb2f60d474ee983f50111039e717}{Player}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstickman_1_1Player_a4a08ebd465b90cda715f1b44cec9dfbb}{$\sim$\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Player_a3875adfeb3236e0ef1279c891ec93a08}{createhead}} (b2\+World $\ast$world, b2\+Vec2 position, bool is\+Static, float radius, float restitution, float density)
+\begin{DoxyCompactList}\small\item\em Creates a circular Box2D object for head of player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Player_acc5e09cabe237f4bee0469bde10b2472}{createbody}} (b2\+World $\ast$world, b2\+Vec2 position, bool is\+Static, float length, float width, float restitution, float density)
+\begin{DoxyCompactList}\small\item\em Creates a rectangular Box2D object for each body part(body, hands, legs) of player. \end{DoxyCompactList}\item 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classstickman_1_1Player_af11cee752804a7e28f5edfc3a31673df}{create\+Revolute\+Joint}} (b2\+World $\ast$world, b2\+Body $\ast$body1, b2\+Body $\ast$body2, b2\+Vec2 anchor\+Point1, b2\+Vec2 anchor\+Point2, float lower\+Limit, float upper\+Limit)
+\begin{DoxyCompactList}\small\item\em Revolute joints can be think of as hinge which allows rotation of body parts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Player_a6e54910f7e28670289d1382d93711a2a}{set\+Health}} (int \mbox{\hyperlink{classstickman_1_1Player_aac9543cdac20e20badb04ad2c70575c0}{health}})
+\begin{DoxyCompactList}\small\item\em Sets the health point of player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Player_aa15350e5f5ea0308dfbf48f481e2d5c1}{set\+Name}} (std\+::string \mbox{\hyperlink{classstickman_1_1Player_a397a42e1a8bfa624c195a059bdc39cc1}{name}})
+\begin{DoxyCompactList}\small\item\em Sets the name of player. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classstickman_1_1Player_a1efb693e575f1a138a3beb22b1cda85d}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of player. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Player_aeb06da25985d100f43a539608f41d65d}{get\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Returns the health of player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1Player_adc87fa49d1b4a0d4dfa7f3138dbb7721}{init}} (bool first\+Player)
+\begin{DoxyCompactList}\small\item\em Initialises the textures and sprites of a player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classstickman_1_1Player_aac9543cdac20e20badb04ad2c70575c0}{health}}
+\begin{DoxyCompactList}\small\item\em Health of player Contains the current health point of player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Player_a02d6d36d12beea739b479716579c190d}{head}}
+\begin{DoxyCompactList}\small\item\em Head of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s head. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Player_a0c4f2957bfd99741935fd9c3042fc016}{head\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of head. \end{DoxyCompactList}\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Player_acd8f2ab00e628e2461ebfb9280910034}{head\+Texture}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Texture to be loaded for head of player. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Player_aaad96a55b2a4c4fdbae34fdd572c37a0}{head\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for head of player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Player_aa62fe5087ea80a67830a7de8131f2d6a}{body}}
+\begin{DoxyCompactList}\small\item\em Body of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s body. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Player_a02331a909bf71139db08db754b9c4daf}{body\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of body. \end{DoxyCompactList}\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Player_afeada8e0de202560cfc8c14eab0ce56d}{body\+Texture}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Texture to be loaded for body of player. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Player_a9eecf5e9ec6ad94a85bf67b91e8c20fb}{body\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for body of player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Player_aaef3399d6db819640cc73869871995af}{left\+\_\+hand}}
+\begin{DoxyCompactList}\small\item\em Left Hand of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s left hand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Player_a8d61f8ae7836d74c6999cb47066262ea}{left\+\_\+hand\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of player\textquotesingle{}s left hand. \end{DoxyCompactList}\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Player_ad1eb37889054a5ae84cd538a4c4a724e}{hand\+Texture}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Texture to be loaded for both the hands of player. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Player_a01146f7c34219b1c7709208a708227a5}{left\+\_\+hand\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for left hand of player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Player_af20bbb315f0e5e2a53de7c4442fbf474}{right\+\_\+hand}}
+\begin{DoxyCompactList}\small\item\em Right Hand of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s right hand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Player_aced57ff6048e4c5fe8fa209d04f19233}{right\+\_\+hand\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of player\textquotesingle{}s right hand. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Player_acf0b15ede24575f5582172160b08d791}{right\+\_\+hand\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for right hand of player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Player_a4fd86f2e13fb831a11e329031327b409}{left\+\_\+leg}}
+\begin{DoxyCompactList}\small\item\em Left Leg of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s left leg. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Player_aaafa0487d2ece2e5a0c99e6b8f986707}{left\+\_\+leg\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of player\textquotesingle{}s left leg. \end{DoxyCompactList}\item 
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1Player_a64d34fc8aeb9256e2108bee054e21612}{leg\+Texture}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Texture to be loaded for both the legs of player. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Player_a9c0d369171a1a15bb09fddc1baf8d661}{left\+\_\+leg\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for left leg of player. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \mbox{\hyperlink{classstickman_1_1Player_a15c22b7416e70833797388cd505e15e6}{right\+\_\+leg}}
+\begin{DoxyCompactList}\small\item\em Right Leg of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s right leg. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstickman_1_1Player_af08b3cf98adde4eeecd986723b6b4e92}{right\+\_\+leg\+User\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains the user\+Data of player\textquotesingle{}s right leg. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1Player_ad1374a385082617127732534a09d912f}{right\+\_\+leg\+Sprite}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Sprite to be displayed for right leg of player. \end{DoxyCompactList}\item 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classstickman_1_1Player_a9eb558689e62aa1e7341ced39f10b9b1}{head\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between head and body of player. \end{DoxyCompactList}\item 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classstickman_1_1Player_a5670c9e178135eb53f3b4ae8950a65f4}{right\+\_\+hand\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between right hand and body of player. \end{DoxyCompactList}\item 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classstickman_1_1Player_af347db64ebd5052c2b039aa5e8260868}{left\+\_\+hand\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between left hand and body of player. \end{DoxyCompactList}\item 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classstickman_1_1Player_a4d15b11aeaaec337f03473b0ad62ebff}{right\+\_\+leg\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between right leg and body of player. \end{DoxyCompactList}\item 
+b2\+Revolute\+Joint $\ast$ \mbox{\hyperlink{classstickman_1_1Player_a82c2a23ebd0d34aa9cb6d42a1d53a7bf}{left\+\_\+leg\+Joint}}
+\begin{DoxyCompactList}\small\item\em Represents Revolute Joint between left leg and body of player. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classstickman_1_1Player_a397a42e1a8bfa624c195a059bdc39cc1}{name}}
+\begin{DoxyCompactList}\small\item\em Name of player Stores the name of player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains all the information about the player. 
+
+\begin{DoxyVerb} Contains information about the player including its name, health point, textures, sprites and Box2D body
+ pointers along with some joints.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1Player_aadffdb2f60d474ee983f50111039e717}\label{classstickman_1_1Player_aadffdb2f60d474ee983f50111039e717}} 
+\index{stickman::Player@{stickman::Player}!Player@{Player}}
+\index{Player@{Player}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily stickman\+::\+Player\+::\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a4a08ebd465b90cda715f1b44cec9dfbb}\label{classstickman_1_1Player_a4a08ebd465b90cda715f1b44cec9dfbb}} 
+\index{stickman::Player@{stickman::Player}!````~Player@{$\sim$Player}}
+\index{````~Player@{$\sim$Player}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{$\sim$Player()}{~Player()}}
+{\footnotesize\ttfamily stickman\+::\+Player\+::$\sim$\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for player. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstickman_1_1Player_acc5e09cabe237f4bee0469bde10b2472}\label{classstickman_1_1Player_acc5e09cabe237f4bee0469bde10b2472}} 
+\index{stickman::Player@{stickman::Player}!createbody@{createbody}}
+\index{createbody@{createbody}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{createbody()}{createbody()}}
+{\footnotesize\ttfamily b2\+Body $\ast$ stickman\+::\+Player\+::createbody (\begin{DoxyParamCaption}\item[{b2\+World $\ast$}]{world,  }\item[{b2\+Vec2}]{position,  }\item[{bool}]{is\+Static,  }\item[{float}]{length,  }\item[{float}]{width,  }\item[{float}]{restitution,  }\item[{float}]{density }\end{DoxyParamCaption})}
+
+
+
+Creates a rectangular Box2D object for each body part(body, hands, legs) of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Box2D world in which player is initialised. \\
+\hline
+{\em position} & Contains the position where body part is to be created. \\
+\hline
+{\em is\+Static} & Denotes whether the object is static or dynamic. \\
+\hline
+{\em length} & Contains the length of body part of player. \\
+\hline
+{\em length} & Contains the width of body part of player. \\
+\hline
+{\em restitution} & Contains the coefficient of restituion of body part of player. \\
+\hline
+{\em density} & Stores the density of body part of player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Box2D object pointer of body part. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1Player_a3875adfeb3236e0ef1279c891ec93a08}\label{classstickman_1_1Player_a3875adfeb3236e0ef1279c891ec93a08}} 
+\index{stickman::Player@{stickman::Player}!createhead@{createhead}}
+\index{createhead@{createhead}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{createhead()}{createhead()}}
+{\footnotesize\ttfamily b2\+Body $\ast$ stickman\+::\+Player\+::createhead (\begin{DoxyParamCaption}\item[{b2\+World $\ast$}]{world,  }\item[{b2\+Vec2}]{position,  }\item[{bool}]{is\+Static,  }\item[{float}]{radius,  }\item[{float}]{restitution,  }\item[{float}]{density }\end{DoxyParamCaption})}
+
+
+
+Creates a circular Box2D object for head of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Box2D world in which player is initialised. \\
+\hline
+{\em position} & Contains the position where head is to be created. \\
+\hline
+{\em is\+Static} & Denotes whether the object is static or dynamic. \\
+\hline
+{\em radius} & Contains the radius of head of player. \\
+\hline
+{\em restitution} & Contains the coefficient of restituion for head of player. \\
+\hline
+{\em density} & Stores the density of head of player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Box2D object pointer of head. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1Player_af11cee752804a7e28f5edfc3a31673df}\label{classstickman_1_1Player_af11cee752804a7e28f5edfc3a31673df}} 
+\index{stickman::Player@{stickman::Player}!createRevoluteJoint@{createRevoluteJoint}}
+\index{createRevoluteJoint@{createRevoluteJoint}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{createRevoluteJoint()}{createRevoluteJoint()}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint $\ast$ stickman\+::\+Player\+::create\+Revolute\+Joint (\begin{DoxyParamCaption}\item[{b2\+World $\ast$}]{world,  }\item[{b2\+Body $\ast$}]{body1,  }\item[{b2\+Body $\ast$}]{body2,  }\item[{b2\+Vec2}]{anchor\+Point1,  }\item[{b2\+Vec2}]{anchor\+Point2,  }\item[{float}]{lower\+Limit,  }\item[{float}]{upper\+Limit }\end{DoxyParamCaption})}
+
+
+
+Revolute joints can be think of as hinge which allows rotation of body parts. 
+
+Creates a Revolute joint between two body parts. 
+\begin{DoxyParams}{Parameters}
+{\em world} & Box2D world in which player is initialised. \\
+\hline
+{\em body1} & Contains the Box2D object pointer denoting the first body part in joint. \\
+\hline
+{\em body2} & Contains the Box2D object pointer denoting the second body part in joint. \\
+\hline
+{\em anchor\+Point1} & Contains the local position in first body where joint has to be initialised. \\
+\hline
+{\em anchor\+Point2} & Contains the local position in second body where joint has to be initialised. \\
+\hline
+{\em lower\+Limit} & Stores the lower limit of angle of rotation for the Revolute joint. \\
+\hline
+{\em upper\+Limit} & Stores the upper limit of angle of rotation for the Revolute joint. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Box2D Revolute joint pointer denoting the joint. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1Player_aeb06da25985d100f43a539608f41d65d}\label{classstickman_1_1Player_aeb06da25985d100f43a539608f41d65d}} 
+\index{stickman::Player@{stickman::Player}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily int stickman\+::\+Player\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the health of player. 
+
+\begin{DoxyReturn}{Returns}
+Health point of player. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1Player_a1efb693e575f1a138a3beb22b1cda85d}\label{classstickman_1_1Player_a1efb693e575f1a138a3beb22b1cda85d}} 
+\index{stickman::Player@{stickman::Player}!getName@{getName}}
+\index{getName@{getName}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string stickman\+::\+Player\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the name of player. 
+
+\begin{DoxyReturn}{Returns}
+Name of player. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstickman_1_1Player_adc87fa49d1b4a0d4dfa7f3138dbb7721}\label{classstickman_1_1Player_adc87fa49d1b4a0d4dfa7f3138dbb7721}} 
+\index{stickman::Player@{stickman::Player}!init@{init}}
+\index{init@{init}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void stickman\+::\+Player\+::init (\begin{DoxyParamCaption}\item[{bool}]{first\+Player }\end{DoxyParamCaption})}
+
+
+
+Initialises the textures and sprites of a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Player} & Stores the information whether the player is first player or second. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1Player_a6e54910f7e28670289d1382d93711a2a}\label{classstickman_1_1Player_a6e54910f7e28670289d1382d93711a2a}} 
+\index{stickman::Player@{stickman::Player}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily void stickman\+::\+Player\+::set\+Health (\begin{DoxyParamCaption}\item[{int}]{health }\end{DoxyParamCaption})}
+
+
+
+Sets the health point of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & Stores the health to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1Player_aa15350e5f5ea0308dfbf48f481e2d5c1}\label{classstickman_1_1Player_aa15350e5f5ea0308dfbf48f481e2d5c1}} 
+\index{stickman::Player@{stickman::Player}!setName@{setName}}
+\index{setName@{setName}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void stickman\+::\+Player\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets the name of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Stores the name to be set. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstickman_1_1Player_aa62fe5087ea80a67830a7de8131f2d6a}\label{classstickman_1_1Player_aa62fe5087ea80a67830a7de8131f2d6a}} 
+\index{stickman::Player@{stickman::Player}!body@{body}}
+\index{body@{body}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{body}{body}}
+{\footnotesize\ttfamily b2\+Body$\ast$ stickman\+::\+Player\+::body}
+
+
+
+Body of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s body. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a9eecf5e9ec6ad94a85bf67b91e8c20fb}\label{classstickman_1_1Player_a9eecf5e9ec6ad94a85bf67b91e8c20fb}} 
+\index{stickman::Player@{stickman::Player}!bodySprite@{bodySprite}}
+\index{bodySprite@{bodySprite}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{bodySprite}{bodySprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite stickman\+::\+Player\+::body\+Sprite}
+
+
+
+S\+F\+ML Sprite to be displayed for body of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_afeada8e0de202560cfc8c14eab0ce56d}\label{classstickman_1_1Player_afeada8e0de202560cfc8c14eab0ce56d}} 
+\index{stickman::Player@{stickman::Player}!bodyTexture@{bodyTexture}}
+\index{bodyTexture@{bodyTexture}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{bodyTexture}{bodyTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture stickman\+::\+Player\+::body\+Texture}
+
+
+
+S\+F\+ML Texture to be loaded for body of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a02331a909bf71139db08db754b9c4daf}\label{classstickman_1_1Player_a02331a909bf71139db08db754b9c4daf}} 
+\index{stickman::Player@{stickman::Player}!bodyUserData@{bodyUserData}}
+\index{bodyUserData@{bodyUserData}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{bodyUserData}{bodyUserData}}
+{\footnotesize\ttfamily int stickman\+::\+Player\+::body\+User\+Data}
+
+
+
+Contains the user\+Data of body. 
+
+Used to detect body in collision. \mbox{\Hypertarget{classstickman_1_1Player_ad1eb37889054a5ae84cd538a4c4a724e}\label{classstickman_1_1Player_ad1eb37889054a5ae84cd538a4c4a724e}} 
+\index{stickman::Player@{stickman::Player}!handTexture@{handTexture}}
+\index{handTexture@{handTexture}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{handTexture}{handTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture stickman\+::\+Player\+::hand\+Texture}
+
+
+
+S\+F\+ML Texture to be loaded for both the hands of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a02d6d36d12beea739b479716579c190d}\label{classstickman_1_1Player_a02d6d36d12beea739b479716579c190d}} 
+\index{stickman::Player@{stickman::Player}!head@{head}}
+\index{head@{head}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily b2\+Body$\ast$ stickman\+::\+Player\+::head}
+
+
+
+Head of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s head. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a9eb558689e62aa1e7341ced39f10b9b1}\label{classstickman_1_1Player_a9eb558689e62aa1e7341ced39f10b9b1}} 
+\index{stickman::Player@{stickman::Player}!headJoint@{headJoint}}
+\index{headJoint@{headJoint}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{headJoint}{headJoint}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint$\ast$ stickman\+::\+Player\+::head\+Joint}
+
+
+
+Represents Revolute Joint between head and body of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_aaad96a55b2a4c4fdbae34fdd572c37a0}\label{classstickman_1_1Player_aaad96a55b2a4c4fdbae34fdd572c37a0}} 
+\index{stickman::Player@{stickman::Player}!headSprite@{headSprite}}
+\index{headSprite@{headSprite}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{headSprite}{headSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite stickman\+::\+Player\+::head\+Sprite}
+
+
+
+S\+F\+ML Sprite to be displayed for head of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_acd8f2ab00e628e2461ebfb9280910034}\label{classstickman_1_1Player_acd8f2ab00e628e2461ebfb9280910034}} 
+\index{stickman::Player@{stickman::Player}!headTexture@{headTexture}}
+\index{headTexture@{headTexture}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{headTexture}{headTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture stickman\+::\+Player\+::head\+Texture}
+
+
+
+S\+F\+ML Texture to be loaded for head of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a0c4f2957bfd99741935fd9c3042fc016}\label{classstickman_1_1Player_a0c4f2957bfd99741935fd9c3042fc016}} 
+\index{stickman::Player@{stickman::Player}!headUserData@{headUserData}}
+\index{headUserData@{headUserData}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{headUserData}{headUserData}}
+{\footnotesize\ttfamily int stickman\+::\+Player\+::head\+User\+Data}
+
+
+
+Contains the user\+Data of head. 
+
+Used to detect head in collision of two body parts. \mbox{\Hypertarget{classstickman_1_1Player_aac9543cdac20e20badb04ad2c70575c0}\label{classstickman_1_1Player_aac9543cdac20e20badb04ad2c70575c0}} 
+\index{stickman::Player@{stickman::Player}!health@{health}}
+\index{health@{health}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily int stickman\+::\+Player\+::health}
+
+
+
+Health of player Contains the current health point of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_aaef3399d6db819640cc73869871995af}\label{classstickman_1_1Player_aaef3399d6db819640cc73869871995af}} 
+\index{stickman::Player@{stickman::Player}!left\_hand@{left\_hand}}
+\index{left\_hand@{left\_hand}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{left\_hand}{left\_hand}}
+{\footnotesize\ttfamily b2\+Body$\ast$ stickman\+::\+Player\+::left\+\_\+hand}
+
+
+
+Left Hand of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s left hand. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_af347db64ebd5052c2b039aa5e8260868}\label{classstickman_1_1Player_af347db64ebd5052c2b039aa5e8260868}} 
+\index{stickman::Player@{stickman::Player}!left\_handJoint@{left\_handJoint}}
+\index{left\_handJoint@{left\_handJoint}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{left\_handJoint}{left\_handJoint}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint$\ast$ stickman\+::\+Player\+::left\+\_\+hand\+Joint}
+
+
+
+Represents Revolute Joint between left hand and body of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a01146f7c34219b1c7709208a708227a5}\label{classstickman_1_1Player_a01146f7c34219b1c7709208a708227a5}} 
+\index{stickman::Player@{stickman::Player}!left\_handSprite@{left\_handSprite}}
+\index{left\_handSprite@{left\_handSprite}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{left\_handSprite}{left\_handSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite stickman\+::\+Player\+::left\+\_\+hand\+Sprite}
+
+
+
+S\+F\+ML Sprite to be displayed for left hand of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a8d61f8ae7836d74c6999cb47066262ea}\label{classstickman_1_1Player_a8d61f8ae7836d74c6999cb47066262ea}} 
+\index{stickman::Player@{stickman::Player}!left\_handUserData@{left\_handUserData}}
+\index{left\_handUserData@{left\_handUserData}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{left\_handUserData}{left\_handUserData}}
+{\footnotesize\ttfamily int stickman\+::\+Player\+::left\+\_\+hand\+User\+Data}
+
+
+
+Contains the user\+Data of player\textquotesingle{}s left hand. 
+
+Used to detect left hand in collision \mbox{\Hypertarget{classstickman_1_1Player_a4fd86f2e13fb831a11e329031327b409}\label{classstickman_1_1Player_a4fd86f2e13fb831a11e329031327b409}} 
+\index{stickman::Player@{stickman::Player}!left\_leg@{left\_leg}}
+\index{left\_leg@{left\_leg}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{left\_leg}{left\_leg}}
+{\footnotesize\ttfamily b2\+Body$\ast$ stickman\+::\+Player\+::left\+\_\+leg}
+
+
+
+Left Leg of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s left leg. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a82c2a23ebd0d34aa9cb6d42a1d53a7bf}\label{classstickman_1_1Player_a82c2a23ebd0d34aa9cb6d42a1d53a7bf}} 
+\index{stickman::Player@{stickman::Player}!left\_legJoint@{left\_legJoint}}
+\index{left\_legJoint@{left\_legJoint}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{left\_legJoint}{left\_legJoint}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint$\ast$ stickman\+::\+Player\+::left\+\_\+leg\+Joint}
+
+
+
+Represents Revolute Joint between left leg and body of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a9c0d369171a1a15bb09fddc1baf8d661}\label{classstickman_1_1Player_a9c0d369171a1a15bb09fddc1baf8d661}} 
+\index{stickman::Player@{stickman::Player}!left\_legSprite@{left\_legSprite}}
+\index{left\_legSprite@{left\_legSprite}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{left\_legSprite}{left\_legSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite stickman\+::\+Player\+::left\+\_\+leg\+Sprite}
+
+
+
+S\+F\+ML Sprite to be displayed for left leg of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_aaafa0487d2ece2e5a0c99e6b8f986707}\label{classstickman_1_1Player_aaafa0487d2ece2e5a0c99e6b8f986707}} 
+\index{stickman::Player@{stickman::Player}!left\_legUserData@{left\_legUserData}}
+\index{left\_legUserData@{left\_legUserData}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{left\_legUserData}{left\_legUserData}}
+{\footnotesize\ttfamily int stickman\+::\+Player\+::left\+\_\+leg\+User\+Data}
+
+
+
+Contains the user\+Data of player\textquotesingle{}s left leg. 
+
+Used to detect left leg in collision of two body parts. \mbox{\Hypertarget{classstickman_1_1Player_a64d34fc8aeb9256e2108bee054e21612}\label{classstickman_1_1Player_a64d34fc8aeb9256e2108bee054e21612}} 
+\index{stickman::Player@{stickman::Player}!legTexture@{legTexture}}
+\index{legTexture@{legTexture}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{legTexture}{legTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture stickman\+::\+Player\+::leg\+Texture}
+
+
+
+S\+F\+ML Texture to be loaded for both the legs of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a397a42e1a8bfa624c195a059bdc39cc1}\label{classstickman_1_1Player_a397a42e1a8bfa624c195a059bdc39cc1}} 
+\index{stickman::Player@{stickman::Player}!name@{name}}
+\index{name@{name}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string stickman\+::\+Player\+::name}
+
+
+
+Name of player Stores the name of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_af20bbb315f0e5e2a53de7c4442fbf474}\label{classstickman_1_1Player_af20bbb315f0e5e2a53de7c4442fbf474}} 
+\index{stickman::Player@{stickman::Player}!right\_hand@{right\_hand}}
+\index{right\_hand@{right\_hand}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{right\_hand}{right\_hand}}
+{\footnotesize\ttfamily b2\+Body$\ast$ stickman\+::\+Player\+::right\+\_\+hand}
+
+
+
+Right Hand of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s right hand. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a5670c9e178135eb53f3b4ae8950a65f4}\label{classstickman_1_1Player_a5670c9e178135eb53f3b4ae8950a65f4}} 
+\index{stickman::Player@{stickman::Player}!right\_handJoint@{right\_handJoint}}
+\index{right\_handJoint@{right\_handJoint}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{right\_handJoint}{right\_handJoint}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint$\ast$ stickman\+::\+Player\+::right\+\_\+hand\+Joint}
+
+
+
+Represents Revolute Joint between right hand and body of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_acf0b15ede24575f5582172160b08d791}\label{classstickman_1_1Player_acf0b15ede24575f5582172160b08d791}} 
+\index{stickman::Player@{stickman::Player}!right\_handSprite@{right\_handSprite}}
+\index{right\_handSprite@{right\_handSprite}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{right\_handSprite}{right\_handSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite stickman\+::\+Player\+::right\+\_\+hand\+Sprite}
+
+
+
+S\+F\+ML Sprite to be displayed for right hand of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_aced57ff6048e4c5fe8fa209d04f19233}\label{classstickman_1_1Player_aced57ff6048e4c5fe8fa209d04f19233}} 
+\index{stickman::Player@{stickman::Player}!right\_handUserData@{right\_handUserData}}
+\index{right\_handUserData@{right\_handUserData}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{right\_handUserData}{right\_handUserData}}
+{\footnotesize\ttfamily int stickman\+::\+Player\+::right\+\_\+hand\+User\+Data}
+
+
+
+Contains the user\+Data of player\textquotesingle{}s right hand. 
+
+Used to detect right hand in collision of two body parts. \mbox{\Hypertarget{classstickman_1_1Player_a15c22b7416e70833797388cd505e15e6}\label{classstickman_1_1Player_a15c22b7416e70833797388cd505e15e6}} 
+\index{stickman::Player@{stickman::Player}!right\_leg@{right\_leg}}
+\index{right\_leg@{right\_leg}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{right\_leg}{right\_leg}}
+{\footnotesize\ttfamily b2\+Body$\ast$ stickman\+::\+Player\+::right\+\_\+leg}
+
+
+
+Right Leg of player Contains the Box2D pointer of the object denoting player\textquotesingle{}s right leg. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_a4d15b11aeaaec337f03473b0ad62ebff}\label{classstickman_1_1Player_a4d15b11aeaaec337f03473b0ad62ebff}} 
+\index{stickman::Player@{stickman::Player}!right\_legJoint@{right\_legJoint}}
+\index{right\_legJoint@{right\_legJoint}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{right\_legJoint}{right\_legJoint}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint$\ast$ stickman\+::\+Player\+::right\+\_\+leg\+Joint}
+
+
+
+Represents Revolute Joint between right leg and body of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_ad1374a385082617127732534a09d912f}\label{classstickman_1_1Player_ad1374a385082617127732534a09d912f}} 
+\index{stickman::Player@{stickman::Player}!right\_legSprite@{right\_legSprite}}
+\index{right\_legSprite@{right\_legSprite}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{right\_legSprite}{right\_legSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite stickman\+::\+Player\+::right\+\_\+leg\+Sprite}
+
+
+
+S\+F\+ML Sprite to be displayed for right leg of player. 
+
+\mbox{\Hypertarget{classstickman_1_1Player_af08b3cf98adde4eeecd986723b6b4e92}\label{classstickman_1_1Player_af08b3cf98adde4eeecd986723b6b4e92}} 
+\index{stickman::Player@{stickman::Player}!right\_legUserData@{right\_legUserData}}
+\index{right\_legUserData@{right\_legUserData}!stickman::Player@{stickman::Player}}
+\doxysubsubsection{\texorpdfstring{right\_legUserData}{right\_legUserData}}
+{\footnotesize\ttfamily int stickman\+::\+Player\+::right\+\_\+leg\+User\+Data}
+
+
+
+Contains the user\+Data of player\textquotesingle{}s right leg. 
+
+Used to detect right leg in collision of two body parts. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{player_8h}{player.\+h}}\item 
+\mbox{\hyperlink{player_8cpp}{player.\+cpp}}\end{DoxyCompactItemize}

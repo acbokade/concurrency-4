@@ -1,5 +1,14 @@
 \hypertarget{classstickman_1_1NameState}{}\doxysection{stickman\+::Name\+State Class Reference}
 \label{classstickman_1_1NameState}\index{stickman::NameState@{stickman::NameState}}
+
+
+Class for name state which takes the name of player and gives the option of chosing whether to host a server/ join a server.  
+
+
+
+
+{\ttfamily \#include $<$name.\+h$>$}
+
 Inheritance diagram for stickman\+::Name\+State\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,45 +18,163 @@ Inheritance diagram for stickman\+::Name\+State\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1NameState_a68519b810f8859240bfabe17a5c7e9f2}\label{classstickman_1_1NameState_a68519b810f8859240bfabe17a5c7e9f2}} 
-{\bfseries Name\+State} (Game\+Data\+Ref data)
-\item 
-\mbox{\Hypertarget{classstickman_1_1NameState_aefa56baa2422434844e32da99e0aa9eb}\label{classstickman_1_1NameState_aefa56baa2422434844e32da99e0aa9eb}} 
-void {\bfseries Init} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1NameState_ac09939e23c60b6f2f70348cd1aa102e2}\label{classstickman_1_1NameState_ac09939e23c60b6f2f70348cd1aa102e2}} 
-void {\bfseries Handle\+Input} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1NameState_a96520056674e15df93473c3f4db6c923}\label{classstickman_1_1NameState_a96520056674e15df93473c3f4db6c923}} 
-void {\bfseries Draw} (float dt)
-\item 
-\mbox{\Hypertarget{classstickman_1_1NameState_a7e39e0d621be1ef87645829e0e874783}\label{classstickman_1_1NameState_a7e39e0d621be1ef87645829e0e874783}} 
-void {\bfseries Update} (float dt)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classstickman_1_1NameState_a68519b810f8859240bfabe17a5c7e9f2}{Name\+State}} (\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}} data)
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1NameState_aefa56baa2422434844e32da99e0aa9eb}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function init that may be overloaded which runs at the start of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1NameState_ac09939e23c60b6f2f70348cd1aa102e2}{Handle\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function Handle\+Input that may be overloaded which may be used to handle some input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1NameState_a96520056674e15df93473c3f4db6c923}{Draw}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1NameState_a7e39e0d621be1ef87645829e0e874783}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function Update which may be overloaded which may be used to update game logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1NameState_ad300ce56c0dc2f200742de88450ef8ce}\label{classstickman_1_1NameState_ad300ce56c0dc2f200742de88450ef8ce}} 
-sf\+::\+Text {\bfseries enter\+Name}
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1NameState_ad300ce56c0dc2f200742de88450ef8ce}{enter\+Name}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1NameState_a645fab387bab4a809a2744cfd3efab3f}\label{classstickman_1_1NameState_a645fab387bab4a809a2744cfd3efab3f}} 
-sf\+::\+Texture {\bfseries welcome\+Texture}
+sf\+::\+Texture \mbox{\hyperlink{classstickman_1_1NameState_a645fab387bab4a809a2744cfd3efab3f}{welcome\+Texture}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1NameState_add93c083f7076182065b03d2c764e7e1}\label{classstickman_1_1NameState_add93c083f7076182065b03d2c764e7e1}} 
-sf\+::\+Sprite {\bfseries welcome\+Sprite}
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1NameState_add93c083f7076182065b03d2c764e7e1}{welcome\+Sprite}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1NameState_a5a1367c9d1b973b7db979ed20f2961f6}\label{classstickman_1_1NameState_a5a1367c9d1b973b7db979ed20f2961f6}} 
-sf\+::\+Text {\bfseries player\+Text}
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1NameState_a5a1367c9d1b973b7db979ed20f2961f6}{player\+Text}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1NameState_afb038771066e6d1f158e67446318e147}\label{classstickman_1_1NameState_afb038771066e6d1f158e67446318e147}} 
-sf\+::\+Font {\bfseries font}
+sf\+::\+Font \mbox{\hyperlink{classstickman_1_1NameState_afb038771066e6d1f158e67446318e147}{font}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1NameState_ab311c66fa91348846487e4df1b7d165b}\label{classstickman_1_1NameState_ab311c66fa91348846487e4df1b7d165b}} 
-std\+::string {\bfseries player\+Input}
+std\+::string \mbox{\hyperlink{classstickman_1_1NameState_ab311c66fa91348846487e4df1b7d165b}{player\+Input}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for name state which takes the name of player and gives the option of chosing whether to host a server/ join a server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1NameState_a68519b810f8859240bfabe17a5c7e9f2}\label{classstickman_1_1NameState_a68519b810f8859240bfabe17a5c7e9f2}} 
+\index{stickman::NameState@{stickman::NameState}!NameState@{NameState}}
+\index{NameState@{NameState}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{NameState()}{NameState()}}
+{\footnotesize\ttfamily stickman\+::\+Name\+State\+::\+Name\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Constructs the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Takes the data of the game from the previous state \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstickman_1_1NameState_a96520056674e15df93473c3f4db6c923}\label{classstickman_1_1NameState_a96520056674e15df93473c3f4db6c923}} 
+\index{stickman::NameState@{stickman::NameState}!Draw@{Draw}}
+\index{Draw@{Draw}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void stickman\+::\+Name\+State\+::\+Draw (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1NameState_ac09939e23c60b6f2f70348cd1aa102e2}\label{classstickman_1_1NameState_ac09939e23c60b6f2f70348cd1aa102e2}} 
+\index{stickman::NameState@{stickman::NameState}!HandleInput@{HandleInput}}
+\index{HandleInput@{HandleInput}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{HandleInput()}{HandleInput()}}
+{\footnotesize\ttfamily void stickman\+::\+Name\+State\+::\+Handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Handle\+Input that may be overloaded which may be used to handle some input. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1NameState_aefa56baa2422434844e32da99e0aa9eb}\label{classstickman_1_1NameState_aefa56baa2422434844e32da99e0aa9eb}} 
+\index{stickman::NameState@{stickman::NameState}!Init@{Init}}
+\index{Init@{Init}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void stickman\+::\+Name\+State\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function init that may be overloaded which runs at the start of the state. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1NameState_a7e39e0d621be1ef87645829e0e874783}\label{classstickman_1_1NameState_a7e39e0d621be1ef87645829e0e874783}} 
+\index{stickman::NameState@{stickman::NameState}!Update@{Update}}
+\index{Update@{Update}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void stickman\+::\+Name\+State\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Update which may be overloaded which may be used to update game logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}{stickman\+::\+State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstickman_1_1NameState_ad300ce56c0dc2f200742de88450ef8ce}\label{classstickman_1_1NameState_ad300ce56c0dc2f200742de88450ef8ce}} 
+\index{stickman::NameState@{stickman::NameState}!enterName@{enterName}}
+\index{enterName@{enterName}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{enterName}{enterName}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Name\+State\+::enter\+Name}
+
+\mbox{\Hypertarget{classstickman_1_1NameState_afb038771066e6d1f158e67446318e147}\label{classstickman_1_1NameState_afb038771066e6d1f158e67446318e147}} 
+\index{stickman::NameState@{stickman::NameState}!font@{font}}
+\index{font@{font}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily sf\+::\+Font stickman\+::\+Name\+State\+::font}
+
+\mbox{\Hypertarget{classstickman_1_1NameState_ab311c66fa91348846487e4df1b7d165b}\label{classstickman_1_1NameState_ab311c66fa91348846487e4df1b7d165b}} 
+\index{stickman::NameState@{stickman::NameState}!playerInput@{playerInput}}
+\index{playerInput@{playerInput}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{playerInput}{playerInput}}
+{\footnotesize\ttfamily std\+::string stickman\+::\+Name\+State\+::player\+Input}
+
+\mbox{\Hypertarget{classstickman_1_1NameState_a5a1367c9d1b973b7db979ed20f2961f6}\label{classstickman_1_1NameState_a5a1367c9d1b973b7db979ed20f2961f6}} 
+\index{stickman::NameState@{stickman::NameState}!playerText@{playerText}}
+\index{playerText@{playerText}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{playerText}{playerText}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Name\+State\+::player\+Text}
+
+\mbox{\Hypertarget{classstickman_1_1NameState_add93c083f7076182065b03d2c764e7e1}\label{classstickman_1_1NameState_add93c083f7076182065b03d2c764e7e1}} 
+\index{stickman::NameState@{stickman::NameState}!welcomeSprite@{welcomeSprite}}
+\index{welcomeSprite@{welcomeSprite}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{welcomeSprite}{welcomeSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite stickman\+::\+Name\+State\+::welcome\+Sprite}
+
+\mbox{\Hypertarget{classstickman_1_1NameState_a645fab387bab4a809a2744cfd3efab3f}\label{classstickman_1_1NameState_a645fab387bab4a809a2744cfd3efab3f}} 
+\index{stickman::NameState@{stickman::NameState}!welcomeTexture@{welcomeTexture}}
+\index{welcomeTexture@{welcomeTexture}!stickman::NameState@{stickman::NameState}}
+\doxysubsubsection{\texorpdfstring{welcomeTexture}{welcomeTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture stickman\+::\+Name\+State\+::welcome\+Texture}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-name.\+h\item 
-name.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{name_8h}{name.\+h}}\item 
+\mbox{\hyperlink{name_8cpp}{name.\+cpp}}\end{DoxyCompactItemize}

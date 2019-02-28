@@ -1,0 +1,137 @@
+\hypertarget{namespacestickman}{}\doxysection{stickman Namespace Reference}
+\label{namespacestickman}\index{stickman@{stickman}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classstickman_1_1AssetManager}{Asset\+Manager}}
+\begin{DoxyCompactList}\small\item\em Class for asset manager.\+This class loads a texture and creates a map between textures and strings so that we don\textquotesingle{}t have to load the same texture and sprite again and again. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structstickman_1_1emptyStr}{empty\+Str}}
+\begin{DoxyCompactList}\small\item\em An empty struct to derive from. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1Game}{Game}}
+\begin{DoxyCompactList}\small\item\em Contains all basic entities required in game like window, players object, Tcp\+Listener, Send and receive sockets, Box2D world, walls,ground, sprites of all bodies to be displayed in window and functions to check collision, decrease health points, sending and receving packets from client to server and vice versa, worker threads which checks for collision and gem thread used to generate gem. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1Game2}{Game2}}
+\begin{DoxyCompactList}\small\item\em Class for game which initializes the different properties related to the game like resolution and so on. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structstickman_1_1GameData}{Game\+Data}}
+\begin{DoxyCompactList}\small\item\em This contains the objects required by the game as the whole like the state machine which switches states and different managers to make loading different things easier. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1GameOver}{Game\+Over}}
+\begin{DoxyCompactList}\small\item\em Class for game over state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1HelpState}{Help\+State}}
+\begin{DoxyCompactList}\small\item\em Class for help state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1InputManager}{Input\+Manager}}
+\begin{DoxyCompactList}\small\item\em Class for input manager. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{classstickman_1_1mainGame}{main\+Game}}
+\begin{DoxyCompactList}\small\item\em Class for main game. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1MainMenuState}{Main\+Menu\+State}}
+\begin{DoxyCompactList}\small\item\em Class for main menu state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1myListener}{my\+Listener}}
+\begin{DoxyCompactList}\small\item\em Listens to collision between any two objects in Box2D world. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1NameState}{Name\+State}}
+\begin{DoxyCompactList}\small\item\em Class for name state which takes the name of player and gives the option of chosing whether to host a server/ join a server. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1Player}{Player}}
+\begin{DoxyCompactList}\small\item\em Contains all the information about the player. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}
+\begin{DoxyCompactList}\small\item\em Struct for testing player data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1SplashState}{Splash\+State}}
+\begin{DoxyCompactList}\small\item\em Class for splash state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1State}{State}}
+\begin{DoxyCompactList}\small\item\em Class for state which has functions which can be overloaded so that a particular state of the game can run using these functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1StateMachine}{State\+Machine}}
+\begin{DoxyCompactList}\small\item\em Class which is responsible for running a state when it gets loaded. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structstickman_1_1testDecreaseHp}{test\+Decrease\+Hp}}
+\begin{DoxyCompactList}\small\item\em This will be passed to the test as we want an interface to the previous struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structstickman_1_1GameData}{Game\+Data}} $>$ \mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}}
+\begin{DoxyCompactList}\small\item\em Creating container for raw pointers for the struct game data. \end{DoxyCompactList}\item 
+typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classstickman_1_1State}{State}} $>$ \mbox{\hyperlink{namespacestickman_a707bbc31863cc54199f46a75a1d498db}{State\+Ref}}
+\begin{DoxyCompactList}\small\item\em Creates a unique pointer for State\+Ref so that it gets automatically destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacestickman_a1a297e1ad2aed8e651b0e53f770e6260}{T\+E\+S\+T\+\_\+F}} (\mbox{\hyperlink{classstickman_1_1mainGame}{main\+Game}}, initialize\+Data)
+\begin{DoxyCompactList}\small\item\em Runs the test initialize\+Data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacestickman_a23245606432435a9568fc0cd8265341d}{T\+E\+S\+T\+\_\+F}} (\mbox{\hyperlink{classstickman_1_1mainGame}{main\+Game}}, generate\+Gem)
+\begin{DoxyCompactList}\small\item\em test for generate gem function \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacestickman_a1217bd218916027a9b3659cbc46a9bda}{T\+E\+S\+T\+\_\+F}} (\mbox{\hyperlink{classstickman_1_1mainGame}{main\+Game}}, check\+Distance)
+\begin{DoxyCompactList}\small\item\em Test for the distance function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacestickman_a76663b679dff9682c5cc5037bcc1ad7c}{T\+E\+S\+T\+\_\+P}} (\mbox{\hyperlink{structstickman_1_1testDecreaseHp}{test\+Decrease\+Hp}}, decrease\+Hp)
+\begin{DoxyCompactList}\small\item\em Performs a test with multiple inputs to check different test cases. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacestickman_a708f6c679239775ba3c52f478474c19a}{I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E\+\_\+P}} (Default, \mbox{\hyperlink{structstickman_1_1testDecreaseHp}{test\+Decrease\+Hp}}, testing\+::\+Values(\mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 1, 5\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 5, 1\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 6, 3\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 3, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 4, 5\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 5, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 3, 5\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 5, 3\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 2, 8\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 8, 2\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 7, 2\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 2, 7\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 1, 7\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 7, 1\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 100, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 60, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 40, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 20, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{20, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 10, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{10, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 80, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 60, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 40, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 20, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{20, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 10, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{10, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 80, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 60, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 40, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 20, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{20, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 10, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{10, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 80, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 40, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 60, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 40, 6, 4\}))
+\begin{DoxyCompactList}\small\item\em Passes the test cases for the test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}\label{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}} 
+\index{stickman@{stickman}!GameDataRef@{GameDataRef}}
+\index{GameDataRef@{GameDataRef}!stickman@{stickman}}
+\doxysubsubsection{\texorpdfstring{GameDataRef}{GameDataRef}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{structstickman_1_1GameData}{Game\+Data}}$>$ \mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{stickman\+::\+Game\+Data\+Ref}}}
+
+
+
+Creating container for raw pointers for the struct game data. 
+
+\mbox{\Hypertarget{namespacestickman_a707bbc31863cc54199f46a75a1d498db}\label{namespacestickman_a707bbc31863cc54199f46a75a1d498db}} 
+\index{stickman@{stickman}!StateRef@{StateRef}}
+\index{StateRef@{StateRef}!stickman@{stickman}}
+\doxysubsubsection{\texorpdfstring{StateRef}{StateRef}}
+{\footnotesize\ttfamily typedef std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classstickman_1_1State}{State}}$>$ \mbox{\hyperlink{namespacestickman_a707bbc31863cc54199f46a75a1d498db}{stickman\+::\+State\+Ref}}}
+
+
+
+Creates a unique pointer for State\+Ref so that it gets automatically destroyed. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacestickman_a708f6c679239775ba3c52f478474c19a}\label{namespacestickman_a708f6c679239775ba3c52f478474c19a}} 
+\index{stickman@{stickman}!INSTANTIATE\_TEST\_CASE\_P@{INSTANTIATE\_TEST\_CASE\_P}}
+\index{INSTANTIATE\_TEST\_CASE\_P@{INSTANTIATE\_TEST\_CASE\_P}!stickman@{stickman}}
+\doxysubsubsection{\texorpdfstring{INSTANTIATE\_TEST\_CASE\_P()}{INSTANTIATE\_TEST\_CASE\_P()}}
+{\footnotesize\ttfamily stickman\+::\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E\+\_\+P (\begin{DoxyParamCaption}\item[{Default}]{,  }\item[{\mbox{\hyperlink{structstickman_1_1testDecreaseHp}{test\+Decrease\+Hp}}}]{,  }\item[{testing\+::\+Values(\mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 1, 5\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 5, 1\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 6, 3\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 3, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 4, 5\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 5, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 3, 5\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 5, 3\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 2, 8\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 8, 2\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 7, 2\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 2, 7\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 1, 7\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 100, 7, 1\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 100, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 60, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 40, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 20, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{20, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{100, 10, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{10, 100, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 80, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 60, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 40, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 20, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{20, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 10, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{10, 80, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 80, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 60, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 40, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 20, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{20, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 10, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{10, 60, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 80, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{80, 40, 6, 4\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{40, 60, 4, 6\}, \mbox{\hyperlink{structstickman_1_1playerdata}{playerdata}}\{60, 40, 6, 4\})}]{ }\end{DoxyParamCaption})}
+
+
+
+Passes the test cases for the test. 
+
+\mbox{\Hypertarget{namespacestickman_a1217bd218916027a9b3659cbc46a9bda}\label{namespacestickman_a1217bd218916027a9b3659cbc46a9bda}} 
+\index{stickman@{stickman}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!stickman@{stickman}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily stickman\+::\+T\+E\+S\+T\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstickman_1_1mainGame}{main\+Game}}}]{,  }\item[{check\+Distance}]{ }\end{DoxyParamCaption})}
+
+
+
+Test for the distance function. 
+
+\mbox{\Hypertarget{namespacestickman_a23245606432435a9568fc0cd8265341d}\label{namespacestickman_a23245606432435a9568fc0cd8265341d}} 
+\index{stickman@{stickman}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!stickman@{stickman}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily stickman\+::\+T\+E\+S\+T\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstickman_1_1mainGame}{main\+Game}}}]{,  }\item[{generate\+Gem}]{ }\end{DoxyParamCaption})}
+
+
+
+test for generate gem function 
+
+\mbox{\Hypertarget{namespacestickman_a1a297e1ad2aed8e651b0e53f770e6260}\label{namespacestickman_a1a297e1ad2aed8e651b0e53f770e6260}} 
+\index{stickman@{stickman}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!stickman@{stickman}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily stickman\+::\+T\+E\+S\+T\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstickman_1_1mainGame}{main\+Game}}}]{,  }\item[{initialize\+Data}]{ }\end{DoxyParamCaption})}
+
+
+
+Runs the test initialize\+Data. 
+
+\mbox{\Hypertarget{namespacestickman_a76663b679dff9682c5cc5037bcc1ad7c}\label{namespacestickman_a76663b679dff9682c5cc5037bcc1ad7c}} 
+\index{stickman@{stickman}!TEST\_P@{TEST\_P}}
+\index{TEST\_P@{TEST\_P}!stickman@{stickman}}
+\doxysubsubsection{\texorpdfstring{TEST\_P()}{TEST\_P()}}
+{\footnotesize\ttfamily stickman\+::\+T\+E\+S\+T\+\_\+P (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstickman_1_1testDecreaseHp}{test\+Decrease\+Hp}}}]{,  }\item[{decrease\+Hp}]{ }\end{DoxyParamCaption})}
+
+
+
+Performs a test with multiple inputs to check different test cases. 
+

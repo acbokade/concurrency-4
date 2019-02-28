@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>stickman</b></li><li class="navelem"><a class="el" href="classstickman_1_1StateMachine.html">StateMachine</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacestickman.html">stickman</a></li><li class="navelem"><a class="el" href="classstickman_1_1StateMachine.html">StateMachine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,25 +74,190 @@ $(function() {
 <div class="title">stickman::StateMachine Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class which is responsible for running a state when it gets loaded.  
+ <a href="classstickman_1_1StateMachine.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="StateMachine_8hpp_source.html">StateMachine.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af31e88ef2f1da17fc5a06e3639807a42"><td class="memItemLeft" align="right" valign="top"><a id="af31e88ef2f1da17fc5a06e3639807a42"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddState</b> (StateRef newState, bool isReplacing=true)</td></tr>
+<tr class="memitem:acb1670387882473fc02e8afc5e75e193"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1StateMachine.html#acb1670387882473fc02e8afc5e75e193">StateMachine</a> ()</td></tr>
+<tr class="memdesc:acb1670387882473fc02e8afc5e75e193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the object.  <a href="#acb1670387882473fc02e8afc5e75e193">More...</a><br /></td></tr>
+<tr class="separator:acb1670387882473fc02e8afc5e75e193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489ae6a692dfc6703022983292a977fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1StateMachine.html#a489ae6a692dfc6703022983292a977fc">~StateMachine</a> ()</td></tr>
+<tr class="memdesc:a489ae6a692dfc6703022983292a977fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the object.  <a href="#a489ae6a692dfc6703022983292a977fc">More...</a><br /></td></tr>
+<tr class="separator:a489ae6a692dfc6703022983292a977fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31e88ef2f1da17fc5a06e3639807a42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1StateMachine.html#af31e88ef2f1da17fc5a06e3639807a42">AddState</a> (<a class="el" href="namespacestickman.html#a707bbc31863cc54199f46a75a1d498db">StateRef</a> newState, bool isReplacing=true)</td></tr>
+<tr class="memdesc:af31e88ef2f1da17fc5a06e3639807a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks a state for adding.  <a href="#af31e88ef2f1da17fc5a06e3639807a42">More...</a><br /></td></tr>
 <tr class="separator:af31e88ef2f1da17fc5a06e3639807a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf3a0887563761fcc548529e9e4671ba"><td class="memItemLeft" align="right" valign="top"><a id="abf3a0887563761fcc548529e9e4671ba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveState</b> ()</td></tr>
+<tr class="memitem:abf3a0887563761fcc548529e9e4671ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1StateMachine.html#abf3a0887563761fcc548529e9e4671ba">RemoveState</a> ()</td></tr>
+<tr class="memdesc:abf3a0887563761fcc548529e9e4671ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks a state for removal.  <a href="#abf3a0887563761fcc548529e9e4671ba">More...</a><br /></td></tr>
 <tr class="separator:abf3a0887563761fcc548529e9e4671ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a413411361b59eafbe30af0994910f7de"><td class="memItemLeft" align="right" valign="top"><a id="a413411361b59eafbe30af0994910f7de"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ProcessStateChanges</b> ()</td></tr>
+<tr class="memitem:a413411361b59eafbe30af0994910f7de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1StateMachine.html#a413411361b59eafbe30af0994910f7de">ProcessStateChanges</a> ()</td></tr>
+<tr class="memdesc:a413411361b59eafbe30af0994910f7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the function which replaces the states and adds new stats while deleting previous ones.  <a href="#a413411361b59eafbe30af0994910f7de">More...</a><br /></td></tr>
 <tr class="separator:a413411361b59eafbe30af0994910f7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a716b7ed79a506d768c556f58bac04323"><td class="memItemLeft" align="right" valign="top"><a id="a716b7ed79a506d768c556f58bac04323"></a>
-StateRef &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetActiveState</b> ()</td></tr>
+<tr class="memitem:a716b7ed79a506d768c556f58bac04323"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacestickman.html#a707bbc31863cc54199f46a75a1d498db">StateRef</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstickman_1_1StateMachine.html#a716b7ed79a506d768c556f58bac04323">GetActiveState</a> ()</td></tr>
+<tr class="memdesc:a716b7ed79a506d768c556f58bac04323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the active state which is running.  <a href="#a716b7ed79a506d768c556f58bac04323">More...</a><br /></td></tr>
 <tr class="separator:a716b7ed79a506d768c556f58bac04323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class which is responsible for running a state when it gets loaded. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acb1670387882473fc02e8afc5e75e193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb1670387882473fc02e8afc5e75e193">&#9670;&nbsp;</a></span>StateMachine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stickman::StateMachine::StateMachine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the object. </p>
+
+</div>
+</div>
+<a id="a489ae6a692dfc6703022983292a977fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a489ae6a692dfc6703022983292a977fc">&#9670;&nbsp;</a></span>~StateMachine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stickman::StateMachine::~StateMachine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af31e88ef2f1da17fc5a06e3639807a42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af31e88ef2f1da17fc5a06e3639807a42">&#9670;&nbsp;</a></span>AddState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::StateMachine::AddState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacestickman.html#a707bbc31863cc54199f46a75a1d498db">StateRef</a>&#160;</td>
+          <td class="paramname"><em>newState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isReplacing</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marks a state for adding. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">newState</td><td>The new state which will be added </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isReplacing</td><td>Indicates if replacing the old state or just pausing it </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a716b7ed79a506d768c556f58bac04323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a716b7ed79a506d768c556f58bac04323">&#9670;&nbsp;</a></span>GetActiveState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacestickman.html#a707bbc31863cc54199f46a75a1d498db">StateRef</a> &amp; stickman::StateMachine::GetActiveState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the active state which is running. </p>
+<dl class="section return"><dt>Returns</dt><dd>The active state. </dd></dl>
+
+</div>
+</div>
+<a id="a413411361b59eafbe30af0994910f7de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a413411361b59eafbe30af0994910f7de">&#9670;&nbsp;</a></span>ProcessStateChanges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::StateMachine::ProcessStateChanges </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the function which replaces the states and adds new stats while deleting previous ones. </p>
+<p>It may also pause or resume states </p>
+
+</div>
+</div>
+<a id="abf3a0887563761fcc548529e9e4671ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3a0887563761fcc548529e9e4671ba">&#9670;&nbsp;</a></span>RemoveState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stickman::StateMachine::RemoveState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marks a state for removal. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="StateMachine_8hpp_source.html">StateMachine.hpp</a></li>
-<li>StateMachine.cpp</li>
+<li><a class="el" href="StateMachine_8cpp.html">StateMachine.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

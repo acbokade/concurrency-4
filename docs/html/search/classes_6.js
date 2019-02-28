@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player',['Player',['../classPlayer.html',1,'']]]
+  ['namestate',['NameState',['../classstickman_1_1NameState.html',1,'stickman']]]
 ];

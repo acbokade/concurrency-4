@@ -1,5 +1,14 @@
 \hypertarget{classstickman_1_1HelpState}{}\doxysection{stickman\+::Help\+State Class Reference}
 \label{classstickman_1_1HelpState}\index{stickman::HelpState@{stickman::HelpState}}
+
+
+Class for help state.  
+
+
+
+
+{\ttfamily \#include $<$Help\+State.\+hpp$>$}
+
 Inheritance diagram for stickman\+::Help\+State\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,51 +18,208 @@ Inheritance diagram for stickman\+::Help\+State\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_a42616e913d864b6e1121007cbdd9aa0a}\label{classstickman_1_1HelpState_a42616e913d864b6e1121007cbdd9aa0a}} 
-{\bfseries Help\+State} (Game\+Data\+Ref data)
-\item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_a5a3dd712088e2fa89d6701b77f845c27}\label{classstickman_1_1HelpState_a5a3dd712088e2fa89d6701b77f845c27}} 
-void {\bfseries Init} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_ac4292c337e03bcc2d6071a730e44c906}\label{classstickman_1_1HelpState_ac4292c337e03bcc2d6071a730e44c906}} 
-void {\bfseries Handle\+Input} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_a0d16af20f0f748539ddf07a6efe26cb7}\label{classstickman_1_1HelpState_a0d16af20f0f748539ddf07a6efe26cb7}} 
-void {\bfseries Update} (float dt)
-\item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_ad29b1f2d91f2a98253c9b3582a119118}\label{classstickman_1_1HelpState_ad29b1f2d91f2a98253c9b3582a119118}} 
-void {\bfseries Draw} (float dt)
-\item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_afcc5760ef4b571e558e4d35eb22a5528}\label{classstickman_1_1HelpState_afcc5760ef4b571e558e4d35eb22a5528}} 
-void {\bfseries set\+Text} (sf\+::\+Text text, int x\+Pos, int y\+Pos, int size, string s)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classstickman_1_1HelpState_a42616e913d864b6e1121007cbdd9aa0a}{Help\+State}} (\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}} data)
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1HelpState_a5a3dd712088e2fa89d6701b77f845c27}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function init that may be overloaded which runs at the start of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1HelpState_ac4292c337e03bcc2d6071a730e44c906}{Handle\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function Handle\+Input that may be overloaded which may be used to handle some input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1HelpState_a0d16af20f0f748539ddf07a6efe26cb7}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function Update which may be overloaded which may be used to update game logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1HelpState_ad29b1f2d91f2a98253c9b3582a119118}{Draw}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1HelpState_afcc5760ef4b571e558e4d35eb22a5528}{set\+Text}} (sf\+::\+Text text, int x\+Pos, int y\+Pos, int size, string s)
+\begin{DoxyCompactList}\small\item\em Sets the text onto a particular position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_aa955bbd42a05872004d24a2bf2f79869}\label{classstickman_1_1HelpState_aa955bbd42a05872004d24a2bf2f79869}} 
-sf\+::\+Font {\bfseries font}
+sf\+::\+Font \mbox{\hyperlink{classstickman_1_1HelpState_aa955bbd42a05872004d24a2bf2f79869}{font}}
+\begin{DoxyCompactList}\small\item\em Stores a font. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1HelpState_a90a2bc0f6c68d0aaebf5b74c15884050}{info\+Text}}
+\begin{DoxyCompactList}\small\item\em Stores text to be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1HelpState_a2905ff1c27a2ebbaad546f6051d00244}{rules\+Text}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_a90a2bc0f6c68d0aaebf5b74c15884050}\label{classstickman_1_1HelpState_a90a2bc0f6c68d0aaebf5b74c15884050}} 
-sf\+::\+Text {\bfseries info\+Text}
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1HelpState_a978de5c2f9fff7ff6aa6fe58ea7b03e1}{rule1\+Text}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_a2905ff1c27a2ebbaad546f6051d00244}\label{classstickman_1_1HelpState_a2905ff1c27a2ebbaad546f6051d00244}} 
-sf\+::\+Text {\bfseries rules\+Text}
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1HelpState_aab2d6214e08b366667fa0bd879ebec7e}{rule2\+Text}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_a978de5c2f9fff7ff6aa6fe58ea7b03e1}\label{classstickman_1_1HelpState_a978de5c2f9fff7ff6aa6fe58ea7b03e1}} 
-sf\+::\+Text {\bfseries rule1\+Text}
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1HelpState_a07b3ecc58143024c5e1801384486713d}{rule3\+Text}}
 \item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_aab2d6214e08b366667fa0bd879ebec7e}\label{classstickman_1_1HelpState_aab2d6214e08b366667fa0bd879ebec7e}} 
-sf\+::\+Text {\bfseries rule2\+Text}
-\item 
-\mbox{\Hypertarget{classstickman_1_1HelpState_a07b3ecc58143024c5e1801384486713d}\label{classstickman_1_1HelpState_a07b3ecc58143024c5e1801384486713d}} 
-sf\+::\+Text {\bfseries rule3\+Text}
-\item 
+sf\+::\+Sprite \mbox{\hyperlink{classstickman_1_1HelpState_ac8d0e2883e8f948ae90edaa9e093624f}{back\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Sprite which stores the back button sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for help state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1HelpState_a42616e913d864b6e1121007cbdd9aa0a}\label{classstickman_1_1HelpState_a42616e913d864b6e1121007cbdd9aa0a}} 
+\index{stickman::HelpState@{stickman::HelpState}!HelpState@{HelpState}}
+\index{HelpState@{HelpState}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{HelpState()}{HelpState()}}
+{\footnotesize\ttfamily stickman\+::\+Help\+State\+::\+Help\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Constructs the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data which contains information about the game \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstickman_1_1HelpState_ad29b1f2d91f2a98253c9b3582a119118}\label{classstickman_1_1HelpState_ad29b1f2d91f2a98253c9b3582a119118}} 
+\index{stickman::HelpState@{stickman::HelpState}!Draw@{Draw}}
+\index{Draw@{Draw}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void stickman\+::\+Help\+State\+::\+Draw (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_ac4292c337e03bcc2d6071a730e44c906}\label{classstickman_1_1HelpState_ac4292c337e03bcc2d6071a730e44c906}} 
+\index{stickman::HelpState@{stickman::HelpState}!HandleInput@{HandleInput}}
+\index{HandleInput@{HandleInput}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{HandleInput()}{HandleInput()}}
+{\footnotesize\ttfamily void stickman\+::\+Help\+State\+::\+Handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Handle\+Input that may be overloaded which may be used to handle some input. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_a5a3dd712088e2fa89d6701b77f845c27}\label{classstickman_1_1HelpState_a5a3dd712088e2fa89d6701b77f845c27}} 
+\index{stickman::HelpState@{stickman::HelpState}!Init@{Init}}
+\index{Init@{Init}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void stickman\+::\+Help\+State\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function init that may be overloaded which runs at the start of the state. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_afcc5760ef4b571e558e4d35eb22a5528}\label{classstickman_1_1HelpState_afcc5760ef4b571e558e4d35eb22a5528}} 
+\index{stickman::HelpState@{stickman::HelpState}!setText@{setText}}
+\index{setText@{setText}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void stickman\+::\+Help\+State\+::set\+Text (\begin{DoxyParamCaption}\item[{sf\+::\+Text}]{text,  }\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos,  }\item[{int}]{size,  }\item[{string}]{s }\end{DoxyParamCaption})}
+
+
+
+Sets the text onto a particular position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text \\
+\hline
+{\em x\+Pos} & The x position \\
+\hline
+{\em y\+Pos} & The y position \\
+\hline
+{\em size} & The size \\
+\hline
+{\em s} & Text to be set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstickman_1_1HelpState_a0d16af20f0f748539ddf07a6efe26cb7}\label{classstickman_1_1HelpState_a0d16af20f0f748539ddf07a6efe26cb7}} 
+\index{stickman::HelpState@{stickman::HelpState}!Update@{Update}}
+\index{Update@{Update}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void stickman\+::\+Help\+State\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Update which may be overloaded which may be used to update game logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}{stickman\+::\+State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classstickman_1_1HelpState_ac8d0e2883e8f948ae90edaa9e093624f}\label{classstickman_1_1HelpState_ac8d0e2883e8f948ae90edaa9e093624f}} 
-sf\+::\+Sprite {\bfseries back\+Sprite}
-\end{DoxyCompactItemize}
+\index{stickman::HelpState@{stickman::HelpState}!backSprite@{backSprite}}
+\index{backSprite@{backSprite}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{backSprite}{backSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite stickman\+::\+Help\+State\+::back\+Sprite}
+
+
+
+Sprite which stores the back button sprite. 
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_aa955bbd42a05872004d24a2bf2f79869}\label{classstickman_1_1HelpState_aa955bbd42a05872004d24a2bf2f79869}} 
+\index{stickman::HelpState@{stickman::HelpState}!font@{font}}
+\index{font@{font}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily sf\+::\+Font stickman\+::\+Help\+State\+::font}
+
+
+
+Stores a font. 
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_a90a2bc0f6c68d0aaebf5b74c15884050}\label{classstickman_1_1HelpState_a90a2bc0f6c68d0aaebf5b74c15884050}} 
+\index{stickman::HelpState@{stickman::HelpState}!infoText@{infoText}}
+\index{infoText@{infoText}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{infoText}{infoText}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Help\+State\+::info\+Text}
+
+
+
+Stores text to be displayed. 
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_a978de5c2f9fff7ff6aa6fe58ea7b03e1}\label{classstickman_1_1HelpState_a978de5c2f9fff7ff6aa6fe58ea7b03e1}} 
+\index{stickman::HelpState@{stickman::HelpState}!rule1Text@{rule1Text}}
+\index{rule1Text@{rule1Text}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{rule1Text}{rule1Text}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Help\+State\+::rule1\+Text}
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_aab2d6214e08b366667fa0bd879ebec7e}\label{classstickman_1_1HelpState_aab2d6214e08b366667fa0bd879ebec7e}} 
+\index{stickman::HelpState@{stickman::HelpState}!rule2Text@{rule2Text}}
+\index{rule2Text@{rule2Text}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{rule2Text}{rule2Text}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Help\+State\+::rule2\+Text}
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_a07b3ecc58143024c5e1801384486713d}\label{classstickman_1_1HelpState_a07b3ecc58143024c5e1801384486713d}} 
+\index{stickman::HelpState@{stickman::HelpState}!rule3Text@{rule3Text}}
+\index{rule3Text@{rule3Text}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{rule3Text}{rule3Text}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Help\+State\+::rule3\+Text}
+
+\mbox{\Hypertarget{classstickman_1_1HelpState_a2905ff1c27a2ebbaad546f6051d00244}\label{classstickman_1_1HelpState_a2905ff1c27a2ebbaad546f6051d00244}} 
+\index{stickman::HelpState@{stickman::HelpState}!rulesText@{rulesText}}
+\index{rulesText@{rulesText}!stickman::HelpState@{stickman::HelpState}}
+\doxysubsubsection{\texorpdfstring{rulesText}{rulesText}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Help\+State\+::rules\+Text}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Help\+State.\+hpp\item 
-Help\+State.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{HelpState_8hpp}{Help\+State.\+hpp}}\item 
+\mbox{\hyperlink{HelpState_8cpp}{Help\+State.\+cpp}}\end{DoxyCompactItemize}

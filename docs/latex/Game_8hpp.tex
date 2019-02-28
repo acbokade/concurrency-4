@@ -1,0 +1,25 @@
+\hypertarget{Game_8hpp}{}\doxysection{Game.\+hpp File Reference}
+\label{Game_8hpp}\index{Game.hpp@{Game.hpp}}
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}S\+F\+M\+L/\+Graphics.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}State\+Machine.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Asset\+Manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Input\+Manager.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstickman_1_1GameData}{stickman\+::\+Game\+Data}}
+\begin{DoxyCompactList}\small\item\em This contains the objects required by the game as the whole like the state machine which switches states and different managers to make loading different things easier. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstickman_1_1Game2}{stickman\+::\+Game2}}
+\begin{DoxyCompactList}\small\item\em Class for game which initializes the different properties related to the game like resolution and so on. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacestickman}{stickman}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ Game\+Data $>$ \mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{stickman\+::\+Game\+Data\+Ref}}
+\begin{DoxyCompactList}\small\item\em Creating container for raw pointers for the struct game data. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,5 +1,14 @@
 \hypertarget{classstickman_1_1MainMenuState}{}\doxysection{stickman\+::Main\+Menu\+State Class Reference}
 \label{classstickman_1_1MainMenuState}\index{stickman::MainMenuState@{stickman::MainMenuState}}
+
+
+Class for main menu state.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Menu\+State.\+hpp$>$}
+
 Inheritance diagram for stickman\+::Main\+Menu\+State\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,42 +18,179 @@ Inheritance diagram for stickman\+::Main\+Menu\+State\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1MainMenuState_a248cb294a427eb7449f83014988a0ba9}\label{classstickman_1_1MainMenuState_a248cb294a427eb7449f83014988a0ba9}} 
-{\bfseries Main\+Menu\+State} (Game\+Data\+Ref data, string s, bool client)
-\item 
-\mbox{\Hypertarget{classstickman_1_1MainMenuState_aa036ab40ddef231b39f6284b697563d3}\label{classstickman_1_1MainMenuState_aa036ab40ddef231b39f6284b697563d3}} 
-void {\bfseries Init} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1MainMenuState_abc46a398737d396338ca215ba305c571}\label{classstickman_1_1MainMenuState_abc46a398737d396338ca215ba305c571}} 
-void {\bfseries Handle\+Input} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1MainMenuState_a59582ab699bea20eca435ad8003e277a}\label{classstickman_1_1MainMenuState_a59582ab699bea20eca435ad8003e277a}} 
-void {\bfseries Update} (float dt)
-\item 
-\mbox{\Hypertarget{classstickman_1_1MainMenuState_a374ee05ef9a54ff9c325bcbb94acbb20}\label{classstickman_1_1MainMenuState_a374ee05ef9a54ff9c325bcbb94acbb20}} 
-void {\bfseries Draw} (float dt)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classstickman_1_1MainMenuState_a248cb294a427eb7449f83014988a0ba9}{Main\+Menu\+State}} (\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}} data, string s, bool client)
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1MainMenuState_aa036ab40ddef231b39f6284b697563d3}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function init that may be overloaded which runs at the start of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1MainMenuState_abc46a398737d396338ca215ba305c571}{Handle\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function Handle\+Input that may be overloaded which may be used to handle some input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1MainMenuState_a59582ab699bea20eca435ad8003e277a}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function Update which may be overloaded which may be used to update game logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1MainMenuState_a374ee05ef9a54ff9c325bcbb94acbb20}{Draw}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classstickman_1_1MainMenuState_ab833a9402a8d59243fd7755f7b37cdc8}\label{classstickman_1_1MainMenuState_ab833a9402a8d59243fd7755f7b37cdc8}} 
-sf\+::\+Text {\bfseries player\+Text}
-\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1MainMenuState_ab833a9402a8d59243fd7755f7b37cdc8}{player\+Text}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML text to be displayed as input is taken. \end{DoxyCompactList}\item 
+sf\+::\+Font \mbox{\hyperlink{classstickman_1_1MainMenuState_af3cf70c8c9f3b9307e830f3f44c3a74e}{font}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML font to be loaded. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classstickman_1_1MainMenuState_a6b6335ee05b08c8e6a059858998fd906}{player\+Input}}
+\begin{DoxyCompactList}\small\item\em String containing the ip to be connected. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1MainMenuState_aaf75a064e8e21cc81288ac1336ddb42e}{text1}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Text to be diplayed. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{classstickman_1_1MainMenuState_add19c64d8c61376c58bd81e872f7f97d}{text2}}
+\begin{DoxyCompactList}\small\item\em S\+F\+ML Text to be diplayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for main menu state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstickman_1_1MainMenuState_a248cb294a427eb7449f83014988a0ba9}\label{classstickman_1_1MainMenuState_a248cb294a427eb7449f83014988a0ba9}} 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!MainMenuState@{MainMenuState}}
+\index{MainMenuState@{MainMenuState}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{MainMenuState()}{MainMenuState()}}
+{\footnotesize\ttfamily stickman\+::\+Main\+Menu\+State\+::\+Main\+Menu\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}}}]{data,  }\item[{string}]{s,  }\item[{bool}]{client }\end{DoxyParamCaption})}
+
+
+
+Constructs the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Takes the data of the game from the previous state \\
+\hline
+{\em s} & Stores the name of player \\
+\hline
+{\em client} & Stores the information whether the system is client/server \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstickman_1_1MainMenuState_a374ee05ef9a54ff9c325bcbb94acbb20}\label{classstickman_1_1MainMenuState_a374ee05ef9a54ff9c325bcbb94acbb20}} 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!Draw@{Draw}}
+\index{Draw@{Draw}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void stickman\+::\+Main\+Menu\+State\+::\+Draw (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1MainMenuState_abc46a398737d396338ca215ba305c571}\label{classstickman_1_1MainMenuState_abc46a398737d396338ca215ba305c571}} 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!HandleInput@{HandleInput}}
+\index{HandleInput@{HandleInput}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{HandleInput()}{HandleInput()}}
+{\footnotesize\ttfamily void stickman\+::\+Main\+Menu\+State\+::\+Handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Handle\+Input that may be overloaded which may be used to handle some input. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1MainMenuState_aa036ab40ddef231b39f6284b697563d3}\label{classstickman_1_1MainMenuState_aa036ab40ddef231b39f6284b697563d3}} 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!Init@{Init}}
+\index{Init@{Init}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void stickman\+::\+Main\+Menu\+State\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function init that may be overloaded which runs at the start of the state. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1MainMenuState_a59582ab699bea20eca435ad8003e277a}\label{classstickman_1_1MainMenuState_a59582ab699bea20eca435ad8003e277a}} 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!Update@{Update}}
+\index{Update@{Update}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void stickman\+::\+Main\+Menu\+State\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Update which may be overloaded which may be used to update game logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}{stickman\+::\+State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classstickman_1_1MainMenuState_af3cf70c8c9f3b9307e830f3f44c3a74e}\label{classstickman_1_1MainMenuState_af3cf70c8c9f3b9307e830f3f44c3a74e}} 
-sf\+::\+Font {\bfseries font}
-\item 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!font@{font}}
+\index{font@{font}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily sf\+::\+Font stickman\+::\+Main\+Menu\+State\+::font}
+
+
+
+S\+F\+ML font to be loaded. 
+
 \mbox{\Hypertarget{classstickman_1_1MainMenuState_a6b6335ee05b08c8e6a059858998fd906}\label{classstickman_1_1MainMenuState_a6b6335ee05b08c8e6a059858998fd906}} 
-std\+::string {\bfseries player\+Input}
-\item 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!playerInput@{playerInput}}
+\index{playerInput@{playerInput}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{playerInput}{playerInput}}
+{\footnotesize\ttfamily std\+::string stickman\+::\+Main\+Menu\+State\+::player\+Input}
+
+
+
+String containing the ip to be connected. 
+
+\mbox{\Hypertarget{classstickman_1_1MainMenuState_ab833a9402a8d59243fd7755f7b37cdc8}\label{classstickman_1_1MainMenuState_ab833a9402a8d59243fd7755f7b37cdc8}} 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!playerText@{playerText}}
+\index{playerText@{playerText}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{playerText}{playerText}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Main\+Menu\+State\+::player\+Text}
+
+
+
+S\+F\+ML text to be displayed as input is taken. 
+
 \mbox{\Hypertarget{classstickman_1_1MainMenuState_aaf75a064e8e21cc81288ac1336ddb42e}\label{classstickman_1_1MainMenuState_aaf75a064e8e21cc81288ac1336ddb42e}} 
-sf\+::\+Text {\bfseries text1}
-\item 
+\index{stickman::MainMenuState@{stickman::MainMenuState}!text1@{text1}}
+\index{text1@{text1}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{text1}{text1}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Main\+Menu\+State\+::text1}
+
+
+
+S\+F\+ML Text to be diplayed. 
+
 \mbox{\Hypertarget{classstickman_1_1MainMenuState_add19c64d8c61376c58bd81e872f7f97d}\label{classstickman_1_1MainMenuState_add19c64d8c61376c58bd81e872f7f97d}} 
-sf\+::\+Text {\bfseries text2}
-\end{DoxyCompactItemize}
+\index{stickman::MainMenuState@{stickman::MainMenuState}!text2@{text2}}
+\index{text2@{text2}!stickman::MainMenuState@{stickman::MainMenuState}}
+\doxysubsubsection{\texorpdfstring{text2}{text2}}
+{\footnotesize\ttfamily sf\+::\+Text stickman\+::\+Main\+Menu\+State\+::text2}
+
+
+
+S\+F\+ML Text to be diplayed. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Main\+Menu\+State.\+hpp\item 
-Main\+Menu\+State.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{MainMenuState_8hpp}{Main\+Menu\+State.\+hpp}}\item 
+\mbox{\hyperlink{MainMenuState_8cpp}{Main\+Menu\+State.\+cpp}}\end{DoxyCompactItemize}

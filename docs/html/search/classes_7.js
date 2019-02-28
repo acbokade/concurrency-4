@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['splashstate',['SplashState',['../classstickman_1_1SplashState.html',1,'stickman']]],
-  ['state',['State',['../classstickman_1_1State.html',1,'stickman']]],
-  ['statemachine',['StateMachine',['../classstickman_1_1StateMachine.html',1,'stickman']]]
+  ['player',['Player',['../classstickman_1_1Player.html',1,'stickman']]],
+  ['playerdata',['playerdata',['../structstickman_1_1playerdata.html',1,'stickman']]]
 ];

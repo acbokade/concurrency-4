@@ -1,5 +1,14 @@
 \hypertarget{classstickman_1_1SplashState}{}\doxysection{stickman\+::Splash\+State Class Reference}
 \label{classstickman_1_1SplashState}\index{stickman::SplashState@{stickman::SplashState}}
+
+
+Class for splash state.  
+
+
+
+
+{\ttfamily \#include $<$Splash\+State.\+hpp$>$}
+
 Inheritance diagram for stickman\+::Splash\+State\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,24 +18,109 @@ Inheritance diagram for stickman\+::Splash\+State\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classstickman_1_1SplashState_af27f167e7b6b5b02ab4608b23e1e4198}{Splash\+State}} (\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}} data)
+\begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1SplashState_ad9206a3ab4c75bee1b004dbe75d9e9bf}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function init that may be overloaded which runs at the start of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1SplashState_af0cb5c88110ec0237e08cbd1dc948c2f}{Handle\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function Handle\+Input that may be overloaded which may be used to handle some input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1SplashState_af6dfe88a7cad53cf324bb59c827da1dd}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function Update which may be overloaded which may be used to update game logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstickman_1_1SplashState_a9bec36a73e46ec106fe7671e20e3d00b}{Draw}} (float dt)
+\begin{DoxyCompactList}\small\item\em Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for splash state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classstickman_1_1SplashState_af27f167e7b6b5b02ab4608b23e1e4198}\label{classstickman_1_1SplashState_af27f167e7b6b5b02ab4608b23e1e4198}} 
-{\bfseries Splash\+State} (Game\+Data\+Ref data)
-\item 
-\mbox{\Hypertarget{classstickman_1_1SplashState_ad9206a3ab4c75bee1b004dbe75d9e9bf}\label{classstickman_1_1SplashState_ad9206a3ab4c75bee1b004dbe75d9e9bf}} 
-void {\bfseries Init} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1SplashState_af0cb5c88110ec0237e08cbd1dc948c2f}\label{classstickman_1_1SplashState_af0cb5c88110ec0237e08cbd1dc948c2f}} 
-void {\bfseries Handle\+Input} ()
-\item 
-\mbox{\Hypertarget{classstickman_1_1SplashState_af6dfe88a7cad53cf324bb59c827da1dd}\label{classstickman_1_1SplashState_af6dfe88a7cad53cf324bb59c827da1dd}} 
-void {\bfseries Update} (float dt)
-\item 
+\index{stickman::SplashState@{stickman::SplashState}!SplashState@{SplashState}}
+\index{SplashState@{SplashState}!stickman::SplashState@{stickman::SplashState}}
+\doxysubsubsection{\texorpdfstring{SplashState()}{SplashState()}}
+{\footnotesize\ttfamily stickman\+::\+Splash\+State\+::\+Splash\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestickman_aa0ca039c3b58da4fb417e9d07ee88d92}{Game\+Data\+Ref}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Constructs the object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The data which contains information about the game \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classstickman_1_1SplashState_a9bec36a73e46ec106fe7671e20e3d00b}\label{classstickman_1_1SplashState_a9bec36a73e46ec106fe7671e20e3d00b}} 
-void {\bfseries Draw} (float dt)
-\end{DoxyCompactItemize}
+\index{stickman::SplashState@{stickman::SplashState}!Draw@{Draw}}
+\index{Draw@{Draw}!stickman::SplashState@{stickman::SplashState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void stickman\+::\+Splash\+State\+::\+Draw (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function draw which may be overloaded which may be used to draw something on screen on each iteration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a31be755b70dc7046fb37e4d22f0f38b9}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1SplashState_af0cb5c88110ec0237e08cbd1dc948c2f}\label{classstickman_1_1SplashState_af0cb5c88110ec0237e08cbd1dc948c2f}} 
+\index{stickman::SplashState@{stickman::SplashState}!HandleInput@{HandleInput}}
+\index{HandleInput@{HandleInput}!stickman::SplashState@{stickman::SplashState}}
+\doxysubsubsection{\texorpdfstring{HandleInput()}{HandleInput()}}
+{\footnotesize\ttfamily void stickman\+::\+Splash\+State\+::\+Handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Handle\+Input that may be overloaded which may be used to handle some input. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_ad7de6a9b7011f5c83530988a075956b4}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1SplashState_ad9206a3ab4c75bee1b004dbe75d9e9bf}\label{classstickman_1_1SplashState_ad9206a3ab4c75bee1b004dbe75d9e9bf}} 
+\index{stickman::SplashState@{stickman::SplashState}!Init@{Init}}
+\index{Init@{Init}!stickman::SplashState@{stickman::SplashState}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void stickman\+::\+Splash\+State\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function init that may be overloaded which runs at the start of the state. 
+
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_acd313e7bfcc3bcda8a69a9244f59533d}{stickman\+::\+State}}.
+
+\mbox{\Hypertarget{classstickman_1_1SplashState_af6dfe88a7cad53cf324bb59c827da1dd}\label{classstickman_1_1SplashState_af6dfe88a7cad53cf324bb59c827da1dd}} 
+\index{stickman::SplashState@{stickman::SplashState}!Update@{Update}}
+\index{Update@{Update}!stickman::SplashState@{stickman::SplashState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void stickman\+::\+Splash\+State\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function Update which may be overloaded which may be used to update game logic. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dt} & The difference in frames to syncronise with framerate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstickman_1_1State_a6b74acc3f068ca84b5b91fe5faffb82a}{stickman\+::\+State}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Splash\+State.\+hpp\item 
-Splash\+State.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{SplashState_8hpp}{Splash\+State.\+hpp}}\item 
+\mbox{\hyperlink{SplashState_8cpp}{Splash\+State.\+cpp}}\end{DoxyCompactItemize}

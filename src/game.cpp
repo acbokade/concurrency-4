@@ -103,6 +103,10 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
     this->player2RoundsSprite.setPosition(736.f,35.f);
     this->player1->init(true);
 	this->player2->init(false);
+	this->ground = this->createGround(b2Vec2(683.f/SCALE, 70.f/SCALE),0);
+	this->wall1 = this->createGround(b2Vec2(683.f/SCALE, 698.f/SCALE),0);
+	this->wall2 = this->createGround(b2Vec2(71.f/SCALE, 384.f/SCALE),90);
+	this->wall3 = this->createGround(b2Vec2(1295.f/SCALE, 384.f/SCALE),90);
 	this->gemExists = false;
 	this->isExiting = false;
 };
