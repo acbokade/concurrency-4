@@ -79,19 +79,34 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
     this->player2RoundsText.setString(std::to_string(this->player2Rounds));
 
 	this->isClient = client;
-    this->groundTexture.loadFromFile("res/g1.png");
+	if (!groundTexture.loadFromFile("res/g1.png"))
+	{
+		std::cerr<<"Failed to load ground texture!"<<std::endl;
+	}
     this->groundSprite.setTexture(groundTexture);
     this->groundSprite.setOrigin(620.f, 8.f);
-    this->wall1Texture.loadFromFile("res/g1.png");
+    if (!wall1Texture.loadFromFile("res/g1.png"))
+	{
+		std::cerr<<"Failed to load wall1 texture!"<<std::endl;
+	}
     this->wall1Sprite.setTexture(wall1Texture);
     this->wall1Sprite.setOrigin(620.f, 8.f);
-    this->wall2Texture.loadFromFile("res/g2.png");
+    if (!wall2Texture.loadFromFile("res/g2.png"))
+	{
+		std::cerr<<"Failed to load wall2 texture!"<<std::endl;
+	}
     this->wall2Sprite.setTexture(wall2Texture);
     this->wall2Sprite.setOrigin(314.f, 8.f);
-    this->wall3Texture.loadFromFile("res/g2.png");
+    if (!wall3Texture.loadFromFile("res/g2.png"))
+	{
+		std::cerr<<"Failed to load wall3 texture!"<<std::endl;
+	}
     this->wall3Sprite.setTexture(wall3Texture);
     this->wall3Sprite.setOrigin(314.f, 8.f);
-    this->gemTexture.loadFromFile("res/gem1.png");
+    if (!gemTexture.loadFromFile("res/gem1.png"))
+	{
+		std::cerr<<"Failed to load gem texture!"<<std::endl;
+	}
     this->gemSprite.setTexture(gemTexture);
     this->gemSprite.setOrigin((sf::Vector2f)gemTexture.getSize()/2.f);
     this->roundTexture.loadFromFile("res/box2.png");
@@ -212,8 +227,10 @@ void Game::gameLoop()
 		texture.setSmooth(true);
 		sf::Texture bar1;
 		sf::Texture bar2;
-    	bar1.loadFromFile("res/bar.png");
-    	bar2.loadFromFile("res/bar.png");
+		if (!bar1.loadFromFile("res/bar.png") && !bar2.loadFromFile("res/bar.png"))
+		{
+			std::cerr<<"Failed to load health bar texture!"<<std::endl;
+		}
     	sf::Sprite barsprite1;
     	barsprite1.setTexture(bar1);
     	sprite.setColor(sf::Color(255,255,255,100));
