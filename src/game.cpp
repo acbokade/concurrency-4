@@ -123,6 +123,14 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	this->wall1 = this->createGround(b2Vec2(683.f/SCALE, 698.f/SCALE),0);
 	this->wall2 = this->createGround(b2Vec2(71.f/SCALE, 384.f/SCALE),90);
 	this->wall3 = this->createGround(b2Vec2(1295.f/SCALE, 384.f/SCALE),90);
+	groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
+	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
+	wall1Sprite.setPosition((this->wall1->GetPosition().x * SCALE), this->wall1->GetPosition().y * SCALE);
+	wall1Sprite.setRotation((180/b2_pi) * this->wall1->GetAngle());
+	wall2Sprite.setPosition(this->wall2->GetPosition().x * SCALE, (this->wall2->GetPosition().y * SCALE));
+	wall2Sprite.setRotation((180/b2_pi) * this->wall2->GetAngle());
+	wall3Sprite.setPosition(((this->wall3->GetPosition().x) * SCALE), ((this->wall3->GetPosition().y )* SCALE));
+	wall3Sprite.setRotation((180/b2_pi) * this->wall3->GetAngle());
 	this->gemExists = false;
 	this->isExiting = false;
 };
@@ -312,14 +320,6 @@ void Game::gameLoop()
 	        thr2.join();
 	        updatePlayer(player1);
 	        updatePlayer(player2);
-	      	groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
-	    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
-	    	wall1Sprite.setPosition((this->wall1->GetPosition().x * SCALE), this->wall1->GetPosition().y * SCALE);
-    		wall1Sprite.setRotation((180/b2_pi) * this->wall1->GetAngle());
-    		wall2Sprite.setPosition(this->wall2->GetPosition().x * SCALE, (this->wall2->GetPosition().y * SCALE));
-    		wall2Sprite.setRotation((180/b2_pi) * this->wall2->GetAngle());
-    		wall3Sprite.setPosition(((this->wall3->GetPosition().x) * SCALE), ((this->wall3->GetPosition().y )* SCALE));
-    		wall3Sprite.setRotation((180/b2_pi) * this->wall3->GetAngle());
 			window->clear();
 			window->draw(sprite);
 			draw(player1);
@@ -489,14 +489,6 @@ void Game::gameLoop()
 	    	else if(player2->getHealth()>50)
 	    		barsprite2.setColor(sf::Color(255,255,255,255));
 
-			groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
-	    	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
-	    	wall1Sprite.setPosition((this->wall1->GetPosition().x * SCALE), this->wall1->GetPosition().y * SCALE);
-    		wall1Sprite.setRotation((180/b2_pi) * this->wall1->GetAngle());
-    		wall2Sprite.setPosition(this->wall2->GetPosition().x * SCALE, (this->wall2->GetPosition().y * SCALE));
-    		wall2Sprite.setRotation((180/b2_pi) * this->wall2->GetAngle());
-    		wall3Sprite.setPosition(((this->wall3->GetPosition().x) * SCALE), ((this->wall3->GetPosition().y )* SCALE));
-    		wall3Sprite.setRotation((180/b2_pi) * this->wall3->GetAngle());
 			window->clear();
 			window->draw(sprite);
 			draw(player1);
@@ -728,8 +720,6 @@ void Game::updatePlayer(Player *player)
     player->right_handSprite.setRotation(player->right_hand->GetAngle() * (180/b2_pi));
 }
 
-
-
 void Game::draw(Player* player)
 {
 	window->draw(player->left_legSprite);
@@ -788,7 +778,6 @@ void Game::decrease_hp(int a,int b)
 	{
 		damage2=5;
 	}
-	
 	else if( (a==3 && b==6) || (a==6 && b==3) )
 	{
 		damage2=3;
@@ -835,34 +824,22 @@ void Game::server_receive()
     std::string s;
     packet1>>s;
     if (s=="D")
-    {
         player2->body->SetAngularVelocity(60*DEGTORAD);
-    }
 
     else if (s=="A")
-    {
         player2->body->SetAngularVelocity(-60*DEGTORAD);
-    }
 
     else if (s=="L")
-    {
         player2->body->SetLinearVelocity(b2Vec2(-4,0));
-    }
 
     else if (s=="R")
-    {
         player2->body->SetLinearVelocity(b2Vec2(4,0));
-    }
 
     else if (s=="U")
-    {
         player2->body->SetLinearVelocity(b2Vec2(0,-4));
-    }
 
     else if (s=="B")
-    {
         player2->body->SetLinearVelocity(b2Vec2(0,4));
-    }
 }
 
 void Game::client_send()
