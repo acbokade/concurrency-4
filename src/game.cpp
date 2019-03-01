@@ -123,14 +123,14 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	this->wall1 = this->createGround(b2Vec2(683.f/SCALE, 698.f/SCALE),0);
 	this->wall2 = this->createGround(b2Vec2(71.f/SCALE, 384.f/SCALE),90);
 	this->wall3 = this->createGround(b2Vec2(1295.f/SCALE, 384.f/SCALE),90);
-	groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
-	groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
-	wall1Sprite.setPosition((this->wall1->GetPosition().x * SCALE), this->wall1->GetPosition().y * SCALE);
-	wall1Sprite.setRotation((180/b2_pi) * this->wall1->GetAngle());
-	wall2Sprite.setPosition(this->wall2->GetPosition().x * SCALE, (this->wall2->GetPosition().y * SCALE));
-	wall2Sprite.setRotation((180/b2_pi) * this->wall2->GetAngle());
-	wall3Sprite.setPosition(((this->wall3->GetPosition().x) * SCALE), ((this->wall3->GetPosition().y )* SCALE));
-	wall3Sprite.setRotation((180/b2_pi) * this->wall3->GetAngle());
+	this->groundSprite.setPosition(this->ground->GetPosition().x * SCALE, this->ground->GetPosition().y * SCALE);
+	this->groundSprite.setRotation((180/b2_pi) * this->ground->GetAngle());
+	this->wall1Sprite.setPosition((this->wall1->GetPosition().x * SCALE), this->wall1->GetPosition().y * SCALE);
+	this->wall1Sprite.setRotation((180/b2_pi) * this->wall1->GetAngle());
+	this->wall2Sprite.setPosition(this->wall2->GetPosition().x * SCALE, (this->wall2->GetPosition().y * SCALE));
+	this->wall2Sprite.setRotation((180/b2_pi) * this->wall2->GetAngle());
+	this->wall3Sprite.setPosition(((this->wall3->GetPosition().x) * SCALE), ((this->wall3->GetPosition().y )* SCALE));
+	this->wall3Sprite.setRotation((180/b2_pi) * this->wall3->GetAngle());
 	this->gemExists = false;
 	this->isExiting = false;
 };
@@ -233,7 +233,11 @@ void Game::gameLoop()
 		texture.setSmooth(true);
 		sf::Texture bar1;
 		sf::Texture bar2;
-		if (!bar1.loadFromFile("res/bar.png") && !bar2.loadFromFile("res/bar.png"))
+		if (!bar1.loadFromFile("res/bar.png"))
+		{
+			std::cerr<<"Failed to load health bar texture!"<<std::endl;
+		}
+		if(!bar2.loadFromFile("res/bar.png"))
 		{
 			std::cerr<<"Failed to load health bar texture!"<<std::endl;
 		}
@@ -824,22 +828,34 @@ void Game::server_receive()
     std::string s;
     packet1>>s;
     if (s=="D")
+    {
         player2->body->SetAngularVelocity(60*DEGTORAD);
+    }
 
     else if (s=="A")
+    {
         player2->body->SetAngularVelocity(-60*DEGTORAD);
+    }
 
     else if (s=="L")
+    {
         player2->body->SetLinearVelocity(b2Vec2(-4,0));
+    }
 
     else if (s=="R")
+    {
         player2->body->SetLinearVelocity(b2Vec2(4,0));
+    }
 
     else if (s=="U")
+    {
         player2->body->SetLinearVelocity(b2Vec2(0,-4));
+    }
 
     else if (s=="B")
+    {
         player2->body->SetLinearVelocity(b2Vec2(0,4));
+    }
 }
 
 void Game::client_send()
