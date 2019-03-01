@@ -8,7 +8,7 @@ include_directories(include ${GTEST_INCLUDE_DIRS})
 
 link_directories(include)
 
-add_compile_options(-fPIC -Wno-deprecated-declarations)
+add_compile_options(-fPIC)
 
 find_package(GTest REQUIRED)
 
