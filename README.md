@@ -1,5 +1,5 @@
 # Stickman Fighter
-[![CircleCI](https://circleci.com/gh/IITH-SBJoshi/concurrency-4/tree/master.svg?style=svg)](https://circleci.com/gh/IITH-SBJoshi/concurrency-4/tree/master)
+[![CircleCI](https://circleci.com/gh/IITH-SBJoshi/concurrency-4/tree/master.svg?style=svg&circle-token=9bec410bdf2bd7578a08affff3e93f6fdf5c991c)](https://circleci.com/gh/IITH-SBJoshi/concurrency-4/tree/master)
 
 A 2 player fighting game created in C++. It is created to learn concurrency for POPL-2 course.
 
