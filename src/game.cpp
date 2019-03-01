@@ -10,8 +10,8 @@ using namespace std;
 #define DEGTORAD 0.0174532925199432957f
 
 const float SCALE = 30.f;
-float temp1 = ((75/2)/sqrt(2));
-float temp2 = (60/2);
+const float temp1 = ((75/2)/sqrt(2));
+const float temp2 = (60/2);
 
 namespace stickman{
 Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
@@ -133,7 +133,7 @@ Game::~Game()
 
 void Game::connect()
 {
-	if(!isClient)
+	if(!this->isClient)
 	{
 		std::thread t1(&Game::serverListen,this,false);
 		std::thread t2(&Game::serverListen,this,true);
@@ -193,12 +193,11 @@ void Game::serverListen(bool flag)
 void Game::gameLoop()
 {
 	srand(time(0));
-	char con;
 	if(!isClient)
 	{
 		this->isPlaying = true;
 		initPlayer(player1, 200.f,0);
-		initPlayer(player2, 500.f,4);
+		initPlayer(player2, 1168.f,4);
 	    player1->setHealth(100);
 	    player2->setHealth(100);
 	    sf::Packet packet1,packet2;
@@ -215,12 +214,10 @@ void Game::gameLoop()
 	    gettimeofday(&prev_time1, NULL);
 	    sf::Texture texture;
 		texture.setRepeated(true);
-
 		if (!texture.loadFromFile("res/texture.png"))
 		{
 			std::cerr<<"Failed to load texture!"<<std::endl;
 		}
-
 		sf::Sprite sprite;
 		sprite.setTexture(texture);
 		sprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
@@ -280,10 +277,9 @@ void Game::gameLoop()
 	    		barsprite2.setColor(sf::Color(255,255,255,255));
 	    	}
 	        
-			this->world->Step(timeStep, velocityIterations, positionIterations);
+			this->world->Step(this->timeStep, this->velocityIterations, this->positionIterations);
 			gettimeofday(&current_time,NULL);
 	        time_difference = (double) ((current_time.tv_sec * 1000000 + current_time.tv_usec) - (prev_time.tv_sec * 1000000 + prev_time.tv_usec)) / 1000.0;
-
 
 	        if(time_difference > 100)
 	        {
@@ -292,34 +288,22 @@ void Game::gameLoop()
 	        }
 			
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
-	        {
 	            player1->body->SetAngularVelocity(60*DEGTORAD);
-	        }
 
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
-	        {
 	            player1->body->SetAngularVelocity(-60*DEGTORAD);
-	        }
 
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	        {
 	            player1->body->SetLinearVelocity(b2Vec2(-4,0));
-	        }
 
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	        {
 	            player1->body->SetLinearVelocity(b2Vec2(4,0));
-	        }
 
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	        {
 	            player1->body->SetLinearVelocity(b2Vec2(0,-4));
-	        }
 
 	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	        {
 	            player1->body->SetLinearVelocity(b2Vec2(0,4));
-	        }
 
 	        std::thread thr1,thr2;
 	        thr1=std::thread(&Game::server_send,this);
@@ -354,7 +338,7 @@ void Game::gameLoop()
 	        window->draw(this->player1RoundsText);
 	        window->draw(this->player2RoundsText);
 	        m1.lock();
-	        if(gemExists)
+	        if(this->gemExists)
 	        	window->draw(this->gemSprite);
 	        m1.unlock();
 	        window->display();
@@ -605,10 +589,10 @@ void Game::generateGem()
 		{
 	      	int x = rand();
 			int y = rand();
-			x = 100 + x % 1000;
+			x = 100 + x % 1100;
 			y = 100 + y % 550;
 			this->gemSprite.setPosition(x,y);
-			assert(this->gemSprite.getPosition().x >= 100 && this->gemSprite.getPosition().x < 1100);
+			assert(this->gemSprite.getPosition().x >= 100 && this->gemSprite.getPosition().x < 1200);
 			assert(this->gemSprite.getPosition().y >= 100 && this->gemSprite.getPosition().y < 650); 
 			m1.lock();
 			this->gemExists = true;
