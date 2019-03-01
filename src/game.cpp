@@ -5,6 +5,7 @@
 #include "Box2D/Box2D.h"
 #include "myListener.h"
 #include <iostream>
+#include <assert.h>
 using namespace std;
 #define DEGTORAD 0.0174532925199432957f
 
@@ -604,9 +605,11 @@ void Game::generateGem()
 		{
 	      	int x = rand();
 			int y = rand();
-			x = 100 + x % 550;
-			y = 100 + y % 1000; 
+			x = 100 + x % 1000;
+			y = 100 + y % 550;
 			this->gemSprite.setPosition(x,y);
+			assert(this->gemSprite.getPosition().x >= 100 && this->gemSprite.getPosition().x < 1100);
+			assert(this->gemSprite.getPosition().y >= 100 && this->gemSprite.getPosition().y < 650); 
 			m1.lock();
 			this->gemExists = true;
 			m1.unlock();
