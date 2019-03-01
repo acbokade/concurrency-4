@@ -605,7 +605,7 @@ void Game::generateGem()
 	      	int x = rand();
 			int y = rand();
 			x = 100 + x % 550;
-			y = 100 + y % 1100; 
+			y = 100 + y % 1000; 
 			this->gemSprite.setPosition(x,y);
 			m1.lock();
 			this->gemExists = true;
@@ -820,7 +820,6 @@ void Game::decrease_hp(int a,int b)
 
 void Game::server_send()
 {
-
 	sf::Packet packet2;
     packet2<<player1->head->GetPosition().x*SCALE<<player1->head->GetPosition().y*SCALE<<player1->head->GetAngle() * (180/b2_pi);
     packet2<<player1->body->GetPosition().x*SCALE<<player1->body->GetPosition().y*SCALE<<player1->body->GetAngle() * (180/b2_pi);

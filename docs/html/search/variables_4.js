@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data',['data',['../classstickman_1_1mainGame.html#ab5a923acd1295ec08af270ac4ed87e6a',1,'stickman::mainGame::data()'],['../structstickman_1_1playerdata.html#a08b47ece0d37dea92b353f0e5371dec0',1,'stickman::playerdata::data()']]]
+  ['data',['data',['../structstickman_1_1mainGamel.html#a70b66d2e7a0aeccd13cac116250c06b0',1,'stickman::mainGamel::data()'],['../structstickman_1_1playerdata.html#a08b47ece0d37dea92b353f0e5371dec0',1,'stickman::playerdata::data()']]]
 ];
