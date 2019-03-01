@@ -15,7 +15,7 @@ namespace stickman
 	void HelpState::Init()
 	{ 
 		this->_data->assets.LoadTexture("Back Button", BACK_BUTTON); 
-        if(!this->font.loadFromFile("res/arial.ttf"))
+        if(!this->font.loadFromFile("res/Ubuntu-R.ttf"))
 			std::cerr<<"Failed to load font!"<<std::endl;
         this->backSprite.setTexture(this->_data->assets.GetTexture("Back Button"));
         this->backSprite.setPosition(50,50);

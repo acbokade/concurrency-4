@@ -28,7 +28,7 @@ namespace stickman
         this->welcomeSprite.setTexture(welcomeTexture);
         this->welcomeSprite.setPosition(300,50);
 
-    	this->font.loadFromFile("res/arial.ttf");
+    	this->font.loadFromFile("res/Ubuntu-R.ttf");
     	this->enterName.setPosition(420,180);
 		this->enterName.setCharacterSize(60);
     	this->enterName.setFont(this->font);

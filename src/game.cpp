@@ -29,7 +29,7 @@ Game::Game(GameDataRef data,string s,bool client,string myip): _data(data)
 	else
 		this->player2->setName(s);
 
-	if(!this->font.loadFromFile("res/arial.ttf"))
+	if(!this->font.loadFromFile("res/Ubuntu-R.ttf"))
 		std::cerr<<"Failed to load font!"<<std::endl;
 	this->rtext.setPosition(420,180);
 	this->rtext.setCharacterSize(60);

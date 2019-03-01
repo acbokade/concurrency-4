@@ -15,7 +15,7 @@ namespace stickman
 
 	void GameOver::Init()
 	{   
-        this->font.loadFromFile("res/arial.ttf");
+        this->font.loadFromFile("res/Ubuntu-R.ttf");
         this->_data->assets.LoadTexture("restart",Restart_FILEPATH);
         this->_play_again_button.setTexture(this->_data->assets.GetTexture("restart"));
         this->_play_again_button.setPosition(600,400);
