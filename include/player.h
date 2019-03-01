@@ -15,7 +15,8 @@ namespace stickman{
 class Player 
 {
 public:
-	/** @brief Health of player
+	bool isDestroyed=false;
+     /** @brief Health of player
     *	 	   	Contains the current health point of player. 
     */
 	int health;

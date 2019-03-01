@@ -42,7 +42,7 @@ namespace stickman
 
 	private:
 		/**
-		 *@brief Updates run at 240 fps
+		 *@brief Updates run at 60 fps
 		 */
 		const float dt = 1.0f / 240.0f;
 		/**

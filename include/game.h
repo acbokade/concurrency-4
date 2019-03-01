@@ -16,6 +16,7 @@
 #include "Game.hpp"
 #include <utility>
 #include <string>
+#include "bots.hpp"
 
 namespace stickman {
 /**@class Game
@@ -355,6 +356,11 @@ public:
     *	 	   	Contains the font which is to be loaded to text to display it on window.
     */
 	sf::Font font;
+
+	botSom* bott;
+
+	int numBots=0;
+
 private:
 	/** @brief Contains StateMachine of Game, Render Window, over which game is displayed, AssetManager of game, InputManager of Game.
     */

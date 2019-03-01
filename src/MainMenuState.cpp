@@ -22,8 +22,7 @@ namespace stickman
         this->_title.setTexture(this->_data->assets.GetTexture("Game Title"));
         this->_title.setPosition((SCREEN_WIDTH/2)-(_title.getGlobalBounds().width/2),_title.getGlobalBounds().height/4);*/
         
-        if(!this->font.loadFromFile("res/Ubuntu-R.ttf"))
-			std::cerr<<"Failed to load font!"<<std::endl;
+        this->font.loadFromFile("res/arial.ttf");
     	this->text1.setPosition(420,180);
 		this->text1.setCharacterSize(60);
     	this->text1.setFont(this->font);

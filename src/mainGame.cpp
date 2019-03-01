@@ -14,31 +14,12 @@ namespace stickman
 	{
 		//creating ground
 		Game gameState(this->_data,s,client,ip);
-    	gameState.connect();
-    	while(gameState.player1Rounds <= 2 && gameState.player2Rounds <= 2 && !gameState.isExiting)
+    	while(!gameState.isExiting)
     	{
-    		gameState.gameLoop();
+			gameState.gameLoop();
     	}
-    	if(!gameState.isExiting)
-    	{
-            gameState.tcplistener.close();
-            gameState.tcplistener1.close();
-            gameState.sendSocket.disconnect();
-            gameState.listenSocket.disconnect();
-            gameState.isExiting = true;
-            if(gameState.player1Rounds == 3 && gameState.player2Rounds < 3)
-            {
-                this->_data->machine.AddState(StateRef(new GameOver(_data,gameState.player1->name,1)), true);
-            }
-            else if(gameState.player1Rounds < 3 && gameState.player2Rounds == 3)
-            {
-                this->_data->machine.AddState(StateRef(new GameOver(_data,gameState.player2->name,1)), true);
-            }
-            else
-            {
-                this->_data->machine.AddState(StateRef(new GameOver(_data,"noname",0)), true); 
-            }
-    	}
+        this->_data->machine.AddState(StateRef(new GameOver(_data,gameState.player1->name,0)), true);
+
 
     	//gameState.socket.disconnect();
     	//gameState.tcplistener.close();

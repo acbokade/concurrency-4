@@ -15,8 +15,7 @@ namespace stickman
 	void HelpState::Init()
 	{ 
 		this->_data->assets.LoadTexture("Back Button", BACK_BUTTON); 
-        if(!this->font.loadFromFile("res/Ubuntu-R.ttf"))
-			std::cerr<<"Failed to load font!"<<std::endl;
+        this->font.loadFromFile("res/arial.ttf");
         this->backSprite.setTexture(this->_data->assets.GetTexture("Back Button"));
         this->backSprite.setPosition(50,50);
         this->infoText.setPosition(50,200);
@@ -24,7 +23,7 @@ namespace stickman
 		this->infoText.setFont(this->font);
 	    this->infoText.setColor(sf::Color::Red);
         string s = string("This is a multiplayer addictive fighting game.\n\nYou can move player up, down, right, left using Up, Down, Right, Left arrow keys\nrespectively.\n")+
-	    string("You can rotate player clockwise using \"D\" key and anticlockwise using \"A\" key.\n\nGame will finish when either one of them wins 3 rounds and he will be the winner.\nInitial health of each player is 100.")+
+	    string("You can rotate player clockwise using \"D\" key and anticlockwise using \"A\" key.\n\nGame will finish when either one of them wins 2 rounds and he will be the winner.\nInitial health of each player is 100.")+
 	    string(" One whose health becomes 0 first will lose the round\nand other wins that round. If it happens simultaneously, it will result in tie.")+
 	    string("\n\nDamage due to collision of head of First Player and head of Second")+
 	    string(" Player is 5 to each.\nDamage due to collision of head of First Player")+
